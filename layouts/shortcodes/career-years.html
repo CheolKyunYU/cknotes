@@ -1,0 +1,1 @@
+{{- $startYear := 2010 -}}{{- $startMonth := 9 -}}{{- $startDay := 6 -}}{{- $now := now -}}{{- $years := sub $now.Year $startYear -}}{{- if or (lt (int $now.Month) $startMonth) (and (eq (int $now.Month) $startMonth) (lt $now.Day $startDay)) -}}{{- $years = sub $years 1 -}}{{- end -}}<span class="career-years" data-start="2010-09-06">{{ $years }}</span>

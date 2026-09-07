@@ -18,5 +18,20 @@
       });
       mermaid.initialize({ startOnLoad: true, theme: 'default' });
     }
+
+    /* Auto calculate career years based on 2010-09-06 */
+    const careerEls = document.querySelectorAll('.career-years');
+    if (careerEls.length > 0) {
+      const startDate = new Date('2010-09-06T00:00:00+09:00');
+      const today = new Date();
+      let years = today.getFullYear() - startDate.getFullYear();
+      const m = today.getMonth() - startDate.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < startDate.getDate())) {
+        years--;
+      }
+      careerEls.forEach(function(el) {
+        el.textContent = years;
+      });
+    }
   });
 </script>
