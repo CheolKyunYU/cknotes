@@ -1,6 +1,6 @@
-baseURL = "https://cheolkyunyu.github.io/ck.log/"
+baseURL = "https://cknotes.kr/"
 locale = "ko-KR"
-title = "CK log"
+title = "CK notes"
 theme = "PaperMod"
 paginate = 10
 enableRobotsTXT = true
@@ -11,9 +11,9 @@ enableRobotsTXT = true
 
 [params]
   env = "production"
-  title = "CK log"
-  description = "16년 차 IT 시스템 엔지니어 CK의 실무 인프라(HPE SimpliVity, VME, VMware, Linux, 서버/스토리지) 구축 및 트러블슈팅 경험 기록 블로그"
-  author = "CK log"
+  title = "CK notes"
+  description = "16년 차 IT 시스템 엔지니어 CK의 실무 인프라(HPE SimpliVity, VME, VMware, Linux, 서버/스토리지) 구축 및 트러블슈팅 경험 기록 노트"
+  author = "CK notes"
   DateFormat = "2006-01-02 15:04"
   ShowReadingTime = false
   ShowShareButtons = true
