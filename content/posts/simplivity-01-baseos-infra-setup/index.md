@@ -5,6 +5,8 @@ date: 2026-08-31T14:00:00+09:00
 draft: false
 categories: ["Tech"]
 tags: ["HPE", "SimpliVity", "VME", "BaseOS", "NTP", "DNS", "NFS", "Troubleshooting"]
+aliases:
+  - /posts/simplivity-01-baseos-infra-setup/
 ---
 
 > **작성자**: 15년 차 IT 필드 엔지니어  
@@ -12,11 +14,11 @@ tags: ["HPE", "SimpliVity", "VME", "BaseOS", "NTP", "DNS", "NFS", "Troubleshooti
 
 > 📌 **HPE SimpliVity 6.2.0 (HVM) 실전 구축 연재 목차**
 > 
-> - **[PreStep. 사전 설치 준비 & 2노드 네트워크 설계 가이드](../00_simplivity_설치준비/)**
+> - **[PreStep. 사전 설치 준비 & 2노드 네트워크 설계 가이드](../simplivity-00-install-prep/)**
 > - **[현재글] [Step 1. 관리서버 BaseOS HVM 24.04 & NTP/DNS/NFS 구성](./)**
-> - **[Step 2. 관리서버 VME Manager VM & Arbiter VM 설치](../02_관리서버_vme_manager_및_arbiter/)**
-> - **[Step 3. SimpliVity 노드 펌웨어 업데이트 & Initial Setup](../03_simplivity_노드_initial_setup/)**
-> - **[Step 4. VM Essentials Manager 기반 HVM Cluster 생성 & OVC 배포](../04_hvm클러스터_및_ovc배포/)**
+> - **[Step 2. 관리서버 VME Manager VM & Arbiter VM 설치](../simplivity-02-vme-mgr-arbiter/)**
+> - **[Step 3. SimpliVity 노드 펌웨어 업데이트 & Initial Setup](../simplivity-03-node-initial-setup/)**
+> - **[Step 4. VM Essentials Manager 기반 HVM Cluster 생성 & OVC 배포](../simplivity-04-hvm-cluster-ovc-deploy/)**
 
 ---
 
@@ -152,7 +154,7 @@ HPE SimpliVity 6.2.0 구축의 탄탄한 기반은 **관리서버 OS(LVM 설정)
 
 | 이전 단계 | 다음 단계 |
 | :---: | :---: |
-| 첫 번째 글입니다 | **[Step 2. VME Manager & Arbiter VM 설치 ➡️](../02_관리서버_VME_Manager_및_Arbiter/)** |
+| 첫 번째 글입니다 | **[Step 2. VME Manager & Arbiter VM 설치 ➡️](../simplivity-02-vme-mgr-arbiter/)** |
 
 ---
 궁금한 점은 댓글로 남겨주세요!

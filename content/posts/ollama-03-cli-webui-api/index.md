@@ -5,6 +5,8 @@ date: 2026-09-05T20:30:00+09:00
 draft: false
 categories: ["Tech"]
 tags: ["Ollama", "LLM", "Local-AI", "Windows11", "WebUI", "Chatbox", "Python", "API", "Automation"]
+aliases:
+  - /posts/ollama-03-cli-webui-api/
 ---
 
 > **작성자**: 15년 차 IT 필드 엔지니어  
@@ -12,8 +14,8 @@ tags: ["Ollama", "LLM", "Local-AI", "Windows11", "WebUI", "Chatbox", "Python", "
 
 > 📌 **내 PC에서 구동하는 로컬 LLM: Ollama 실전 연재 목차**
 > 
-> - **[1편. 내 PC에서 무료로 돌리는 로컬 AI, Ollama란 무엇인가? (개념 및 특징)](../ollama_01_로컬_llm_개념_및_알아보기/)**
-> - **[2편. Windows 11 환경 Ollama 설치 및 첫 모델 다운로드 & 구동 가이드](../ollama_02_windows_설치_및_모델_구동/)**
+> - **[1편. 내 PC에서 무료로 돌리는 로컬 AI, Ollama란 무엇인가? (개념 및 특징)](../ollama-01-local-llm-intro/)**
+> - **[2편. Windows 11 환경 Ollama 설치 및 첫 모델 다운로드 & 구동 가이드](../ollama-02-windows-install-guide/)**
 > - **[현재글] [3편. Ollama 실전 활용법: CLI 고급 팁부터 WebUI 및 API 연동까지](./)**
 
 ---
@@ -241,7 +243,7 @@ Ollama는 자체적으로 **OpenAI API 호환 규격(`http://localhost:11434/v1`
 
 | 이전 단계 | 다음 단계 |
 | :---: | :---: |
-| **[⬅️ 2편. Windows 11 Ollama 설치 & 모델 구동 가이드](../ollama_02_windows_설치_및_모델_구동/)** | **시리즈 완결 🎉** |
+| **[⬅️ 2편. Windows 11 Ollama 설치 & 모델 구동 가이드](../ollama-02-windows-install-guide/)** | **시리즈 완결 🎉** |
 
 ---
 Ollama 활용 중 막히는 부분이나 추가로 알고 싶은 자동화 팁이 있다면 언제든 댓글로 남겨주세요!

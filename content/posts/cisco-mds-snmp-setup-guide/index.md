@@ -5,6 +5,8 @@ date: 2026-09-07T09:50:00+09:00
 draft: false
 categories: ["Tech"]
 tags: ["Cisco", "MDS", "SAN", "Switch", "SNMP", "MIB", "NMS", "Network"]
+aliases:
+  - /posts/cisco-mds-snmp-setup-guide/
 ---
 
 * 작성자: CK log ({{< career-years >}}년 차 IT 필드 엔지니어)

@@ -12,9 +12,9 @@ This skill defines the complete operational standards, layout rules, taxonomy co
 
 ## 1. Blog Persona & Identity
 
-* **Blog Name**: `CK log`
-* **Base URL**: `https://CheolKyunYU.github.io/ck.log/`
-* **Author**: `CK` (15-year IT Field Systems Engineer)
+* **Blog Name**: `CK notes`
+* **Base URL**: `https://cknotes.kr/`
+* **Author**: `CK notes` (16-year IT Field Systems Engineer)
 * **Core Topics**: Server, Storage, HCI (HPE SimpliVity / VME / VMware), Linux, IT Infrastructure Troubleshooting, Daily Life, Car Maintenance, Travel.
 
 ---
@@ -59,26 +59,29 @@ tags: ["HPE", "SimpliVity", "VME", "Troubleshooting"]
 
 ---
 
-## 5. Page Bundle & Web-Safe Image Rules
+## 5. Page Bundle & URL / Image Naming Rules
 
 1. **Hugo Page Bundle Structure**:
    * `content/posts/<bundle_folder>/index.md`
    * `content/posts/<bundle_folder>/images/`
-2. **Image Naming Rules**:
-   * **MUST** use lowercased ASCII filenames without spaces or Korean characters (e.g., `os_network_setup.jpg`, `hpe_vm_console_vme_mgr.jpg`).
+2. **URL & Folder Naming Convention (STRICT)**:
+   * **ALL** post folder names and URLs **MUST** use lowercased ASCII kebab-case English only (e.g., `nexo-used-vs-smart-down`, `cisco-mds-snmp-setup-guide`).
+   * **NEVER** use Korean characters in folder names or URLs to ensure clean, percent-encoding-free URLs for SEO and social sharing.
+3. **Image Naming Rules**:
+   * **MUST** use lowercased ASCII filenames without spaces or Korean characters (e.g., `os_network_setup.jpg`, `the_all_new_nexo.jpg`).
    * Avoid spaces or Korean in image filenames to prevent 404 URL encoding errors on Linux web servers (GitHub Pages).
-3. **Internal Links Between Posts**:
-   * Links must target lowercased folder paths (e.g., `../00_simplivity_설치준비/`, `../01_관리서버_baseos_및_인프라서비스/`) matching Hugo's compiled output folders to prevent case-sensitive 404 errors.
+4. **Internal Links Between Posts**:
+   * Links must target clean English folder paths (e.g., `../simplivity-00-install-prep/`, `../ollama-01-local-llm-intro/`).
 
 ---
 
 ## 6. HPE SimpliVity 6.2.0 (HVM) Series Lineup
 
-* `PreStep`: 사전 설치 준비 & 2노드 네트워크 설계 가이드 (`content/posts/00_SimpliVity_설치준비/index.md`)
-* `Step 1`: [관리서버] BaseOS HVM 24.04 & NTP/DNS/NFS 구성 (`content/posts/01_관리서버_BaseOS_및_인프라서비스/index.md`)
-* `Step 2`: [관리서버] VME Manager VM & Arbiter VM 설치 (`content/posts/02_관리서버_VME_Manager_및_Arbiter/index.md`)
-* `Step 3`: [SimpliVity 서버] 펌웨어 업데이트 & Initial Setup (`content/posts/03_SimpliVity_노드_Initial_Setup/index.md`)
-* `Step 4`: [클러스터 & OVC 배포] HVM Cluster 생성 & OVC 배포 (`content/posts/04_HVM클러스터_및_OVC배포/index.md`)
+* `PreStep`: 사전 설치 준비 & 2노드 네트워크 설계 가이드 (`content/posts/simplivity-00-install-prep/index.md`)
+* `Step 1`: [관리서버] BaseOS HVM 24.04 & NTP/DNS/NFS 구성 (`content/posts/simplivity-01-baseos-infra-setup/index.md`)
+* `Step 2`: [관리서버] VME Manager VM & Arbiter VM 설치 (`content/posts/simplivity-02-vme-mgr-arbiter/index.md`)
+* `Step 3`: [SimpliVity 서버] 펌웨어 업데이트 & Initial Setup (`content/posts/simplivity-03-node-initial-setup/index.md`)
+* `Step 4`: [클러스터 & OVC 배포] HVM Cluster 생성 & OVC 배포 (`content/posts/simplivity-04-hvm-cluster-ovc-deploy/index.md`)
 
 ---
 

@@ -5,6 +5,8 @@ date: 2026-09-07T10:45:00+09:00
 draft: false
 categories: ["일상"]
 tags: ["디올뉴넥쏘", "NEXO", "넥쏘", "수소차", "친환경차", "차량고민", "중고차", "부담다운프로그램", "차량관리", "엔지니어일상"]
+aliases:
+  - /posts/nexo-used-vs-smart-down/
 ---
 
 안녕하세요! {{< career-years >}}년 동안 인프라 현장을 누벼온 IT 시스템 엔지니어 **CK log**입니다.

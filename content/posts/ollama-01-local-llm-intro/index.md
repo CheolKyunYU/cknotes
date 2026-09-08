@@ -5,6 +5,8 @@ date: 2026-09-05T19:00:00+09:00
 draft: false
 categories: ["Tech"]
 tags: ["Ollama", "LLM", "Local-AI", "AI", "Windows11", "OpenSource"]
+aliases:
+  - /posts/ollama-01-local-llm-intro/
 ---
 
 > **작성자**: 15년 차 IT 필드 엔지니어  
@@ -13,8 +15,8 @@ tags: ["Ollama", "LLM", "Local-AI", "AI", "Windows11", "OpenSource"]
 > 📌 **내 PC에서 구동하는 로컬 LLM: Ollama 실전 연재 목차**
 > 
 > - **[현재글] [1편. 내 PC에서 무료로 돌리는 로컬 AI, Ollama란 무엇인가? (개념 및 특징)](./)**
-> - **[2편. Windows 11 환경 Ollama 설치 및 첫 모델 다운로드 & 구동 가이드](../ollama_02_windows_설치_및_모델_구동/)**
-> - **[3편. Ollama 실전 활용법: 터미널 대화부터 WebUI & API 연동까지](../ollama_03_실전_활용_webui_및_api/)**
+> - **[2편. Windows 11 환경 Ollama 설치 및 첫 모델 다운로드 & 구동 가이드](../ollama-02-windows-install-guide/)**
+> - **[3편. Ollama 실전 활용법: 터미널 대화부터 WebUI & API 연동까지](../ollama-03-cli-webui-api/)**
 
 ---
 
@@ -142,7 +144,7 @@ Ollama는 외부 인터넷이 완전히 차단된 에어갭(Air-gap) 현장에�
 
 | 이전 단계 | 다음 단계 |
 | :---: | :---: |
-| **시리즈 시작 (현재글)** | **[2편. Windows 11 환경 Ollama 설치 및 첫 모델 구동 가이드 ➡️](../ollama_02_windows_설치_및_모델_구동/)** |
+| **시리즈 시작 (현재글)** | **[2편. Windows 11 환경 Ollama 설치 및 첫 모델 구동 가이드 ➡️](../ollama-02-windows-install-guide/)** |
 
 ---
 궁금한 점이나 노트북 환경에서 돌려보고 싶은 모델이 있다면 댓글로 편하게 남겨주세요!

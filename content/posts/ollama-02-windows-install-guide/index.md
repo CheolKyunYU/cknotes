@@ -5,6 +5,8 @@ date: 2026-09-05T19:20:00+09:00
 draft: false
 categories: ["Tech"]
 tags: ["Ollama", "LLM", "Local-AI", "Windows11", "Gemma", "Llama", "Tutorial"]
+aliases:
+  - /posts/ollama-02-windows-install-guide/
 ---
 
 > **작성자**: 15년 차 IT 필드 엔지니어  
@@ -12,9 +14,9 @@ tags: ["Ollama", "LLM", "Local-AI", "Windows11", "Gemma", "Llama", "Tutorial"]
 
 > 📌 **내 PC에서 구동하는 로컬 LLM: Ollama 실전 연재 목차**
 > 
-> - **[1편. 내 PC에서 무료로 돌리는 로컬 AI, Ollama란 무엇인가? (개념 및 특징)](../ollama_01_로컬_llm_개념_및_알아보기/)**
+> - **[1편. 내 PC에서 무료로 돌리는 로컬 AI, Ollama란 무엇인가? (개념 및 특징)](../ollama-01-local-llm-intro/)**
 > - **[현재글] [2편. Windows 11 환경 Ollama 설치 및 첫 모델 다운로드 & 구동 가이드](./)**
-> - **[3편. Ollama 실전 활용법: 터미널 대화부터 WebUI & API 연동까지](../ollama_03_실전_활용_webui_및_api/)**
+> - **[3편. Ollama 실전 활용법: 터미널 대화부터 WebUI & API 연동까지](../ollama-03-cli-webui-api/)**
 
 ---
 
@@ -182,7 +184,7 @@ ollama run gemma2:2b
 
 | 이전 단계 | 다음 단계 |
 | :---: | :---: |
-| **[⬅️ 1편. Ollama 개념 및 특징 총정리](../ollama_01_로컬_llm_개념_및_알아보기/)** | **[3편. Ollama 실전 활용법: WebUI & API 연동 ➡️](../ollama_03_실전_활용_webui_및_api/)** |
+| **[⬅️ 1편. Ollama 개념 및 특징 총정리](../ollama-01-local-llm-intro/)** | **[3편. Ollama 실전 활용법: WebUI & API 연동 ➡️](../ollama-03-cli-webui-api/)** |
 
 ---
 설치 중 오류가 발생하거나 궁금한 점이 있다면 댓글로 남겨주세요!
