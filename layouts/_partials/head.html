@@ -8,7 +8,7 @@
 {{- end }}
 
 {{- /* Title */}}
-<title>{{ if .IsHome }}{{ site.Title }} | 16년 차 IT 시스템 엔지니어의 기술 노트{{ else }}{{ if .Title }}{{ .Title }} | {{ end }}{{ site.Title }}{{ end }}</title>
+<title>{{ if .IsHome }}{{ site.Title }} | {{ site.Params.homeSubtitle | default "16년 차 IT 시스템 엔지니어의 기술 노트" }}{{ else }}{{ if .Title }}{{ .Title }} | {{ end }}{{ site.Title }}{{ end }}</title>
 
 {{- /* Meta */}}
 {{- if .IsHome }}

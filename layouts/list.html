@@ -1,7 +1,7 @@
 {{- define "main" }}
 
 {{- if .IsHome }}
-<h1 style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">CK notes - 16년 차 IT 시스템 엔지니어의 기술 노트</h1>
+<h1 style="position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;">{{ site.Title }} - {{ site.Params.homeSubtitle | default "16년 차 IT 시스템 엔지니어의 기술 노트" }}</h1>
 {{- end }}
 
 {{- if (and site.Params.profileMode.enabled .IsHome) }}

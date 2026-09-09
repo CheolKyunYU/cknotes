@@ -1,5 +1,6 @@
 baseURL = "https://cknotes.kr/"
-locale = "ko-KR"
+defaultContentLanguage = "ko"
+defaultContentLanguageInSubdir = false
 title = "CK notes"
 theme = "PaperMod"
 paginate = 10
@@ -22,50 +23,132 @@ enableRobotsTXT = true
 [params.analytics.google]
   SiteVerificationTag = "dr0Q6_PYk2R4JOUSa884LZJjb8hrAqlRxTg5j-XnkgY"
 
+[languages]
+  [languages.ko]
+    languageName = "KO"
+    languageCode = "ko-KR"
+    contentDir = "content"
+    weight = 1
+    title = "CK notes"
+    [languages.ko.params]
+      homeSubtitle = "16년 차 IT 시스템 엔지니어의 기술 노트"
+      description = "16년 차 IT 시스템 엔지니어 CK의 실무 인프라(HPE SimpliVity, VME, VMware, Linux, 서버/스토리지) 구축 및 트러블슈팅 경험 기록 노트"
+    [languages.ko.menu]
+      [[languages.ko.menu.main]]
+        identifier = "posts"
+        name = "Posts"
+        url = "/posts/"
+        weight = 10
+      [[languages.ko.menu.main]]
+        identifier = "categories"
+        name = "Categories"
+        url = "/categories/"
+        weight = 15
+      [[languages.ko.menu.main]]
+        identifier = "search"
+        name = "Search"
+        url = "/search/"
+        weight = 20
+      [[languages.ko.menu.main]]
+        identifier = "tags"
+        name = "Tags"
+        url = "/tags/"
+        weight = 30
+      [[languages.ko.menu.main]]
+        identifier = "privacy"
+        name = "Privacy Policy"
+        url = "/privacy/"
+        weight = 40
+      [[languages.ko.menu.main]]
+        identifier = "about"
+        name = "About me"
+        url = "/about/"
+        weight = 50
 
+  [languages.en]
+    languageName = "EN"
+    languageCode = "en-US"
+    contentDir = "content"
+    weight = 2
+    title = "CK notes"
+    [languages.en.params]
+      homeSubtitle = "Field Notes of a 16-Year IT Systems Engineer"
+      description = "Practical infrastructure deployment, troubleshooting, and field notes by a 16-year IT systems engineer (HPE SimpliVity, VME, VMware, Linux, Server/Storage)."
+    [languages.en.menu]
+      [[languages.en.menu.main]]
+        identifier = "posts"
+        name = "Posts"
+        url = "/posts/"
+        weight = 10
+      [[languages.en.menu.main]]
+        identifier = "categories"
+        name = "Categories"
+        url = "/categories/"
+        weight = 15
+      [[languages.en.menu.main]]
+        identifier = "search"
+        name = "Search"
+        url = "/search/"
+        weight = 20
+      [[languages.en.menu.main]]
+        identifier = "tags"
+        name = "Tags"
+        url = "/tags/"
+        weight = 30
+      [[languages.en.menu.main]]
+        identifier = "privacy"
+        name = "Privacy Policy"
+        url = "/privacy/"
+        weight = 40
+      [[languages.en.menu.main]]
+        identifier = "about"
+        name = "About me"
+        url = "/about/"
+        weight = 50
 
-
-[languages.ko]
-  label = "Korean"
-  weight = 1
-  [languages.ko.menu]
-    [[languages.ko.menu.main]]
-      identifier = "posts"
-      name = "Posts"
-      url = "/posts/"
-      weight = 10
-    [[languages.ko.menu.main]]
-      identifier = "categories"
-      name = "Categories"
-      url = "/categories/"
-      weight = 15
-    [[languages.ko.menu.main]]
-      identifier = "search"
-      name = "Search"
-      url = "/search/"
-      weight = 20
-
-    [[languages.ko.menu.main]]
-      identifier = "tags"
-      name = "Tags"
-      url = "/tags/"
-      weight = 30
-    [[languages.ko.menu.main]]
-      identifier = "privacy"
-      name = "Privacy Policy"
-      url = "/privacy/"
-      weight = 40
-    [[languages.ko.menu.main]]
-      identifier = "about"
-      name = "About me"
-      url = "/about/"
-      weight = 50
-
+  [languages.jp]
+    languageName = "JP"
+    languageCode = "ja-JP"
+    contentDir = "content"
+    weight = 3
+    title = "CK notes"
+    [languages.jp.params]
+      homeSubtitle = "16年目ITシステムエンジニアの技術ノート"
+      description = "16年目のITシステムエンジニアCKによる実務インフラ構築（HPE SimpliVity、VME、VMware、Linux、サーバー/ストレージ）およびトラブルシュー팅の記録ノート。"
+    [languages.jp.menu]
+      [[languages.jp.menu.main]]
+        identifier = "posts"
+        name = "Posts"
+        url = "/posts/"
+        weight = 10
+      [[languages.jp.menu.main]]
+        identifier = "categories"
+        name = "Categories"
+        url = "/categories/"
+        weight = 15
+      [[languages.jp.menu.main]]
+        identifier = "search"
+        name = "Search"
+        url = "/search/"
+        weight = 20
+      [[languages.jp.menu.main]]
+        identifier = "tags"
+        name = "Tags"
+        url = "/tags/"
+        weight = 30
+      [[languages.jp.menu.main]]
+        identifier = "privacy"
+        name = "Privacy Policy"
+        url = "/privacy/"
+        weight = 40
+      [[languages.jp.menu.main]]
+        identifier = "about"
+        name = "About me"
+        url = "/about/"
+        weight = 50
 
 [frontmatter]
   date = ["date", "publishDate", "lastmod"]
   lastmod = ["lastmod", ":git", "date"]
   publishDate = ["publishDate", "date"]
   expiryDate = ["expiryDate"]
-
-
