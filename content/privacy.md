@@ -87,7 +87,7 @@ Google의 최신 퍼블리셔 정책에 따라 다음과 같은 필수 사항을
 본 사이트의 개인정보 처리와 관련하여 문의사항, 정정·삭제 요구 또는 의견이 있으신 경우 아래 담당자에게 이메일로 연락해 주시면 신속하게 조치해 드리겠습니다:
 
 * 👤 **운영자**: CK (블로그 관리자)
-* 📧 **문의 이메일**: [cheolkyun.yu@gmail.com](mailto:cheolkyun.yu@gmail.com)
+* 📧 **문의 이메일**: [nrj.adm@gmail.com](mailto:nrj.adm@gmail.com)
 
 ---
 

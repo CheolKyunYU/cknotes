@@ -52,4 +52,4 @@ summary: "CK notes 블로그 및 작성자 소개"
 포스팅 내용에 대한 질문, 인프라 구축 관련 기술 논의, 혹은 나눌 이야기가 있으시면 언제든 편하게 연락해 주세요!
 
 * **작성자**: CK notes
-* **이메일**: [cheolkyun.yu@gmail.com](mailto:cheolkyun.yu@gmail.com)
+* **이메일**: [nrj.adm@gmail.com](mailto:nrj.adm@gmail.com)
