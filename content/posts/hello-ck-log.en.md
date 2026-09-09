@@ -1,9 +1,9 @@
-﻿---
+---
 title: "Welcome to CK notes: Field Notes of a Systems Engineer"
 description: "Introducing CK notes, a technical blog documenting enterprise infrastructure architecture, troubleshooting, and daily life by a 16-year IT systems engineer."
 date: 2026-08-26T21:00:00+09:00
 draft: false
-categories: ["Life"]
+categories: ["Daily Life"]
 tags: ["Blog", "Intro", "SystemEngineer"]
 ---
 
