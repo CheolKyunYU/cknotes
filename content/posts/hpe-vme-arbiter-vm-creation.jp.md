@@ -1,19 +1,20 @@
 ---
-title: "HPE VME Manager에 수동으로 Arbiter VM 생성"
-description: "HPE VME Manager 환경에서 수동으로 Arbiter VM을 생성하는 virt-install 스크립트, VNC 5901 접속, GRUB 콘솔 설정 및 dpkg 패키지 설치 절차 가이드입니다."
+title: "HPE VME Managerで手動でArbiter VMを作成する"
+description: "HPE VME Manager 環境で Arbiter VM を手動で作成する virt-install スクリプト、VNC 5901 接続、GRUB コンソール設定、および dpkg パッケージのインストール手順ガイド。"
 date: 2026-01-07T10:00:00+09:00
 draft: false
 categories: ["Tech"]
 tags: ["HPE", "VME", "Arbiter", "Linux", "Ubuntu", "KVM", "virsh", "Troubleshooting"]
 ---
 
-HPE VME Manager 환경에서 수동으로 Arbiter VM을 생성하고 설정하는 절차 및 명령어 가이드입니다.
+
+HPE VME Manager 環境で手動で Arbiter VM を作成および設定する手順およびコマンドガイドです.
 
 ---
 
-## 1. Ubuntu ISO 이미지 복사
+## 1. Ubuntu ISO イメージのコピー
 
-ISO 이미지를 libvirt 이미지 경로에 복사하고 정상적으로 복사되었는지 확인합니다.
+ISOイメージをlibvirtイメージパスにコピーし、正常にコピーされたことを確認します。
 
 ```bash
 # ISO 이미지 복사
@@ -26,9 +27,9 @@ ls /var/lib/libvirt/images/
 
 ---
 
-## 2. Arbiter VM 생성 스크립트 작성 및 실행
+## 2. Arbiter VM生成スクリプトの作成と実行
 
-VM 디스크를 저장할 디렉토리를 생성하고 `virt-install` 스크립트를 작성하여 배포합니다.
+VMディスクを保存するディレクトリを作成し、 `virt-install`スクリプトを作成して展開します。
 
 ```bash
 # 저장소 디렉토리 생성
@@ -38,7 +39,7 @@ mkdir -p /var/morpheus/kvm/vms/arbiter
 vi arbiter.sh
 ```
 
-**`arbiter.sh` 스크립트 내용**:
+** `arbiter.sh`スクリプトの内容**：
 ```bash
 sudo virt-install --name arbiter --ram 4096 --vcpus 2 --cpu host-passthrough \
 --disk path=/var/morpheus/kvm/vms/arbiter/arbiter.qcow2,size=40,format=qcow2,bus=virtio \
@@ -49,12 +50,12 @@ sudo virt-install --name arbiter --ram 4096 --vcpus 2 --cpu host-passthrough \
 --noautoconsole --autostart
 ```
 
-스크립트 실행:
+スクリプトの実行：
 ```bash
 sh -x arbiter.sh
 ```
 
-**출력 예시**:
+**出力例**：
 ```text
 Starting install...
 Allocating 'arbiter.qcow2' ...
@@ -64,9 +65,9 @@ Domain is still running. Installation may be in progress.
 
 ---
 
-## 3. VNC Client로 OS 설치
+## 3. VNC ClientでOSをインストールする
 
-VNC 디스플레이 포트를 확인하고 VNC 뷰어(예: MobaXterm)를 통해 OS 설치 과정을 진행합니다.
+VNCディスプレイポートを確認し、VNCビューア（MobaXtermなど）を介してOSのインストールを進めます。
 
 ```bash
 # VNC 포트 확인
@@ -76,16 +77,16 @@ virsh vncdisplay arbiter
 
 ---
 
-## 4. OS 설치 완료 후 VM 상태 확인 및 시작
+## 4. OSインストール完了後のVMの状態の確認と起動
 
-설치가 완료되어 VM이 종료(shut off) 상태가 되면 자동 시작 설정 후 구동합니다.
+インストールが完了してVMがシャットオフ状態になると、自動起動設定後にドライブします。
 
 ```bash
 # VM 리스트 확인
 virsh list --all
 ```
 
-**출력 예시**:
+**出力例**：
 ```text
 root@vmemgr:/home/vmeadmin# virsh list --all
  Id   Name      State
@@ -94,7 +95,7 @@ root@vmemgr:/home/vmeadmin# virsh list --all
  -    arbiter   shut off
 ```
 
-`arbiter` 상태가 `shut off`로 표시되면 자동 시작 설정 및 기동:
+`arbiter`ステータスが`shut off`と表示された場合の自動起動の設定と起動：
 ```bash
 virsh autostart arbiter
 virsh start arbiter
@@ -102,9 +103,9 @@ virsh start arbiter
 
 ---
 
-## 5. Virsh Console 접속 사용 설정
+## 5. Virsh Console 接続を有効にする
 
-`virsh console` 명령어로 직접 VM 터미널에 접속할 수 있도록 GRUB 설정을 변경합니다.
+`virsh console`コマンドで直接VMターミナルにアクセスできるようにGRUB設定を変更します。
 
 ```bash
 # GRUB 설정 수정
@@ -117,22 +118,22 @@ GRUB_CMDLINE_LINUX="console=ttyS0"
 update-grub
 ```
 
-설정 후에는 아래 명령어로 직접 접속 가능합니다:
+設定後は以下のコマンドで直接接続可能です。
 ```bash
 virsh console arbiter
 ```
 
 ---
 
-## 6. Arbiter 패키지 설치
+## 6. Arbiter パッケージのインストール
 
-Arbiter 설치 패키지(`svtarb`)를 설치합니다.
+Arbiterインストールパッケージ（ `svtarb`）をインストールします。
 
 ```bash
 dpkg -i ./svtarb_6.0.0.39_amd64.deb
 ```
 
-**출력 및 응답 예시**:
+**出力と応答の例**：
 ```text
 Do you accept the End User License Agreement (y/n) y
 Certificate request self-signature ok
@@ -142,10 +143,10 @@ Created symlink /etc/systemd/system/multi-user.target.wants/svtarb.service -> /l
 
 ---
 
-## 💡 핵심 포인트 및 팁
+## 💡コアポイントとヒント
 
-1. **ISO 경로**: `/var/lib/libvirt/images/` 에 위치
-2. **VM 디스크 경로**: `/var/morpheus/kvm/vms/arbiter/` 에 생성
-3. **VNC 접속**: MobaXterm 등의 VNC Client를 활용하여 5901 포트로 접속
-4. **Console 접속**: `GRUB_CMDLINE_LINUX="console=ttyS0"` 설정으로 `virsh console` 유용하게 관리
-5. **자동 등록**: Arbiter 패키지(`svtarb`) 설치 시 `systemd` 서비스로 자동 등록됨
+1. **ISOパス**： `/var/lib/libvirt/images/`にあります
+2. **VM ディスクパス**: `/var/morpheus/kvm/vms/arbiter/` に作成
+3. **VNC接続**: MobaXtermなどのVNC Clientを利用して5901ポートで接続
+4. **コンソール接続**: `GRUB_CMDLINE_LINUX="console=ttyS0"` 設定で `virsh console` 便利に管理
+5. **自動登録**：Arbiterパッケージ（ `svtarb`）をインストールすると、 `systemd`サービスとして自動的に登録されます
