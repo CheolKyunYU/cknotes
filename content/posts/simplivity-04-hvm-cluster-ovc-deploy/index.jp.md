@@ -227,10 +227,15 @@ ssh svtcli@<OVC_Node1_Mgmt_IP>
 sudo svt-federation-show
 ```
 
-### 📋 `svt-federation-show` 正常出力基準
-* **Node 1 & Node 2 Status**: 2ノード共に**`Alive`**であること。
-* **Arbiter Status**: [Step 2]のArbiter VMと正常接続され**`Connected`**であること。
-* **Cluster Quorum Status**: **`Normal`**（または`Healthy`）と表示され、2ノード高可用性クォーラムが正常動作していることを確認します。
+以下は、2ノードデプロイ完了後にOVC CLIコンソールで`svt-federation-show`を実行した実際の検証画面です。
+
+![svt-federation-show 実行結果](images/21_svt_federation_show_cli.png)
+
+### 📋 `svt-federation-show` 実践出力結果の分析
+* **State (`Alive`)**: `svt-vme1`および`svt-vme2`の2ノード共に正常疎通し、緑色の**`Alive`**ステータスを維持している必要があります。
+* **Arbiter (`Connected`)**: [Step 2]で管理サーバに配備したExternal Arbiter VMと正常にペアリングされ、緑色の**`Connected`**と表示されます。
+* **Model & Version**: ハードウェアモデル（`HPE SimpliVity 380 Gen11`）およびソフトウェアリリース（`Release 6.0.0.163` / HVMファミリ）が正確に認識されています。
+* **ネットワーク分離の確認**: 設計どおりManagement IP、Federation IP、Storage IPがそれぞれのサブネット帯域に正常にバインドされています。
 
 ```bash
 # 3. ハードウェアコンポーネントおよびアクセラレータカード状態確認

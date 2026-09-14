@@ -227,10 +227,15 @@ ssh svtcli@<OVC_Node1_Mgmt_IP>
 sudo svt-federation-show
 ```
 
-### 📋 Standard Output for `svt-federation-show`
-* **Node 1 & Node 2 Status**: Both nodes must show **`Alive`**.
-* **Arbiter Status**: Connected to the external Arbiter VM with status **`Connected`**.
-* **Cluster Quorum Status**: Shows **`Normal`** (or `Healthy`), confirming 2-node high availability is established.
+Below is the actual verification screenshot from the OVC CLI console executing `svt-federation-show` following the 2-node deployment.
+
+![svt-federation-show Execution Result](images/21_svt_federation_show_cli.png)
+
+### 📋 `svt-federation-show` Output Analysis
+* **State (`Alive`)**: Both `svt-vme1` and `svt-vme2` communicate properly and maintain a green **`Alive`** status.
+* **Arbiter (`Connected`)**: Paired with the external Arbiter VM deployed on the management server in [Step 2], showing green **`Connected`**.
+* **Model & Version**: Accurately recognizes the hardware platform (`HPE SimpliVity 380 Gen11`) and software release (`Release 6.0.0.163` / HVM family).
+* **Network Isolation**: Validates that Management IP, Federation IP, and Storage IP are correctly assigned to their respective designed subnets.
 
 ```bash
 # 3. Check Hardware Components & Accelerator Card
