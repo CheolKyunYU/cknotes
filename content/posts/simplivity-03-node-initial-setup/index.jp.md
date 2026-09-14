@@ -10,7 +10,7 @@ aliases:
 ---
 
 
-> **作成者**: 15年目のITフィールドエンジニア
+> **作成者**: 16年目のITフィールドエンジニア
 > **リファレンスドキュメント**: HPE SimpliVity 6.2.0 for HPE Morpheus VM Essentials Software Guide (sd00006914en_us)
 
 > 📌 **HPE SimpliVity 6.2.0(HVM)実戦構築連載目次**
@@ -23,7 +23,7 @@ aliases:
 
 ---
 
-こんにちは！ 15年目のITフィールドエンジニアです。
+こんにちは！ 16年目のITフィールドエンジニアです。
 
 [Step 1 & Step 2]を通じて外部管理サーバー（BaseOS、NTP/DNS/NFS、VME Manager、Arbiter）の構築が完了したら、ついにデータセンターラックに搭載された**HPE SimpliVity物理サーバ2台**を直接扱う段階に入ります。
 
@@ -130,7 +130,7 @@ SimpliVity仮想コントローラ（OVC）の展開とVMEプラグインの連�
 
 ---
 
-## 4. 15年目のエンジニアの実戦のヒント（Troubleshooting）
+## 4. 16年目のエンジニアの実戦のヒント（Troubleshooting）
 
 > ⚠️ **現場で最も多くするミス Top 2**
 > 

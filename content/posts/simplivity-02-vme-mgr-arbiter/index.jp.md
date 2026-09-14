@@ -10,7 +10,7 @@ aliases:
 ---
 
 
-> **作成者**: 15年目のITフィールドエンジニア
+> **作成者**: 16年目のITフィールドエンジニア
 > **リファレンスドキュメント**: HPE SimpliVity 6.2.0 for HPE Morpheus VM Essentials Software Guide (sd00006914en_us)
 
 > 📌 **HPE SimpliVity 6.2.0(HVM)実戦構築連載目次**
@@ -23,7 +23,7 @@ aliases:
 
 ---
 
-こんにちは！ 15年目のITフィールドエンジニアです。
+こんにちは！ 16年目のITフィールドエンジニアです。
 
 [Step 1. 管理サーバー BaseOS HVM 24.04 インストール & NTP/DNS/NFS 構成編] で管理サーバーのインフラ基盤をしっかりと固めたら、今管理サーバー上に **コア制御コアである VME Manager VM(vmgmgr)とスプリットブレーン防止用 Arbiter VM** を上げる順番です。
 
@@ -121,7 +121,7 @@ sudo ufw allow 22122/tcp
 
 ---
 
-## 5. 15年目のエンジニアの実戦のヒント (Troubleshooting & Tips)
+## 5. 16年目のエンジニアの実戦のヒント (Troubleshooting & Tips)
 
 > 💡 **電算室インフラサービス（DNS / NTP / NFS）未構築の顧客の行動のヒント**
 > お客様のコンピュータ室に専用のDNS、NTP、NFSサーバーが構築されていなくても心配する必要はありません。管理サーバー内にLinuxデーモンサービス（Chrony、BIND9、NFS-Kernel-Server）として直接インストールするか、軽量専用VMで簡単にサービス環境を構成することで、SimpliVityクラスタにインフラストラクチャサービスを完全に提供できます。

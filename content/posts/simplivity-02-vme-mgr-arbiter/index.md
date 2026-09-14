@@ -9,7 +9,7 @@ aliases:
   - /posts/simplivity-02-vme-mgr-arbiter/
 ---
 
-> **작성자**: 15년 차 IT 필드 엔지니어  
+> **작성자**: 16년 차 IT 필드 엔지니어  
 > **기준 문서**: HPE SimpliVity 6.2.0 for HPE Morpheus VM Essentials Software Guide (sd00006914en_us)
 
 > 📌 **HPE SimpliVity 6.2.0 (HVM) 실전 구축 연재 목차**
@@ -22,7 +22,7 @@ aliases:
 
 ---
 
-안녕하세요! 15년 차 IT 필드 엔지니어입니다.
+안녕하세요! 16년 차 IT 필드 엔지니어입니다.
 
 [Step 1. 관리서버 BaseOS HVM 24.04 설치 & NTP/DNS/NFS 구성 편]에서 관리서버의 인프라 기반을 탄탄히 다졌다면, 이제 관리서버 상에 **핵심 제어 코어인 VME Manager VM(vmgmgr)과 스플릿 브레인 방지용 Arbiter VM**을 올릴 차례입니다.
 
@@ -120,7 +120,7 @@ sudo ufw allow 22122/tcp
 
 ---
 
-## 5. 15년 차 엔지니어의 실전 팁 (Troubleshooting & Tips)
+## 5. 16년 차 엔지니어의 실전 팁 (Troubleshooting & Tips)
 
 > 💡 **전산실 인프라 서비스(DNS / NTP / NFS) 미구축 고객사 조치 팁**  
 > 고객사 전산실에 전용 DNS, NTP, NFS 서버가 구축되어 있지 않더라도 걱정하실 필요가 없습니다. 관리서버(Management Server) 내부에 리눅스 데몬 서비스(Chrony, BIND9, NFS-Kernel-Server)로 직접 설치하거나 경량 전용 VM으로 손쉽게 서비스 환경을 구성하여 SimpliVity 클러스터에 인프라 서비스를 완벽하게 제공할 수 있습니다.

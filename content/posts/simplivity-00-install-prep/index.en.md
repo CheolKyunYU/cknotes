@@ -25,7 +25,7 @@ aliases:
 
 ---
 
-Hello! I am a field engineer who has been in the field for 15 years, building servers, storage, and HCI in numerous data centers and computer rooms.
+Hello! I am a field engineer who has been in the field for 16 years, building servers, storage, and HCI in numerous data centers and computer rooms.
 
 Whenever I go to the HPE SimpliVity work site, there is something I always emphasize to my junior engineers.
 **"90% of the success of an HCI deployment depends on how thoroughly the engineer organizes the network IP sheet before going to the site."**
@@ -143,7 +143,7 @@ Before going to the site, you must receive a **static IP** in advance by providi
 
 ---
 
-## 5. Practical tips from an engineer with 15 years of experience (Troubleshooting & Pitfalls)
+## 5. Practical tips from an engineer with 16 years of experience (Troubleshooting & Pitfalls)
 
 > ⚠️ **Top 3 most common mistakes made in the field**
 > 

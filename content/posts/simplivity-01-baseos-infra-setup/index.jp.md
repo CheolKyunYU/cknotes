@@ -10,7 +10,7 @@ aliases:
 ---
 
 
-> **作成者**: 15年目のITフィールドエンジニア
+> **作成者**: 16年目のITフィールドエンジニア
 > **リファレンスドキュメント**: HPE SimpliVity 6.2.0 for HPE Morpheus VM Essentials Software Guide (sd00006914en_us)
 
 > 📌 **HPE SimpliVity 6.2.0(HVM)実戦構築連載目次**
@@ -23,7 +23,7 @@ aliases:
 
 ---
 
-こんにちは！ 15年間現場を歩き回り、数多くのデータセンターや電算室でサーバー・ストレージ・HCIを構築してきたフィールドエンジニアです。
+こんにちは！ 16年間現場を歩き回り、数多くのデータセンターや電算室でサーバー・ストレージ・HCIを構築してきたフィールドエンジニアです。
 
 現場でHPE SimpliVity（Morpheus VM Essentials）インフラストラクチャを構築するとき**仮想化環境の中心軸となる先行作業は、まさに「管理サーバー（Management Server）ベースの構築」**です。
 
@@ -127,7 +127,7 @@ sudo systemctl restart nfs-kernel-server
 
 ---
 
-## 5. 15年目のエンジニアの実戦のヒント（Troubleshooting）
+## 5. 16年目のエンジニアの実戦のヒント（Troubleshooting）
 
 > ⚠️ **現場で最も多くするミス Top 3**
 > 

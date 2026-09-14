@@ -10,7 +10,7 @@ aliases:
 ---
 
 
-> **Author**: IT field engineer with 15 years of experience
+> **Author**: IT field engineer with 16 years of experience
 > **Environment**: Windows 11 (based on general business laptop)
 
 > 📌 **Local LLM running on my PC: Ollama practical series table of contents**
@@ -21,7 +21,7 @@ aliases:
 
 ---
 
-Hello! I am an IT field engineer with 15 years of experience.
+Hello! I am an IT field engineer with 16 years of experience.
 
 In [Part 1], we learned why local LLM is needed in air-gap (closed network) sites where the external Internet is blocked, and why 2B to 3B small models are most suitable for general business laptops.
 
@@ -153,7 +153,7 @@ To end a conversation and exit to a regular terminal shell:
 
 ---
 
-## 8. Practical tips from an engineer with 15 years of experience (Windows 11 environment)
+## 8. Practical tips from an engineer with 16 years of experience (Windows 11 environment)
 
 ### 💡 Tip 1: How to change the model storage path when C drive space is insufficient
 If you download multiple models (Gemma, Llama, Qwen, etc.), your C drive may quickly run out of space. In this case, you can **change the model storage path to another partition such as the D drive**.

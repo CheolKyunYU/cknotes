@@ -10,7 +10,7 @@ aliases:
 ---
 
 
-> **Author**: IT field engineer with 15 years of experience
+> **Author**: IT field engineer with 16 years of experience
 > **Environment**: Based on Windows 11 environment (for general business laptops)
 
 > 📌 **Local LLM running on my PC: Ollama practical series table of contents**
@@ -21,7 +21,7 @@ aliases:
 
 ---
 
-Hello! I am an IT field engineer with 15 years of experience.
+Hello! I am an IT field engineer with 16 years of experience.
 
 Recently, generative AI (LLM) has become an essential tool in daily life and work, but the working environment for field engineers is not so easy. Customer sites with strict security, such as financial IT centers, public institutions, power plants, and national defense, are mostly **air-gap (closed network) environments** where the external Internet is 100% blocked**.
 

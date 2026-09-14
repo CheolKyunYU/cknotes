@@ -10,7 +10,7 @@ aliases:
 ---
 
 
-> **Author**: IT field engineer with 15 years of experience
+> **Author**: IT field engineer with 16 years of experience
 > **Baseline document**: HPE SimpliVity 6.2.0 for HPE Morpheus VM Essentials Software Guide (sd00006914en_us)
 
 > 📌 **HPE SimpliVity 6.2.0 (HVM) Practical Deployment Series Table of Contents**
@@ -23,7 +23,7 @@ aliases:
 
 ---
 
-Hello! I am an IT field engineer with 15 years of experience.
+Hello! I am an IT field engineer with 16 years of experience.
 
 If you have completed building an external management server (BaseOS, NTP/DNS/NFS, VME Manager, Arbiter) through [Step 1 & Step 2], you can now finally enter the step of directly handling **two HPE SimpliVity physical servers** mounted on the data center rack.
 
@@ -130,7 +130,7 @@ Once the settings application is 100% complete, the node will enter the Discover
 
 ---
 
-## 4. Practical tips (Troubleshooting) from an engineer with 15 years of experience
+## 4. Practical tips (Troubleshooting) from an engineer with 16 years of experience
 
 > ⚠️ **Top 2 most common mistakes made in the field**
 > 

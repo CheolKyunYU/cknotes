@@ -10,7 +10,7 @@ aliases:
 ---
 
 
-> **Author**: IT field engineer with 15 years of experience
+> **Author**: IT field engineer with 16 years of experience
 > **Baseline document**: HPE SimpliVity 6.2.0 for HPE Morpheus VM Essentials Software Guide (sd00006914en_us)
 
 > 📌 **HPE SimpliVity 6.2.0 (HVM) Practical Deployment Series Table of Contents**
@@ -23,7 +23,7 @@ aliases:
 
 ---
 
-Hello! I am an IT field engineer with 15 years of experience.
+Hello! I am an IT field engineer with 16 years of experience.
 
 If you have solidified the infrastructure of the management server in [Step 1. Management server BaseOS HVM 24.04 installation & NTP/DNS/NFS configuration], it is now time to install the VME Manager VM (vmgmgr), the core control core, and the Arbiter VM for split brain prevention** on the management server.
 
@@ -121,7 +121,7 @@ sudo ufw allow 22122/tcp
 
 ---
 
-## 5. Practical tips from an engineer with 15 years of experience (Troubleshooting & Tips)
+## 5. Practical tips from an engineer with 16 years of experience (Troubleshooting & Tips)
 
 > 💡 **Tips for measures taken by customers who have not established computer room infrastructure services (DNS / NTP / NFS) **
 > There is no need to worry even if a dedicated DNS, NTP, or NFS server is not installed in the customer's computer room. You can perfectly provide infrastructure services to the SimpliVity cluster by installing it directly as a Linux daemon service (Chrony, BIND9, NFS-Kernel-Server) inside the management server or by easily configuring a service environment with a lightweight dedicated VM.

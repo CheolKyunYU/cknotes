@@ -9,7 +9,7 @@ aliases:
   - /posts/simplivity-03-node-initial-setup/
 ---
 
-> **작성자**: 15년 차 IT 필드 엔지니어  
+> **작성자**: 16년 차 IT 필드 엔지니어  
 > **기준 문서**: HPE SimpliVity 6.2.0 for HPE Morpheus VM Essentials Software Guide (sd00006914en_us)
 
 > 📌 **HPE SimpliVity 6.2.0 (HVM) 실전 구축 연재 목차**
@@ -22,7 +22,7 @@ aliases:
 
 ---
 
-안녕하세요! 15년 차 IT 필드 엔지니어입니다.
+안녕하세요! 16년 차 IT 필드 엔지니어입니다.
 
 [Step 1 & Step 2]를 통해 외부 관리서버(BaseOS, NTP/DNS/NFS, VME Manager, Arbiter) 구축을 마쳤다면, 이제 드디어 데이터센터 랙에 장착된 **HPE SimpliVity 물리 서버 2대**를 직접 다루는 단계에 들어섭니다.
 
@@ -129,7 +129,7 @@ SimpliVity 가상 컨트롤러(OVC) 배포 및 VME 플러그인 연동을 위해
 
 ---
 
-## 4. 15년 차 엔지니어의 실전 팁 (Troubleshooting)
+## 4. 16년 차 엔지니어의 실전 팁 (Troubleshooting)
 
 > ⚠️ **현장에서 가장 많이 하는 실수 Top 2**
 > 

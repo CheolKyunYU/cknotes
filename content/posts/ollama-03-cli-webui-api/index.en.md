@@ -10,7 +10,7 @@ aliases:
 ---
 
 
-> **Author**: IT field engineer with 15 years of experience
+> **Author**: IT field engineer with 16 years of experience
 > **Environment**: Windows 11 (based on general business laptop)
 
 > 📌 **Local LLM running on my PC: Ollama practical series table of contents**
@@ -21,7 +21,7 @@ aliases:
 
 ---
 
-Hello! I am an IT field engineer with 15 years of experience.
+Hello! I am an IT field engineer with 16 years of experience.
 
 In [Part 1], we identified the need for local LLM and model selection criteria, and in [Part 2], we installed Ollama directly on a Windows 11 laptop and ran our first lightweight model.
 
@@ -87,7 +87,7 @@ When you enter conversational mode with `ollama run <model name>`, you can contr
 * **`/clear`**: Clear the previous conversation context (history) and start with a new topic.
 * **`/set system "..."`**: Assign a specific role (persona) to AI
   ```text
-  >>> /set system "너는 15년 차 시니어 리눅스 시스템 엔지니어 사수야. 모든 답변은 실무 위주 쉘 스크립트와 명령어 예시로 간결하게 설명해."
+  >>> /set system "너는 16년 차 시니어 리눅스 시스템 엔지니어 사수야. 모든 답변은 실무 위주 쉘 스크립트와 명령어 예시로 간결하게 설명해."
   ```
 * **`/save <my_model_name>`**: Permanently save the system prompts you set and create your own custom AI model!
   ```text
@@ -211,7 +211,7 @@ Therefore, if you change the endpoint URL to `http://localhost:11434/v1` in Lang
 
 ---
 
-## 6. 3 scenarios for practical use of local LLM by an engineer with 15 years of experience
+## 6. 3 scenarios for practical use of local LLM by an engineer with 16 years of experience
 
 These are the three utilization patterns that I find most useful in actual field engineering sites:
 

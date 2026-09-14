@@ -9,7 +9,7 @@ aliases:
   - /posts/simplivity-01-baseos-infra-setup/
 ---
 
-> **작성자**: 15년 차 IT 필드 엔지니어  
+> **작성자**: 16년 차 IT 필드 엔지니어  
 > **기준 문서**: HPE SimpliVity 6.2.0 for HPE Morpheus VM Essentials Software Guide (sd00006914en_us)
 
 > 📌 **HPE SimpliVity 6.2.0 (HVM) 실전 구축 연재 목차**
@@ -22,7 +22,7 @@ aliases:
 
 ---
 
-안녕하세요! 15년 동안 현장을 누비며 수많은 데이터센터와 전산실에서 서버·스토리지·HCI를 구축해 온 필드 엔지니어입니다.
+안녕하세요! 16년 동안 현장을 누비며 수많은 데이터센터와 전산실에서 서버·스토리지·HCI를 구축해 온 필드 엔지니어입니다.
 
 현장에서 HPE SimpliVity (Morpheus VM Essentials) 인프라를 구축할 때 **가상화 환경의 중심축이 되는 선행 작업은 바로 '관리서버(Management Server) 기반 구축'**입니다.
 
@@ -126,7 +126,7 @@ sudo systemctl restart nfs-kernel-server
 
 ---
 
-## 5. 15년 차 엔지니어의 실전 팁 (Troubleshooting)
+## 5. 16년 차 엔지니어의 실전 팁 (Troubleshooting)
 
 > ⚠️ **현장에서 가장 많이 하는 실수 Top 3**
 > 
