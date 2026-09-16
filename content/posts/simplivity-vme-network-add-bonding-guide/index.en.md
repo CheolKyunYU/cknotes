@@ -1,6 +1,6 @@
----
-title: "[HPE VME & SimpliVity] HVM Virtualization Network Addition & Bonding Practical Guide (Single NIC Bonding Tip & OVS Troubleshooting)"
-description: "A complete guide to creating Bond interfaces in HPE VM Console (TUI), adding OVS network routers in VME Manager, and attaching them to VMs. Includes single NIC bonding tips and OVS troubleshooting."
+﻿---
+title: "[HPE VME & SimpliVity] HVM Virtualization Network Addition & Bonding Guide (Single NIC Design Tip & OVS Troubleshooting)"
+description: "Standard procedure from host network bonding in HPE VM Console (TUI) to OVS router registration in VME Manager and VM assignment. Includes single NIC bonding principles and OVS troubleshooting."
 date: 2026-09-14T21:50:00+09:00
 draft: false
 categories: ["Tech"]
@@ -9,42 +9,38 @@ aliases:
   - /posts/simplivity-vme-network-add-bonding-guide/
 ---
 
-> **Author**: 16-year IT Field Systems Engineer (CK notes)  
 > **Environment**: HPE Morpheus VM Essentials (VME) / HPE SimpliVity 6.2.0 (HVM 24.04 BaseOS)  
 > **Reference Guide**: HPE-VM Network Addition Operation Guide v2.0
 
 ---
 
-Hello! I am **CK notes**, an IT field systems engineer with 16 years of experience.
+After initial deployment of an HPE SimpliVity HVM or VME (VM Essentials) cluster, only the default Management network is configured. Putting production workload virtual machines (VMs) into service requires adding dedicated data networks or tenant VLANs.
 
-After deploying virtualization infrastructure based on HPE VM Essentials (VME) or HPE SimpliVity HVM, you inevitably need to **connect dedicated production service data networks or additional VLANs in addition to the default Management network** before putting virtual machines (VMs) into production.
+The deployment workflow consists of two primary stages: creating a network bond interface at the physical host layer (via HPE VM Console TUI), and then mapping it as an Open vSwitch (OVS) network router within the VME Manager web console to attach to VMs.
 
-However, many engineers often encounter confusion regarding **"how to configure bonding at the physical host level (HPE VM Console TUI)"**, **"the procedure to register OVS (Open vSwitch) network routers in VME Manager web console"**, and **"how to design networks in a single NIC environment to prevent future headaches."**
-
-In this post, we walk through the **7 steps of creating host network bonds in HPE VM Console and the 4 steps of registering routers in VME Manager and assigning them to VMs (with 11 real-world screenshots)**.  
-Furthermore, we reveal our essential field tip: **"Why you MUST configure bonding even in a single NIC environment"**, along with practical **OVS ghost port error troubleshooting techniques**!
+This guide outlines the standard operating procedure from TUI host bonding to VME router mapping and VM vNIC provisioning. It also highlights a crucial field design practice—why you should always encapsulate single physical links in a bond interface—as well as practical troubleshooting steps for lingering OVS ghost port errors.
 
 ---
 
-## 1. End-to-End Workflow for HPE VME & SimpliVity Network Addition
+## 1. End-to-End Workflow
 
-Adding a new network to an HVM host and attaching it to virtual machines spans **two layers (Physical Host TUI ➔ VME Web Console)**.
+Adding an external network to HVM hosts and attaching it to VMs is cleanly separated between the physical host and virtualization management layers.
 
 ```mermaid
 flowchart TD
     subgraph HostLevel["Layer 1: Physical Host Level (HPE VM Console TUI)"]
         A1["Access HPE VM Console<br/>(Configure Network)"] --> A2["Select Device Type: bond(0) & Add"]
         A2 --> A3["Specify Bond Device ID<br/>(e.g., net-10g)"]
-        A3 --> A4["Select Member Physical Interfaces<br/>(e.g., eno2)"]
-        A4 --> A5["Configure Bonding Mode<br/>(active-backup, etc.)"]
+        A3 --> A4["Select Member Physical Interface<br/>(e.g., eno2)"]
+        A4 --> A5["Set Bonding Mode<br/>(active-backup, etc.)"]
         A5 --> A6["Save & Apply Netplan<br/>(Netplan changes applied)"]
     end
 
     subgraph VMELevel["Layer 2: Management Web Console (VME Manager Web GUI)"]
         B1["Navigate to Infrastructure > Network > Routers"] --> B2["Click + Add to create Network Router"]
-        B2 --> B3["Map GROUP / CLOUD / NAME / CLUSTER /<br/>Host Bridge & Network Interface (net-10g)"]
-        B3 --> B4["Validate Router Status<br/>(STATUS: OK, OVS Bridge Domain)"]
-        B4 --> B5["Reconfigure Instance<br/>(Attach new network net-10g to VM)"]
+        B2 --> B3["Map GROUP / CLOUD / NAME / CLUSTER /<br/>Host Bridge & Network Interface"]
+        B3 --> B4["Verify Router Status<br/>(STATUS: OK, OVS Bridge Domain)"]
+        B4 --> B5["Instance Reconfigure<br/>(Attach new network net-10g)"]
     end
 
     HostLevel --> VMELevel
@@ -52,153 +48,151 @@ flowchart TD
 
 ---
 
-## 2. 16-Year Field Engineer Pro-Tip: "Even with a Single NIC, ALWAYS Configure as a Bond!"
+## 2. Field Design Practice: Why Single NIC Environments Still Require Bonding
 
-During field deployments, due to top-of-rack L2/L3 switch port shortages or cabling schedules, you often face situations where you must open services with **only one physical cable/NIC (e.g., `eno2`) initially connected**.
+During physical rollouts, upstream switch ports may not yet be provisioned, or rack cabling delays might require bringing up services with only a single physical link (e.g., `eno2`).
 
-The most common rookie mistake here is: **"Since there is only one cable, let's configure Device Type as `ethernet` and bind `eno2` directly to the OVS bridge."**
+A common pitfall in this situation is configuring the interface directly as a raw `ethernet` device and attaching it straight to the OVS bridge.
 
 > [!WARNING]
-> **🚨 Critical Problems Caused by Binding a Single NIC as a Raw `ethernet` Device**  
-> Later, when additional switch ports become available and you run a second cable to establish **High Availability (HA) redundancy, you must delete and recreate the existing OVS bridge and virtual machine network mappings.** This inevitably causes **downtime for running production virtual machines!**
+> **Drawback of Direct Single Ethernet Devices**  
+> When the secondary switch port becomes available later and you want to implement high-availability (HA) teaming, you will have to tear down and rebuild the existing OVS bridge and all attached VM network mappings. This inevitably causes unnecessary service downtime for production workloads.
 
-### 💡 3 Field Reasons to Wrap Single Ports in a `bond` (active-backup)
+### Key Operational Reasons to Use `bond` (active-backup) for Single Links
 
 1. **Zero-Downtime HA Scalability**  
-   If you create the device as a `bond` (Device ID: `net-10g`, Mode: `active-backup`, Interface: `eno2`) from day one, when the secondary redundant cable (`eno3`) is installed later, **you never touch the OVS bridge or VM configuration. You simply add `eno3` to the bond member interface list, achieving zero-downtime instant HA upgrade!**
-2. **Invariance of OVS Bridge & VME Manager Mappings**  
-   The VME Manager web console only references the logical interface `net-10g` (Bond). Even if the underlying physical NIC count expands from 1 to 2 or swaps to different physical ports, the router mapping and VM vNIC configurations in VME remain completely untouched.
-3. **Standardized Failover Infrastructure**  
-   Enforcing consistent `bond` naming conventions (e.g., `bond0`, `net-10g`, `net-service`) across all virtualization hosts standardizes operational automation and maintenance.
+   Even with a single cable, creating a `bond` (Device ID: `net-10g`, Mode: `active-backup`, Interface: `eno2`) establishes an extensible logical abstraction. When the secondary link (`eno3`) is patched later, you simply add `eno3` to the bond members without touching the OVS bridge or restarting VMs.
+2. **Configuration Immutability in VME Manager**  
+   VME Manager binds to the higher-level logical device (`net-10g`). Physical NIC additions, swaps, or driver adjustments beneath the bond remain transparent to VME router bindings and VM vNIC configurations.
+3. **Operational Consistency**  
+   Standardizing all host network devices under consistent bond naming conventions (e.g., `bond0`, `net-10g`) simplifies long-term maintenance, documentation, and automation playbooks.
 
 > [!TIP]
-> **📌 Conclusion**: Whether you have 1 physical port or 2, always define **Device Type as `bond` with `active-backup` mode** on HVM hosts. This is the gold standard of systems engineering.
+> Regardless of whether you currently have one or two cables connected, configuring host interfaces as a `bond` in `active-backup` mode is the enterprise standard.
 
 ---
 
-## 3. [Part 1] HPE VM Console (TUI) Host Network Bonding Configuration (7 Steps)
+## 3. [Part 1] HPE VM Console (TUI) Host Network Bonding Configuration
 
-From the HVM host console (via iLO Remote Console or physical monitor/keyboard), launch the text-based user interface (TUI) **HPE VM Console** to configure network bonding.
+Connect to the HVM host console (via iLO Remote Console or physical KVM) to configure bonding using the text-based HPE VM Console.
 
-### Step 01. Enter HPE VM Console & Select Configure Network
-From the main menu, use arrow keys to navigate to **`<Configure Network>`** and press Enter.
+### Step 01. Enter Configure Network Menu
+On the HPE VM Console home screen, select `<Configure Network>` using arrow keys and press Enter.
 
 ![HPE VM Console Configure Network](images/01_hpe_vm_console_main.png)
 
-### Step 02. Select `bond(0)` in Device Type & Click `<Add>`
-In the Configure Network screen, select **`bond(0)`** from the Device Type dropdown and click **`<Add>`** at the bottom.
+### Step 02. Select `bond(0)` Device Type and `<Add>`
+From the Device Type dropdown, select `bond(0)` and select `<Add>`.
 
-![Device Type bond selection and Add](images/02_configure_network_device_type_bond.png)
+![Select bond Device Type](images/02_configure_network_device_type_bond.png)
 
-### Step 03. Assign Bond Device ID
-When the `Add Device` modal opens, verify Device Type is `bond`, enter your **Device ID (e.g., `net-10g` or `bond1`)**, and click **`<Continue>`**.
+### Step 03. Specify Bond Device ID
+In the Add Device modal, confirm that Device Type is `bond`, enter the desired Device ID (e.g., `net-10g`), and click `<Continue>`.
 
 ![Enter Device ID net-10g](images/03_add_device_bond_id.png)
 
-### Step 04. Select Member Physical Interfaces for the Bond
-Under the `Bond` tab in `Edit Device`, navigate to **`[ ] interfaces`**, toggle the spacebar to check member physical interfaces (e.g., **`eno2`**), and click `<Done>`.  
-*(※ Even if you only have one physical port right now, check eno2 alone to create the bond!)*
+### Step 04. Select Member Physical Interfaces
+Under the Bond tab in Edit Device, navigate to `[ ] interfaces`, select the physical interface (e.g., `eno2`) with the Space bar, and click `<Done>`.  
+*(※ Even in single link scenarios, select just `eno2` and proceed.)*
 
-![Select eno2 in Bond Interfaces](images/04_bond_edit_interfaces.png)
+![Select eno2 Interface](images/04_bond_edit_interfaces.png)
 
-### Step 05. Configure Bonding Mode and Parameters
-In `Edit parameters`, choose the bonding mode:
-* For single switch or single NIC environments, select the rock-solid **`mode: active-backup`**.
-* If switch LACP dynamic trunking is configured, select `802.3ad` (LACP).
-* Click **`<Done>`** when finished.
+### Step 05. Configure Bonding Mode
+In the Edit parameters screen, select the bonding operation mode:
+* For standard active-passive redundancy or single NIC deployments, select `mode: active-backup`.
+* If upstream switches have pre-configured LACP trunks, select `802.3ad`.
+* Click `<Done>` when finished.
 
-![Configure active-backup bonding mode](images/05_bond_mode_parameters.png)
+![Configure active-backup Mode](images/05_bond_mode_parameters.png)
 
-### Step 06. Save and Confirm Netplan Configuration
-Return to the Configure Network main screen and click **`<Save>`**.  
-In the confirmation popup: "Netplan changes may result in a disconnect. Are you sure you want to continue?", select **`<Yes>`**.
+### Step 06. Save Netplan Configuration
+Return to Configure Network and click `<Save>`. Confirm with `<Yes>` when prompted that Netplan changes may cause a disconnect.
 
-![Confirm Netplan Changes](images/06_netplan_save_confirm.png)
+![Confirm Netplan Save](images/06_netplan_save_confirm.png)
 
-### Step 07. Netplan Applied OK
-Once the Linux network stack accepts the configuration, a **`Netplan changes applied`** message appears. Click **`<OK>`**, exit the console, and proceed to the VME Manager web console.
+### Step 07. Verify Netplan Applied Successfully
+Once Linux network configuration completes, `Netplan changes applied` is displayed. Click `<OK>` to exit the console.
 
 ![Netplan Changes Applied Successfully](images/07_netplan_applied_ok.png)
 
 ---
 
-## 4. [Part 2] Registering Router in VME Manager & Assigning to VM (4 Steps)
+## 4. [Part 2] VME Manager Web Console: Router Registration & VM Attachment
 
-With the `net-10g` bond interface active on the host OS, we now register it as a logical OVS network router in VM Essentials Manager and map it to a VM.
+With `net-10g` active at the host OS layer, register it as a logical router in VME Manager and attach it to virtual instances.
 
-### Step 08. Navigate to Infrastructure > Network > Routers & Click `+ Add`
-Log in to VME Manager (`https://<VME_Manager_IP>`), go to **[Infrastructure] -> [Network] -> [Routers]**, and click the green **`[+ Add]`** button.
+### Step 08. Navigate to Network > Routers and Click `+ Add`
+Log into VME Manager (`https://<VME_Manager_IP>`), navigate to **[Infrastructure] -> [Network] -> [Routers]**, and click the green `[+ Add]` button.
 
-![VME Manager Routers Menu and Add Click](images/08_vme_manager_network_routers_add.png)
+![VME Manager Routers Add](images/08_vme_manager_network_routers_add.png)
 
-### Step 09. Configure Router Parameters & Map Host Bridge / Interface
-Fill in the `ADD NETWORK ROUTER` modal as follows:
+### Step 09. Configure Router Parameters & Interface Mapping
+In the ADD NETWORK ROUTER modal, enter the configuration details:
 
-![Add Network Router Configuration Modal](images/09_vme_manager_add_network_router_modal.png)
+![Add Network Router Modal](images/09_vme_manager_add_network_router_modal.png)
 
 * **GROUP**: Target management group (e.g., `vme-grp`)
-* **CLOUD**: Target cloud environment (e.g., `vme-cloud`)
-* **NAME**: Identification router name in VME (e.g., `10g-net`)
+* **CLOUD**: Connected cloud environment (e.g., `vme-cloud`)
+* **NAME**: Identifier for the router (e.g., `10g-net`)
 * **CLUSTER**: Target HVM cluster (e.g., `prod-cluster`)
-* **HOST BRIDGE**: Unique Open vSwitch bridge name (e.g., `10g-net`)
-* **NETWORK INTERFACE**: Select the bonding interface created in Part 1 (e.g., **`net-10`** or **`dummy0`**).
+* **HOST BRIDGE**: Name for the OVS bridge (e.g., `10g-net`)
+* **NETWORK INTERFACE**: Select the bond interface created in Part 1 (e.g., `net-10` or test `dummy0`).
 
 > [!CAUTION]
-> **⚠️ Avoid Duplicate OVS Bridge Names**  
-> In Open vSwitch, specifying an existing bridge name (such as the default management bridge `mgmt` or an existing `192-net`) will cause a collision and fail router creation. Always assign a unique bridge identifier.
+> **Avoid OVS Bridge Name Collisions**  
+> Do not use names of existing bridges on the host (such as the default management bridge `mgmt`). Duplicate bridge names will cause router provisioning to fail.
 
-### Step 10. Verify Created Network Router Status
-Once created, the router displays in the list:
-* **STATUS**: Green checkmark (Active)
-* **NAME**: `net-10g`
-* **ROUTER TYPE**: **`OVS Bridge Domain`**
-* **GROUP**: Bound to the assigned group
+### Step 10. Verify Router Status
+Once provisioned, the new router appears in the Routers list:
+* **STATUS**: Green checkmark (Active/OK)
+* **NAME**: Assigned router name (`net-10g`)
+* **ROUTER TYPE**: `OVS Bridge Domain`
+* **GROUP**: Correct management group binding
 
 ![Verify Network Router Status](images/10_vme_manager_routers_status_ok.png)
 
-### Step 11. Attach New Network to Virtual Machine Instance
-Attach the new network to your target VM:
-1. Go to **[Provisioning] -> [Instances]** and select the VM.
-2. In the top-right actions menu, click **`Reconfigure`**.
-3. Under **`NETWORKS`**, click the **`+`** button.
-4. Select **`net-10g`** from the dropdown and set the IP addressing mode (DHCP or Static IP).
-5. Click **`[Reconfigure]`** to instantly mount the new virtual NIC (vNIC).
+### Step 11. Attach Network to Virtual Machine
+Attach the new network to your workload instances:
+1. Navigate to **[Provisioning] -> [Instances]** and select the target VM.
+2. In the instance details view, click `Reconfigure` from the top-right action menu.
+3. In the `NETWORKS` section, click the `+` button.
+4. Select `net-10g` from the network dropdown and configure IP addressing (DHCP or Static).
+5. Click `[Reconfigure]` to dynamically attach the virtual NIC.
 
-![Reconfigure Instance to Add Network](images/11_vm_instance_reconfigure_add_network.png)
+![Attach Network to Instance](images/11_vm_instance_reconfigure_add_network.png)
 
 ---
 
-## 5. Special Considerations for SimpliVity VME Environments
+## 5. Network Separation Considerations for SimpliVity HVM Clusters
 
-In **HPE SimpliVity 6.2.0 (HVM) cluster environments**, strict network segregation rules must be maintained:
+Unlike standalone HVM nodes, **HPE SimpliVity 6.2.0 (HVM) clusters** require strict physical isolation between workload traffic and storage backbones.
 
 ```
 +-----------------------------------------------------------------------+
 |                       HPE SimpliVity Physical Node                    |
 |                                                                       |
-|  [ Dedicated 10G/25G PCIe NICs ] --> SimpliVity OVC (Storage Ctrl)   |
-|   - Storage Network (MTU 9000, VLAN 151): Synchronous block mirror     |
-|   - Federation Network (MTU 9000, VLAN 153): Cluster metadata          |
-|   * Strictly prohibited from sharing with regular VM traffic!         |
+|  [ Dedicated 10G/25G PCIe NIC ] ---> SimpliVity OVC Storage Controller|
+|   - Storage Network (MTU 9000, VLAN 151) : Real-time block replication|
+|   - Federation Network (MTU 9000, VLAN 153) : Cluster metadata        |
+|   * Workload VM traffic is strictly prohibited on these links!        |
 |                                                                       |
-|  [ Onboard LOM / Extra NICs (eno1~eno4) ] --> New OVS Bond (net-10g)  |
-|   - Workload Virtual Machines service & production data traffic       |
+|  [ Onboard LOM / Extra PCIe NIC (eno1~eno4) ] --> OVS Bond (net-10g)  |
+|   - Production Workload VM Application Traffic                       |
 +-----------------------------------------------------------------------+
 ```
 
-1. **Mandatory Isolation of OVC Storage / Federation Traffic**  
-   SimpliVity OmniStack Virtual Controller (OVC) exclusively utilizes dedicated 10GbE interfaces (`ens21f0np0`, `ens21f1np1`) with Jumbo Frames (MTU 9000) for inline deduplication and real-time block replication.  
-   **Never mix or share OVC storage NICs with general workload VM networks.** Always bind service networks to onboard LOM ports (`eno1`–`eno4`) or separate PCIe NICs.
-2. **Uniform Bridge Topology Across All Cluster Nodes**  
-   For seamless live migration (vMotion) and HA failover across a 2-node or multi-node SimpliVity cluster, ensure identical bond device names and OVS bridge names are deployed across every physical host in the cluster.
+1. **Isolate OVC Storage & Federation Interfaces**  
+   OmniStack Virtual Controllers (OVC) use dedicated 10GbE interfaces (`ens21f0np0`, `ens21f1np1`) with jumbo frames (MTU 9000) for real-time deduplication and synchronous mirroring. Never share OVC storage interfaces with VM workloads. Use separate onboard LOM ports (`eno1`–`eno4`) or dedicated workload PCIe NICs.
+2. **Maintain Identical Bridge Topology Across All Cluster Nodes**  
+   To ensure seamless VM live migrations (vMotion), create identical bond names and OVS bridge configurations across every host in the cluster.
 
 ---
 
-## 6. Field Troubleshooting & Advanced Engineering Tips
+## 6. Field Troubleshooting: Clearing OVS Ghost Ports
 
-### 🛠️ Troubleshooting 1: Cleaning Up OVS Ghost Port Errors (`could not open network device vnetX`)
+If a virtual machine crashes or is deleted improperly, orphaned virtual interfaces (ghost ports) may linger inside the Open vSwitch database, generating errors.
 
-When deleting or reconfiguring VMs, unexpected guest termination can leave orphaned ghost virtual ports on OVS bridges:
+Running `ovs-vsctl show` on the host CLI may display:
 
 ```text
 root@vmemgr:/home/vmeadmin# ovs-vsctl show
@@ -221,11 +215,10 @@ root@vmemgr:/home/vmeadmin# ovs-vsctl show
                 type: internal
 ```
 
-#### ✅ Resolution: Manually Remove Ghost Ports with `ovs-vsctl del-port`
-Remove the failed vnet ports from the bridge:
+You can cleanly resolve this by manually pruning the stale ports from the bridge:
 
 ```bash
-# Delete orphaned vnet ports from mgmt bridge
+# Delete orphaned vnet ports
 sudo ovs-vsctl del-port mgmt vnet17
 sudo ovs-vsctl del-port mgmt vnet2
 sudo ovs-vsctl del-port mgmt vnet3
@@ -233,44 +226,13 @@ sudo ovs-vsctl del-port mgmt vnet3
 # Verify OVS status
 ovs-vsctl show
 ```
-The error messages clear, leaving only valid ports (`eno2`, `vnet0`, `vnet1`, `mgmt`).
+
+After removal, `ovs-vsctl show` will reflect a clean bridge state containing only active ports (`eno2`, `mgmt`).
 
 ---
 
-### 💡 Advanced Tip 2: Using Linux Dummy Interfaces for Pre-Cabling Verification
+## 7. Summary
 
-If switch cabling is delayed or you are building in a lab environment, use the Linux **`dummy` kernel module** to simulate network interfaces:
+Network provisioning in HPE VME and SimpliVity clusters hinges on standard host-level bonding paired with flexible VME OVS router abstraction.
 
-```bash
-# 1) Load dummy kernel module
-sudo modprobe dummy
-
-# 2) Create two dummy interfaces
-sudo ip link add dummy0 type dummy
-sudo ip link add dummy1 type dummy
-
-# 3) Assign test IP addresses
-sudo ip addr add 10.10.10.1/32 dev dummy0
-sudo ip addr add 10.10.20.1/32 dev dummy1
-
-# 4) Bring interfaces UP
-sudo ip link set dummy0 up
-sudo ip link set dummy1 up
-```
-
-`dummy0` and `dummy1` will immediately appear in the VME Manager `Network Interface` dropdown, enabling full end-to-end simulation before physical cables arrive!
-
----
-
-## 7. Conclusion & Summary
-
-Network expansion in HPE VME and SimpliVity harmonizes **standardized bonding at the physical host layer (HPE VM Console)** with **flexible OVS router mapping at the virtualization management layer (VME Manager)**.
-
-### 📌 Top 3 Key Takeaways
-1. **Always Bond Even Single NICs (`active-backup`)**: Enables zero-downtime secondary cable addition and seamless HA scaling.
-2. **Ensure Unique OVS Bridge Names**: Avoid name collisions with existing management bridges like `mgmt`.
-3. **SimpliVity Network Segregation**: Keep OVC 10G Jumbo Frame (MTU 9000) storage backbones strictly isolated from workload VM networks.
-
----
-
-Feel free to leave questions or real-world networking challenges in the comments below!
+The workflow is straightforward, but adhering to two core practices—**bonding even single links from day one** and **strictly isolating storage backbone fabrics**—ensures reliable long-term operations and non-disruptive capacity expansion.

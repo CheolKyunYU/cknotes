@@ -1,0 +1,33 @@
+﻿{{- if or .Params.comments (and site.Params.comments (ne .Params.comments false)) -}}
+{{- $term := "" -}}
+{{- if .File -}}
+  {{- if eq .File.TranslationBaseName "index" -}}
+    {{- $term = path.Base .File.Dir -}}
+  {{- else -}}
+    {{- $term = .File.TranslationBaseName -}}
+  {{- end -}}
+{{- end -}}
+{{- with site.Params.giscus -}}
+{{- if and .enable .repo .repoId -}}
+<div class="comments" style="margin-top: 2.5rem; padding-top: 1.5rem; border-top: 1px solid var(--border);">
+  <script src="https://giscus.app/client.js"
+          data-repo="{{ .repo }}"
+          data-repo-id="{{ .repoId }}"
+          data-category="{{ .category | default "General" }}"
+          data-category-id="{{ .categoryId }}"
+          data-mapping="specific"
+          data-term="{{ $term }}"
+          data-strict="0"
+          data-reactions-enabled="{{ .reactionsEnabled | default "1" }}"
+          data-emit-metadata="{{ .emitMetadata | default "0" }}"
+          data-input-position="{{ .inputPosition | default "top" }}"
+          data-theme="{{ .theme | default "preferred_color_scheme" }}"
+          data-lang="{{ .lang | default "preferred" }}"
+          data-loading="lazy"
+          crossorigin="anonymous"
+          async>
+  </script>
+</div>
+{{- end -}}
+{{- end -}}
+{{- end -}}

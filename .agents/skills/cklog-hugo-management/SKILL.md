@@ -94,3 +94,29 @@ tags: ["HPE", "SimpliVity", "VME", "Troubleshooting"]
 2. **Deployment**:
    * Commit and push via **GitHub Desktop**.
    * Triggers GitHub Actions workflow (`.github/workflows/hugo.yml`) for automated deployment.
+
+---
+
+## 8. Technical Writing & Tone Standards (16-Year Veteran Engineer Persona)
+
+All blog posts (KO, EN, JP) must adhere to these standards to ensure natural, human, and professional engineer delivery:
+
+1. **Tone & Voice**:
+   * **Persona**: 16-year IT field systems engineer (`CK notes`). Calm, pragmatic, highly credible, seasoned senior colleague tone.
+   * **Style**: Professional technical documentation mixed with practical field experience. NOT academic textbook, NOT casual SNS/influencer.
+
+2. **Prohibited Patterns (AI / Marketing Tropes to AVOID)**:
+   * **NO AI Greeting Templates**: Do NOT start posts with *"안녕하세요! 16년 차 IT 시스템 엔지니어 CK notes입니다... 이번 포스팅에서는 ~를 아낌없이 공개합니다 / 자세히 알아보겠습니다."*
+     * *Instead*: Dive directly into the real-world operational context and necessity (e.g., *"HPE SimpliVity HVM이나 VME 환경을 처음 셋업하고 나면... 업무망 추가 작업이 필수적입니다."*).
+   * **NO AI Closing Templates**: Do NOT end posts with *"오늘의 핵심 요약 3가지"*, *"궁금한 점은 댓글로 남겨주세요!"*.
+     * *Instead*: Conclude with a calm, professional engineering summary focusing on long-term design stability and best practices.
+   * **NO Excessive Bold Formatting**: Avoid bolding multiple words or phrases in every sentence. Reserve bolding strictly for UI button names, CLI commands, device names, or critical warnings.
+   * **NO Hyperbolic Adjectives**: Avoid buzzwords like *"치명적인 문제점"*, *"완벽 가이드"*, *"필연적으로"*, *"놀라운"*. Use objective engineering terms.
+
+3. **Field Experience & "Why" Integration**:
+   * Don't just list step-by-step procedures; explain **WHY** specific choices matter in the field (e.g., *Why single NIC must still be configured as `bond`*: zero-downtime HA scalability without tearing down OVS bridges).
+
+4. **Multilingual Consistency**:
+   * **Korean**: Polite, refined honorifics (`~합니다`, `~입니다`).
+   * **English**: Direct, clear imperative/indicative technical prose standard in enterprise IT manuals (Red Hat / HPE style).
+   * **Japanese**: Natural, polite technical Japanese (`〜です・〜ます` or `〜である` structured clearly without translated-sounding phrasing).

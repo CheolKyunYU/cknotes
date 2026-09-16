@@ -1,6 +1,6 @@
----
-title: "[HPE VME & SimpliVity] HVM仮想化ネットワーク追加およびボンディング(Bonding)実践ガイド (シングルNICボンディング設計Tips & OVSトラブルシューティング)"
-description: "HPE VM Console(TUI)でBondを作成し、VME Manager WebコンソールでOVSネットワークルーターを追加してVMに接続する実践ガイドです。シングルNICボンディング設計TipsとOVSエラー対処法も解説します。"
+﻿---
+title: "[HPE VME & SimpliVity] HVM仮想化ネットワーク追加およびボンディング（Bonding）実践ガイド (シングルNIC設計の要点 & OVSトラブルシューティング)"
+description: "HPE VM Console（TUI）でのボンディング作成からVME ManagerでのOVSネットワークルーター登録、VMへの割り当てまでの標準作業手順です。シングルNIC環境でのボンディング設計原則とOVSトラブルシューティングを解説します。"
 date: 2026-09-14T21:50:00+09:00
 draft: false
 categories: ["Tech"]
@@ -9,42 +9,38 @@ aliases:
   - /posts/simplivity-vme-network-add-bonding-guide/
 ---
 
-> **作成者**: 16年目のITフィールドエンジニア (CK notes)  
-> **基準環境**: HPE Morpheus VM Essentials (VME) / HPE SimpliVity 6.2.0 (HVM 24.04 BaseOS)  
-> **参照マニュアル**: HPE-VM ネットワーク追加作業ガイド v2.0
+> **環境基準**: HPE Morpheus VM Essentials (VME) / HPE SimpliVity 6.2.0 (HVM 24.04 BaseOS)  
+> **参照マニュアル**: HPE-VMネットワーク追加作業ガイド v2.0
 
 ---
 
-こんにちは！16年目のITフィールドシステムエンジニア **CK notes** です。
+HPE SimpliVity HVMやVME（VM Essentials）環境の初期セットアップ直後は、デフォルトの管理ネットワーク（Management）のみが構成されている状態です。実際の業務仮想マシン（VM）を本番稼働させるには、サービス用データネットワークや業務別VLANを追加する作業が不可欠となります。
 
-HPE VM Essentials(VME)仮想化基盤やHPE SimpliVity HVM環境を構築した後、仮想マシン(VM)を本番業務サービスに投入するには、**標準の管理ネットワーク(Management)に加えて、業務データ用ネットワークや追加VLANを接続する作業**が不可欠です。
+作業の流れは大きく2段階に分かれます。まず物理ホストレベル（HPE VM Console TUI）でボンディングインターフェースを作成し、その後VME Manager WebコンソールでOVS（Open vSwitch）ルーターとして登録し、仮想マシンへ割り当てる手順です。
 
-しかし、多くのエンジニアが**「物理ホストレベル(HPE VM Console TUI)でボンディングを設定する方法」**、**「VME Manager WebコンソールでOVS(Open vSwitch)ネットワークルーターとして登録する手順」**、そして**「単一物理ポートしか接続できないシングルネットワーク環境で将来の障害を防ぐ設計法」**について戸惑うことがあります。
-
-本記事では、**HPE VM Consoleでのホストネットワークボンディング(Bond)作成7ステップから、VME Manager Webコンソールでのルーター登録およびVM割り当て4ステップ（合計11枚の実践スクリーンショット）**を詳しく解説します。  
-さらに、16年の現場経験で培った**「シングルNIC環境でも必ずボンディングで構成すべき理由」**や、**OVSゴーストポートエラーのトラブルシューティング手法**まで余すところなく公開します！
+本記事では、TUIコンソールでのボンディング設定からVME Webコンソールでのルーターマッピング、VMへの割り当てまでの標準手順を整理しました。さらに、現場で物理ポートが1本（Single NIC）しか接続できない状況であっても、なぜ最初からボンディングで構成しておくべきなのかという実務的な理由と、OVS設定時のトラブルシューティングポイントを併せて解説します。
 
 ---
 
-## 1. HPE VME & SimpliVity ネットワーク追加全体ワークフロー
+## 1. 全体作業ワークフロー
 
-HVMホストに新しいネットワークを追加し仮想マシンに接続する流れは、**2つのレイヤー（物理ホストTUI ➔ VME Webコンソール）**で進行します。
+HVMホストに外部ネットワークを追加してVMに接続する構成は、物理ホスト層と仮想化管理層で明確に分離されています。
 
 ```mermaid
 flowchart TD
-    subgraph HostLevel["Layer 1: 物理ホストレベル (HPE VM Console TUI)"]
-        A1["HPE VM Console接続<br/>(Configure Network)"] --> A2["Device Type: bond(0) 選択 & Add"]
+    subgraph HostLevel["第1段階：物理ホストレベル (HPE VM Console TUI)"]
+        A1["HPE VM Consoleアクセス<br/>(Configure Network)"] --> A2["Device Type: bond(0) 選択およびAdd"]
         A2 --> A3["Bondデバイス名指定<br/>(例: net-10g)"]
         A3 --> A4["物理インターフェース選択<br/>(例: eno2)"]
-        A4 --> A5["ボンディングモード設定<br/>(active-backup 等)"]
+        A4 --> A5["ボンディングモード設定<br/>(active-backup等)"]
         A5 --> A6["Save & Netplan適用<br/>(Netplan changes applied)"]
     end
 
-    subgraph VMELevel["Layer 2: 管理Webコンソール (VME Manager Web GUI)"]
-        B1["Infrastructure > Network > Routers へ移動"] --> B2["+ Add クリックでルーター新規追加"]
-        B2 --> B3["GROUP / CLOUD / NAME / CLUSTER /<br/>Host Bridge & Network Interface (net-10g) マッピング"]
-        B3 --> B4["ルーターステータス検証<br/>(STATUS: OK, OVS Bridge Domain)"]
-        B4 --> B5["仮想マシン(Instance) Reconfigure<br/>(新規ネットワーク net-10g をVMに割り当て)"]
+    subgraph VMELevel["第2段階：管理Webコンソール (VME Manager Web GUI)"]
+        B1["Infrastructure > Network > Routers 移動"] --> B2["+ Add クリックして新規ルーター追加"]
+        B2 --> B3["GROUP / CLOUD / NAME / CLUSTER /<br/>Host Bridge & Network Interface マッピング"]
+        B3 --> B4["ルーター状態検証<br/>(STATUS: OK, OVS Bridge Domain)"]
+        B4 --> B5["仮想マシン(Instance) Reconfigure<br/>(新規ネットワーク net-10g 追加割り当て)"]
     end
 
     HostLevel --> VMELevel
@@ -52,155 +48,152 @@ flowchart TD
 
 ---
 
-## 2. 16年目エンジニアの実践設計Tips: 「シングルNIC(単一ポート)でも必ずボンディング(Bonding)で構成せよ！」
+## 2. 実務設計原則：「シングルNIC（単一ポート）環境でもなぜボンディングで組むべきなのか」
 
-現場での構築作業中、上位L2/L3スイッチの空きポート不足やケーブリング日程の都合により、まずは**1本の物理ポート(例: `eno2`)のみを接続してサービスを開始しなければならない状況**に直面することがよくあります。
+現場導入を進めていると、上位L2/L3スイッチ側のポート手配が遅れていたり、ラック配線スケジュールの関係で、当面は物理ポート1本（`eno2`など）のみを接続してサービスを開始しなければならないケースがよくあります。
 
-このとき、初級エンジニアが陥りがちなミスが**「どうせ線は1本だから、Device Typeを`ethernet`にして`eno2`をOVSブリッジに直結してしまうこと」**です。
+このとき最も陥りやすい失敗が、「どうせケーブルが1本だから」とデバイスタイプを単純な `ethernet` に設定し、OVSブリッジに直結してしまうことです。
 
 > [!WARNING]
-> **🚨 シングルNICを`ethernet`単一デバイスとして直接構成した場合の致命的な問題点**  
-> 後日スイッチポートが確保され、2本目のケーブルを接続して**ネットワーク冗長化(HA)を構成しようとする際、既存のOVSブリッジと仮想マシンネットワーク設定をすべて削除して再作成しなければなりません。** これは必然的に**稼働中仮想マシンのサービス停止（ダウンタイム）**を引き起こします！
+> **単一ethernetデバイスで直接構成した場合の問題点**  
+> 将来スイッチ側のポートが確保され、2本目のケーブルを挿して冗長化（HA）を組もうとした際、既存のOVSブリッジと仮想マシンに接続されたネットワークマッピングをすべて削除し、再作成する必要があります。つまり、稼働中の仮想マシンに不要なサービス停止（ダウンタイム）が発生します。
 
-### 💡 単一ポートでも`bond` (active-backup)で包むべき3つの理由
+### シングルポートでも `bond` (active-backup) でラップすべき実務上の理由
 
-1. **無停止（Zero-Downtime）でのHA冗長化拡張**  
-   初めは物理ポートが1本だけでも`bond` (Device ID: `net-10g`, Mode: `active-backup`, Interface: `eno2`)として作成しておけば、後から冗長ケーブル(`eno3`)が配線された際、**OVSブリッジや仮想マシン設定を変更することなく、単にBondメンバーリストに`eno3`を追加するだけで即座に無停止冗長化が完了**します。
-2. **OVSブリッジおよびVME Manager設定の不変性維持**  
-   VME Manager Webコンソールでは上位論理インターフェースである`net-10g` (Bond)のみを参照しているため、下位の物理NICが1本から2本に拡張されたり別ポートに交換されたりしても、VME側のルーターマッピングやVMのvNIC設定は完全に保持されます。
-3. **フェイルオーバー構成の標準化**  
-   すべての仮想化ホストでネットワークデバイスを`bond`命名規則（例: `bond0`, `net-10g`, `net-service`）に統一することで、運用保守および自動化スクリプトの整合性が保たれます。
+1. **無停止での冗長化拡張（Zero-Downtime HA）**  
+   物理ポートが1本だけであっても、Device IDを `net-10g`、Modeを `active-backup` に指定し、`eno2` のみを束ねておきます。後から冗長化回線（`eno3`）が配線された際、上位のOVSブリッジやVM設定には一切手を加えることなく、単にBondメンバーへ `eno3` を追加するだけで即座に無停止冗長化が完了します。
+2. **上位仮想化設定の不変性維持**  
+   VME Manager Webコンソールは、上位の論理インターフェースである `net-10g`（Bond）のみを参照します。配下の物理NICが1本から2本に増設されたり別ポートに変更されたりしても、VME上のルーターマッピングやVMのvNIC設定はそのまま保持されます。
+3. **運用の標準化**  
+   すべての仮想化ノードでネットワークデバイス名を `bond` 命名規則（例: `bond0`, `net-10g`）で統一しておくことで、長期的な保守性やスクリプト運用の再現性が大幅に向上します。
 
 > [!TIP]
-> **📌 結論**: 物理ポートが1本でも2本でも、HVMホストレベルでは**常にDevice Typeを`bond`とし、`active-backup`モードで構成する**のがプロエンジニアの鉄則です。
+> 物理ポートが今1本であろうと2本であろうと、HVMホストレベルでは常にデバイスタイプを `bond` とし、`active-backup` モードで組んでおくことが現場の安全な標準です。
 
 ---
 
-## 3. [Part 1] HPE VM Console (TUI) ホストネットワークボンディング構成 7ステップ
+## 3. [Part 1] HPE VM Console (TUI) ホストネットワークボンディング構成
 
-HVMホストのコンソール（iLOリモートコンソールまたは物理モニタ/キーボード）から、テキストベースUIである**HPE VM Console**を使用してネットワークボンディングを作成します。
+HVMホストのコンソール（iLOリモートコンソールまたは物理ディスプレイ/キーボード）から、TUI環境であるHPE VM Consoleを通じてボンディングを作成します。
 
-### Step 01. HPE VM Console 起動 & Configure Network 選択
-メインメニューで方向キーを使って**`<Configure Network>`**を選択し、Enterを押します。
+### Step 01. Configure Networkメニューへ進む
+HPE VM Consoleの初期画面で方向キーを使用して `<Configure Network>` を選択し、Enterキーを押します。
 
 ![HPE VM Console Configure Network選択](images/01_hpe_vm_console_main.png)
 
-### Step 02. Device Type で `bond(0)` を選択し `<Add>` をクリック
-Configure Network画面の`Device Type`ドロップダウンから**`bond(0)`**を選択し、下部の**`<Add>`**ボタンを押します。
+### Step 02. Device Typeで `bond(0)` を選択し `<Add>`
+Configure Network画面のDevice Typeドロップダウンから `bond(0)` を選択し、`<Add>` を押します。
 
 ![Device Type bond選択およびAdd](images/02_configure_network_device_type_bond.png)
 
-### Step 03. ボンディングデバイス名(Device ID)の指定
-`Add Device`ウィンドウが表示されたら、Device Typeが`bond`であることを確認し、使用する**Device ID（例: `net-10g` または `bond1`）**を入力して**`<Continue>`**をクリックします。
+### Step 03. ボンディングデバイス名（Device ID）の指定
+Add Device画面でDevice Typeが `bond` であることを確認し、使用するDevice ID（例: `net-10g`）を入力して `<Continue>` をクリックします。
 
 ![Device ID net-10g入力](images/03_add_device_bond_id.png)
 
-### Step 04. Bond に含める物理インターフェースの選択
-`Edit Device`画面の`Bond`タブで**`[ ] interfaces`**を選択し、ボンディングに含める物理インターフェース（例: **`eno2`**）をスペースキーでチェックして`<Done>`を押します。  
-*(※ 前述のTipsどおり、物理ポートが1本だけでもeno2のみをチェックしてBondを作成します。)*
+### Step 04. ボンディングに含める物理インターフェースの選択
+Edit Device画面のBondタブで `[ ] interfaces` を選択し、ボンディングに束ねる物理インターフェース（例: `eno2`）をスペースキーでチェックして `<Done>` を押します。  
+*(※ 物理ポートが1本のみの環境でも、`eno2` のみをチェックして進めます。)*
 
-![Bondインターフェースeno2選択](images/04_bond_edit_interfaces.png)
+![Bondインターフェース eno2選択](images/04_bond_edit_interfaces.png)
 
-### Step 05. ボンディングモード(Bonding Mode)の設定
-`Edit parameters`メニューでボンディング動作モードを指定します。
-* 単一スイッチやシングルNIC環境では、最も安定した**`mode: active-backup`**を選択します。
-* 対向スイッチでLACPトランクが構成されている場合は`802.3ad` (LACP)を選択します。
-* 設定後、下部の**`<Done>`**をクリックします。
+### Step 05. ボンディングモード（Bonding Mode）の設定
+Edit parametersメニューでボンディングの動作モードを指定します。
+* 一般的なアクティブ-スタンバイ構成やシングルNIC環境では、`mode: active-backup` を選択します。
+* 上位スイッチ側ですでにLACPトランクが構成されている場合は、`802.3ad`（LACP）を選択します。
+* 設定が完了したら `<Done>` を押します。
 
-![ボンディングモードactive-backup設定](images/05_bond_mode_parameters.png)
+![ボンディングモード active-backup設定](images/05_bond_mode_parameters.png)
 
-### Step 06. Netplan設定の保存(Save)および確認
-Configure Networkメインに戻り、下部の**`<Save>`**をクリックします。  
-「Netplan changes may result in a disconnect. Are you sure you want to continue?」ポップアップで**`<Yes>`**を選択します。
+### Step 06. Netplan設定の保存（Save）
+Configure Networkメイン画面に戻り、`<Save>` を押します。  
+Netplan変更により接続が切断される可能性がある旨の確認ポップアップが表示されたら、`<Yes>` を選択します。
 
 ![Netplan変更確認ポップアップ](images/06_netplan_save_confirm.png)
 
-### Step 07. Netplan適用完了 (Applied OK)
-Netplan設定が正常に反映されると、**`Netplan changes applied`**メッセージが表示されます。**`<OK>`**を押してコンソールを終了し、VME Manager Webコンソールへ移動します。
+### Step 07. Netplan適用完了の確認
+ホストLinuxのネットワークスタックに設定が正常に反映されると、`Netplan changes applied` メッセージが表示されます。`<OK>` を押してコンソール作業を終了します。
 
-![Netplan変更適用完了確認](images/07_netplan_applied_ok.png)
+![Netplan変更正常適用確認](images/07_netplan_applied_ok.png)
 
 ---
 
-## 4. [Part 2] VME Manager Webコンソールでのルーター登録 & VM割り当て 4ステップ
+## 4. [Part 2] VME Manager Webコンソールでのルーター登録およびVM割り当て
 
-ホストOSレベルで`net-10g`ボンディングインターフェースが有効化されたので、VME Manager Webコンソールで論理OVSネットワークルーターとして登録し、仮想マシンに接続します。
+ホストOSレベルで `net-10g` ボンディングインターフェースが有効化されたため、VME Manager Webコンソールでこれを論理ルーターとして登録し、仮想マシンに接続します。
 
-### Step 08. Infrastructure > Network > Routers メニューで `+ Add` をクリック
-WebブラウザでVME Manager（`https://<VME_Manager_IP>`）にログインし、**[Infrastructure] -> [Network] -> [Routers]**タブへ移動します。右上の緑色の**`[+ Add]`**ボタンをクリックします。
+### Step 08. Network > Routersメニューへの移動と `+ Add`
+VME Manager（`https://<VME_Manager_IP>`）にログイン後、**[Infrastructure] -> [Network] -> [Routers]** メニューへ進み、右上の緑色の `[+ Add]` ボタンをクリックします。
 
 ![VME Manager RoutersメニューおよびAddクリック](images/08_vme_manager_network_routers_add.png)
 
-### Step 09. ルーター情報の入力および Host Bridge / Interface マッピング
-`ADD NETWORK ROUTER`モーダルで各項目を入力します:
+### Step 09. ルーター情報の入力とHost Bridge / Interfaceマッピング
+ADD NETWORK ROUTERモーダルで環境に合わせた情報を入力します。
 
 ![Add Network Router設定モーダル](images/09_vme_manager_add_network_router_modal.png)
 
-* **GROUP**: ルーターが属する管理グループ（例: `vme-grp`）
-* **CLOUD**: 連携クラウド環境（例: `vme-cloud`）
-* **NAME**: VME上で識別するルーター名（例: `10g-net`）
-* **CLUSTER**: 対象HVMクラスタ（例: `prod-cluster`）
-* **HOST BRIDGE**: 作成するOpen vSwitchブリッジ名（例: `10g-net`）
-* **NETWORK INTERFACE**: ドロップダウンから[Part 1]で作成したボンディングインターフェース（例: **`net-10`** または **`dummy0`**）を選択します。
+* **GROUP**: 所属する管理グループ（例: `vme-grp`）
+* **CLOUD**: 連携先のクラウド（例: `vme-cloud`）
+* **NAME**: ルーターの識別名（例: `10g-net`）
+* **CLUSTER**: 対象のHVMクラスター（例: `prod-cluster`）
+* **HOST BRIDGE**: 作成するOVSブリッジ名（例: `10g-net`）
+* **NETWORK INTERFACE**: [Part 1]で作成したボンディングインターフェース（例: `net-10` または検証用 `dummy0`）を選択します。
 
 > [!CAUTION]
-> **⚠️ OVSブリッジ名の重複禁止 (Bridge Name Conflict)**  
-> Open vSwitch環境では、ホスト内に既に存在するブリッジ名（デフォルト管理ブリッジの`mgmt`や既存の`192-net`など）と同一の名前を指定すると競合が発生し、ルーター作成に失敗します。必ず一意のBridge名を指定してください。
+> **OVSブリッジ名の重複禁止**  
+> ホスト内に既に存在するブリッジ名（管理用ブリッジの `mgmt` など）と重複した名前を指定すると、ブリッジ作成に失敗します。必ず一意なBridge名を指定してください。
 
-### Step 10. 作成されたネットワークルーターステータスの検証
-作成が完了すると、Routers一覧に表示されます:
+### Step 10. ネットワークルーターの状態検証
+登録完了後、Routers一覧に新しく追加されたルーターが表示されます。
 * **STATUS**: 緑色のチェックアイコン（正常アクティブ）
-* **NAME**: `net-10g`
-* **ROUTER TYPE**: **`OVS Bridge Domain`**
-* **GROUP**: 所属グループ正常バインド確認
+* **NAME**: 指定したルーター名（`net-10g`）
+* **ROUTER TYPE**: `OVS Bridge Domain`
+* **GROUP**: 所属グループとのバインド確認
 
-![追加されたネットワークルーターステータス確認](images/10_vme_manager_routers_status_ok.png)
+![追加されたネットワークルーター状態確認](images/10_vme_manager_routers_status_ok.png)
 
-### Step 11. 仮想マシンインスタンス(VM)への新規ネットワーク割り当て
-仮想マシンに新しいネットワークを割り当てます:
-1. **[Provisioning] -> [Instances]**で対象VMを選択します。
-2. 右上のアクションメニューから**`Reconfigure`**をクリックします。
-3. `RECONFIGURE INSTANCE`画面の**`NETWORKS`**セクションで右側の**`+`**ボタンを押します。
-4. 追加されたプルダウンから先ほど作成した**`net-10g`**を選択し、IP割り当て方式（DHCPまたはStatic IP）を指定します。
-5. 右下の**`[Reconfigure]`**をクリックすると、VMに新しい仮想NIC(vNIC)が即座にマウントされます。
+### Step 11. 仮想マシン（VM）への新規ネットワーク割り当て
+仮想マシンに新しい仮想NICを接続します。
+1. **[Provisioning] -> [Instances]** から対象のVMを選択します。
+2. 画面右上のアクションメニューから `Reconfigure` をクリックします。
+3. `NETWORKS` セクション右側の `+` ボタンをクリックします。
+4. ドロップダウンから作成した `net-10g` を選択し、IP割り当て方式（DHCPまたはStatic）を指定します。
+5. 右下の `[Reconfigure]` をクリックすると、VMに新しいvNICが動的にマウントされます。
 
-![インスタンスReconfigureネットワーク追加](images/11_vm_instance_reconfigure_add_network.png)
-
----
-
-## 5. SimpliVity VME 環境構築時の特別考慮事項
-
-**HPE SimpliVity 6.2.0 (HVM) クラスタ環境**では、ネットワーク追加時に以下のトラフィック分離原則を厳守する必要があります。
-
-```
-+-----------------------------------------------------------------------+
-|                       HPE SimpliVity 物理ノード                        |
-|                                                                       |
-|  [ 専用 10G/25G PCIe NIC ] ------> SimpliVity OVC (ストレージ制御)    |
-|   - Storage Network (MTU 9000, VLAN 151) : リアルタイムブロック同期    |
-|   - Federation Network (MTU 9000, VLAN 153) : クラスタメタデータ同期   |
-|   ※ 一般VMトラフィックの相乗りは厳禁！                                |
-|                                                                       |
-|  [ オンボード LOM / 追加NIC (eno1〜eno4) ] --> 新規OVS Bond (net-10g)  |
-|   - 一般業務仮想マシン(Workload VM) データサービストラフィック         |
-+-----------------------------------------------------------------------+
-```
-
-1. **OVC専用ストレージ/フェデレーション網の完全分離**  
-   SimpliVityのOmniStack Virtual Controller(OVC)は、リアルタイム重複排除・圧縮・同期ブロックレプリケーションのため、10GbE専用ポート（`ens21f0np0`, `ens21f1np1`）とジャンボフレーム(MTU 9000)を排他的に使用します。  
-   業務VM用ネットワークを追加する際は、**OVC専用NICを絶対に共有せず**、オンボードLOMポート（`eno1`〜`eno4`）や追加PCIe NICを使用してボンディングを構築してください。
-2. **全クラスタノードで同一ブリッジ構成の維持**  
-   2ノード以上のSimpliVityクラスタでは、VMのライブマイグレーション(vMotion/HA)がスムーズに機能するよう、**全物理ノードで同一名称のBondデバイスおよびOVSブリッジ**を作成しておく必要があります。
+![インスタンス Reconfigure ネットワーク追加](images/11_vm_instance_reconfigure_add_network.png)
 
 ---
 
-## 6. 現場トラブルシューティング & 応用エンジニアリングTips
+## 5. SimpliVity VMEクラスター環境におけるネットワーク分離原則
 
-### 🛠️ トラブルシューティング 1: OVSゴーストポートエラーの解消 (`could not open network device vnetX`)
+単独のHVMノードとは異なり、**HPE SimpliVity 6.2.0 (HVM) クラスター環境**では、ストレージ専用トラフィックとの物理的分離が非常に重要です。
 
-仮想マシンの削除やvNIC再構成の際、異常終了などによってOVSブリッジ上に実体のない仮想ポートが残骸（Ghost Port）として残り、エラーを出力することがあります。
+```
++-----------------------------------------------------------------------+
+|                       HPE SimpliVity 物理ノード                         |
+|                                                                       |
+|  [ 専用 10G/25G PCIe NIC ] ------> SimpliVity OVC (ストレージコントローラー) |
+|   - Storage Network (MTU 9000, VLAN 151) : リアルタイムブロック複製    |
+|   - Federation Network (MTU 9000, VLAN 153) : クラスターメタデータ     |
+|   ※ 一般VMトラフィックの混在は厳禁                                     |
+|                                                                       |
+|  [ オンボードLOM / 追加NIC (eno1〜eno4) ] --> 新規OVSボンディング (net-10g) |
+|   - 一般業務仮想マシン(Workload VM) データサービストラフィック           |
++-----------------------------------------------------------------------+
+```
 
-ホストCLIで`ovs-vsctl show`を実行した際、以下のようなエラーが確認された場合:
+1. **OVC専用ストレージ/フェデレーションインターフェースの分離**  
+   SimpliVityのOmniStack Virtual Controller（OVC）は、リアルタイムのブロック複製やインライン重複排除/圧縮トラフィックを処理するため、10GbE専用ポート（`ens21f0np0`, `ens21f1np1`）とジャンボフレーム（MTU 9000）を占有します。業務VM用のネットワークを追加する際は、OVC専用NICを絶対に共有せず、オンボードLOM（`eno1`〜`eno4`）や業務専用の追加PCIe NICを分離してボンディングを組んでください。
+2. **クラスターノード間での同一ブリッジ形状の維持**  
+   ノード間のVMライブマイグレーションを正常に動作させるため、クラスターに属するすべての物理ノードに同一名称のボンディングインターフェースおよびOVSブリッジを事前に作成しておく必要があります。
+
+---
+
+## 6. 現場トラブルシューティング：OVSゴーストポートエラーの解消
+
+仮想マシンの強制削除や構成変更時の異常終了により、OVSブリッジ上に不要な仮想インターフェースの残骸（Ghost Port）が残り、エラーを発生させることがあります。
+
+ホストCLIで `ovs-vsctl show` を実行した際に、以下のようなエラーが出力されるケースです。
 
 ```text
 root@vmemgr:/home/vmeadmin# ovs-vsctl show
@@ -223,56 +216,24 @@ root@vmemgr:/home/vmeadmin# ovs-vsctl show
                 type: internal
 ```
 
-#### ✅ 解決手順: `ovs-vsctl del-port` によるゴーストポート削除
-該当ブリッジ（例: `mgmt`）からエラーポートを手動削除します:
+この場合、該当ブリッジ（例: `mgmt`）からエラー対象の仮想ポートを手動で削除することで解消できます。
 
 ```bash
-# エラーの発生したvnetポートを順次削除
+# エラーが発生している vnet ポートを削除
 sudo ovs-vsctl del-port mgmt vnet17
 sudo ovs-vsctl del-port mgmt vnet2
 sudo ovs-vsctl del-port mgmt vnet3
 
-# OVSブリッジ状態を再確認
+# ブリッジ状態の再確認
 ovs-vsctl show
 ```
-削除後に再確認するとエラーが消滅し、正常なポート（`eno2`, `vnet0`, `vnet1`, `mgmt`）のみが残ります。
+
+削除後に再確認すると、エラー表示が消えて正常なポート（`eno2`, `mgmt` 等）のみが残ります。
 
 ---
 
-### 💡 応用Tips 2: 配線前検証に役立つ Linux Dummy インターフェース作成法
+## 7. まとめ
 
-物理スイッチのケーブリング工事が未了の場合や、ラボ環境でVME Managerのルーター登録からVM割り当てまでの導通フローを事前にテストしたい場合、Linuxの**`dummy`ネットワークモジュール**を活用すると非常に効果的です。
+HPE VMEおよびSimpliVity環境におけるネットワーク拡張は、ホストレベルでのボンディング構成とVME WebコンソールでのOVSルーターマッピングが両輪となって機能します。
 
-```bash
-# 1) dummy カーネルモジュールロード
-sudo modprobe dummy
-
-# 2) dummy インターフェースを2つ作成
-sudo ip link add dummy0 type dummy
-sudo ip link add dummy1 type dummy
-
-# 3) テスト用IPアドレス割り当て
-sudo ip addr add 10.10.10.1/32 dev dummy0
-sudo ip addr add 10.10.20.1/32 dev dummy1
-
-# 4) インターフェース起動 (UP)
-sudo ip link set dummy0 up
-sudo ip link set dummy1 up
-```
-
-これにより、VME Managerの`Network Interface`プルダウンに**`dummy0`**, **`dummy1`**が即座に表示され、物理ケーブルがない状態でも完全な事前シミュレーションを実施できます！
-
----
-
-## 7. まとめおよび重要ポイント
-
-HPE VMEおよびSimpliVity環境でのネットワーク追加は、**物理レベル（HPE VM Console）での標準化されたボンディング設計**と、**仮想化レベル（VME Manager）での柔軟なOVSルーターマッピング**を連携させることで安全かつ確実に完了します。
-
-### 📌 本日の重要ポイント3選
-1. **シングルNICでも必ずボンディング(`active-backup`)構成**: 後からケーブルを追加する際、無停止(Zero-Downtime)で冗長化へ拡張できる最重要設計です。
-2. **OVSブリッジ名の一意性確保**: 既存の管理ブリッジ(`mgmt`等)と名前が衝突しないよう注意します。
-3. **SimpliVity専用トラフィックの分離**: OVCの10G/MTU 9000ストレージバックボーン網は一般業務VMと共有せず、物理的に完全分離します。
-
----
-
-実務現場での疑問点やネットワークトラブルに関するご質問は、お気軽にコメント欄までお寄せください！
+手順自体はシンプルですが、初期導入時に**「シングルポートであってもボンディングで組んでおく設計習慣」**と**「ストレージバックボーン回線の物理的分離原則」**を守っておくことで、将来のインフラ拡張や回線冗長化をサービス無停止でスムーズに実施できるようになります。

@@ -19,6 +19,20 @@ enableRobotsTXT = true
   ShowReadingTime = false
   ShowShareButtons = true
   ShowPostNavLinks = true
+  comments = true
+
+[params.giscus]
+  enable = true
+  repo = "CheolKyunYU/cknotes"
+  repoId = ""          # giscus.app에서 발급받은 repo-id 입력
+  category = "General" # GitHub Discussions 카테고리
+  categoryId = ""      # giscus.app에서 발급받은 category-id 입력
+  mapping = "specific" # 다국어 페이지 간 동일한 포스트 식별자로 공유
+  reactionsEnabled = "1"
+  emitMetadata = "0"
+  inputPosition = "top"
+  theme = "preferred_color_scheme"
+  lang = "preferred"
 
 [params.analytics.google]
   SiteVerificationTag = "dr0Q6_PYk2R4JOUSa884LZJjb8hrAqlRxTg5j-XnkgY"
