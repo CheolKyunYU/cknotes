@@ -16,15 +16,13 @@ aliases:
 
 ---
 
-hello! I am an IT system engineer with {{< career-years >}} years.
+Operating Cisco MDS SAN switches—the storage fabric backbone in enterprise datacenters—requires real-time telemetry into hardware component health (fans, power supplies, thermal sensors), FC port link state, and fabric zoning events via an integrated Network Management System (NMS: Zabbix, PRTG, Nagios).
 
-To stably operate the **Cisco MDS SAN switch**, which is the backbone that connects core storage in the data center, the switch's hardware status (fan, power supply, temperature), port link failure, fabric configuration change, etc. must be detected in real time by linking with **integrated monitoring system (NMS: Zabbix, PRTG, What's Up, Zenoss, etc.)**.
+A frequent misconfiguration in production is executing `snmp-server enable traps` globally. Indiscriminately enabling every trap floods the monitoring collectors with low-severity debug notifications, triggering trap storms and elevating switch CPU utilization.
 
-The most common mistake when configuring SNMP on Cisco MDS switches is to **enable all notifications at once** with the `snmp-server enable traps` command. If you do this, even minor debug events will pour into the NMS, causing a **Trap Storm** and putting unnecessary load on the switch CPU and monitoring server.
+Enterprise best practice dictates selectively activating only high-impact MIB trap categories.
 
-Therefore, in the field, it is a standard best practice to selectively activate only the core MIB notifications that must be monitored based on the Reference Guide.
-
-In this article, we will organize everything from **SNMP v2c basic settings (Community, Host)** to **Enabling mandatory MIB notification selection**, **Saving and verifying settings**, and **Required MIB file download path for NMS server** based on practical commands.
+This guide outlines the standard configuration sequence for SNMP v2c (Community, Host), selective MIB trap enablement, running configuration persistence, and official Cisco MIB dependencies for NMS ingestion.
 
 ---
 
@@ -210,4 +208,4 @@ You can download the MIB files for the MDS 9000 Series for free directly from Ci
 | **Security Surveillance** | `snmp-server enable traps aaa` / `snmp authentication` | Unauthorized access and authentication failure detection |
 | **save** | `copy running-config startup-config` | Retain settings across reboots |
 
-When deploying Cisco MDS SAN switch monitoring, please refer to the guide above and set it up. You can cleanly control only the essential faults without unnecessary trap load! 🚀
+Selectively configuring SNMP trap categories—focusing on physical chassis health, FC link state, and fabric mutations—protects switch management planes from trap storm overhead while ensuring rapid detection of critical storage infrastructure outages.

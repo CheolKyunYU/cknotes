@@ -22,13 +22,11 @@ aliases:
 
 ---
 
-안녕하세요! 16년 차 IT 필드 엔지니어 **CK notes**입니다.
+사전 준비 단계(관리서버 인프라 구축, VME Manager 및 Arbiter VM 배포, 물리 노드 펌웨어 업데이트 및 Initial Setup)를 모두 마쳤다면, 이제 전체 연재의 핵심 단계인 HVM 클러스터 생성과 SimpliVity 가상 컨트롤러(OVC) 배포로 진입합니다.
 
-[Step 1 ~ Step 3]까지의 철저한 사전 준비(관리서버 인프라 구축, VME Manager 및 Arbiter VM 준비, SimpliVity 물리 노드 펌웨어 업데이트 & Initial Setup)를 모두 마치셨다면, 드디어 이번 연재 시리즈의 최종 하이라이트인 **'HVM 클러스터 생성 및 SimpliVity 가상 컨트롤러(OVC) 배포'** 단계에 도달했습니다!
+이 과정은 VME Manager 웹 콘솔에서 독립된 물리 노드들을 하나의 고가용성 HVM Cluster로 묶고, 각 노드마다 SimpliVity 스토리지 엔진인 OVC(OmniStack Virtual Controller)를 자동 배포하여 실시간 중복제거와 블록 미러링 인프라를 완성하는 단계입니다.
 
-현장 구축 워크플로우의 최종 완성 단계로, **VM Essentials Manager 웹 콘솔에서 독립된 물리 노드들을 단일 HVM Cluster로 통합하고, 노드마다 SimpliVity의 두뇌인 OVC(OmniStack Virtual Controller)를 자동 배포**하여 엔터프라이즈급 초고속 HCI 환경을 구축하게 됩니다.
-
-이번 포스팅에서는 **HVM 클러스터 생성 11단계와 SimpliVity OVC 배포 9단계(총 20개 실전 UI 스크린샷), 그리고 최종 CLI 헬스체크 검증까지의 모든 과정**을 현장 엔지니어의 시각에서 완벽하게 정리해 드리겠습니다.
+이번 글에서는 HVM 클러스터 구성부터 SimpliVity OVC 자동 배포, 그리고 터미널에서 `svt-federation-show` 명령어를 통한 최종 헬스체크 검증까지의 전체 절차를 정리했습니다.
 
 ---
 
@@ -268,20 +266,15 @@ sudo svt-storage-show
 
 ---
 
-## 6. 결론 및 핵심 요약 (전체 5단계 시리즈 완결 🎉)
+## 6. 정리하며
 
-이로써 **HPE SimpliVity 6.2.0 for HPE Morpheus VM Essentials (HVM)** 2노드 클러스터 구축의 모든 실전 프로세스가 대단원의 막을 내렸습니다!
+HPE SimpliVity 6.2.0 (HVM) 환경에서의 클러스터 구축과 OVC 배포는 물리 노드의 가상화 통합과 스토리지 컨트롤러 배포가 자동화되어 진행되는 핵심 구간입니다.
 
-사전 네트워크 설계부터 관리 인프라 구축, 물리 서버 초기화, HVM 클러스터 생성, 그리고 OVC 자동 배포까지 전 과정을 완벽히 마스터하셨습니다.
-
-### 📌 오늘의 핵심 요약 3가지
-1. **클러스터 생성 시 Corosync 동기화 인내**: VME Manager에서 노드 등록 시 백그라운드 클러스터링 구성으로 수 분간 시간이 소요되므로 대기합니다.
-2. **10G 전용 매핑 & 점보 프레임(MTU 9000)**: 스토리지와 페더레이션 네트워크는 반드시 10GbE 전용 인터페이스와 MTU 9000으로 구축합니다.
-3. **사전 검증(Validate) & Arbiter 연동**: 배포 전 NTP 통신 및 Arbiter(Port 22122) 검증을 통과한 후 배포를 실행하고, CLI에서 `svt-federation-show`로 최종 `Alive / Connected` 상태를 확인합니다.
+배포 과정에서 **10GbE 전용 인터페이스 매핑**과 **점보 프레임(MTU 9000) 일치 여부**, 그리고 **사내 NTP 동기화 및 Arbiter 쿼럼 통신**만 사전에 확실히 검증해 두면 이후 스토리지 장애 없이 안정적인 고가용성 HCI 인프라를 운영할 수 있습니다.
 
 ---
 
-### 🔗 HPE SimpliVity 6.2.0 실전 연재 전체 시리즈 바로가기
+### 🔗 HPE SimpliVity 6.2.0 실전 구축 연재 바로가기
 
 | 단계 | 포스팅 링크 | 핵심 내용 |
 | :---: | :--- | :--- |
@@ -291,6 +284,3 @@ sudo svt-storage-show
 | **Step 3** | **[SimpliVity 노드 펌웨어 업데이트 & Initial Setup](../simplivity-03-node-initial-setup/)** | SPP 펌웨어 최신화, BaseOS 리이미징, https://IP:9292 초기 설정 |
 | **Step 4** | **[현재글] [HVM Cluster 생성 & SimpliVity OVC 배포](./)** | HVM Cluster 생성, 10G/MTU 9000 OVC 자동 배포, CLI 검증 |
 
----
-
-긴 연재 시리즈를 함께해 주셔서 진심으로 감사드립니다! 실무 구축 현장에서 발생하는 기술 문의나 트러블슈팅 질문은 언제든 댓글로 남겨주시면 성심껏 답변드리겠습니다.

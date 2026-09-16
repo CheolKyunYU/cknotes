@@ -17,12 +17,12 @@ HPE VME Manager 環境で手動で Arbiter VM を作成および設定する手�
 ISOイメージをlibvirtイメージパスにコピーし、正常にコピーされたことを確認します。
 
 ```bash
-# ISO 이미지 복사
+# ISOイメージのコピー
 cp ubuntu-22.04.5-live-server-amd64.iso /var/lib/libvirt/images/
 
-# 복사 확인
+# コピー確認
 ls /var/lib/libvirt/images/
-# 출력: ubuntu-22.04.5-live-server-amd64.iso
+# 出力: ubuntu-22.04.5-live-server-amd64.iso
 ```
 
 ---
@@ -32,14 +32,14 @@ ls /var/lib/libvirt/images/
 VMディスクを保存するディレクトリを作成し、 `virt-install`スクリプトを作成して展開します。
 
 ```bash
-# 저장소 디렉토리 생성
+# 保存先ディレクトリ作成
 mkdir -p /var/morpheus/kvm/vms/arbiter
 
-# VM 생성 스크립트 작성 (arbiter.sh)
+# VM作成スクリプト作成 (arbiter.sh)
 vi arbiter.sh
 ```
 
-** `arbiter.sh`スクリプトの内容**：
+**`arbiter.sh`スクリプトの内容**：
 ```bash
 sudo virt-install --name arbiter --ram 4096 --vcpus 2 --cpu host-passthrough \
 --disk path=/var/morpheus/kvm/vms/arbiter/arbiter.qcow2,size=40,format=qcow2,bus=virtio \
@@ -70,9 +70,9 @@ Domain is still running. Installation may be in progress.
 VNCディスプレイポートを確認し、VNCビューア（MobaXtermなど）を介してOSのインストールを進めます。
 
 ```bash
-# VNC 포트 확인
+# VNCポート確認
 virsh vncdisplay arbiter
-# 출력 예시: :1 -> VME Manager 서버 IP:5901 로 접속 (기본 포트 5900 + 1)
+# 出力例: :1 -> VME ManagerサーバーIP:5901 にアクセス (デフォルトポート 5900 + 1)
 ```
 
 ---
@@ -82,7 +82,7 @@ virsh vncdisplay arbiter
 インストールが完了してVMがシャットオフ状態になると、自動起動設定後にドライブします。
 
 ```bash
-# VM 리스트 확인
+# VMリスト確認
 virsh list --all
 ```
 
@@ -108,13 +108,13 @@ virsh start arbiter
 `virsh console`コマンドで直接VMターミナルにアクセスできるようにGRUB設定を変更します。
 
 ```bash
-# GRUB 설정 수정
+# GRUB設定変更
 vi /etc/default/grub
 
-# 아래 항목 추가/수정
+# 以下の項目を追加/変更
 GRUB_CMDLINE_LINUX="console=ttyS0"
 
-# GRUB 업데이트
+# GRUB更新
 update-grub
 ```
 

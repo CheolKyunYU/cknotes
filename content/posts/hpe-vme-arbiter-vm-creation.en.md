@@ -17,12 +17,12 @@ This is a procedure and command guide for manually creating and setting up an Ar
 Copy the ISO image to the libvirt image path and check whether it was copied properly.
 
 ```bash
-# ISO 이미지 복사
+# Copy ISO image
 cp ubuntu-22.04.5-live-server-amd64.iso /var/lib/libvirt/images/
 
-# 복사 확인
+# Verify copy
 ls /var/lib/libvirt/images/
-# 출력: ubuntu-22.04.5-live-server-amd64.iso
+# Output: ubuntu-22.04.5-live-server-amd64.iso
 ```
 
 ---
@@ -32,10 +32,10 @@ ls /var/lib/libvirt/images/
 Create a directory to store the VM disk and write a `virt-install` script to deploy it.
 
 ```bash
-# 저장소 디렉토리 생성
+# Create storage directory
 mkdir -p /var/morpheus/kvm/vms/arbiter
 
-# VM 생성 스크립트 작성 (arbiter.sh)
+# Create VM deployment script (arbiter.sh)
 vi arbiter.sh
 ```
 
@@ -70,9 +70,9 @@ Domain is still running. Installation may be in progress.
 Check the VNC display port and proceed with the OS installation process through a VNC viewer (e.g. MobaXterm).
 
 ```bash
-# VNC 포트 확인
+# Check VNC port
 virsh vncdisplay arbiter
-# 출력 예시: :1 -> VME Manager 서버 IP:5901 로 접속 (기본 포트 5900 + 1)
+# Output example: :1 -> Connect to VME Manager Server IP:5901 (Default port 5900 + 1)
 ```
 
 ---
@@ -82,7 +82,7 @@ virsh vncdisplay arbiter
 When the installation is complete and the VM is in the shut off state, it is set to auto-start and then runs.
 
 ```bash
-# VM 리스트 확인
+# Verify VM list
 virsh list --all
 ```
 
@@ -108,13 +108,13 @@ virsh start arbiter
 Change GRUB settings so that you can directly access the VM terminal with the `virsh console` command.
 
 ```bash
-# GRUB 설정 수정
+# Edit GRUB configuration
 vi /etc/default/grub
 
-# 아래 항목 추가/수정
+# Add or modify the following line
 GRUB_CMDLINE_LINUX="console=ttyS0"
 
-# GRUB 업데이트
+# Update GRUB
 update-grub
 ```
 

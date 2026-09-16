@@ -25,12 +25,11 @@ aliases:
 
 ---
 
-Hello! I am a field engineer who has been in the field for 16 years, building servers, storage, and HCI in numerous data centers and computer rooms.
+Deploying an HPE SimpliVity 6.2.0 (Morpheus VM Essentials) cluster reliably depends heavily on pre-site preparation—specifically organizing network IP planning and structural isolation across all interfaces.
 
-Whenever I go to the HPE SimpliVity work site, there is something I always emphasize to my junior engineers.
-**"90% of the success of an HCI deployment depends on how thoroughly the engineer organizes the network IP sheet before going to the site."**
+Without thorough upfront planning, deployments frequently stall on-site due to duplicate IP assignments, missing VLAN trunk tags, storage traffic contention, or blocked Arbiter witness ports.
 
-If you don't prepare properly in advance, you often end up working all night when you arrive at the client's site because IPs are duplicated, VLANs aren't open, and arbiter communication isn't working. In this post, we will very easily summarize the essential information and network design diagrams** that you must keep when building a 2-node cluster based on **HPE SimpliVity 6.2.0 (VM Essentials target)**.
+This guide details the network segmentation principles (iLO, Management, Storage, Federation, Workload VM) and prerequisite checklist required before deploying a 2-node SimpliVity cluster.
 
 ---
 
@@ -156,15 +155,10 @@ Before going to the site, you must receive a **static IP** in advance by providi
 
 ---
 
-## 6. Conclusion and key takeaways
+## 6. Summary
 
-The first step in building an HPE SimpliVity 6.2.0 2-node cluster is **designing correct network traffic separation**.
+The long-term stability of an HPE SimpliVity 6.2.0 2-node cluster begins with rigorous network traffic segregation.
 
-### 📌 3 key takeaways from today
-1. **iLO network independence**: The iLO management network is physically/logically independent from the host/OVC inbound management network.
-2. **Storage network is dedicated to OVC**: The Storage/Federation network is dedicated to node replication between OVCs, and general workload virtual machines only use the VM service network.
-3. **Arbiter external placement & NTP**: The 2-node quorum arbiter is placed on the external network and verifies NTP time synchronization of all nodes.
+Maintaining isolated iLO management fabrics, enforcing MTU 9000 across dedicated OVC storage links, and locating the Arbiter quorum witness on external physical infrastructure prevents unnecessary troubleshooting during physical deployment and cluster provisioning.
 
----
-
-In the next post, we will come to **[Step 1. [Management Server] BaseOS HVM 24.04 Installation & Essential Infrastructure Services (NTP, DNS, NFS) Configuration Guide](../simplivity-01-baseos-infra-setup/)**.
+The subsequent article covers **[Step 1: BaseOS HVM 24.04 Installation & Essential Infrastructure Setup (NTP, DNS, NFS)](../simplivity-01-baseos-infra-setup/)**.

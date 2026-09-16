@@ -22,13 +22,11 @@ aliases:
 
 ---
 
-こんにちは！16年目のITフィールドエンジニア **CK notes** です。
+事前準備（管理サーバーインフラ構築、VME ManagerおよびArbiter VMの準備、物理ノードのファームウェア更新とInitial Setup）が完了したら、いよいよ本構築の重要フェーズであるHVMクラスター作成およびSimpliVity仮想コントローラー（OVC）のデプロイに進みます。
 
-[Step 1 〜 Step 3]までの周到な事前準備（管理サーバインフラ構築、VME ManagerおよびArbiter VMの準備、物理ノードのファームウェア更新 & Initial Setup）をすべて終えられたら、いよいよ本連載の最終ハイライトである**「HVMクラスタ作成およびSimpliVity仮想コントローラ(OVC)デプロイ」**のステップに到達しました！
+この工程では、VM Essentials Manager Webコンソール上で独立した物理ノードを単一の高可用性HVM Clusterとして統合し、各ノードにSimpliVityのストレージエンジンであるOVC（OmniStack Virtual Controller）を自動デプロイして、リアルタイム重複排除・圧縮およびブロック同期インフラを完成させます。
 
-現場導入ワークフローの最終完成段階として、**VM Essentials Manager Webコンソールで独立した物理ノードを単一のHVM Clusterに統合し、各ノード上にSimpliVityの頭脳であるOVC(OmniStack Virtual Controller)を自動デプロイ**して、エンタープライズ級の超高速HCI環境を構築します。
-
-本記事では、**HVMクラスタ作成11ステップとSimpliVity OVCデプロイ9ステップ（合計20枚の実践UIスクリーンショット）、そして最終CLI健全性検証までの全工程**をフィールドエンジニアの視点で分かりやすく解説します。
+本記事では、HVMクラスターの構成からSimpliVity OVCの自動デプロイ、そしてCLIにおける `svt-federation-show` コマンドを用いた最終健全性検証までの全手順を解説します。
 
 ---
 
@@ -268,16 +266,11 @@ sudo svt-storage-show
 
 ---
 
-## 6. まとめおよび全シリーズ完結 🎉
+## 6. まとめ
 
-これにて、**HPE SimpliVity 6.2.0 for HPE Morpheus VM Essentials (HVM)** 2ノードクラスタ構築の全実践プロセスが完結しました！
+HPE SimpliVity 6.2.0 (HVM) 環境におけるクラスター構築およびOVC自動デプロイは、物理ノードの仮想化統合とストレージ制御基盤を完成させる重要な工程です。
 
-事前ネットワーク設計から管理インフラ構築、物理ノード初期化、HVMクラスタ作成、そしてOVC自動デプロイまで、全工程を完全にマスターしていただけました。
-
-### 📌 本日の重要ポイント3選
-1. **クラスタ作成時のCorosync同期待機**: VME Managerでノード登録時はクラスタリング処理に数分要するため待機します。
-2. **10G専用マッピング & ジャンボフレーム(MTU 9000)**: ストレージおよびフェデレーション網は必ず10GbE専用NICとMTU 9000で構成します。
-3. **事前検証(Validate) & Arbiter連携**: デプロイ前にNTP通信およびArbiter(Port 22122)検証を通過させ、CLIの`svt-federation-show`で最終`Alive / Connected`状態を確認します。
+事前に **10GbE専用インターフェースの割り当て**、**ジャンボフレーム（MTU 9000）の一致**、**NTP時刻同期**、および **Arbiterクォーラム通信** を確実に検証しておくことで、導入後のストレージ障害を防ぎ、信頼性の高い高可用性HCI基盤を安定稼働させることができます。
 
 ---
 
@@ -291,6 +284,3 @@ sudo svt-storage-show
 | **Step 3** | **[SimpliVity ノード ファームウェア更新 & Initial Setup](../simplivity-03-node-initial-setup/)** | SPP更新、BaseOS再イメージング、https://IP:9292初期設定 |
 | **Step 4** | **[現在の記事] [HVM Cluster作成 & SimpliVity OVCデプロイ](./)** | HVM Cluster作成、10G/MTU 9000 OVC自動配備、CLI検証 |
 
----
-
-長編連載にお付き合いいただき、誠にありがとうございました！実務現場での技術的なご質問やトラブルシューティングに関するお問い合わせは、お気軽にコメント欄までお寄せください。

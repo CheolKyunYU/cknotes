@@ -23,13 +23,11 @@ aliases:
 
 ---
 
-こんにちは！ 16年目のITフィールドエンジニアです。
+外部管理サーバー（BaseOS、NTP/DNS/NFS、VME Manager、Arbiter）の構成が完了したら、データセンターのラックに搭載されたHPE SimpliVity物理ノードのセットアップに進みます。
 
-[Step 1 & Step 2]を通じて外部管理サーバー（BaseOS、NTP/DNS/NFS、VME Manager、Arbiter）の構築が完了したら、ついにデータセンターラックに搭載された**HPE SimpliVity物理サーバ2台**を直接扱う段階に入ります。
+この工程では、SimpliVityサーバーのファームウェア（SPP）更新、必要に応じたHVM BaseOSの再イメージング、および各ホストの初期設定（Initial Setup）を実施し、ノードがVME Managerによる一元管理を受けられるようにベースラインのネットワークとアカウントを構成します。
 
-サイト構築フローチャートでは、このステップは下部領域の開始点で、**SimpliVityサーバーのファームウェア（SPP）アップデート、HVM Base OSリイメージング（必要）、およびホストのInitial Setup（初期設定）**に進みます。
-
-今回の投稿では、**SimpliVity物理サーバーの初期化とhttps://IP:9292 Web GUIベースのInitial Setup実践手順と現場ノウハウ**を詳細にまとめます。
+本記事では、物理ノードのファームウェア更新から `https://<Host_IP>:9292` Web GUIを用いたInitial Setup設定までの実務手順と留意点を解説します。
 
 ---
 
@@ -141,23 +139,17 @@ SimpliVity仮想コントローラ（OVC）の展開とVMEプラグインの連�
 
 ---
 
-## 5. 結論と鍵のまとめ
+## 5. まとめ
 
-SimpliVity物理サーバーの**ファームウェアの最新化、HVMイメージング、およびhttps://IP:9292 Web GUI Initial Setup**が完了すると、初めてノードがVME Managerの集中管理を受ける準備が整います。
+SimpliVity物理ノードのファームウェア更新と `https://<Host_IP>:9292` による初期ネットワーク構成が完了すると、各ノードをVME Managerのクラスターメンバーとして登録する準備が整います。
 
-### 📌今日の主な要約3つ
-1. **SPPファームウェアの最新化**：iLOを介してSPP ISOを上げて、最初にサーバーハードウェアファームウェアを最新化します。
-2. **HPE Software Center HVM イメージング**: 必要に応じて `HPE-SVT-HVM-HostOS-XXX-release.iso` ファイルで HVM OS を純粋に修復します。
-3. **`https://<Host_IP>:9292` Initial Setup Web 設定**: Web 接続後、ウィザードを通じてホスト名、Mgmt IP、管理サーバー NTP/DNS アドレスを注入します。
+この初期設定で指定したホスト名、管理IP、およびNTP/DNS情報は、次工程のHVMクラスター作成およびOVC自動デプロイでそのまま使用されるため、誤入力がないか事前に十分に確認しておくことが重要です。
 
 ---
 
-### 🔗連載シリーズを移動する
+### 🔗 連載シリーズリンク
 
 | 前のステップ | 次のステップ |
 | :---: | :---: |
 | **[⬅️ Step 2. VME Manager & Arbiter VM のインストール](../simplivity-02-vme-mgr-arbiter/)** | **[Step 4. HVM Cluster の作成 & OVC デプロイ ➡️](../simplivity-04-hvm-cluster-ovc-deploy/)** |
 
----
-
-気になる点はコメントとして残してください！

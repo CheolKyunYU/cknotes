@@ -1,37 +1,36 @@
 ---
-title: "[Daily Life/Vehicle Management] My partner who travels to customers across the country, the engine oil changer (feat. Gongimnara)"
-description: "This is a review of an engine oil change at 230,000 and 240,000 kilometers that was reasonably carried out using a combination of Gongimnara, MANN filter, and ZIC oil."
+title: "[Lifestyle/Car Maintenance] Field Workhorse Maintenance: Engine Oil Change Log (feat. Gongimnara)"
+description: "A practical car maintenance log covering 234,000 km and 246,000 km oil changes using Gongimnara, MANN filters, and ZIC engine oil."
 date: 2026-08-31T22:30:00+09:00
 draft: false
 categories: ["Daily Life"]
-tags: ["차량관리", "엔진오일", "공임나라", "MANN필터", "정비", "ZIC"]
+tags: ["CarMaintenance", "EngineOil", "Gongimnara", "MANNFilter", "ZIC", "HighMileage"]
 ---
 
+It is never too late to start documenting everyday moments and vehicle upkeep.
 
-hello! **It's a little late, but from now on, I'm going to keep a record of my daily life and car maintenance on the blog.**
+Today, I am logging the routine engine oil service for my car—a trusted companion that carries me across the country to client sites day in and day out.
 
-Today, I would like to write about my colleague and partner, who always supports me every time I go out to work at a customer site, and the engine oil changer for my vehicle.
+With frequent nationwide trips, keeping the car in top mechanical shape is essential. In the first half of this year alone, the car went through two oil changes as mileage accumulated rapidly.
 
-As we travel all over the country and work hard together, I take care of my consumables meticulously with the thought, **"I have to take care of my partner's condition myself!"**. I've already changed the engine oil twice in the first half of this year alone.
+## January: First Oil Change of the Year (~234,000 km)
 
-## First engine oil change in January (approximately 234,000 km)
-
-I had my first engine oil change early this year, on January 9th, when the mileage had just exceeded 234,000 kilometers.
+On January 9th, as the odometer crossed 234,000 km, I scheduled the first oil change of the year.
 
 ![MANN filter set delivered in advance](images/mann_filters.jpg)
 *(Photo: MANN filter boxes prepared in advance)*
 
-Before going to the repair shop, I purchased various filters, including oil filters and air filters, at low prices through Naver Shopping. The filter was prepared with **MANN FILTER**, which I trust, and the engine oil was prepared with **ZIC**, which I always use.
+Before heading to the garage, I ordered the oil filter and engine air filter online. I chose **MANN-FILTER** for filtration reliability, paired with **ZIC** engine oil, which has been my go-to choice for years.
 
-**💡 Small resolutions related to filters**
-Of course, the performance of the MANN filter is undoubtedly good, but the next time you change engine oil, I will look for a 'more reasonable cost-effective filter combination' that can save you a little more money, and I will be sure to introduce it to you in the next post!
+**💡 Note on Filters**
+While MANN filters offer dependable quality, I plan to test other cost-effective OEM alternatives on upcoming services to compare value.
 
-I loaded the parts into the trunk and headed to **'Labor Nara'** where I had made a reservation in advance.
+With parts in the trunk, I headed to a pre-booked **Gongimnara** shop.
 
 ![Maintenance in Gongimnara](images/mechanic_working.jpg)
-*(Photo: A mechanic opens the bonnet and thoroughly repairs the vehicle)*
+*(Photo: Mechanic performing the service)*
 
-At Gongimnara, you can buy the parts you want and receive maintenance by paying a reasonable standard labor fee. This is the best system for people like me who want to save money and be meticulous in selecting the parts for their partner. 👍
+Gongimnara operates on a labor-only model: you supply your own preferred parts and pay standardized, transparent labor fees. For drivers who prefer picking their own fluids and parts while keeping maintenance costs predictable, it is an efficient solution.
 
 ![Kixx engine oil available in store](images/kixx_oil.jpg)
 *(Photo: Kixx oil on display in the store)*

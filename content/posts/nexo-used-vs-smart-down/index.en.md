@@ -1,32 +1,25 @@
 ---
-title: "[Daily Life/Car Concerns] Realistic calculations by an engineer with 16 years of experience: ‘Losing the burden of the all-new Nexo’ vs. ‘1st generation used Nexo’ (What if 15 million won disappears in 3-year depreciation anyway?)"
-description: "어차피 3년 타면 감가로 1,000만 ~ 2,000만 원은 사라지는 돈! We will be honest about which choice is more reasonable in daily life: the all-new Nexo burden reduction program or the first-generation used Nexo."
+title: "[Lifestyle/Car Decision] An Engineer's Cost Breakdown: 'The All-New NEXO Guaranteed Buyback' vs. '1st Gen Used NEXO'"
+description: "Whether buying new or used, a hydrogen EV loses substantial value over 3 years. We break down the real-world costs and risks between the new NEXO guaranteed-buyback program and a heavily depreciated 1st-generation used NEXO."
 date: 2026-09-07T10:45:00+09:00
 draft: false
 categories: ["Daily Life"]
-tags: ["디올뉴넥쏘", "NEXO", "넥쏘", "수소차", "친환경차", "차량고민", "중고차", "부담다운프로그램", "차량관리", "엔지니어일상"]
+tags: ["TheAllNewNexo", "NEXO", "HydrogenEV", "EcoFriendly", "UsedCar", "CostAnalysis", "EngineerLife"]
 aliases:
   - /posts/nexo-used-vs-smart-down/
 ---
 
+Working with IT infrastructure systems for many years creates a habit of analyzing every decision—even personal vehicle choices—through the lens of cost-to-benefit ratios and risk management.
 
-hello! I am **CK notes**, an IT system engineer who has been working in the infrastructure field for {{< career-years >}} years.
+Recently, as I began looking for a car to handle daily commuting and client visits, Hyundai's hydrogen fuel cell vehicle, the NEXO, entered my shortlist.
 
-Today, instead of talking about hard IT technologies such as servers and networks, I will try to comfortably talk about **the biggest worry in my daily life (choosing a car)**, which is the most complicated thing on my mind these days. 🚗
+![The All-New NEXO, running on coastal roads](images/the_all_new_nexo.jpg)
 
-Recently, as I was thinking about a new way to commute to work and to work with customers across the country, I seriously put Hyundai Motor Company's hydrogen electric vehicle **NEXO** on my wish list.
+While the upcoming 2nd-generation **The All-New NEXO**—featuring bold boxy SUV styling and modern pixel lighting derived from the INITIUM concept—looks appealing, evaluating the purchase methods brings a classic dilemma:
 
-Yesterday, I briefly shared this concern on my Naver blog, but since it is a job, the 'cost calculator' automatically started spinning in my head. lol
+> **"Paying full sticker price (actual purchase price around 38 to 40 million KRW after subsidies) means facing steep hydrogen EV depreciation over 3 years... Should I pick up a 1st-generation used NEXO that has already dropped to roughly 15 million KRW? Or opt for Hyundai's guaranteed residual buyback program on the new generation to cap the downside?"**
 
-![The All-New NEXO, the next generation that runs coolly on coastal roads](images/the_all_new_nexo.jpg)
-
-In particular, my eyes were rolling when I saw the actual **'The All-New NEXO'**, which will be released with a strong, traditional boxy SUV line based on the INITIUM concept and next-generation pixel lighting.
-
-But when you come back to reality and consider how you buy, a deeper dilemma begins:
-
-> **"If you buy a new car for full price (actual purchase price about 38 to 40 million won), the depreciation after 3 years is scary... Should I buy the '1st generation used Nexo' that has dropped to around 15 million won, less than half the price? Or should I try the new The All New Nexo through Hyundai Motor Company's 'burden reduction program' that reduces worries about depreciation?"**
-
-I have summarized the honest and realistic thoughts I came up with by carefully tapping the calculator from the perspective of an engineer.
+Here is a realistic look at the numbers and trade-offs when calculated across a 3-year ownership horizon.
 
 ---
 
@@ -84,7 +77,7 @@ This is a method of purchasing a used 1st generation Nexo, which has already rea
 
 ---
 
-## 4. Daily comparison table of an engineer with 16 years of experience
+## 4. Real-World Cost and Risk Comparison Table
 
 Assuming you'll keep the car for three years, we've compared the two options side by side in a table:
 

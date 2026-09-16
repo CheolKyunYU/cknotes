@@ -22,13 +22,11 @@ aliases:
 
 ---
 
-Hello! I am **CK notes**, an IT field systems engineer with 16 years of experience.
+Having completed the prerequisite phases—management server deployment, VME Manager and Arbiter VM provisioning, physical node firmware updates, and Initial Setup—we now arrive at the core deployment stage: HVM Cluster creation and SimpliVity Virtual Controller (OVC) provisioning.
 
-If you have completed the thorough preparation process from [Step 1 to Step 3] (management server infrastructure setup, VME Manager and Arbiter VM deployment, physical node firmware updates, and Initial Setup), you have finally reached the ultimate highlight of this series: **'HVM Cluster Creation and SimpliVity Virtual Controller (OVC) Deployment'**!
+This procedure unifies standalone physical nodes into a high-availability HVM Cluster managed by VM Essentials Manager, and deploys an OmniStack Virtual Controller (OVC) instance onto each node to activate real-time deduplication, compression, and synchronous block replication.
 
-As the final milestone in the deployment workflow, we combine independent physical nodes into a unified **HVM Cluster via the VM Essentials Manager web console, and automatically deploy OVC (OmniStack Virtual Controller) on each node** to establish an enterprise-grade high-performance HCI infrastructure.
-
-In this guide, we walk through the **11 steps of HVM cluster creation and 9 steps of SimpliVity OVC deployment (with 20 real-world sanitized UI screenshots), concluding with CLI health check verification**.
+This guide details the complete process from HVM cluster setup and automated OVC provisioning to final CLI health verification using `svt-federation-show`.
 
 ---
 
@@ -268,16 +266,11 @@ sudo svt-storage-show
 
 ---
 
-## 6. Conclusion & Summary (Series Complete 🎉)
+## 6. Summary
 
-This marks the completion of the entire 5-part deployment series for **HPE SimpliVity 6.2.0 on HPE Morpheus VM Essentials (HVM)**!
+Cluster deployment and automated OVC provisioning in HPE SimpliVity 6.2.0 (HVM) unify physical compute nodes with software-defined hyperconverged storage.
 
-From initial network design to management infrastructure, physical server preparation, HVM cluster clustering, and OVC automated deployment—you have mastered every real-world engineering step.
-
-### 📌 Key Takeaways
-1. **Patience During Corosync Sync**: When registering nodes in VME Manager, Corosync background clustering takes several minutes.
-2. **Dedicated 10G & Jumbo Frames (MTU 9000)**: Configure dedicated 10GbE interfaces and MTU 9000 for Storage and Federation networks.
-3. **Pre-flight Validation & Arbiter Check**: Always pass NTP and Arbiter validation before deployment, and verify `Alive / Connected` status using `svt-federation-show`.
+Verifying that **10GbE dedicated interfaces**, **jumbo frames (MTU 9000)**, **NTP synchronization**, and **Arbiter quorum connectivity** are properly configured in advance ensures high availability and reliable long-term operations.
 
 ---
 
@@ -291,6 +284,3 @@ From initial network design to management infrastructure, physical server prepar
 | **Step 3** | **[SimpliVity Node Firmware & Initial Setup](../simplivity-03-node-initial-setup/)** | SPP firmware, BaseOS reimaging, https://IP:9292 setup |
 | **Step 4** | **[Current Post] [HVM Cluster Creation & OVC Deployment](./)** | HVM Cluster, 10G/MTU 9000 OVC deployment, CLI health check |
 
----
-
-Thank you for following this series! Feel free to leave technical questions or comments below.

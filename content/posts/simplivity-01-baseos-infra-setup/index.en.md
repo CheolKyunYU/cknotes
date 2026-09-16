@@ -23,13 +23,11 @@ aliases:
 
 ---
 
-Hello! I am a field engineer who has been in the field for 16 years, building servers, storage, and HCI in numerous data centers and computer rooms.
+The first fundamental phase in deploying an HPE SimpliVity 6.2.0 (Morpheus VM Essentials) cluster is establishing the external management server environment.
 
-When building HPE SimpliVity (Morpheus VM Essentials) infrastructure in the field, **the prerequisite task that becomes the central axis of the virtualization environment is 'building a management server base'**.
+Before touching physical SimpliVity nodes, setting up this dedicated management platform is essential. Physical host initialization, OVC provisioning, and cluster synchronization rely strictly on a stable BaseOS foundation alongside three core infrastructure services: NTP (precise timekeeping), DNS (forward and reverse resolution), and NFS (virtual image datastore).
 
-Many novice engineers try to start with the SimpliVity node right away, but in actual sites, all subsequent steps will stop unless **BaseOS HVM 24.04 is installed on the management server and the three major infrastructure services, NTP, DNS, and NFS** are not installed properly.
-
-In this post, we will provide a detailed summary of **Practical know-how on installing management server BaseOS HVM 24.04 and configuring three major infrastructure services** along with screen captures of actual field construction.
+This guide covers the deployment of HVM BaseOS 24.04 (partitioning and networking) on the management host, followed by step-by-step configuration of the three core infrastructure services.
 
 ---
 
@@ -140,22 +138,17 @@ sudo systemctl restart nfs-kernel-server
 
 ---
 
-## 6. Conclusion and key takeaways
+## 6. Summary
 
-A solid foundation for building HPE SimpliVity 6.2.0 begins with **management server OS (LVM settings) and three major infrastructure services (NTP, DNS, NFS `/nfs` insecure)**.
+A reliable HPE SimpliVity 6.2.0 deployment depends directly on structured LVM partitioning and robust baseline services (NTP, DNS, NFS) configured on the management server.
 
-### 📌 3 key takeaways from today
-1. **BaseOS HVM static IP and LVM configuration**: During installation, assign a static IP and select an LVM disk group for partition expansion.
-2. **NTP time synchronization required**: Establish a synchronization system so that all infrastructure devices view the management server NTP.
-3. **NFS `/nfs` insecure share settings**: `echo "/nfs *(rw,sync,no_root_squash,insecure)" | Prevent mount timeout with the sudo tee -a /etc/exports` command.
+In isolated datacenter environments without internet connectivity, explicitly defining the management host as an authoritative local NTP stratum and registering reverse DNS (PTR) records prevents timeout failures during subsequent VME Manager and OVC deployment phases.
 
 ---
 
-### 🔗 Go to serial series
+### 🔗 Series Navigation
 
-| previous steps | next steps |
+| Previous Step | Next Step |
 | :---: | :---: |
-| This is the first post | **[Step 2. Install VME Manager & Arbiter VM ➡️](../simplivity-02-vme-mgr-arbiter/)** |
+| First Article | **[Step 2. VME Manager & Arbiter VM Setup ➡️](../simplivity-02-vme-mgr-arbiter/)** |
 
----
-If you have any questions, please leave a comment!

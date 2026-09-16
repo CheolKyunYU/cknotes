@@ -23,13 +23,11 @@ aliases:
 
 ---
 
-Hello! I am an IT field engineer with 16 years of experience.
+With external management infrastructure (BaseOS, NTP/DNS/NFS, VME Manager, Arbiter) operational from Steps 1 and 2, the next phase focuses on provisioning the physical HPE SimpliVity nodes installed in the data center rack.
 
-If you have completed building an external management server (BaseOS, NTP/DNS/NFS, VME Manager, Arbiter) through [Step 1 & Step 2], you can now finally enter the step of directly handling **two HPE SimpliVity physical servers** mounted on the data center rack.
+This stage involves updating server firmware via Service Pack for ProLiant (SPP), reimaging the HVM BaseOS if necessary, and performing node-level Initial Setup to establish baseline management networking and credentials for central orchestration by VME Manager.
 
-In the field deployment flowchart, this step is the starting point for the bottom section, which involves updating the firmware (SPP) of the SimpliVity server, reimaging the HVM Base OS (if necessary), and Initial Setup of the host.
-
-In this post, we will explain in detail the **SimpliVity physical server initialization and https://IP:9292 web GUI-based Initial Setup practical procedures and field know-how**.
+This guide covers physical server preparation, firmware staging, and the `https://<Host_IP>:9292` web GUI Initial Setup workflow.
 
 ---
 
@@ -141,23 +139,17 @@ Once the settings application is 100% complete, the node will enter the Discover
 
 ---
 
-## 5. Conclusion and key takeaways
+## 5. Summary
 
-Once the SimpliVity physical server's **firmware update, HVM re-imaging, and https://IP:9292 web GUI Initial Setup** are completed, the node is ready to receive central control from the VME Manager.
+Completing hardware firmware updates and `https://<Host_IP>:9292` baseline networking readies the SimpliVity nodes for integration into VME Manager.
 
-### 📌 3 key takeaways from today
-1. **Update SPP Firmware**: First update the server hardware firmware by uploading the SPP ISO via iLO.
-2. **HPE Software Center HVM Reimaging**: If necessary, perform a stock restore of the HVM OS using the `HPE-SVT-HVM-HostOS-XXX-release.iso` file.
-3. **`https://<Host_IP>:9292` Initial Setup Web Settings**: After connecting to the web, inject the host name, Mgmt IP, and management server NTP/DNS address through the wizard.
+Hostname, Management IP, and NTP/DNS configurations defined during this Initial Setup stage directly bind to the upcoming HVM Cluster and automated OVC provisioning workflows, making input accuracy essential before proceeding.
 
 ---
 
-### 🔗 Go to serial series
+### 🔗 Series Navigation
 
-| previous steps | next steps |
+| Previous Step | Next Step |
 | :---: | :---: |
-| **[⬅️ Step 2. Install VME Manager & Arbiter VM](../simplivity-02-vme-mgr-arbiter/)** | **[Step 4. HVM Cluster Creation & OVC Deployment ➡️](../simplivity-04-hvm-cluster-ovc-deploy/)** |
+| **[⬅️ Step 2. VME Manager & Arbiter VM Setup](../simplivity-02-vme-mgr-arbiter/)** | **[Step 4. HVM Cluster Creation & OVC Deployment ➡️](../simplivity-04-hvm-cluster-ovc-deploy/)** |
 
----
-
-If you have any questions, please leave a comment!

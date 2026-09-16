@@ -22,11 +22,11 @@ aliases:
 
 ---
 
-안녕하세요! 16년 차 IT 필드 엔지니어입니다.
+Step 1에서 관리서버의 인프라 기반(BaseOS, NTP, DNS, NFS)을 구성했다면, 다음 순서로 관리서버 상에 핵심 제어 엔진인 VME Manager VM(`vmemgr`)과 스플릿 브레인 방지용 Arbiter VM을 배포할 차례입니다.
 
-[Step 1. 관리서버 BaseOS HVM 24.04 설치 & NTP/DNS/NFS 구성 편]에서 관리서버의 인프라 기반을 탄탄히 다졌다면, 이제 관리서버 상에 **핵심 제어 코어인 VME Manager VM(vmgmgr)과 스플릿 브레인 방지용 Arbiter VM**을 올릴 차례입니다.
+VME Manager는 전체 HVM 클러스터와 SimpliVity OVC를 중앙에서 프로비저닝하고 제어하는 가상화 관리 콘솔이며, Arbiter는 2노드 클러스터 간 네트워크 단절 상황에서 정합성을 보장하는 독립 쿼럼 데몬입니다.
 
-이번 포스팅에서는 실제 현장 텍스트 UI 콘솔 캡처 화면과 함께 **`hpe-vm` 콘솔을 이용한 VME Manager VM 설치 파라미터 세팅과 Arbiter 서버 VM 생성 노하우**를 상세히 정리해 드리겠습니다.
+이번 글에서는 호스트 TUI(`hpe-vm`) 콘솔을 통한 VME Manager VM 배포 파라미터 세팅과, SimpliVity Arbiter 패키지 설치 및 포트 검증 절차를 정리했습니다.
 
 ---
 
@@ -134,14 +134,11 @@ sudo ufw allow 22122/tcp
 
 ---
 
-## 6. 결론 및 핵심 요약
+## 6. 정리하며
 
-관리서버 내에 **VME Manager VM과 Arbiter VM** 설치가 완료되면, 이제 SimpliVity 물리 노드들을 맞이할 모든 준비가 끝납니다.
+관리서버 내에 VME Manager VM과 Arbiter VM 설치가 완료되면, 분리된 관리 콘솔과 쿼럼 데몬이 정상 구동되면서 실제 SimpliVity 물리 노드들을 맞이할 준비가 끝납니다.
 
-### 📌 오늘의 핵심 요약 3가지
-1. **`hpe-vm` 콘솔 파라미터 설정**: TUI 화면에서 고정 IP, DNS, QCOW2 이미지 경로를 지정하여 VME Manager를 배포합니다.
-2. **Arbiter 외부 독립 배치**: 스플릿 브레인 방지를 위해 Arbiter VM은 반드시 SimpliVity 외부 관리서버에 설치합니다.
-3. **포트 22122 오픈**: Arbiter 서비스 설치 후 `TCP 22122` 포트 수신 및 방화벽 상태를 사전에 확인합니다.
+특히 2노드 SimpliVity 클러스터에서는 Arbiter가 외부 물리 서버에 완전히 독립되어 배포되어야만 전원 장애나 노드 단절 시 정상적인 스플릿 브레인 방지가 가능하므로, 방화벽(TCP 22122)과 IP 통신 상태를 사전에 확실히 점검해 두시기 바랍니다.
 
 ---
 
@@ -151,5 +148,3 @@ sudo ufw allow 22122/tcp
 | :---: | :---: |
 | **[⬅️ Step 1. BaseOS & 인프라서비스](../simplivity-01-baseos-infra-setup/)** | **[Step 3. SimpliVity 노드 Initial Setup ➡️](../simplivity-03-node-initial-setup/)** |
 
----
-궁금한 점은 댓글로 남겨주세요!

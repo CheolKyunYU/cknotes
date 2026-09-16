@@ -22,13 +22,11 @@ aliases:
 
 ---
 
-안녕하세요! 16년 차 IT 필드 엔지니어입니다.
+외부 관리서버(BaseOS, NTP/DNS/NFS, VME Manager, Arbiter) 구성을 마쳤다면, 이제 데이터센터 랙에 실장된 HPE SimpliVity 물리 노드들을 직접 세팅할 차례입니다.
 
-[Step 1 & Step 2]를 통해 외부 관리서버(BaseOS, NTP/DNS/NFS, VME Manager, Arbiter) 구축을 마쳤다면, 이제 드디어 데이터센터 랙에 장착된 **HPE SimpliVity 물리 서버 2대**를 직접 다루는 단계에 들어섭니다.
+이 단계에서는 SimpliVity 서버의 하드웨어 펌웨어(SPP)를 최신화하고, 필요 시 HVM BaseOS를 리이미징한 후, 호스트별 초기 설정(Initial Setup)을 진행하여 노드가 VME Manager의 중앙 관리를 받을 수 있는 기본 네트워크와 계정을 구성합니다.
 
-현장 구축 순서도에서 이 단계는 하단 영역의 시작점으로, **SimpliVity 서버의 펌웨어(SPP) 업데이트, HVM Base OS 리이미징(필요시), 그리고 호스트의 Initial Setup(초기 설정)**을 진행합니다.
-
-이번 포스팅에서는 **SimpliVity 물리 서버 초기화 및 https://IP:9292 웹 GUI 기반 Initial Setup 실전 절차와 현장 노하우**를 상세히 정리해 드리겠습니다.
+이번 글에서는 물리 서버 펌웨어 업데이트부터 `https://<Host_IP>:9292` 웹 GUI 기반의 Initial Setup 설정까지의 실무 절차와 주의사항을 정리했습니다.
 
 ---
 
@@ -140,14 +138,11 @@ SimpliVity 가상 컨트롤러(OVC) 배포 및 VME 플러그인 연동을 위해
 
 ---
 
-## 5. 결론 및 핵심 요약
+## 5. 정리하며
 
-SimpliVity 물리 서버의 **펌웨어 최신화, HVM 리이미징, 그리고 https://IP:9292 웹 GUI Initial Setup**이 완료되면, 비로소 노드가 VME Manager의 중앙 제어를 받을 준비가 끝납니다.
+SimpliVity 물리 서버의 하드웨어 펌웨어 최신화와 `https://<Host_IP>:9292` 기반의 초기 네트워크 설정이 완료되면, 노드가 VME Manager의 클러스터 멤버로 등록될 준비를 마친 상태가 됩니다.
 
-### 📌 오늘의 핵심 요약 3가지
-1. **SPP 펌웨어 최신화**: iLO를 통해 SPP ISO를 올려 서버 하드웨어 펌웨어를 먼저 최신화합니다.
-2. **HPE Software Center HVM 리이미징**: 필요 시 `HPE-SVT-HVM-HostOS-XXX-release.iso` 파일로 HVM OS를 순정 복구합니다.
-3. **`https://<Host_IP>:9292` Initial Setup 웹 세팅**: 웹 접속 후 마법사를 통해 호스트명, Mgmt IP, 관리서버 NTP/DNS 주소를 주입합니다.
+초기 설정 단계에서 입력한 호스트명, 관리 IP, 그리고 사내 NTP/DNS 정보는 다음 단계인 HVM 클러스터 생성 및 OVC 자동 배포 시 그대로 바인딩되므로, 오탈자가 없는지 한 번 더 꼼꼼히 확인하고 다음 단계로 진행하시기 바랍니다.
 
 ---
 
@@ -157,6 +152,3 @@ SimpliVity 물리 서버의 **펌웨어 최신화, HVM 리이미징, 그리고 h
 | :---: | :---: |
 | **[⬅️ Step 2. VME Manager & Arbiter VM 설치](../simplivity-02-vme-mgr-arbiter/)** | **[Step 4. HVM Cluster 생성 & OVC 배포 ➡️](../simplivity-04-hvm-cluster-ovc-deploy/)** |
 
----
-
-궁금한 점은 댓글로 남겨주세요!

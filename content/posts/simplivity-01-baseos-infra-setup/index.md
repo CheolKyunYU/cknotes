@@ -22,13 +22,11 @@ aliases:
 
 ---
 
-안녕하세요! 16년 동안 현장을 누비며 수많은 데이터센터와 전산실에서 서버·스토리지·HCI를 구축해 온 필드 엔지니어입니다.
+HPE SimpliVity 6.2.0 (Morpheus VM Essentials 기반) 인프라 구축의 첫 단추는 바로 외부 관리서버(Management Server)의 기반 환경을 다지는 작업입니다.
 
-현장에서 HPE SimpliVity (Morpheus VM Essentials) 인프라를 구축할 때 **가상화 환경의 중심축이 되는 선행 작업은 바로 '관리서버(Management Server) 기반 구축'**입니다.
+실무 현장에서 SimpliVity 노드 배포 전에 관리서버를 먼저 구성하는 이유는 명확합니다. 물리 노드 초기화와 OVC 배포, 가상화 클러스터 동기화가 정상 동작하려면 사전에 안정적인 BaseOS 환경과 NTP(시간 동기화), DNS(정/역방향 이름 확인), NFS(ISO 이미지 공유)라는 3대 인프라 서비스가 백본으로 동작하고 있어야 하기 때문입니다.
 
-많은 초보 엔지니어들이 SimpliVity 노드부터 바로 만지려고 하지만, 실제 현장에서는 관리서버에 **BaseOS HVM 24.04를 설치하고 NTP, DNS, NFS 3대 인프라 서비스**를 완벽하게 올려두지 않으면 이후 단계가 모두 멈춰버립니다. 
-
-이번 포스팅에서는 실제 현장 구축 화면 캡처와 함께 **관리서버 BaseOS HVM 24.04 설치 및 3대 인프라 서비스 구성 실전 노하우**를 상세히 정리해 드리겠습니다.
+이번 글에서는 관리서버에 HVM BaseOS 24.04를 설치하는 파티션/네트워크 설정부터, 사내 3대 인프라 서비스의 실전 구성 명령어와 주의점을 정리했습니다.
 
 ---
 
@@ -139,14 +137,11 @@ sudo systemctl restart nfs-kernel-server
 
 ---
 
-## 6. 결론 및 핵심 요약
+## 6. 정리하며
 
-HPE SimpliVity 6.2.0 구축의 탄탄한 기반은 **관리서버 OS(LVM 설정)와 3대 인프라 서비스(NTP, DNS, NFS `/nfs` insecure)**에서 시작됩니다.
+HPE SimpliVity 6.2.0 구축의 성패는 관리서버 BaseOS의 안정적인 LVM 파티션 설계와 3대 인프라 서비스(NTP, DNS, NFS)의 사전 준비에서 결정됩니다.
 
-### 📌 오늘의 핵심 요약 3가지
-1. **BaseOS HVM 고정 IP 및 LVM 구성**: 설치 시 고정 IP를 할당하고 파티션 확장을 위해 LVM 디스크 그룹을 선택합니다.
-2. **NTP 시간 동기화 필수**: 모든 인프라 장비가 관리서버 NTP를 바라보도록 동기화 체계를 갖춥니다.
-3. **NFS `/nfs` insecure 공유 설정**: `echo "/nfs *(rw,sync,no_root_squash,insecure)" | sudo tee -a /etc/exports` 명령어로 마운트 타임아웃을 방지합니다.
+특히 폐쇄망 전산실 환경에서는 외부 인터넷 시간 동기화가 불가능하므로 관리서버 자체를 로컬 NTP 타임서버로 확실히 지정하고, DNS 역방향(PTR) 레코드와 NFS `insecure` 옵션까지 꼼꼼히 점검한 뒤 다음 단계인 VME Manager 배포로 넘어가시기 바랍니다.
 
 ---
 
@@ -156,5 +151,3 @@ HPE SimpliVity 6.2.0 구축의 탄탄한 기반은 **관리서버 OS(LVM 설정)
 | :---: | :---: |
 | 첫 번째 글입니다 | **[Step 2. VME Manager & Arbiter VM 설치 ➡️](../simplivity-02-vme-mgr-arbiter/)** |
 
----
-궁금한 점은 댓글로 남겨주세요!

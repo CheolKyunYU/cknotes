@@ -23,11 +23,11 @@ aliases:
 
 ---
 
-Hello! I am an IT field engineer with 16 years of experience.
+Following the foundation established in Step 1 (BaseOS, NTP, DNS, NFS), the next milestone on the management server is deploying the primary virtualization controller—the VME Manager VM (`vmemgr`)—and the independent Arbiter quorum VM.
 
-If you have solidified the infrastructure of the management server in [Step 1. Management server BaseOS HVM 24.04 installation & NTP/DNS/NFS configuration], it is now time to install the VME Manager VM (vmgmgr), the core control core, and the Arbiter VM for split brain prevention** on the management server.
+VME Manager serves as the centralized orchestration plane for configuring HVM clusters and provisioning SimpliVity OVC instances, while the Arbiter functions as a lightweight witness daemon to prevent split-brain conditions across a 2-node cluster.
 
-In this post, we will explain in detail the VME Manager VM installation parameter settings and Arbiter server VM creation know-how using the `hpe-vm` console, along with the actual field text UI console capture screen.
+This guide details the VME Manager VM provisioning parameters via the text-based `hpe-vm` console, followed by the SimpliVity Arbiter installation and network port verification.
 
 ---
 
@@ -135,22 +135,17 @@ sudo ufw allow 22122/tcp
 
 ---
 
-## 6. Conclusion and key takeaways
+## 6. Summary
 
-Once **VME Manager VM and Arbiter VM** are installed on the management server, you are now ready to welcome SimpliVity physical nodes.
+With the VME Manager and Arbiter instances running on the dedicated management server, the orchestration plane is fully prepared to provision the physical SimpliVity nodes.
 
-### 📌 3 key takeaways from today
-1. **Set `hpe-vm` console parameters**: Deploy VME Manager by specifying a static IP, DNS, and QCOW2 image path in the TUI screen.
-2. **Arbiter external independent deployment**: To prevent split brain, the Arbiter VM must be installed on a SimpliVity external management server.
-3. **Open port 22122**: After installing the Arbiter service, check the `TCP 22122` port listening and firewall status in advance.
+In 2-node SimpliVity topologies, keeping the Arbiter completely isolated on external infrastructure is mandatory to ensure proper split-brain resolution during power or network partition events. Ensure firewall rules for TCP port 22122 and IP routing are validated before proceeding.
 
 ---
 
-### 🔗 Go to serial series
+### 🔗 Series Navigation
 
-| previous steps | next steps |
+| Previous Step | Next Step |
 | :---: | :---: |
-| **[⬅️ Step 1. BaseOS & Infrastructure Service](../simplivity-01-baseos-infra-setup/)** | **[Step 3. SimpliVity Node Initial Setup ➡️](../simplivity-03-node-initial-setup/)** |
+| **[⬅️ Step 1. BaseOS & Infrastructure Setup](../simplivity-01-baseos-infra-setup/)** | **[Step 3. SimpliVity Node Initial Setup ➡️](../simplivity-03-node-initial-setup/)** |
 
----
-If you have any questions, please leave a comment!
