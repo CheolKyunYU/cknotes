@@ -10,7 +10,7 @@ aliases:
 ---
 
 
-> **作成者**: CK Log
+> **作成者**: CK notes
 > **リファレンスドキュメント**: HPE SimpliVity 6.2.0 for HPE Morpheus VM Essentials Software Guide (sd00006914en_us)
 
 ---

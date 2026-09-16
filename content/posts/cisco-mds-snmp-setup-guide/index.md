@@ -9,7 +9,7 @@ aliases:
   - /posts/cisco-mds-snmp-setup-guide/
 ---
 
-* 작성자: CK log ({{< career-years >}}년 차 IT 필드 엔지니어)
+* 작성자: CK notes ({{< career-years >}}년 차 IT 필드 엔지니어)
 * 대상 장비: Cisco MDS 9000 Series Fabric Switch (MDS 9148, 9396, 9700 등)
 * 운영체제: Cisco NX-OS / SAN-OS
 

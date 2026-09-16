@@ -10,7 +10,7 @@ aliases:
 ---
 
 
-* 著者：CK log（{{< career-years>}}年次ITフィールドエンジニア）
+* 著者：CK notes（{{< career-years >}}年次ITフィールドエンジニア）
 * 対象機器：Cisco MDS 9000 Series Fabric Switch（MDS 9148、9396、9700など）
 * オペレーティングシステム：Cisco NX-OS / SAN-OS
 

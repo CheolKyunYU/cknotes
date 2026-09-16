@@ -1,12 +1,12 @@
 ---
 title: "개인정보처리방침 (Privacy Policy)"
-description: "CK log 블로그의 개인정보처리방침, Google AdSense 광고 쿠키 정책, Google Analytics 분석 및 방문자 데이터 보호와 쿠키 거부 안내입니다."
+description: "CK notes 블로그의 개인정보처리방침, Google AdSense 광고 쿠키 정책, Google Analytics 분석 및 방문자 데이터 보호와 쿠키 거부 안내입니다."
 date: 2026-09-05T19:40:00+09:00
 draft: false
-summary: "CK log 개인정보처리방침, 구글 애드센스 쿠키 정책 및 문의 안내"
+summary: "CK notes 개인정보처리방침, 구글 애드센스 쿠키 정책 및 문의 안내"
 ---
 
-본 블로그(**CK log**, 이하 '사이트')는 방문자의 개인정보를 소중하게 생각하며, 대한민국의 「개인정보 보호법」 및 **Google의 광고 및 분석 서비스 운영 정책(Google Publisher Policies)**을 철저히 준수합니다.
+본 블로그(**CK notes**, 이하 '사이트')는 방문자의 개인정보를 소중하게 생각하며, 대한민국의 「개인정보 보호법」 및 **Google의 광고 및 분석 서비스 운영 정책(Google Publisher Policies)**을 철저히 준수합니다.
 
 본 사이트는 어떠한 개인 식별 정보(PII)도 방문자의 사전 동의 없이 무단 수집하지 않으며, 구글 애드센스(Google AdSense), 구글 애널리틱스(Google Analytics) 등 타사 서비스의 쿠키 수집 및 이용 방식에 대해 아래와 같이 투명하게 안내합니다.
 

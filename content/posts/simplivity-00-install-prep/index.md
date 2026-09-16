@@ -9,7 +9,7 @@ aliases:
   - /posts/simplivity-00-install-prep/
 ---
 
-> **작성자**: CK Log  
+> **작성자**: CK notes  
 > **기준 문서**: HPE SimpliVity 6.2.0 for HPE Morpheus VM Essentials Software Guide (sd00006914en_us)
 
 ---

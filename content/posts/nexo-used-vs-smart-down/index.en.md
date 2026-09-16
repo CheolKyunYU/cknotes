@@ -10,7 +10,7 @@ aliases:
 ---
 
 
-hello! I am **CK log**, an IT system engineer who has been working in the infrastructure field for {{< career-years >}} years.
+hello! I am **CK notes**, an IT system engineer who has been working in the infrastructure field for {{< career-years >}} years.
 
 Today, instead of talking about hard IT technologies such as servers and networks, I will try to comfortably talk about **the biggest worry in my daily life (choosing a car)**, which is the most complicated thing on my mind these days. 🚗
 

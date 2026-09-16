@@ -10,7 +10,7 @@ aliases:
 ---
 
 
-* Author: CK log (IT field engineer with {{< career-years >}} years)
+* Author: CK notes (IT field engineer with {{< career-years >}} years)
 * Target Equipment: Cisco MDS 9000 Series Fabric Switch (MDS 9148, 9396, 9700, etc.)
 * Operating System: Cisco NX-OS / SAN-OS
 
