@@ -37,6 +37,9 @@ enableRobotsTXT = true
 [params.analytics.google]
   SiteVerificationTag = "dr0Q6_PYk2R4JOUSa884LZJjb8hrAqlRxTg5j-XnkgY"
 
+[params.analytics.naver]
+  SiteVerificationTag = "9a4f94fbee3ccb2fe33131ffc39b8073bb85e812"
+
 [languages]
   [languages.ko]
     languageName = "KO"
