@@ -13,7 +13,7 @@ enableRobotsTXT = true
 [params]
   env = "production"
   title = "CK notes"
-  description = "16년 차 IT 시스템 엔지니어 CK의 실무 인프라(HPE SimpliVity, VME, VMware, Linux, 서버/스토리지) 구축 및 트러블슈팅 경험 기록 노트"
+  description = "IT 시스템 엔지니어 CK의 실무 인프라 구축 및 트러블슈팅 경험 노트"
   author = "CK notes"
   DateFormat = "2006-01-02 15:04"
   ShowReadingTime = false
@@ -49,7 +49,7 @@ enableRobotsTXT = true
     title = "CK notes"
     [languages.ko.params]
       homeSubtitle = "16년 차 IT 시스템 엔지니어의 기술 노트"
-      description = "16년 차 IT 시스템 엔지니어 CK의 실무 인프라(HPE SimpliVity, VME, VMware, Linux, 서버/스토리지) 구축 및 트러블슈팅 경험 기록 노트"
+      description = "IT 시스템 엔지니어 CK의 실무 인프라 구축 및 트러블슈팅 경험 노트"
     [languages.ko.menu]
       [[languages.ko.menu.main]]
         identifier = "posts"
@@ -131,7 +131,7 @@ enableRobotsTXT = true
     title = "CK notes"
     [languages.jp.params]
       homeSubtitle = "16年目ITシステムエンジニアの技術ノート"
-      description = "16年目のITシステムエンジニアCKによる実務インフラ構築（HPE SimpliVity、VME、VMware、Linux、サーバー/ストレージ）およびトラブルシュー팅の記録ノート。"
+      description = "16年目のITシステムエンジニアCKによる実務インフラ構築（HPE SimpliVity、VME、VMware、Linux、サーバー/ストレージ）およびトラブルシューティングの記録ノート。"
     [languages.jp.menu]
       [[languages.jp.menu.main]]
         identifier = "posts"
