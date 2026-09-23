@@ -1,4 +1,4 @@
-﻿---
+---
 title: "About me"
 description: "Profile of CK notes, a 16-year IT systems/field engineer. Explains the meaning behind CK notes, core technical stack, career experience, and contact information."
 date: 2026-08-27T12:30:00+09:00
@@ -34,16 +34,16 @@ Working as an IT systems and field engineer since September 6, 2010 (**{{< caree
 
 ---
 
-### 📂 Content Pillars
+### 📂 Blog Focus & Publishing Schedule
+* **Mission**:  
+  This blog rejects generic vendor textbook documentation. Since 2010, I have spent 16 years inside enterprise data centers and server rooms, documenting raw, field-tested troubleshooting logs and deployment notes.
 
-1. **Practical Field Engineering (Tech)**
-   * Real-world troubleshooting and error analysis rather than theoretical textbook manuals.
-   * Step-by-step deployment guides backed by architecture diagrams and verified configurations.
-   * Content designed to serve as both personal technical assets and reliable guideposts for fellow engineers tackling similar production issues.
+* **Publishing Frequency**:  
+  To prioritize verified depth over quantity, new in-depth articles are published **2 to 4 times a month (bi-weekly schedule)**.
 
-2. **Life & Personal Interests (Life)**
-   * DIY automotive maintenance (engine oil, filters, consumable replacements).
-   * Travel logs, casual thoughts, and life outside the server room.
+* **Core Categories**:
+  1. **Tech (Field Engineering Notes)**: Servers, SAN storage, HCI (SimpliVity/VME), KVM, and Linux data center infrastructure troubleshooting.
+  2. **Life & Car**: Maintenance, repairs, and DIY logs for the road partner vehicle (Hyundai NEXO, etc.) that powers client on-site visits across the country, alongside everyday reflections away from technology.
 
 ---
 
