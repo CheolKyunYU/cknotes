@@ -3,8 +3,9 @@ title: "HPE SimpliVity With VME 소개"
 description: "컴퓨팅, 스토리지, 네트워크를 단일 플랫폼으로 통합한 HPE SimpliVity VME 가상화 인프라 솔루션의 고가용성, 데이터 효율성 및 주요 특징을 소개합니다."
 date: 2025-12-31T21:00:00+09:00
 draft: false
-categories: ["Tech"]
 tags: ["HPE", "SimpliVity", "VME", "HCI", "Infrastructure"]
+categories:
+  - SimpliVityVME
 ---
 
 ## 1. 솔루션 개요

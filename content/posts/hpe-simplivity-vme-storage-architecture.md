@@ -3,8 +3,9 @@ title: "HPE SimpliVity VME 스토리지 아키텍처 및 VMware 기반 SimpliVit
 description: "HPE SimpliVity의 RAID+RAIN 이중 보호 아키텍처, NFS 데이터스토어 및 VMware 기반 대비 VME의 라이선스 절감과 소프트웨어 정의 스토리지 강점을 비교합니다."
 date: 2025-12-31T22:00:00+09:00
 draft: false
-categories: ["Tech"]
 tags: ["HPE", "SimpliVity", "VME", "Storage", "VMware", "NFS", "RAID", "RAIN"]
+categories:
+  - SimpliVityVME
 ---
 
 ## 1. 개요

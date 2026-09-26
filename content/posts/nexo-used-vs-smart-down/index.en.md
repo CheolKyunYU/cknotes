@@ -3,10 +3,11 @@ title: "[Lifestyle/Car Decision] An Engineer's Cost Breakdown: 'The All-New NEXO
 description: "Whether buying new or used, a hydrogen EV loses substantial value over 3 years. We break down the real-world costs and risks between the new NEXO guaranteed-buyback program and a heavily depreciated 1st-generation used NEXO."
 date: 2026-09-07T10:45:00+09:00
 draft: false
-categories: ["Daily Life"]
 tags: ["TheAllNewNexo", "NEXO", "HydrogenEV", "EcoFriendly", "UsedCar", "CostAnalysis", "EngineerLife"]
 aliases:
   - /posts/nexo-used-vs-smart-down/
+categories:
+  - 일상
 ---
 
 Working with IT infrastructure systems for many years creates a habit of analyzing every decision—even personal vehicle choices—through the lens of cost-to-benefit ratios and risk management.

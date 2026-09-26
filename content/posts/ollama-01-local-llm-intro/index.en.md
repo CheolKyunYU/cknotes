@@ -3,10 +3,11 @@ title: "[Ollama] Part 1. What is Ollama, a local AI that runs for free on my PC?
 description: "We summarize the concept, features, and recommendation model of Ollama, a local LLM tool that runs easily in an air-gap environment without the Internet and on a regular laptop."
 date: 2026-09-05T19:00:00+09:00
 draft: false
-categories: ["Tech"]
 tags: ["Ollama", "LLM", "Local-AI", "AI", "Windows11", "OpenSource"]
 aliases:
   - /posts/ollama-01-local-llm-intro/
+categories:
+  - AI
 ---
 
 
@@ -147,4 +148,4 @@ The next article, **[Part 2: Windows 11 Ollama Installation & Initial Model Setu
 
 | Previous Step | Next Step |
 | :---: | :---: |
-| **Series Start (Current)** | **[Part 2. Windows 11 Ollama Installation & First Model Setup ➡️](../ollama-02-windows-install-guide/)** |
+| **Series Start (Current)** | **[Part 2. Windows 11 Ollama Installation & First Model Setup ➡️](../ollama-02-windows-install-guide/)** |

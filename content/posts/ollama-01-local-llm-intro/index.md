@@ -3,10 +3,11 @@ title: "[Ollama] 1편. 내 PC에서 무료로 돌리는 로컬 AI, Ollama란 무
 description: "인터넷 없는 폐쇄망(Air-gap) 환경과 일반 노트북에서도 가볍게 구동되는 로컬 LLM 도구 Ollama의 개념과 특징, 추천 모델을 정리합니다."
 date: 2026-09-05T19:00:00+09:00
 draft: false
-categories: ["Tech"]
 tags: ["Ollama", "LLM", "Local-AI", "AI", "Windows11", "OpenSource"]
 aliases:
   - /posts/ollama-01-local-llm-intro/
+categories:
+  - AI
 ---
 
 > **작성자**: 16년 차 IT 필드 엔지니어  
@@ -146,4 +147,4 @@ Ollama는 외부 인터넷이 완전히 차단된 폐쇄망 환경에서도 일�
 
 | 이전 단계 | 다음 단계 |
 | :---: | :---: |
-| **시리즈 시작 (현재글)** | **[2편. Windows 11 환경 Ollama 설치 및 첫 모델 구동 가이드 ➡️](../ollama-02-windows-install-guide/)** |
+| **시리즈 시작 (현재글)** | **[2편. Windows 11 환경 Ollama 설치 및 첫 모델 구동 가이드 ➡️](../ollama-02-windows-install-guide/)** |

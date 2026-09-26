@@ -1,12 +1,13 @@
-﻿---
+---
 title: "[HPE VME & SimpliVity] HVM Virtualization Network Addition & Bonding Guide (Single NIC Design Tip & OVS Troubleshooting)"
 description: "Standard procedure from host network bonding in HPE VM Console (TUI) to OVS router registration in VME Manager and VM assignment. Includes single NIC bonding principles and OVS troubleshooting."
 date: 2026-09-14T21:50:00+09:00
 draft: false
-categories: ["Tech"]
 tags: ["HPE", "VME", "SimpliVity", "Network", "Bonding", "OVS", "Troubleshooting"]
 aliases:
   - /posts/simplivity-vme-network-add-bonding-guide/
+categories:
+  - SimpliVityVME
 ---
 
 > **Environment**: HPE Morpheus VM Essentials (VME) / HPE SimpliVity 6.2.0 (HVM 24.04 BaseOS)  

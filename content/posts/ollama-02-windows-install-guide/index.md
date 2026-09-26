@@ -3,10 +3,11 @@ title: "[Ollama] 2편. Windows 11 환경 Ollama 설치 및 첫 모델 다운로�
 description: "Windows 11 인스톨러를 이용한 Ollama 설치, 트레이 아이콘 백그라운드 구동 확인, 첫 경량 모델 다운로드 및 터미널 대화법을 정리합니다."
 date: 2026-09-05T19:20:00+09:00
 draft: false
-categories: ["Tech"]
 tags: ["Ollama", "LLM", "Local-AI", "Windows11", "Gemma", "Llama", "Tutorial"]
 aliases:
   - /posts/ollama-02-windows-install-guide/
+categories:
+  - AI
 ---
 
 > **작성자**: CK notes  

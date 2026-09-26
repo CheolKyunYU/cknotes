@@ -3,10 +3,11 @@ title: "[HPE VME & SimpliVity] HVM 가상화 네트워크 추가 및 본딩(Bond
 description: "HPE VM Console(TUI) 본딩 생성부터 VME Manager OVS 라우터 등록 및 VM 할당까지의 표준 작업 절차입니다. 싱글 NIC 환경에서의 본딩 설계 원칙과 OVS 트러블슈팅을 다룹니다."
 date: 2026-09-14T21:50:00+09:00
 draft: false
-categories: ["Tech"]
 tags: ["HPE", "VME", "SimpliVity", "Network", "Bonding", "OVS", "Troubleshooting"]
 aliases:
   - /posts/simplivity-vme-network-add-bonding-guide/
+categories:
+  - SimpliVityVME
 ---
 
 > **환경 기준**: HPE Morpheus VM Essentials (VME) / HPE SimpliVity 6.2.0 (HVM 24.04 BaseOS)  

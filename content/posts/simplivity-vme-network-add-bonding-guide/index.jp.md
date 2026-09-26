@@ -1,12 +1,13 @@
-﻿---
+---
 title: "[HPE VME & SimpliVity] HVM仮想化ネットワーク追加およびボンディング（Bonding）実践ガイド (シングルNIC設計の要点 & OVSトラブルシューティング)"
 description: "HPE VM Console（TUI）でのボンディング作成からVME ManagerでのOVSネットワークルーター登録、VMへの割り当てまでの標準作業手順です。シングルNIC環境でのボンディング設計原則とOVSトラブルシューティングを解説します。"
 date: 2026-09-14T21:50:00+09:00
 draft: false
-categories: ["Tech"]
 tags: ["HPE", "VME", "SimpliVity", "Network", "Bonding", "OVS", "Troubleshooting"]
 aliases:
   - /posts/simplivity-vme-network-add-bonding-guide/
+categories:
+  - SimpliVityVME
 ---
 
 > **環境基準**: HPE Morpheus VM Essentials (VME) / HPE SimpliVity 6.2.0 (HVM 24.04 BaseOS)  

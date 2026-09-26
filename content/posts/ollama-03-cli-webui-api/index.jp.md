@@ -3,10 +3,11 @@ title: "[Ollama] 3編。 Ollamaの実践活用法：CLIの高度なヒントか�
 description: "Ollama CLI管理命令、ChatGPTスタイルのWebUI（Chatbox）連動、他のPCからリモート接続する蜂蜜チップ、Python/API活用ノウハウを総括します。"
 date: 2026-09-05T20:30:00+09:00
 draft: false
-categories: ["Tech"]
 tags: ["Ollama", "LLM", "Local-AI", "Windows11", "WebUI", "Chatbox", "Python", "API", "Automation"]
 aliases:
   - /posts/ollama-03-cli-webui-api/
+categories:
+  - AI
 ---
 
 

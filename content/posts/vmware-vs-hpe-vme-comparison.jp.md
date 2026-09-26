@@ -3,8 +3,9 @@ title: "VMware vs HPE VME比較分析"
 description: "エンタープライズ代表仮想化vSphereとKVM / MorpheusベースのHPE VME（VM Essentials）のアーキテクチャ、機能の違い、マルチハイパーバイザー、およびTCOコスト構造の比較をまとめます。"
 date: 2025-12-31T20:00:00+09:00
 draft: false
-categories: ["Tech"]
 tags: ["VMware", "HPE", "VME", "vSphere", "KVM", "Comparison"]
+categories:
+  - SimpliVityVME
 ---
 
 

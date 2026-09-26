@@ -3,8 +3,9 @@ title: "[Linux Guide] Online Disk Expansion Without Reboot: Step-by-Step LVM Res
 description: "A complete field guide for IT engineers to safely expand virtual disks, trigger kernel SCSI rescans, resize LVM (pvresize, lvextend), and grow XFS/EXT4 filesystems on running production Linux servers without downtime."
 date: 2026-09-22T14:00:00+09:00
 draft: false
-categories: ["Tech"]
 tags: ["Linux", "LVM", "Storage", "Troubleshooting", "SysAdmin", "Infrastructure"]
+categories:
+  - Linux
 ---
 
 > **Author**: 16-Year IT Systems Field Engineer (CK notes)  

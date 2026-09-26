@@ -3,10 +3,11 @@ title: "[HPE SimpliVity & VME] ライセンス課金を回避してKVM CLIでArb
 description: "SimpliVity 2ノードクラスタ構築に必須のArbiterを、VME ManagerのライセンスCPUコア消費なしに、ネイティブKVM virt-installとVNCで無課金構築する現場の裏技ガイドです。"
 date: 2026-01-07T10:00:00+09:00
 draft: false
-categories: ["Tech"]
 tags: ["HPE", "SimpliVity", "VME", "Arbiter", "Linux", "Ubuntu", "KVM", "virsh", "ライセンス", "トラブルシューティング"]
 aliases:
   - /jp/posts/hpe-vme-arbiter-vm-creation/
+categories:
+  - SimpliVityVME
 ---
 
 > **執筆者**: 16年目ITシステムエンジニア (CK notes)  

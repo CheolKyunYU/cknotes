@@ -1,12 +1,13 @@
-﻿---
+---
 title: "[HPE SimpliVity & VME] Practical Guide to ISO Image Registration & NFS Storage Integration"
 description: "End-to-end walkthrough of attaching NFSv3 file share storage in VME Manager, uploading OS installation ISO images to the virtual library, and mounting them to virtual instances."
 date: 2026-09-14T21:55:00+09:00
 draft: false
-categories: ["Tech"]
 tags: ["HPE", "VME", "SimpliVity", "NFS", "ISO", "Storage", "Troubleshooting"]
 aliases:
   - /posts/simplivity-vme-iso-image-upload-guide/
+categories:
+  - SimpliVityVME
 ---
 
 > **Environment**: HPE Morpheus VM Essentials (VME) / HPE SimpliVity 6.2.0 (HVM 24.04 BaseOS)  

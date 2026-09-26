@@ -3,8 +3,9 @@ title: "[Linux実務] 再起動なしでオンラインディスク容量拡張�
 description: "稼働中のLinux本番サーバーで無停止（オンライン）のままディスク容量を拡張し、SCSIバス再スキャン、LVM拡張（pvresize、lvextend）、XFS/EXT4ファイルシステムへの反映手順を解説します。"
 date: 2026-09-22T14:00:00+09:00
 draft: false
-categories: ["Tech"]
 tags: ["Linux", "LVM", "Storage", "Troubleshooting", "サーバー運用", "インフラ"]
+categories:
+  - Linux
 ---
 
 > **執筆者**: 16年目ITシステムエンジニア (CK notes)  

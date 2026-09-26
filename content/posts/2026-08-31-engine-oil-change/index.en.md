@@ -3,8 +3,9 @@ title: "[Lifestyle/Car Maintenance] Field Workhorse Maintenance: Engine Oil Chan
 description: "A practical car maintenance log covering 234,000 km and 246,000 km oil changes using Gongimnara, MANN filters, and ZIC engine oil."
 date: 2026-08-31T22:30:00+09:00
 draft: false
-categories: ["Daily Life"]
 tags: ["CarMaintenance", "EngineOil", "Gongimnara", "MANNFilter", "ZIC", "HighMileage"]
+categories:
+  - 일상
 ---
 
 It is never too late to start documenting everyday moments and vehicle upkeep.

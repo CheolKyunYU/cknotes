@@ -3,7 +3,6 @@ title: "[HPE SimpliVity & VME] 2ノード仮想化クラスタ実戦構築 A to 
 description: "HPE SimpliVity 6.2.0およびVMEによる2ノードクラスタ構築の全体ワークフロー、ネットワーク分離設計、Arbiter構成、OVC展開時のトラブルシューティングを総まとめします。"
 date: 2026-08-31T13:00:00+09:00
 draft: false
-categories: ["Tech"]
 tags: ["HPE", "SimpliVity", "VME", "HCI", "仮想化", "トラブルシューティング", "インフラ構築"]
 aliases:
   - /jp/posts/simplivity-00-install-prep/
@@ -11,6 +10,8 @@ aliases:
   - /jp/posts/simplivity-02-vme-mgr-arbiter/
   - /jp/posts/simplivity-03-node-initial-setup/
   - /jp/posts/simplivity-04-hvm-cluster-ovc-deploy/
+categories:
+  - SimpliVityVME
 ---
 
 > **執筆者**: 16年目ITシステムエンジニア (CK notes)  

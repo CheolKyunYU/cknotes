@@ -3,10 +3,11 @@ title: "[Ollama] 2編。 Windows 11環境Ollamaのインストールと最初の
 description: "Windows 11インストーラを使用したOllamaのインストール、トレイアイコンのバックグラウンド駆動の確認、最初の軽量モデルのダウンロード、およびターミナル対話を整理します。"
 date: 2026-09-05T19:20:00+09:00
 draft: false
-categories: ["Tech"]
 tags: ["Ollama", "LLM", "Local-AI", "Windows11", "Gemma", "Llama", "Tutorial"]
 aliases:
   - /posts/ollama-02-windows-install-guide/
+categories:
+  - AI
 ---
 
 

@@ -3,10 +3,11 @@ title: "[Ollama] 1編。私のPCから無料で回すローカルAI、Ollamaと�
 description: "インターネットレスの閉鎖網(Air-gap)環境や一般ノートパソコンでも軽く駆動されるローカルLLMツールOllamaの概念と特徴、推奨モデルをまとめます。"
 date: 2026-09-05T19:00:00+09:00
 draft: false
-categories: ["Tech"]
 tags: ["Ollama", "LLM", "Local-AI", "AI", "Windows11", "OpenSource"]
 aliases:
   - /posts/ollama-01-local-llm-intro/
+categories:
+  - AI
 ---
 
 

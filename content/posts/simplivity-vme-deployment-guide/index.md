@@ -3,7 +3,6 @@ title: "[HPE SimpliVity & VME] 2노드 가상화 클러스터 실전 구축 A to
 description: "HPE SimpliVity 6.2.0 및 VME(VM Essentials) 2노드 클러스터 구축의 전체 워크플로우, 네트워크 분리 설계, 아비터 구성 및 OVC 배포 시 현장 트러블슈팅 팁을 총정리합니다."
 date: 2026-08-31T13:00:00+09:00
 draft: false
-categories: ["Tech"]
 tags: ["HPE", "SimpliVity", "VME", "HCI", "가상화", "트러블슈팅", "인프라구축"]
 aliases:
   - /posts/simplivity-00-install-prep/
@@ -11,6 +10,8 @@ aliases:
   - /posts/simplivity-02-vme-mgr-arbiter/
   - /posts/simplivity-03-node-initial-setup/
   - /posts/simplivity-04-hvm-cluster-ovc-deploy/
+categories:
+  - SimpliVityVME
 ---
 
 > **글쓴이**: 16년 차 IT 시스템 엔지니어 (CK notes)  

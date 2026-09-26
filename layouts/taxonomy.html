@@ -15,29 +15,82 @@
 <div class="category-tree" style="margin-top: 24px; padding-left: 10px;">
     <ul style="list-style-type: none; padding-left: 16px; margin: 0; border-left: 2px solid var(--border);">
         {{- $type := .Type }}
-        {{- range $key, $value := .Data.Terms.Alphabetical }}
-            {{- $name := .Name }}
-            {{- $count := .Count }}
-            {{- with site.GetPage (printf "/%s/%s" $type $name) }}
-            <li style="position: relative; padding-left: 24px; margin-bottom: 28px;">
-                <div style="position: absolute; left: -16px; top: 14px; width: 22px; height: 2px; background: var(--border);"></div>
-                <div style="display: flex; align-items: center; gap: 8px;">
-                    <span style="font-size: 1.2rem;">📂</span>
-                    <a href="{{ .Permalink }}" style="font-size: 1.2rem; font-weight: 700; text-decoration: none; color: var(--primary);">
-                        {{ .LinkTitle }}
-                    </a>
-                    <span style="font-size: 0.85rem; padding: 2px 10px; background: var(--entry); border: 1px solid var(--border); border-radius: 12px; color: var(--secondary); font-weight: 600;">
-                        {{ $count }}개의 글
-                    </span>
-                </div>
-                {{- if .Description }}
-                <div style="font-size: 0.95rem; color: var(--secondary); margin-top: 8px; margin-left: 32px; line-height: 1.5;">
-                    {{ .Description }}
-                </div>
-                {{- end }}
-            </li>
+        {{- $terms := .Data.Terms }}
+        
+        <!-- 1. Tech 메인 카테고리 (클릭 불가, 총 글 수 표시) -->
+        {{- $subcats := slice "storage" "simplivityvme" "ai" "linux" }}
+        {{- $totalTechCount := 0 }}
+        {{- range $subcats }}
+            {{- $subTerm := index $terms . }}
+            {{- if $subTerm }}
+                {{- $totalTechCount = add $totalTechCount $subTerm.Count }}
             {{- end }}
         {{- end }}
+
+        <li style="position: relative; padding-left: 24px; margin-bottom: 24px;">
+            <div style="position: absolute; left: -16px; top: 14px; width: 22px; height: 2px; background: var(--border);"></div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 1.3rem;">📂</span>
+                <!-- Tech는 눌러도 반응 없도록 (링크 없이 일반 텍스트 처리) -->
+                <span style="font-size: 1.3rem; font-weight: 700; color: var(--primary); cursor: default; user-select: none;">
+                    Tech
+                </span>
+                <span style="font-size: 0.85rem; padding: 2px 10px; background: var(--entry); border: 1px solid var(--border); border-radius: 12px; color: var(--secondary); font-weight: 600;">
+                    {{ $totalTechCount }}개의 글
+                </span>
+            </div>
+            <div style="font-size: 0.95rem; color: var(--secondary); margin-top: 8px; margin-left: 32px; line-height: 1.5;">
+                16년 차 IT 시스템 엔지니어가 데이터센터 현장에서 직접 부딪히며 겪은 서버, 스토리지, HCI(SimpliVity/VME), Linux 트러블슈팅과 무중단 인프라 구축 실무를 생생한 기술 노트 형식으로 기록합니다.
+            </div>
+
+            <!-- 서브 카테고리 트리 목록 (눌러야 해당 관련 글들이 나옴) -->
+            <ul style="list-style-type: none; padding-left: 24px; margin-top: 16px; margin-left: 8px; border-left: 2px dashed var(--border);">
+                {{- range $subcats }}
+                    {{- $subTerm := index $terms . }}
+                    {{- if $subTerm }}
+                    {{- with site.GetPage (printf "/categories/%s" .) }}
+                    <li style="position: relative; padding-left: 20px; margin-bottom: 14px;">
+                        <div style="position: absolute; left: -24px; top: 12px; width: 20px; height: 2px; background: var(--border);"></div>
+                        <div style="display: flex; align-items: center; gap: 8px;">
+                            <span style="font-size: 1.1rem;">📁</span>
+                            <a href="{{ .Permalink }}" style="font-size: 1.1rem; font-weight: 600; text-decoration: none; color: var(--primary);">
+                                {{ .LinkTitle }}
+                            </a>
+                            <span style="font-size: 0.8rem; padding: 1px 8px; background: var(--entry); border: 1px solid var(--border); border-radius: 10px; color: var(--secondary); font-weight: 500;">
+                                {{ $subTerm.Count }}개의 글
+                            </span>
+                        </div>
+                    </li>
+                    {{- end }}
+                    {{- end }}
+                {{- end }}
+            </ul>
+        </li>
+
+        <!-- 2. 일상 메인 카테고리 (클릭 가능) -->
+        {{- with site.GetPage "/categories/일상" }}
+        {{- $dailyTerm := index $terms "일상" }}
+        <li style="position: relative; padding-left: 24px; margin-bottom: 28px;">
+            <div style="position: absolute; left: -16px; top: 14px; width: 22px; height: 2px; background: var(--border);"></div>
+            <div style="display: flex; align-items: center; gap: 8px;">
+                <span style="font-size: 1.3rem;">📂</span>
+                <a href="{{ .Permalink }}" style="font-size: 1.3rem; font-weight: 700; text-decoration: none; color: var(--primary);">
+                    {{ .LinkTitle }}
+                </a>
+                {{- if $dailyTerm }}
+                <span style="font-size: 0.85rem; padding: 2px 10px; background: var(--entry); border: 1px solid var(--border); border-radius: 12px; color: var(--secondary); font-weight: 600;">
+                    {{ $dailyTerm.Count }}개의 글
+                </span>
+                {{- end }}
+            </div>
+            {{- if .Description }}
+            <div style="font-size: 0.95rem; color: var(--secondary); margin-top: 8px; margin-left: 32px; line-height: 1.5;">
+                {{ .Description }}
+            </div>
+            {{- end }}
+        </li>
+        {{- end }}
+
     </ul>
 </div>
 {{- else }}
@@ -56,5 +109,3 @@
 {{- end }}
 
 {{- end }}
-
-

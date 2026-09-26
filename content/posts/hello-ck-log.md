@@ -3,8 +3,9 @@ title: "CK notes를 시작하며: 시스템 엔지니어의 기술 노트"
 description: "16년 차 IT 시스템 엔지니어 CK notes의 인프라 구축, 트러블슈팅 경험 및 소소한 일상을 담아가는 기술 기록 블로그 첫 출발 소개입니다."
 date: 2026-08-26T21:00:00+09:00
 draft: false
-categories: ["일상"]
 tags: ["Blog", "Intro", "SystemEngineer"]
+categories:
+  - 일상
 ---
 
 안녕하세요! IT 시스템 엔지니어로서 실무 현장을 누비며 겪은 생생한 경험과 소소한 일상을 기록하는 **CK notes**입니다.

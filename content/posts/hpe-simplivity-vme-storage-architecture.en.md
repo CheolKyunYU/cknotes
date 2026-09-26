@@ -3,8 +3,9 @@ title: "Comparison of HPE SimpliVity VME storage architecture and SimpliVity on 
 description: "Compare the licensing savings and software-defined storage strengths of HPE SimpliVity's RAID+RAIN dual protection architecture, NFS datastores, and VME versus VMware-based."
 date: 2025-12-31T22:00:00+09:00
 draft: false
-categories: ["Tech"]
 tags: ["HPE", "SimpliVity", "VME", "Storage", "VMware", "NFS", "RAID", "RAIN"]
+categories:
+  - SimpliVityVME
 ---
 
 

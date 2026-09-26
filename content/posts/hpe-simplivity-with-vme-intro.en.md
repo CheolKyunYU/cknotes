@@ -3,8 +3,9 @@ title: "Introducing HPE SimpliVity With VME"
 description: "Introduce the high availability, data efficiency, and key features of HPE SimpliVity VME virtualization infrastructure solutions that integrate compute, storage, and network into a single platform."
 date: 2025-12-31T21:00:00+09:00
 draft: false
-categories: ["Tech"]
 tags: ["HPE", "SimpliVity", "VME", "HCI", "Infrastructure"]
+categories:
+  - SimpliVityVME
 ---
 
 

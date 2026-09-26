@@ -1,1 +1,54 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Categories on CK notes</title><link>https://cknotes.kr/categories/</link><description>Recent content in Categories on CK notes</description><generator>Hugo</generator><language>ko-KR</language><lastBuildDate>Mon, 14 Sep 2026 21:55:00 +0900</lastBuildDate><atom:link href="https://cknotes.kr/categories/index.xml" rel="self" type="application/rss+xml"/><item><title>Tech</title><link>https://cknotes.kr/categories/tech/</link><pubDate>Mon, 14 Sep 2026 21:55:00 +0900</pubDate><guid>https://cknotes.kr/categories/tech/</guid><description>서버, 스토리지, HCI, 가상화(SimpliVity, VME, VMware) 및 리눅스 트러블슈팅 등 실무 인프라 구축 경험과 노하우를 기록하는 Tech 카테고리입니다.</description></item><item><title>일상</title><link>https://cknotes.kr/categories/%EC%9D%BC%EC%83%81/</link><pubDate>Mon, 07 Sep 2026 10:45:00 +0900</pubDate><guid>https://cknotes.kr/categories/%EC%9D%BC%EC%83%81/</guid><description>IT 엔지니어로서의 소소한 일상, 블로그 운영 소회, 차량 정비 기록 및 생각 정리를 자유롭게 공유하는 일상 카테고리입니다.</description></item><item><title>여행</title><link>https://cknotes.kr/categories/%EC%97%AC%ED%96%89/</link><pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate><guid>https://cknotes.kr/categories/%EC%97%AC%ED%96%89/</guid><description>업무에서 벗어나 국내외 다양한 장소를 여행하며 남긴 사진과 감상, 추천 여행지 기록을 아카이빙하는 여행 카테고리입니다.</description></item></channel></rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Categories on CK notes</title>
+    <link>http://localhost:1313/categories/</link>
+    <description>Recent content in Categories on CK notes</description>
+    <generator>Hugo</generator>
+    <language>ko-KR</language>
+    <lastBuildDate>Sat, 26 Sep 2026 13:30:00 +0900</lastBuildDate>
+    <atom:link href="http://localhost:1313/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Storage</title>
+      <link>http://localhost:1313/categories/storage/</link>
+      <pubDate>Sat, 26 Sep 2026 13:30:00 +0900</pubDate>
+      <guid>http://localhost:1313/categories/storage/</guid>
+      <description>HPE Alletra (6000/9000/MP B10K), Primera, 3PAR 등 enterprise 엔지니어의 스토리지 구축, OS/펌웨어 업그레이드, 트러블슈팅 및 운영 노하우를 기록합니다.</description>
+    </item>
+    <item>
+      <title>Linux</title>
+      <link>http://localhost:1313/categories/linux/</link>
+      <pubDate>Tue, 22 Sep 2026 14:00:00 +0900</pubDate>
+      <guid>http://localhost:1313/categories/linux/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>SimpliVityVME</title>
+      <link>http://localhost:1313/categories/simplivityvme/</link>
+      <pubDate>Mon, 14 Sep 2026 21:55:00 +0900</pubDate>
+      <guid>http://localhost:1313/categories/simplivityvme/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>일상</title>
+      <link>http://localhost:1313/categories/%EC%9D%BC%EC%83%81/</link>
+      <pubDate>Mon, 07 Sep 2026 10:45:00 +0900</pubDate>
+      <guid>http://localhost:1313/categories/%EC%9D%BC%EC%83%81/</guid>
+      <description>전국 고객사 현장 출장의 든든한 발이 되어주는 파트너 차량(넥쏘 등)의 정비·수리 경험담과 소모품 관리기, 그리고 IT 테크와는 거리를 둔 엔지니어의 진솔한 일상 이야기를 담아냅니다.</description>
+    </item>
+    <item>
+      <title>AI</title>
+      <link>http://localhost:1313/categories/ai/</link>
+      <pubDate>Sat, 05 Sep 2026 20:30:00 +0900</pubDate>
+      <guid>http://localhost:1313/categories/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>Tech</title>
+      <link>http://localhost:1313/categories/tech/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      <guid>http://localhost:1313/categories/tech/</guid>
+      <description>16년 차 IT 시스템 엔지니어가 데이터센터 현장에서 직접 부딪치며 겪은 서버, 스토리지, HCI(SimpliVity/VME), Linux 트러블슈팅과 무중단 인프라 구축 실무를 생생한 기술 노트 형식으로 기록합니다.</description>
+    </item>
+  </channel>
+</rss>
