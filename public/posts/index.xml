@@ -109,7 +109,7 @@
       <description>SimpliVity 2노드 클러스터 구축 전 필수인 Arbiter를 VME Manager 라이선스 코어 카운트 차감 없이, KVM virt-install과 VNC로 무과금 수동 생성하는 실무 우회 가이드입니다.</description>
     </item>
     <item>
-      <title>HPE SimpliVity VME 스토리지 아키텍처 및 VMware 기반 SimpliVity 비교</title>
+      <title>HPE SimpliVity VME 스토리지 아키텍처 및 VMware 기반 SimpliVity 비교 (16년 차 엔지니어의 실무 분석)</title>
       <link>http://localhost:1313/posts/hpe-simplivity-vme-storage-architecture/</link>
       <pubDate>Wed, 31 Dec 2025 22:00:00 +0900</pubDate>
       <guid>http://localhost:1313/posts/hpe-simplivity-vme-storage-architecture/</guid>
