@@ -12,6 +12,24 @@
 {{- end }}
 
 {{- if eq .Type "categories" }}
+{{- $lang := site.Language.Lang }}
+{{- $postCountSuffix := "개의 글" }}
+{{- $techDesc := "16년 차 IT 시스템 엔지니어가 데이터센터 현장에서 직접 부딪히며 겪은 서버, 스토리지, HCI(SimpliVity/VME), Linux 트러블슈팅과 무중단 인프라 구축 실무를 생생한 기술 노트 형식으로 기록합니다." }}
+{{- $dailyTitle := "일상" }}
+{{- $dailyDesc := "전국 고객사 현장 출장의 든든한 발이 되어주는 파트너 차량(넥쏘 등)의 정비·수리 경험담과 소모품 관리기, 그리고 IT 테크와는 거리를 둔 엔지니어의 진솔한 일상 이야기를 담아냅니다." }}
+
+{{- if eq $lang "en" }}
+    {{- $postCountSuffix = "posts" }}
+    {{- $techDesc = "Field notes from a 16-year IT systems engineer documenting real-world datacenter experience across enterprise servers, storage, HCI (SimpliVity/VME), Linux troubleshooting, and high-availability infrastructure deployments." }}
+    {{- $dailyTitle = "Daily Life" }}
+    {{- $dailyDesc = "Practical maintenance, repairs, and care for fleet and commuter vehicles (such as the Nexo FCEV), along with genuine, down-to-earth reflections from an engineer's everyday life outside the datacenter." }}
+{{- else if eq $lang "jp" }}
+    {{- $postCountSuffix = "件の記事" }}
+    {{- $techDesc = "16年目のITシステムエンジニアがデータセンター現場で培ったサーバー、ストレージ、HCI(SimpliVity/VME)、Linuxのトラブルシューティングおよび無停止インフラ構築の実践技術ノートです。" }}
+    {{- $dailyTitle = "日常" }}
+    {{- $dailyDesc = "全国の顧客先出張を支える愛車(ネッソ等)のメンテナンス・整備記録や消耗品管理、そしてIT現場を離れたエンジニアの等身大の日常ストーリーを記録します。" }}
+{{- end }}
+
 <div class="category-tree" style="margin-top: 24px; padding-left: 10px;">
     <ul style="list-style-type: none; padding-left: 16px; margin: 0; border-left: 2px solid var(--border);">
         {{- $type := .Type }}
@@ -36,11 +54,11 @@
                     Tech
                 </span>
                 <span style="font-size: 0.85rem; padding: 2px 10px; background: var(--entry); border: 1px solid var(--border); border-radius: 12px; color: var(--secondary); font-weight: 600;">
-                    {{ $totalTechCount }}개의 글
+                    {{ $totalTechCount }} {{ $postCountSuffix }}
                 </span>
             </div>
             <div style="font-size: 0.95rem; color: var(--secondary); margin-top: 8px; margin-left: 32px; line-height: 1.5;">
-                16년 차 IT 시스템 엔지니어가 데이터센터 현장에서 직접 부딪히며 겪은 서버, 스토리지, HCI(SimpliVity/VME), Linux 트러블슈팅과 무중단 인프라 구축 실무를 생생한 기술 노트 형식으로 기록합니다.
+                {{ $techDesc }}
             </div>
 
             <!-- 서브 카테고리 트리 목록 (눌러야 해당 관련 글들이 나옴) -->
@@ -57,7 +75,7 @@
                                 {{ .LinkTitle }}
                             </a>
                             <span style="font-size: 0.8rem; padding: 1px 8px; background: var(--entry); border: 1px solid var(--border); border-radius: 10px; color: var(--secondary); font-weight: 500;">
-                                {{ $subTerm.Count }}개의 글
+                                {{ $subTerm.Count }} {{ $postCountSuffix }}
                             </span>
                         </div>
                     </li>
@@ -75,19 +93,17 @@
             <div style="display: flex; align-items: center; gap: 8px;">
                 <span style="font-size: 1.3rem;">📂</span>
                 <a href="{{ .RelPermalink }}" style="font-size: 1.3rem; font-weight: 700; text-decoration: none; color: var(--primary);">
-                    {{ .LinkTitle }}
+                    {{ $dailyTitle }}
                 </a>
                 {{- if $dailyTerm }}
                 <span style="font-size: 0.85rem; padding: 2px 10px; background: var(--entry); border: 1px solid var(--border); border-radius: 12px; color: var(--secondary); font-weight: 600;">
-                    {{ $dailyTerm.Count }}개의 글
+                    {{ $dailyTerm.Count }} {{ $postCountSuffix }}
                 </span>
                 {{- end }}
             </div>
-            {{- if .Description }}
             <div style="font-size: 0.95rem; color: var(--secondary); margin-top: 8px; margin-left: 32px; line-height: 1.5;">
-                {{ .Description }}
+                {{ $dailyDesc }}
             </div>
-            {{- end }}
         </li>
         {{- end }}
 
