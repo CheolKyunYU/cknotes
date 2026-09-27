@@ -120,3 +120,27 @@ All blog posts (KO, EN, JP) must adhere to these standards to ensure natural, hu
    * **Korean**: Polite, refined honorifics (`~합니다`, `~입니다`).
    * **English**: Direct, clear imperative/indicative technical prose standard in enterprise IT manuals (Red Hat / HPE style).
    * **Japanese**: Natural, polite technical Japanese (`〜です・〜ます` or `〜である` structured clearly without translated-sounding phrasing).
+
+---
+
+## 9. Multilingual Translation & Page Generation Protocol (다국어 표준 프롬프트)
+
+When creating or modifying technical posts in CK log, the agent MUST execute the following 3-language generation protocol simultaneously:
+
+1. **Leaf Bundle Triad Structure**:
+   * `content/posts/<post-folder>/index.md` (Korean Master)
+   * `content/posts/<post-folder>/index.en.md` (Full English Translation)
+   * `content/posts/<post-folder>/index.jp.md` (Full Japanese Translation - Note: `.jp.md`, not `.ja.md`!)
+
+2. **Strict Heading-Image Layout Rule**:
+   * **Step Headings Must Come First**: Always write `### Step X. Title`, followed by command/description text, and then the figure shortcode `{{< figure src="step-XX.jpg" caption="..." >}}`.
+   * **Never place figures above the step heading**.
+   * **Sequential Step Numbering**: Steps must be numbered continuously (Step 1, Step 2, Step 3, Step 4...).
+
+3. **Multilingual Image & Link Compatibility**:
+   * Always use `{{< figure src="filename.jpg" caption="..." >}}` (or markdown standard `![caption](filename.jpg)`).
+   * Do NOT hardcode language subdirectories (`/en/`, `/jp/`) in image paths; the global shortcode automatically handles path resolution across all languages.
+
+4. **Zero-Omission Translation Standard**:
+   * English (`index.en.md`) and Japanese (`index.jp.md`) must be **100% translated in the full body text**, not just frontmatter titles.
+   * Preserve code blocks, command syntaxes, figure filenames, and table formats identically across all 3 files.
