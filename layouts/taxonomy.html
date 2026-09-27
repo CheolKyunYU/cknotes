@@ -53,7 +53,7 @@
                         <div style="position: absolute; left: -24px; top: 12px; width: 20px; height: 2px; background: var(--border);"></div>
                         <div style="display: flex; align-items: center; gap: 8px;">
                             <span style="font-size: 1.1rem;">📁</span>
-                            <a href="{{ .Permalink }}" style="font-size: 1.1rem; font-weight: 600; text-decoration: none; color: var(--primary);">
+                            <a href="{{ .RelPermalink }}" style="font-size: 1.1rem; font-weight: 600; text-decoration: none; color: var(--primary);">
                                 {{ .LinkTitle }}
                             </a>
                             <span style="font-size: 0.8rem; padding: 1px 8px; background: var(--entry); border: 1px solid var(--border); border-radius: 10px; color: var(--secondary); font-weight: 500;">
@@ -74,7 +74,7 @@
             <div style="position: absolute; left: -16px; top: 14px; width: 22px; height: 2px; background: var(--border);"></div>
             <div style="display: flex; align-items: center; gap: 8px;">
                 <span style="font-size: 1.3rem;">📂</span>
-                <a href="{{ .Permalink }}" style="font-size: 1.3rem; font-weight: 700; text-decoration: none; color: var(--primary);">
+                <a href="{{ .RelPermalink }}" style="font-size: 1.3rem; font-weight: 700; text-decoration: none; color: var(--primary);">
                     {{ .LinkTitle }}
                 </a>
                 {{- if $dailyTerm }}
@@ -101,7 +101,7 @@
             {{- $count := .Count }}
             {{- with site.GetPage (printf "/%s/%s" $type $name) }}
             <li>
-                <a href="{{ .Permalink }}">{{ .LinkTitle }} <sup><strong><sup>{{ $count }}</sup></strong></sup> </a>
+                <a href="{{ .RelPermalink }}">{{ .LinkTitle }} <sup><strong><sup>{{ $count }}</sup></strong></sup> </a>
             </li>
         {{- end }}
     {{- end }}
