@@ -51,7 +51,7 @@ Navigate to **System ➔ Software** from the left-hand navigation bar.
 When connected to the internet, the recommended `10.5.60` and latest `10.6.0` packages appear automatically under the **Staged updates** list ready for deployment.
 
 > 💡 **For Air-Gapped (Offline) Environments**:  
-> Click **`Load an update package`** at the top right to manually upload the pre-downloaded firmware package (`tar.gz`) directly via your web browser.
+> Click **`Load an update package`** at the top right to manually upload the pre-downloaded firmware ISO package (e.g., `OS-10.5.50.19.iso` or `OS-10.6.0.xx.iso`) directly via your web browser.
 
 {{< figure src="step-02-software-updates.png" caption="Step 2-1. Software menu displaying automatically staged 10.6.0 firmware update packages" >}}
 
@@ -137,6 +137,9 @@ Navigate to **System ➔ Details / Software** in the new interface to verify ove
 ### Precaution 2: Temporary Web Console Freezing at 44% Version Switch
 * **Symptom**: The browser may appear unresponsive or show the updating popup for 1–2 minutes during node reboots.
 * **Resolution**: This is normal behavior during web service daemon restarts. Do not close or spam-refresh the browser; the page will automatically refresh into the new white UI once complete.
+
+### Precaution 3: When In-House Execution is Difficult (Mandatory Recommendation for HPE Engineer Support)
+* **Recommendation**: HPE Alletra Storage MP powers critical enterprise tier-1 workloads. If your in-house team is unfamiliar with the process, if persistent warnings in Readiness Checks cannot be resolved internally, or if executing offline manual package updates, **do not attempt to force the upgrade alone. Strongly request on-site or remote assistance from certified HPE Pointnext Services or authorized partner engineers** to ensure zero data disruption.
 
 ---
 
