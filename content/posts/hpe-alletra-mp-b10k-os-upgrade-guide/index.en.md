@@ -51,7 +51,7 @@ Navigate to **System ➔ Software** from the left-hand navigation bar.
 When connected to the internet, the recommended `10.5.60` and latest `10.6.0` packages appear automatically under the **Staged updates** list ready for deployment.
 
 > 💡 **For Air-Gapped (Offline) Environments**:  
-> Click **`Load an update package`** at the top right to manually upload the pre-downloaded firmware ISO package (e.g., `OS-10.5.50.19.iso` or `OS-10.6.0.xx.iso`) directly via your web browser.
+> Click **`Load an update package`** at the top right to manually upload the pre-downloaded firmware ISO package (e.g., `OS-10.6.0.xx.iso`) directly via your web browser.
 
 {{< figure src="step-02-software-updates.png" caption="Step 2-1. Software menu displaying automatically staged 10.6.0 firmware update packages" >}}
 
