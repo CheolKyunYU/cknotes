@@ -165,3 +165,6 @@ Navigate to **System ➔ Details / Software** in the new interface to verify ove
 * **Core Upgrade Workflow**:
   - Check 10.5.50 Dashboard ➜ Verify Staged 10.6.0 Package ➜ **Validate 100% Passed on System Readiness Checks (Mandatory)** ➜ Execute `Update software` ➜ Non-disruptive Node Reboots & New White UI Transition ➜ Final Verification on 10.6.0.
   - With rigorous pre-checks, the entire upgrade completes seamlessly in about an hour.
+
+> 📢 **Coming Up Next**:  
+> In this guide, we focused on the step-by-step 10.6.0 OS upgrade procedure. **In the next article, we will dive deep into the completely redesigned white tree-navigation Web UI of OS 10.6.0—exploring new dashboard widgets, updated menu workflows, and enhanced volume/port management features!** Stay tuned!
