@@ -5,7 +5,7 @@ date: 2026-10-04T17:30:00+09:00
 draft: false
 tags: ["HPE", "Alletra", "Alletra9060", "Alletra9000", "Primera", "OSUpgrade", "Storage", "Tech"]
 categories:
-  - Tech
+  - Storage
 ---
 
 > **글쓴이**: 16년 차 IT 시스템 엔지니어 (CK notes)  
