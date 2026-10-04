@@ -169,3 +169,8 @@ enableRobotsTXT = true
   lastmod = ["lastmod", ":git", "date"]
   publishDate = ["publishDate", "date"]
   expiryDate = ["expiryDate"]
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
