@@ -98,8 +98,13 @@
 <link rel="{{ .Rel }}" type="{{ .MediaType.Type | html }}" href="{{ .Permalink | safeURL }}" title="{{ .Name }}">
 {{ end -}}
 {{- range .AllTranslations -}}
-<link rel="alternate" hreflang="{{ .Lang }}" href="{{ .Permalink }}">
-{{ end -}}
+{{- $langCode := .Lang -}}
+{{- if eq .Lang "jp" }}{{ $langCode = "ja" }}{{ end -}}
+<link rel="alternate" hreflang="{{ $langCode }}" href="{{ .Permalink }}">
+{{- if eq .Lang "ko" }}
+<link rel="alternate" hreflang="x-default" href="{{ .Permalink }}">
+{{- end }}
+{{- end -}}
 
 <noscript>
     <style>
