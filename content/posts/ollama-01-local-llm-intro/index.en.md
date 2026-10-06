@@ -1,5 +1,5 @@
 ---
-title: "[Ollama] Part 1. What is Ollama, a Local AI Running Free on Your PC? (Concepts & Features)"
+title: "[Ollama] Part 1. Local AI Concepts & Features Running Free on PC"
 description: "An architectural overview and practical guide to Ollama, enabling lightweight, offline open-source LLMs in air-gapped datacenter environments on commodity laptop hardware."
 date: 2026-09-05T19:00:00+09:00
 draft: false

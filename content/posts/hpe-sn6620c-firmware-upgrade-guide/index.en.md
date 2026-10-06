@@ -1,5 +1,5 @@
 ---
-title: "[HPE SN6620C / Cisco MDS] 9.2.2 → 9.4.5 OS Firmware Upgrade Hands-on Guide"
+title: "[HPE SN6620C] Cisco NX-OS 9.4.5 Firmware Upgrade Guide"
 description: "A step-by-step field guide for upgrading HPE SN6620C (Cisco MDS 9148T OEM) switches from version check, Rebex Tiny SCP file transfer, install all execution, to bootflash cleanup."
 date: 2026-09-27T15:00:00+09:00
 draft: false

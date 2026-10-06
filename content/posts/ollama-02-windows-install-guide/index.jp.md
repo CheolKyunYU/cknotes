@@ -1,5 +1,5 @@
 ---
-title: "【Ollama】第2編：Windows 11環境 Ollamaインストールおよび初モデル駆動ガイド"
+title: "[Ollama] 第2弾：Windows 11インストールと初回モデル起動手順"
 description: "Windows 11インストーラを使用したOllamaのインストール、トレイアイコンのバックグラウンド駆動の確認、最初の軽量モデルのダウンロード、およびターミナル対話を整理します。"
 date: 2026-09-05T19:20:00+09:00
 draft: false

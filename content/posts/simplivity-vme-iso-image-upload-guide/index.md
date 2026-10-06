@@ -1,5 +1,5 @@
 ---
-title: "[HPE SimpliVity & VME] ISO 가상 이미지 등록 및 NFS 스토리지 연동 실전 가이드"
+title: "[HPE VME] ISO 가상 이미지 등록 및 NFS 연동 실전 가이드"
 description: "VME Manager 웹 콘솔에서 NFSv3 파일 공유 스토리지를 연동하고, OS 설치용 ISO 이미지를 라이브러리에 업로드하여 가상머신에 마운트하는 전체 과정을 정리합니다."
 date: 2026-09-14T21:55:00+09:00
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: "[Lifestyle/Car Maintenance] Field Workhorse Maintenance: Engine Oil Change Log (feat. Gongimnara)"
+title: "[Lifestyle] Field Workhorse Engine Oil Change (feat. Gongimnara)"
 description: "A practical car maintenance log covering 234,000 km and 246,000 km oil changes using Gongimnara, MANN filters, and ZIC engine oil."
 date: 2026-08-31T22:30:00+09:00
 draft: false

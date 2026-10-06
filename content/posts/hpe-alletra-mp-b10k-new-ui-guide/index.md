@@ -1,5 +1,5 @@
 ---
-title: "[HPE Alletra MP B10K] ArcusOS 10.6.0 신규 화이트 트리 웹 UI 분석 및 실무 가이드"
+title: "[HPE Alletra MP B10K] ArcusOS 10.6.0 신규 UI 실무 가이드"
 description: "HPE Alletra Storage MP B10K(B10120) 스토리지의 10.6.0 OS 신규 화이트 트리 UI 구조 분석, 6대 핵심 메뉴 체계 및 주요 관리 기능 실무 가이드."
 date: 2026-09-30T07:00:00+09:00
 draft: false

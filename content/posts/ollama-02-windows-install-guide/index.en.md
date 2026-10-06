@@ -1,5 +1,5 @@
 ---
-title: "[Ollama] Part 2. Windows 11 Ollama Installation & First Model Setup Guide"
+title: "[Ollama] Part 2. Windows 11 Installation & First Model Setup Guide"
 description: "A complete walkthrough of installing Ollama on Windows 11, verifying background services, downloading lightweight models, and chatting via CLI prompt."
 date: 2026-09-05T19:20:00+09:00
 draft: false

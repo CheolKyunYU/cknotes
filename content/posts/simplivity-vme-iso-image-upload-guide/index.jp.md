@@ -1,5 +1,5 @@
 ---
-title: "【HPE SimpliVity & VME】ISO仮想イメージ登録およびNFSストレージ連携実践ガイド"
+title: "[HPE VME] ISO仮想イメージ登録とNFSストレージ連携"
 description: "VME Manager WebコンソールでのNFSv3ファイル共有ストレージ連携から、OSインストール用ISOイメージの仮想ライブラリ登録、VMへのマウント手順までを詳しく解説します。"
 date: 2026-09-14T21:55:00+09:00
 draft: false

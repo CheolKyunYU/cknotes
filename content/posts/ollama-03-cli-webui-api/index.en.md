@@ -1,5 +1,5 @@
 ---
-title: "[Ollama] Part 3. Ollama Practical Applications: Terminal Chat, WebUI, and REST API"
+title: "[Ollama] Part 3. CLI Advanced Tips to WebUI & API Integration"
 description: "A comprehensive summary of Ollama CLI management commands, ChatGPT-style WebUI (Chatbox) integration, tips for remote connection from another PC, and know-how on using Python/API."
 date: 2026-09-05T20:30:00+09:00
 draft: false

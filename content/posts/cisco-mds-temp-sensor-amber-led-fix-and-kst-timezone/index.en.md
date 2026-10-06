@@ -1,5 +1,5 @@
 ---
-title: "[Cisco MDS / HPE SN6620C] Fixing Temp Sensor Amber LED Bug & Timezone Setup"
+title: "[Cisco MDS] Fixing Temp Sensor Amber LED & Timezone Setup"
 description: "Troubleshooting false temperature Amber LED alarms in Cisco MDS 9148T / HPE SN6620C NX-OS 9.2.2, resolution via 9.4.5 upgrade, and configuring Timezone."
 date: 2026-09-27T15:30:00+09:00
 draft: false

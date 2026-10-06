@@ -1,5 +1,5 @@
 ---
-title: "[HPE SimpliVity & VME] Practical Guide to ISO Image Registration & NFS Storage Integration"
+title: "[HPE VME] ISO Image Registration & NFS Storage Integration Guide"
 description: "End-to-end walkthrough of attaching NFSv3 file share storage in VME Manager, uploading OS installation ISO images to the virtual library, and mounting them to virtual instances."
 date: 2026-09-14T21:55:00+09:00
 draft: false

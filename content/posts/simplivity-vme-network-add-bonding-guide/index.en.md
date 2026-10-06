@@ -1,5 +1,5 @@
 ---
-title: "[HPE VME & SimpliVity] HVM Virtualization Network Addition & Bonding Guide"
+title: "[HPE VME] HVM Network Addition & Bonding Guide"
 description: "Standard procedure from host network bonding in HPE VM Console (TUI) to OVS router registration in VME Manager and VM assignment. Includes single NIC bonding principles and OVS troubleshooting."
 date: 2026-09-14T21:50:00+09:00
 draft: false

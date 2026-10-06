@@ -1,5 +1,5 @@
 ---
-title: "[HPE Alletra MP B10K] 10.5.50 → 10.6.0 OS Firmware Upgrade Field Guide"
+title: "[HPE Alletra MP B10K] OS 10.6.0 Non-Disruptive Upgrade Guide"
 description: "A comprehensive hands-on field guide for performing a non-disruptive OS upgrade from 10.5.50 to 10.6.0 on HPE Alletra Storage MP B10K (B10120), featuring mandatory System Readiness Checks and the brand-new web UI transition."
 date: 2026-09-28T21:00:00+09:00
 draft: false

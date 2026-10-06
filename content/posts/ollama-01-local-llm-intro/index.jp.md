@@ -1,5 +1,5 @@
 ---
-title: "【Ollama】第1編：PC上で無料稼働するローカルAI、Ollamaの概念と特徴"
+title: "[Ollama] 第1弾：PCで完全無料稼働するローカルAIの概念と特徴"
 description: "インターネットレスの閉鎖網(Air-gap)環境や一般ノートパソコンでも軽く駆動されるローカルLLMツールOllamaの概念と特徴、推奨モデルをまとめます。"
 date: 2026-09-05T19:00:00+09:00
 draft: false

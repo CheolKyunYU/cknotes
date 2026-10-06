@@ -1,5 +1,5 @@
 ---
-title: "[Linux 실무] 재부팅 없이 온라인으로 디스크 용량 증설하기: LVM 확장 및 XFS/EXT4 완벽 가이드"
+title: "[Linux 실무] 재부팅 없는 온라인 디스크 증설 및 LVM 확장"
 description: "운영 중인 리눅스 서버에서 서비스 중단 없이 가상 디스크를 증설하고 SCSI 버스 재스캔, LVM 확장(pvresize, lvextend), XFS/EXT4 파일시스템 적용까지의 실무 절차를 정리합니다."
 date: 2026-09-22T14:00:00+09:00
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: "[Cisco MDS / HPE SN6620C] Temp 센서 오진단 Amber LED 해결 및 Timezone 설정 가이드"
+title: "[Cisco MDS] Temp 센서 Amber LED 해결 및 타임존 설정"
 description: "Cisco MDS 9148T / HPE SN6620C 9.2.2 버전 운영 시 발생하는 가짜 온도 경고(Amber LED)의 원인과 9.4.5 OS 업그레이드를 통한 조치, 타임존(Timezone) 설정 방법을 다룹니다."
 date: 2026-09-27T15:30:00+09:00
 draft: false

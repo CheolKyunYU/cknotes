@@ -1,5 +1,5 @@
 ---
-title: "[HPE SN6620C / Cisco MDS] 9.2.2 → 9.4.5 OS 펌웨어 업그레이드 실전 가이드"
+title: "[HPE SN6620C] Cisco NX-OS 9.4.5 펌웨어 업그레이드 가이드"
 description: "HPE SN6620C(Cisco MDS 9148T OEM) 스위치에서 현재 버전 확인부터 Rebex Tiny SCP 파일 전송, install all 펌웨어 설치 및 delete 용량 정리까지의 표준 작업 절차입니다."
 date: 2026-09-27T15:00:00+09:00
 draft: false

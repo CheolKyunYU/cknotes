@@ -1,5 +1,5 @@
 ---
-title: "[Cisco MDS] SAN Switch SNMP v2c Setup & Key MIB Traps Configuration"
+title: "[Cisco MDS] SAN Switch SNMP v2c & Key Traps Setup"
 description: "A comprehensive guide on configuring SNMP v2c Community and Host Trap settings on Cisco MDS 9000 SAN switches, with selective MIB trap activation for NMS integration."
 date: 2026-09-07T09:50:00+09:00
 draft: false

@@ -1,5 +1,5 @@
 ---
-title: "[HPE Alletra 9060] Step-by-Step OS 9.6.30 Non-Disruptive Upgrade Procedure"
+title: "[HPE Alletra 9060] OS 9.6.30 Non-Disruptive Upgrade Procedure"
 description: "A complete step-by-step walkthrough for performing a non-disruptive HPE Alletra 9060 OS 9.6.30 upgrade, from package staging to rolling node reboots."
 date: 2026-10-04T17:30:00+09:00
 draft: false

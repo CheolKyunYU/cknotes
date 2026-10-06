@@ -1,5 +1,5 @@
 ---
-title: "[HPE SimpliVity & VME] Deploying an Arbiter VM via KVM CLI Without Licensing Costs"
+title: "[SimpliVity & VME] Deploying Arbiter VM via KVM CLI"
 description: "A battle-tested field guide on deploying the mandatory SimpliVity 2-node Arbiter VM using native KVM virt-install and VNC, avoiding expensive VME Manager core licensing charges."
 date: 2026-01-07T10:00:00+09:00
 draft: false

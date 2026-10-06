@@ -1,5 +1,5 @@
 ---
-title: "[HPE SimpliVity & VME] 라이선스 비용 없이 KVM CLI로 Arbiter VM 수동 구축하기"
+title: "[SimpliVity & VME] KVM CLI로 Arbiter VM 수동 구축하기"
 description: "SimpliVity 2노드 클러스터 구축 전 필수인 Arbiter를 VME Manager 라이선스 코어 카운트 차감 없이, KVM virt-install과 VNC로 무과금 수동 생성하는 실무 우회 가이드입니다."
 date: 2026-01-07T10:00:00+09:00
 draft: false

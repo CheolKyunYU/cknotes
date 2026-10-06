@@ -1,5 +1,5 @@
 ---
-title: "【Ollama】第3編：Ollamaの実践活用法：ターミナル対話からWebUI＆API連携まで"
+title: "[Ollama] 第3弾：CLI応用からWebUI・API連携まで"
 description: "Ollama CLI管理命令、ChatGPTスタイルのWebUI（Chatbox）連動、他のPCからリモート接続する蜂蜜チップ、Python/API活用ノウハウを総括します。"
 date: 2026-09-05T20:30:00+09:00
 draft: false

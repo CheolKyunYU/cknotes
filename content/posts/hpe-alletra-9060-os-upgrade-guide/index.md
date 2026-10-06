@@ -1,5 +1,5 @@
 ---
-title: "[HPE Alletra 9060] 그대로 따라하는 OS 9.6.30 무중단 업그레이드 작업 절차"
+title: "[HPE Alletra 9060] OS 9.6.30 무중단 업그레이드 실무 절차"
 description: "HPE Alletra 9060 스토리지 OS 9.6.30 무중단 업그레이드 전 과정을 실제 화면과 함께 쉽게 따라할 수 있도록 정리한 단계별 실무 작업 가이드."
 date: 2026-10-04T17:30:00+09:00
 draft: false

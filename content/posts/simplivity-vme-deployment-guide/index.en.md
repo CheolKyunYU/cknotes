@@ -1,5 +1,5 @@
 ---
-title: "[HPE SimpliVity & VME] 2-Node Virtualization Cluster Deployment A to Z"
+title: "[SimpliVity & VME] 2-Node Cluster Deployment Guide A to Z"
 description: "A comprehensive field guide covering end-to-end 2-node cluster deployment for HPE SimpliVity 6.2.0 and VME, including network isolation, Arbiter setup, and OVC troubleshooting."
 date: 2026-08-31T13:00:00+09:00
 draft: false

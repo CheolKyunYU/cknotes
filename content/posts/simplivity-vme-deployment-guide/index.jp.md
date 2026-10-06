@@ -1,5 +1,5 @@
 ---
-title: "【HPE SimpliVity & VME】2ノード仮想化クラスタ実戦構築 A to Z"
+title: "[SimpliVity & VME] 2ノードクラスタ構築ガイド A to Z"
 description: "HPE SimpliVity 6.2.0およびVMEによる2ノードクラスタ構築の全体ワークフロー、ネットワーク分離設計、Arbiter構成、OVC展開時のトラブルシューティングを総まとめします。"
 date: 2026-08-31T13:00:00+09:00
 draft: false

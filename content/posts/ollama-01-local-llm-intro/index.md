@@ -1,5 +1,5 @@
 ---
-title: "[Ollama] 1편. 내 PC에서 무료로 돌리는 로컬 AI, Ollama란 무엇인가? (개념 및 특징)"
+title: "[Ollama] 1편. PC에서 무료로 구동하는 로컬 AI 개념 및 특징"
 description: "인터넷 없는 폐쇄망(Air-gap) 환경과 일반 노트북에서도 가볍게 구동되는 로컬 LLM 도구 Ollama의 개념과 특징, 추천 모델을 정리합니다."
 date: 2026-09-05T19:00:00+09:00
 draft: false

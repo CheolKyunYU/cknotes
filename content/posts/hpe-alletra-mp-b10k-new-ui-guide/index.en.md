@@ -1,5 +1,5 @@
 ---
-title: "[HPE Alletra MP B10K] ArcusOS 10.6.0 New White Tree Web UI Deep Dive"
+title: "[HPE Alletra MP B10K] ArcusOS 10.6.0 New UI Hands-on Guide"
 description: "A comprehensive technical exploration of the redesigned white tree-navigation Web UI in HPE Alletra Storage MP B10K (ArcusOS 10.6.0), detailing core menu workflows, hardware monitoring, and storage management."
 date: 2026-09-30T07:00:00+09:00
 draft: false

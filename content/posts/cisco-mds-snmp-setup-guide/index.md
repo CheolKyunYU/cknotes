@@ -1,5 +1,5 @@
 ---
-title: "[Cisco MDS] SAN 스위치 SNMP v2c 설정 및 핵심 MIB Trap 구성 가이드"
+title: "[Cisco MDS] SAN 스위치 SNMP v2c 및 핵심 Trap 설정"
 description: "Cisco MDS 9000 SAN 스위치에서 NMS 연동을 위한 SNMP v2c Community 및 Host Trap 설정, 필수 MIB 알림 개별 활성화와 검증 방법을 정리합니다."
 date: 2026-09-07T09:50:00+09:00
 draft: false

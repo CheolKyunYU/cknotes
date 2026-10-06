@@ -1,5 +1,5 @@
 ---
-title: "[Lifestyle/Car Decision] 'The All-New NEXO Buyback' vs. '1st Gen Used NEXO' Cost Breakdown"
+title: "[Lifestyle] 'The All-New NEXO Buyback' vs. '1st Gen Used NEXO'"
 description: "Whether buying new or used, a hydrogen EV loses substantial value over 3 years. We break down the real-world costs and risks between the new NEXO guaranteed-buyback program and a heavily depreciated 1st-generation used NEXO."
 date: 2026-09-07T10:45:00+09:00
 draft: false

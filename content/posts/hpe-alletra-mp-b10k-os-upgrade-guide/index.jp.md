@@ -1,5 +1,5 @@
 ---
-title: "【HPE Alletra MP B10K】10.5.50 → 10.6.0 OSファームウェアアップグレード実践ガイド"
+title: "[HPE Alletra MP B10K] OS 10.6.0無停止アップグレードガイド"
 description: "HPE Alletra Storage MP B10K(B10120)における10.6.0 OS無停止アップグレードの全手順、必須となるSystem Readiness Checks事前検証、および大幅刷新された新ホワイトUIの適用ポイントを徹底解説します。"
 date: 2026-09-28T21:00:00+09:00
 draft: false
