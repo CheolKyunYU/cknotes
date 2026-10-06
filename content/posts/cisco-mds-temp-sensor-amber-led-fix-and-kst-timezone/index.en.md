@@ -1,17 +1,11 @@
 ---
-title: "[Cisco MDS / HPE SN6620C] Fixing NX-OS 9.2.2 Temp Sensor Amber LED Bug & Timezone Setting Guide"
+title: "[Cisco MDS / HPE SN6620C] Fixing Temp Sensor Amber LED Bug & Timezone Setup"
 description: "Troubleshooting false temperature Amber LED alarms in Cisco MDS 9148T / HPE SN6620C NX-OS 9.2.2, resolution via 9.4.5 upgrade, and configuring Timezone."
 date: 2026-09-27T15:30:00+09:00
 draft: false
 tags: ["Cisco", "MDS", "HPE", "SN6620C", "Temperature", "Amber LED", "Timezone", "Troubleshooting", "Storage", "SAN"]
 categories:
   - Storage
----
-
-> **Author**: 16-Year Senior IT Infrastructure Engineer (CK notes)  
-> **Target Device**: Cisco MDS 9000 Series / HPE SN6620C FC Switch  
-> **Symptom**: NX-OS 9.2.2 Temperature Sensor Polling Cosmetic Bug causing false Amber LED alarm
-
 ---
 
 ## 1. Background: Why Did the Switch Front Panel Light Up Amber in a Cold Server Room?

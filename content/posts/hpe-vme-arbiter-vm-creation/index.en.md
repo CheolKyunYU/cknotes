@@ -1,5 +1,5 @@
 ---
-title: "[HPE SimpliVity & VME] Deploying an Arbiter VM via KVM CLI Without Licensing Costs (Field Workaround by a 16-Year Engineer)"
+title: "[HPE SimpliVity & VME] Deploying an Arbiter VM via KVM CLI Without Licensing Costs"
 description: "A battle-tested field guide on deploying the mandatory SimpliVity 2-node Arbiter VM using native KVM virt-install and VNC, avoiding expensive VME Manager core licensing charges."
 date: 2026-01-07T10:00:00+09:00
 draft: false
@@ -8,12 +8,6 @@ aliases:
   - /en/posts/hpe-vme-arbiter-vm-creation/
 categories:
   - SimpliVityVME
----
-
-> **Author**: 16-Year IT Systems Field Engineer (CK notes)  
-> **Environment**: HPE SimpliVity 6.2.0, HPE VM Essentials (VME), KVM / libvirt Management Host  
-> **Arbiter OS**: Ubuntu 22.04.5 LTS Server
-
 ---
 
 When delivering an HPE SimpliVity with VME (VM Essentials) 2-node cluster to an enterprise customer, you will almost invariably hear the client's IT team request:

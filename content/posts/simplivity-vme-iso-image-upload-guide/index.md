@@ -10,11 +10,6 @@ categories:
   - SimpliVityVME
 ---
 
-> **환경 기준**: HPE Morpheus VM Essentials (VME) / HPE SimpliVity 6.2.0 (HVM 24.04 BaseOS)  
-> **참조 매뉴얼**: SimpliVity ISO 이미지 등록 방법 가이드
-
----
-
 HPE SimpliVity 6.2.0 및 VME(VM Essentials) 클러스터 배포를 마쳤다면, 이제 인프라 위에 실제 업무를 담당할 가상머신(VM, Instance)들을 생성하고 운영체제(Linux, Windows 등)를 설치할 단계입니다.
 
 VME 환경에서 가상머신을 생성하여 OS를 설치하려면 설치용 ISO 파일을 가상 이미지 라이브러리에 올려두어야 합니다. 특히 대용량 ISO 파일들이 안정적으로 저장되고 클러스터 내 모든 호스트가 공통으로 접근할 수 있도록, 사전에 NFS 파일 공유 스토리지(File Share)가 VME Manager에 연동되어 있어야 합니다.

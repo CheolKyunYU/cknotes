@@ -1,5 +1,5 @@
 ---
-title: "[HPE SimpliVity & VME] ISO仮想イメージ登録およびNFSストレージ連携実践ガイド"
+title: "【HPE SimpliVity & VME】ISO仮想イメージ登録およびNFSストレージ連携実践ガイド"
 description: "VME Manager WebコンソールでのNFSv3ファイル共有ストレージ連携から、OSインストール用ISOイメージの仮想ライブラリ登録、VMへのマウント手順までを詳しく解説します。"
 date: 2026-09-14T21:55:00+09:00
 draft: false
@@ -8,11 +8,6 @@ aliases:
   - /posts/simplivity-vme-iso-image-upload-guide/
 categories:
   - SimpliVityVME
----
-
-> **環境基準**: HPE Morpheus VM Essentials (VME) / HPE SimpliVity 6.2.0 (HVM 24.04 BaseOS)  
-> **参照マニュアル**: SimpliVity ISOイメージ登録手順ガイド
-
 ---
 
 HPE SimpliVity 6.2.0およびVME（VM Essentials）クラスターのデプロイが完了したら、次はインフラ上で実業務を担う仮想マシン（VM、Instance）を作成し、OS（Linux、Windowsなど）をインストールする段階に入ります。

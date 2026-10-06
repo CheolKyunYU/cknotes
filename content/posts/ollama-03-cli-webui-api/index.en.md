@@ -1,5 +1,5 @@
 ---
-title: "[Ollama] Part 3. How to use Ollama in practice: From CLI advanced tips to WebUI and API integration"
+title: "[Ollama] Part 3. Ollama Practical Applications: Terminal Chat, WebUI, and REST API"
 description: "A comprehensive summary of Ollama CLI management commands, ChatGPT-style WebUI (Chatbox) integration, tips for remote connection from another PC, and know-how on using Python/API."
 date: 2026-09-05T20:30:00+09:00
 draft: false
@@ -9,10 +9,6 @@ aliases:
 categories:
   - AI
 ---
-
-
-> **Author**: CK notes  
-> **Environment**: Windows 11 (Standard business laptop)
 
 > 📌 **Local LLM on My PC: Ollama Practical Series**
 > 

@@ -1,5 +1,5 @@
 ---
-title: "HPE Alletra 6000 OS (Firmware) Upgrade Field Guide & Troubleshooting"
+title: "[HPE Alletra 6000] OS Firmware Upgrade Hands-on Guide"
 date: 2026-09-26T13:30:00+09:00
 tags:
   - HPE
@@ -12,12 +12,12 @@ categories:
   - Storage
 ---
 
-While official vendor manuals exist, this guide is a real-world field record documenting the OS upgrade process using the new HPE Alletra 6000 UI. For beginners, the lack of step-by-step UI screenshots can make firmware upgrades intimidating. This guide aims to resolve that ambiguity. Please use it as a practical reference, as actual field steps may slightly vary depending on environment and version.
+While official vendor manuals exist, this guide is a real-world field record documenting the OS upgrade process using the new HPE Alletra 6000 UI. For engineers and administrators, the lack of step-by-step UI screenshots can make firmware upgrades intimidating. This guide provides clear visual walkthroughs from preparation to troubleshooting.
 
 ### 📌 Task Overview
 - **Current OS Version**: 6.1.2.500
 - **Target OS Version**: 6.1.3.300
-- **Estimated Duration**: ~2 hours (Includes image download, sequential node reboots, and patch application)
+- **Estimated Duration**: ~ 2 hours (Includes image download, sequential node reboots, and patch application)
 
 ---
 

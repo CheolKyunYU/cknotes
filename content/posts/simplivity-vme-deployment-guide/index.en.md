@@ -1,5 +1,5 @@
 ---
-title: "[HPE SimpliVity & VME] 2-Node Virtualization Cluster Deployment A to Z (Field Troubleshooting & Key Checklist from a 16-Year Engineer)"
+title: "[HPE SimpliVity & VME] 2-Node Virtualization Cluster Deployment A to Z"
 description: "A comprehensive field guide covering end-to-end 2-node cluster deployment for HPE SimpliVity 6.2.0 and VME, including network isolation, Arbiter setup, and OVC troubleshooting."
 date: 2026-08-31T13:00:00+09:00
 draft: false
@@ -12,11 +12,6 @@ aliases:
   - /en/posts/simplivity-04-hvm-cluster-ovc-deploy/
 categories:
   - SimpliVityVME
----
-
-> **Author**: 16-Year IT Systems Field Engineer (CK notes)  
-> **Environment**: HPE SimpliVity 380 Gen10/Gen11, HPE VM Essentials (VME / Morpheus-based), HVM 24.04 BaseOS
-
 ---
 
 With VMware's recent licensing changes, many enterprise data centers are looking closely at lightweight, KVM-based virtualization alternatives. One viable enterprise solution is **HPE SimpliVity 6.2.0 powered by HPE VM Essentials (VME)**.

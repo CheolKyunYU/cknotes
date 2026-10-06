@@ -1,17 +1,11 @@
 ---
-title: "[Cisco MDS / HPE SN6620C] NX-OS 9.2.2 温度センサー誤診断Amber LEDの解決およびタイムゾーン設定ガイド"
+title: "【Cisco MDS / HPE SN6620C】Tempセンサー誤検知Amber LED解消およびTimezone設定ガイド"
 description: "Cisco MDS 9148T / HPE SN6620C NX-OS 9.2.2における偽の温度Amber LEDアラームの原因と9.4.5アップグレードによる解決、タイムゾーン設定の解説。"
 date: 2026-09-27T15:30:00+09:00
 draft: false
 tags: ["Cisco", "MDS", "HPE", "SN6620C", "Temperature", "Amber LED", "Timezone", "Troubleshooting", "Storage", "SAN"]
 categories:
   - Storage
----
-
-> **著者**: 16年目 ITシステムエンジニア (CK notes)  
-> **対象機器**: Cisco MDS 9000 Series / HPE SN6620C FC Switch  
-> **対象事象**: NX-OS 9.2.2 温湿度センサーポーリング誤診断(Cosmetic Temp Threshold Bug)によるオレンジ色(Amber) LED点灯
-
 ---
 
 ## 1. 背景: サーバールームは低温なのに、なぜスイッチ前面にAmber LEDが点灯するのか？

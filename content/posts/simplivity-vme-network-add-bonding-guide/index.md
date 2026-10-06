@@ -1,5 +1,5 @@
 ---
-title: "[HPE VME & SimpliVity] HVM 가상화 네트워크 추가 및 본딩(Bonding) 실전 가이드 (싱글 NIC 본딩 설계 팁 & OVS 트러블슈팅)"
+title: "[HPE VME & SimpliVity] HVM 가상화 네트워크 추가 및 본딩(Bonding) 실전 가이드"
 description: "HPE VM Console(TUI) 본딩 생성부터 VME Manager OVS 라우터 등록 및 VM 할당까지의 표준 작업 절차입니다. 싱글 NIC 환경에서의 본딩 설계 원칙과 OVS 트러블슈팅을 다룹니다."
 date: 2026-09-14T21:50:00+09:00
 draft: false
@@ -8,11 +8,6 @@ aliases:
   - /posts/simplivity-vme-network-add-bonding-guide/
 categories:
   - SimpliVityVME
----
-
-> **환경 기준**: HPE Morpheus VM Essentials (VME) / HPE SimpliVity 6.2.0 (HVM 24.04 BaseOS)  
-> **참조 매뉴얼**: HPE-VM 네트워크 추가 작업 가이드 v2.0
-
 ---
 
 HPE SimpliVity HVM이나 VME(VM Essentials) 환경을 처음 셋업하고 나면 기본 관리 네트워크(Management)만 구성된 상태입니다. 실제 업무용 가상머신(VM)들을 운영 환경에 투입하려면 서비스용 데이터 네트워크나 업무별 VLAN을 추가하는 작업이 필수적입니다.
@@ -178,14 +173,14 @@ ADD NETWORK ROUTER 창에서 환경에 맞는 정보를 입력합니다.
 |   - Federation Network (MTU 9000, VLAN 153) : 클러스터 메타데이터      |
 |   ※ 일반 VM 트래픽 침범 엄격 금지                                     |
 |                                                                       |
-|  [ 온보드 LOM / 추가 NIC (eno1~eno4) ] --> 신규 OVS 본딩 (net-10g)   |
+|  [ 온보드 LOM / 추가 NIC (eno1 ~ eno4) ] --> 신규 OVS 본딩 (net-10g)   |
 |   - 일반 업무용 가상머신(Workload VM) 데이터 서비스 트래픽             |
 +-----------------------------------------------------------------------+
 ```
 
 1. **OVC 전용 스토리지/페더레이션 인터페이스와 분리**  
    SimpliVity의 OmniStack Virtual Controller(OVC)는 실시간 블록 복제 및 압축/중복제거 트래픽을 처리하기 위해 10GbE 전용 포트(`ens21f0np0`, `ens21f1np1`)와 점보 프레임(MTU 9000)을 사용합니다.  
-   새로운 업무용 가상머신 네트워크를 추가할 때는 OVC 전용 NIC를 건드리지 마시고, 온보드 LOM(`eno1`~`eno4`)이나 별도의 서비스 전용 PCIe NIC를 분리하여 본딩을 잡아야 합니다.
+   새로운 업무용 가상머신 네트워크를 추가할 때는 OVC 전용 NIC를 건드리지 마시고, 온보드 LOM(`eno1` ~ `eno4`)이나 별도의 서비스 전용 PCIe NIC를 분리하여 본딩을 잡아야 합니다.
 2. **클러스터 노드 간 동일 브릿지 형상 유지**  
    노드 간 VM 라이브 마이그레이션이 원활하게 동작하려면, 클러스터에 묶인 모든 물리 노드에 동일한 이름의 본딩 인터페이스와 OVS 브릿지가 사전에 구성되어 있어야 합니다.
 

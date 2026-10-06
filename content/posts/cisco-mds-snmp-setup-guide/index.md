@@ -1,5 +1,5 @@
 ---
-title: "[SAN] Cisco MDS SAN Switch SNMP v2c 설정 및 주요 MIB 알림(Trap) 구성 가이드"
+title: "[Cisco MDS] SAN 스위치 SNMP v2c 설정 및 핵심 MIB Trap 구성 가이드"
 description: "Cisco MDS 9000 SAN 스위치에서 NMS 연동을 위한 SNMP v2c Community 및 Host Trap 설정, 필수 MIB 알림 개별 활성화와 검증 방법을 정리합니다."
 date: 2026-09-07T09:50:00+09:00
 draft: false
@@ -8,12 +8,6 @@ aliases:
   - /posts/cisco-mds-snmp-setup-guide/
 categories:
   - Storage
----
-
-* 작성자: CK notes ({{< career-years >}}년 차 IT 필드 엔지니어)
-* 대상 장비: Cisco MDS 9000 Series Fabric Switch (MDS 9148, 9396, 9700 등)
-* 운영체제: Cisco NX-OS / SAN-OS
-
 ---
 
 데이터센터에서 핵심 스토리지를 연결하는 백본인 Cisco MDS SAN 스위치를 안정적으로 운영하려면, 하드웨어 상태(팬, 파워서플라이, 온도)와 포트 링크 장애, 패브릭(Fabric) 구성 변경 등을 NMS(Zabbix, PRTG, What's Up 등)와 연동하여 실시간으로 감시해야 합니다.

@@ -1,5 +1,5 @@
 ---
-title: "[Ollama] 2編。 Windows 11環境Ollamaのインストールと最初のモデルのダウンロード＆ドライブガイド"
+title: "【Ollama】第2編：Windows 11環境 Ollamaインストールおよび初モデル駆動ガイド"
 description: "Windows 11インストーラを使用したOllamaのインストール、トレイアイコンのバックグラウンド駆動の確認、最初の軽量モデルのダウンロード、およびターミナル対話を整理します。"
 date: 2026-09-05T19:20:00+09:00
 draft: false
@@ -10,15 +10,11 @@ categories:
   - AI
 ---
 
-
-> **作成者**: CK notes  
-> **環境**：Windows 11（一般業務用ノートPC基準）
-
 > 📌 **私のPCで駆動するローカルLLM：Ollama実践連載目次**
 > 
-> - **[1編。私のPCから無料で回すローカルAI、Ollamaとは何ですか？ (概念と特徴)](../ollama-01-local-llm-intro/)**
-> - **[現在の記事] [2編。 Windows 11 環境 Ollama のインストールと最初のモデルのダウンロード & 駆動ガイド](./)**
-> - **[3編。 Ollamaの実践活用法：ターミナル会話からWebUI＆API連動まで](../ollama-03-cli-webui-api/)**
+> - **[第1編：PC上で無料稼働するローカルAI、Ollamaの概念と特徴](../ollama-01-local-llm-intro/)**
+> - **[現在の記事] [第2編：Windows 11環境 Ollamaインストールおよび初モデル駆動ガイド](./)**
+> - **[第3編：Ollamaの実践活用法：ターミナル対話からWebUI＆API連携まで](../ollama-03-cli-webui-api/)**
 
 ---
 

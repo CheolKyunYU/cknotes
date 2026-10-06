@@ -1,17 +1,11 @@
 ---
-title: "[HPE Alletra Storage MP B10K] ArcusOS 10.6.0 신규 화이트 트리 웹 UI 전면 개편 분석 및 실무 가이드"
+title: "[HPE Alletra MP B10K] ArcusOS 10.6.0 신규 화이트 트리 웹 UI 분석 및 실무 가이드"
 description: "HPE Alletra Storage MP B10K(B10120) 스토리지의 10.6.0 OS 신규 화이트 트리 UI 구조 분석, 6대 핵심 메뉴 체계 및 주요 관리 기능 실무 가이드."
 date: 2026-09-30T07:00:00+09:00
 draft: false
 tags: ["HPE", "Alletra", "AlletraMP", "B10K", "B10120", "ArcusOS", "WebUI", "Storage", "GreenLake", "Tech"]
 categories:
   - Storage
----
-
-> **글쓴이**: 16년 차 IT 시스템 엔지니어 (CK notes)  
-> **대상 장비**: HPE Alletra Storage MP B10120 (B10K 2-Node All-NVMe Block Storage)  
-> **운영체제**: HPE GreenLake for Block Storage OS (ArcusOS) 10.6.0
-
 ---
 
 ## 1. 개요: 10.6.0 전면 개편과 화이트 트리 UI의 도입 배경

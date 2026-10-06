@@ -1,5 +1,5 @@
 ---
-title: "[Cisco MDS / HPE SN6620C] NX-OS 9.2.2 온습도(Temp) 센서 오진단 Amber LED 해결 및 타임존(Timezone) 설정 가이드"
+title: "[Cisco MDS / HPE SN6620C] Temp 센서 오진단 Amber LED 해결 및 Timezone 설정 가이드"
 description: "Cisco MDS 9148T / HPE SN6620C 9.2.2 버전 운영 시 발생하는 가짜 온도 경고(Amber LED)의 원인과 9.4.5 OS 업그레이드를 통한 조치, 타임존(Timezone) 설정 방법을 다룹니다."
 date: 2026-09-27T15:30:00+09:00
 draft: false
@@ -8,15 +8,9 @@ categories:
   - Storage
 ---
 
-> **글쓴이**: 16년 차 IT 시스템 엔지니어 (CK notes)  
-> **대상 장비**: Cisco MDS 9000 Series / HPE SN6620C FC Switch  
-> **관련 현상**: NX-OS 9.2.2 온습도 센서 오진단(Cosmetic Temp Threshold Bug)으로 인한 주황색(Amber) LED 점등
-
----
-
 ## 1. 배경: 항온항습실은 시원한데 왜 스위치 전면에 Amber LED가 들어올까?
 
-데이터센터 현장에 출장을 나가보면, 전산실 온도는 18~20°C로 아주 서늘하게 유지되고 있는데도 **Cisco MDS 9148T (HPE SN6620C) 스토리지 스위치 전면 패널의 SYS/ENV 상태 LED가 주황색(Amber)으로 켜져 있는 현상**을 종종 목격하게 됩니다.
+데이터센터 현장에 출장을 나가보면, 전산실 온도는 18 ~ 20°C로 아주 서늘하게 유지되고 있는데도 **Cisco MDS 9148T (HPE SN6620C) 스토리지 스위치 전면 패널의 SYS/ENV 상태 LED가 주황색(Amber)으로 켜져 있는 현상**을 종종 목격하게 됩니다.
 
 실제 `show environment` 명령어로 내부 센서 온도를 찍어보면 `32°C (Normal)`로 아주 정상적인 상태임에도 불구하고, 9.2.2 버전의 센서 폴링 메커니즘 버그(CSCwo09244 등)로 인해 임계치 초과 경고를 잘못 감지하여 주황색 경고등을 띄우는 것입니다.
 

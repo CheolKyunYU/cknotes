@@ -1,5 +1,5 @@
 ---
-title: "[Lifestyle/Car Decision] An Engineer's Cost Breakdown: 'The All-New NEXO Guaranteed Buyback' vs. '1st Gen Used NEXO'"
+title: "[Lifestyle/Car Decision] 'The All-New NEXO Buyback' vs. '1st Gen Used NEXO' Cost Breakdown"
 description: "Whether buying new or used, a hydrogen EV loses substantial value over 3 years. We break down the real-world costs and risks between the new NEXO guaranteed-buyback program and a heavily depreciated 1st-generation used NEXO."
 date: 2026-09-07T10:45:00+09:00
 draft: false
@@ -82,7 +82,7 @@ This is a method of purchasing a used 1st generation Nexo, which has already rea
 
 Assuming you'll keep the car for three years, we've compared the two options side by side in a table:
 
-| division | Direct purchase of 1st generation used Nexo (2019~2021 model) | The All New Nexo + Burden Reduction Program (New Car) |
+| Feature / Metric | Direct Purchase: 1st Gen Used NEXO (2019–2021) | The All-New NEXO + Guaranteed Buyback (New) |
 | :--- | :--- | :--- |
 | **Estimated 3-year extinction cost** | **Vehicle depreciation loss of approximately 7 to 10 million won** | **Total payment (depreciation amount) over 3 years: approximately 12 to 18 million won** |
 | **Initial lump sum burden** | **Approximately 14 to 17 million won** (Lump sum expenditure) | **Advance fee ranges from 0 won to several million won** (preservation of lump sum) |

@@ -1,5 +1,5 @@
 ---
-title: "[Ollama] 1編。私のPCから無料で回すローカルAI、Ollamaとは何ですか？ (概念と特徴)"
+title: "【Ollama】第1編：PC上で無料稼働するローカルAI、Ollamaの概念と特徴"
 description: "インターネットレスの閉鎖網(Air-gap)環境や一般ノートパソコンでも軽く駆動されるローカルLLMツールOllamaの概念と特徴、推奨モデルをまとめます。"
 date: 2026-09-05T19:00:00+09:00
 draft: false
@@ -10,15 +10,11 @@ categories:
   - AI
 ---
 
-
-> **作成者**: CK notes
-> **環境**：Windows 11環境基準（一般業務用ノートブック対象）
-
-> 📌 **私のPCで駆動するローカルLLM：Ollama本番連載目次**
+> 📌 **私のPCで駆動するローカルLLM：Ollama実践連載目次**
 > 
-> - **[現在の記事] [1編。私のPCから無料で回すローカルAI、Ollamaとは何ですか？ (概念と特徴)](./)**
-> - **[2編。 Windows 11環境Ollamaのインストールと初モデルのダウンロード＆ドライブガイド](../ollama-02-windows-install-guide/)**
-> - **[3編。 Ollamaの実践活用法：ターミナル会話からWebUI＆API連動まで](../ollama-03-cli-webui-api/)**
+> - **[現在の記事] [第1編：PC上で無料稼働するローカルAI、Ollamaの概念と特徴](./)**
+> - **[第2編：Windows 11環境 Ollamaインストールおよび初モデル駆動ガイド](../ollama-02-windows-install-guide/)**
+> - **[第3編：Ollamaの実践活用法：ターミナル対話からWebUI＆API連携まで](../ollama-03-cli-webui-api/)**
 
 ---
 

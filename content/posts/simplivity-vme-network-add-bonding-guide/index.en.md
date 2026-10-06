@@ -1,5 +1,5 @@
 ---
-title: "[HPE VME & SimpliVity] HVM Virtualization Network Addition & Bonding Guide (Single NIC Design Tip & OVS Troubleshooting)"
+title: "[HPE VME & SimpliVity] HVM Virtualization Network Addition & Bonding Guide"
 description: "Standard procedure from host network bonding in HPE VM Console (TUI) to OVS router registration in VME Manager and VM assignment. Includes single NIC bonding principles and OVS troubleshooting."
 date: 2026-09-14T21:50:00+09:00
 draft: false
@@ -8,11 +8,6 @@ aliases:
   - /posts/simplivity-vme-network-add-bonding-guide/
 categories:
   - SimpliVityVME
----
-
-> **Environment**: HPE Morpheus VM Essentials (VME) / HPE SimpliVity 6.2.0 (HVM 24.04 BaseOS)  
-> **Reference Guide**: HPE-VM Network Addition Operation Guide v2.0
-
 ---
 
 After initial deployment of an HPE SimpliVity HVM or VME (VM Essentials) cluster, only the default Management network is configured. Putting production workload virtual machines (VMs) into service requires adding dedicated data networks or tenant VLANs.
@@ -177,7 +172,7 @@ Unlike standalone HVM nodes, **HPE SimpliVity 6.2.0 (HVM) clusters** require str
 |   - Federation Network (MTU 9000, VLAN 153) : Cluster metadata        |
 |   * Workload VM traffic is strictly prohibited on these links!        |
 |                                                                       |
-|  [ Onboard LOM / Extra PCIe NIC (eno1~eno4) ] --> OVS Bond (net-10g)  |
+|  [ Onboard LOM / Extra PCIe NIC (eno1–eno4) ] --> OVS Bond (net-10g)  |
 |   - Production Workload VM Application Traffic                       |
 +-----------------------------------------------------------------------+
 ```

@@ -10,11 +10,6 @@ categories:
   - SimpliVityVME
 ---
 
-> **Environment**: HPE Morpheus VM Essentials (VME) / HPE SimpliVity 6.2.0 (HVM 24.04 BaseOS)  
-> **Reference Guide**: SimpliVity ISO Image Registration Procedure Guide
-
----
-
 After completing the deployment of an HPE SimpliVity 6.2.0 and VME (VM Essentials) cluster, the next operational milestone is provisioning workload virtual machines (VMs, Instances) and installing target guest operating systems (Linux, Windows Server).
 
 In VM Essentials, deploying virtual machines from scratch requires registering OS installation ISO media in the Virtual Image Library. To ensure high-capacity ISO files are stably retained and universally accessible across all cluster nodes, an NFS file share storage backend must be pre-integrated into VME Manager.

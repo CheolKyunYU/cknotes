@@ -1,6 +1,6 @@
 ---
-title: "[Ollama] Part 2. Windows 11 environment Ollama installation and first model download & operation guide"
-description: "We will explain how to install Ollama using the Windows 11 installer, check that the tray icon runs in the background, download the first lightweight model, and use the terminal conversation method."
+title: "[Ollama] Part 2. Windows 11 Ollama Installation & First Model Setup Guide"
+description: "A complete walkthrough of installing Ollama on Windows 11, verifying background services, downloading lightweight models, and chatting via CLI prompt."
 date: 2026-09-05T19:20:00+09:00
 draft: false
 tags: ["Ollama", "LLM", "Local-AI", "Windows11", "Gemma", "Llama", "Tutorial"]
@@ -9,10 +9,6 @@ aliases:
 categories:
   - AI
 ---
-
-
-> **Author**: CK notes  
-> **Environment**: Windows 11 (Standard business laptop)
 
 > 📌 **Local LLM on My PC: Ollama Practical Series**
 > 

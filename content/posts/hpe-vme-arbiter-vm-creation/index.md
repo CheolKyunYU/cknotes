@@ -1,5 +1,5 @@
 ---
-title: "[HPE SimpliVity & VME] 라이선스 비용 없이 KVM CLI로 Arbiter VM 수동 구축하기 (16년 차 엔지니어의 현장 우회 노하우)"
+title: "[HPE SimpliVity & VME] 라이선스 비용 없이 KVM CLI로 Arbiter VM 수동 구축하기"
 description: "SimpliVity 2노드 클러스터 구축 전 필수인 Arbiter를 VME Manager 라이선스 코어 카운트 차감 없이, KVM virt-install과 VNC로 무과금 수동 생성하는 실무 우회 가이드입니다."
 date: 2026-01-07T10:00:00+09:00
 draft: false
@@ -8,12 +8,6 @@ aliases:
   - /posts/hpe-vme-arbiter-vm-creation/
 categories:
   - SimpliVityVME
----
-
-> **글쓴이**: 16년 차 IT 시스템 엔지니어 (CK notes)  
-> **대상 환경**: HPE SimpliVity 6.2.0, HPE VM Essentials (VME), KVM / libvirt 기반 관리 호스트  
-> **아비터 OS**: Ubuntu 22.04.5 LTS (Server)
-
 ---
 
 ## 1. 배경: 현장에서 마주하는 '닭과 달걀의 딜레마'와 '라이선스 함정'
@@ -32,7 +26,7 @@ HPE SimpliVity with VME (VM Essentials) 2노드 클러스터를 납품하러 현
 ### 딜레마 2: VME GUI에서 만들면 유료 라이선스 비용이 청구된다
 그렇다면 아비터는 어디에 올려야 할까요? 정답은 **VME Manager가 구동되고 있는 외부 독립 관리 호스트(KVM 기반)**입니다.
 
-그런데 여기서 큰 문제가 생깁니다. 많은 엔지니어들이 편하게 작업하려고 VME Manager 웹 GUI 콘솔에서 관리 호스트를 정식 등록하고 아비터 VM을 생성하려 합니다. 하지만 VME Manager 정책상, **콘솔에 호스트를 등록하는 순간 해당 물리 서버의 모든 CPU 코어가 VME 유료 라이선스 카운트에 포함**됩니다! 아비터 하나 띄우자고 수백~수천만 원 상당의 소프트웨어 라이선스를 추가 구매할 수는 없는 노릇입니다.
+그런데 여기서 큰 문제가 생깁니다. 많은 엔지니어들이 편하게 작업하려고 VME Manager 웹 GUI 콘솔에서 관리 호스트를 정식 등록하고 아비터 VM을 생성하려 합니다. 하지만 VME Manager 정책상, **콘솔에 호스트를 등록하는 순간 해당 물리 서버의 모든 CPU 코어가 VME 유료 라이선스 카운트에 포함**됩니다! 아비터 하나 띄우자고 수백만 ~ 수천만 원 상당의 소프트웨어 라이선스를 추가 구매할 수는 없는 노릇입니다.
 
 ---
 

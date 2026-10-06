@@ -1,17 +1,11 @@
 ---
-title: "[HPE Alletra Storage MP B10K] Deep Dive into ArcusOS 10.6.0 New White Tree Web UI Architecture"
+title: "[HPE Alletra MP B10K] ArcusOS 10.6.0 New White Tree Web UI Deep Dive"
 description: "A comprehensive technical exploration of the redesigned white tree-navigation Web UI in HPE Alletra Storage MP B10K (ArcusOS 10.6.0), detailing core menu workflows, hardware monitoring, and storage management."
 date: 2026-09-30T07:00:00+09:00
 draft: false
 tags: ["HPE", "Alletra", "AlletraMP", "B10K", "B10120", "ArcusOS", "WebUI", "Storage", "GreenLake", "Tech"]
 categories:
   - Storage
----
-
-> **Author**: 16-Year IT Systems Field Engineer (CK notes)  
-> **Target System**: HPE Alletra Storage MP B10120 (B10K 2-Node All-NVMe Block Storage)  
-> **Operating System**: HPE GreenLake for Block Storage OS (ArcusOS) 10.6.0
-
 ---
 
 ## 1. Overview: Major UI Overhaul in ArcusOS 10.6.0

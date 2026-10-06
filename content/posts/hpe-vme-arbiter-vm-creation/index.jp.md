@@ -1,5 +1,5 @@
 ---
-title: "[HPE SimpliVity & VME] ライセンス課金を回避してKVM CLIでArbiter VMを手動構築する方法 (16年目エンジニアの実践ノウハウ)"
+title: "【HPE SimpliVity & VME】ライセンス課金を回避してKVM CLIでArbiter VMを手動構築する方法"
 description: "SimpliVity 2ノードクラスタ構築に必須のArbiterを、VME ManagerのライセンスCPUコア消費なしに、ネイティブKVM virt-installとVNCで無課金構築する現場の裏技ガイドです。"
 date: 2026-01-07T10:00:00+09:00
 draft: false
@@ -8,12 +8,6 @@ aliases:
   - /jp/posts/hpe-vme-arbiter-vm-creation/
 categories:
   - SimpliVityVME
----
-
-> **執筆者**: 16年目ITシステムエンジニア (CK notes)  
-> **検証環境**: HPE SimpliVity 6.2.0, HPE VM Essentials (VME), KVM / libvirt 管理ホスト  
-> **Arbiter OS**: Ubuntu 22.04.5 LTS Server
-
 ---
 
 HPE SimpliVity with VME (VM Essentials) の2ノードクラスタを顧客先に導入する際、ほぼ確実に担当者から次のように要望されます：

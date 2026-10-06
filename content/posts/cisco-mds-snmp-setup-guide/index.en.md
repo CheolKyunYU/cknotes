@@ -1,6 +1,6 @@
 ---
-title: "[SAN] Cisco MDS SAN Switch SNMP v2c settings and major MIB notification (Trap) configuration guide"
-description: "We summarize the SNMP v2c Community and Host Trap settings for NMS integration on the Cisco MDS 9000 SAN switch, and individual activation and verification methods for required MIB notifications."
+title: "[Cisco MDS] SAN Switch SNMP v2c Setup & Key MIB Traps Configuration"
+description: "A comprehensive guide on configuring SNMP v2c Community and Host Trap settings on Cisco MDS 9000 SAN switches, with selective MIB trap activation for NMS integration."
 date: 2026-09-07T09:50:00+09:00
 draft: false
 tags: ["Cisco", "MDS", "SAN", "Switch", "SNMP", "MIB", "NMS", "Network"]
@@ -8,13 +8,6 @@ aliases:
   - /posts/cisco-mds-snmp-setup-guide/
 categories:
   - Storage
----
-
-
-* Author: CK notes (IT field engineer with {{< career-years >}} years)
-* Target Equipment: Cisco MDS 9000 Series Fabric Switch (MDS 9148, 9396, 9700, etc.)
-* Operating System: Cisco NX-OS / SAN-OS
-
 ---
 
 Operating Cisco MDS SAN switches—the storage fabric backbone in enterprise datacenters—requires real-time telemetry into hardware component health (fans, power supplies, thermal sensors), FC port link state, and fabric zoning events via an integrated Network Management System (NMS: Zabbix, PRTG, Nagios).

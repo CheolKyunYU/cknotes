@@ -8,12 +8,6 @@ categories:
   - Storage
 ---
 
-> **글쓴이**: 16년 차 IT 시스템 엔지니어 (CK notes)  
-> **대상 장비**: HPE Alletra 9060 (Alletra 9000 Series Mission-Critical All-NVMe Storage)  
-> **작업 내용**: HPE Alletra OS 9.6.5 ➔ OS 9.6.30 무중단 롤링 업그레이드
-
----
-
 ## 1. 개요: HPE Alletra 9000 계열 펌웨어 업그레이드의 핵심 원칙
 
 엔터프라이즈 미션 크리티컬 환경을 담당하는 **HPE Alletra 9060 (Alletra 9000 / Primera 아키텍처 기반)** 스토리지는 듀얼 또는 쿼드 컨트롤러 노드 구조를 통해 무중단(Online) 펌웨어 업그레이드를 지원합니다.

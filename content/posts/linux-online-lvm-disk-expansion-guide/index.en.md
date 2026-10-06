@@ -8,15 +8,9 @@ categories:
   - Linux
 ---
 
-> **Author**: 16-Year IT Systems Field Engineer (CK notes)  
-> **Target OS**: RHEL / Rocky Linux / CentOS 7–9, Ubuntu 20.04–24.04 LTS  
-> **Target Filesystems**: XFS, EXT4 (over LVM)
+When production database or application servers running RHEL, Rocky Linux, CentOS (7 ~ 9), or Ubuntu (20.04 ~ 24.04 LTS) reach 90%+ disk utilization, scheduling emergency maintenance downtime is rarely an acceptable option. In modern virtualization (VMware, KVM, Nutanix, SimpliVity) and cloud infrastructures, performing **100% online, non-disruptive storage expansion** is an essential skill for system engineers.
 
----
-
-When production database or application servers reach 90%+ disk utilization, scheduling emergency maintenance downtime is rarely an acceptable option. In modern virtualization (VMware, KVM, Nutanix, SimpliVity) and cloud infrastructures, performing **100% online, non-disruptive storage expansion** is an essential skill for system engineers.
-
-Here is the battle-tested standard operating procedure for triggering a kernel SCSI bus rescan, extending LVM physical/logical volumes, and expanding filesystems without unmounting.
+Here is the battle-tested standard operating procedure for triggering a kernel SCSI bus rescan, extending LVM physical/logical volumes, and expanding filesystems (XFS vs EXT4) without unmounting.
 
 ---
 

@@ -8,12 +8,6 @@ categories:
   - Storage
 ---
 
-> **Author**: 16-Year IT Systems Field Engineer (CK notes)  
-> **Target Equipment**: HPE Alletra 9060 (Alletra 9000 Series Mission-Critical All-NVMe Storage)  
-> **Scope**: HPE Alletra OS 9.6.5 ➔ OS 9.6.30 Non-Disruptive Rolling Upgrade
-
----
-
 ## 1. Overview: Core Principles of HPE Alletra 9000 Firmware Upgrades
 
 Serving enterprise mission-critical workloads, **HPE Alletra 9060 (built on the Alletra 9000 / Primera architecture)** storage arrays support online, non-disruptive firmware upgrades across dual or quad-controller nodes.

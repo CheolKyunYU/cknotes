@@ -1,17 +1,11 @@
 ---
-title: "[HPE SN6620C / Cisco MDS] 9.2.2 → 9.4.5 OSファームウェアアップグレード実践ガイド (Rebex Tiny SCP活用とbootflash整理)"
+title: "【HPE SN6620C / Cisco MDS】9.2.2 → 9.4.5 OSファームウェアアップグレード実践ガイド"
 description: "HPE SN6620C(Cisco MDS 9148T OEM)スイッチにおける現行バージョン確認からRebex Tiny SCPによるファイル転送、install allインストール、deleteによるbootflash容量整理までの標準作業手順です。"
 date: 2026-09-27T15:00:00+09:00
 draft: false
 tags: ["HPE", "SN6620C", "Cisco", "MDS", "Firmware", "NX-OS", "SCP", "Storage", "SAN", "Troubleshooting"]
 categories:
   - Storage
----
-
-> **著者**: 16年目 ITシステムエンジニア (CK notes)  
-> **対象機器**: HPE SN6620C 32Gb 48-Port FC Switch (Cisco MDS 9148T OEM)  
-> **OSバージョン**: Cisco NX-OS 9.2(2) ➔ 9.4(5) (Recommended Release)
-
 ---
 
 ## 1. 背景: なぜ 9.4.5 バージョンへのアップグレードが必要だったのか？

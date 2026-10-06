@@ -1,17 +1,11 @@
 ---
-title: "[HPE Alletra Storage MP B10K] 10.5.50 → 10.6.0 OSファームウェアアップグレード実践ガイド (新UI刷新と事前Readiness Check必須検証)"
+title: "【HPE Alletra MP B10K】10.5.50 → 10.6.0 OSファームウェアアップグレード実践ガイド"
 description: "HPE Alletra Storage MP B10K(B10120)における10.6.0 OS無停止アップグレードの全手順、必須となるSystem Readiness Checks事前検証、および大幅刷新された新ホワイトUIの適用ポイントを徹底解説します。"
 date: 2026-09-28T21:00:00+09:00
 draft: false
 tags: ["HPE", "Alletra", "AlletraMP", "B10K", "B10120", "Firmware", "OS Upgrade", "Storage", "GreenLake", "Troubleshooting"]
 categories:
   - Storage
----
-
-> **著者**: 16年目 ITシステムエンジニア (CK notes)  
-> **対象機器**: HPE Alletra Storage MP B10120 (B10K 2ノードストレージシステム)  
-> **OSバージョン**: HPE GreenLake for Block Storage OS 10.5.50 ➔ 10.6.0
-
 ---
 
 ## 1. 背景: Alletra MP 10.6.0 アップグレードと新UIへの刷新

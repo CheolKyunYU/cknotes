@@ -1,5 +1,5 @@
 ---
-title: "[HPE SimpliVity & VME] 2노드 가상화 클러스터 실전 구축 A to Z (16년 차 엔지니어의 현장 트러블슈팅과 핵심 체크리스트)"
+title: "[HPE SimpliVity & VME] 2노드 가상화 클러스터 실전 구축 A to Z"
 description: "HPE SimpliVity 6.2.0 및 VME(VM Essentials) 2노드 클러스터 구축의 전체 워크플로우, 네트워크 분리 설계, 아비터 구성 및 OVC 배포 시 현장 트러블슈팅 팁을 총정리합니다."
 date: 2026-08-31T13:00:00+09:00
 draft: false
@@ -12,11 +12,6 @@ aliases:
   - /posts/simplivity-04-hvm-cluster-ovc-deploy/
 categories:
   - SimpliVityVME
----
-
-> **글쓴이**: 16년 차 IT 시스템 엔지니어 (CK notes)  
-> **환경 기준**: HPE SimpliVity 380 Gen10/Gen11, HPE VM Essentials (VME / Morpheus 기반), HVM 24.04 BaseOS
-
 ---
 
 최근 엔터프라이즈 인프라 시장에서 VMware 라이선스 정책 변화로 인해 KVM 기반의 경량 가상화 솔루션을 검토하는 기업이 크게 늘었습니다. 그 대안 중 하나로 주목받는 솔루션이 바로 **HPE SimpliVity 6.2.0에 적용된 HPE VM Essentials (VME)** 기반의 HCI 인프라입니다.

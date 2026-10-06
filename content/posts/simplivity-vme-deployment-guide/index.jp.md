@@ -1,5 +1,5 @@
 ---
-title: "[HPE SimpliVity & VME] 2ノード仮想化クラスタ実戦構築 A to Z (16年目エンジニアの実践トラブルシューティング＆チェックリスト)"
+title: "【HPE SimpliVity & VME】2ノード仮想化クラスタ実戦構築 A to Z"
 description: "HPE SimpliVity 6.2.0およびVMEによる2ノードクラスタ構築の全体ワークフロー、ネットワーク分離設計、Arbiter構成、OVC展開時のトラブルシューティングを総まとめします。"
 date: 2026-08-31T13:00:00+09:00
 draft: false
@@ -12,11 +12,6 @@ aliases:
   - /jp/posts/simplivity-04-hvm-cluster-ovc-deploy/
 categories:
   - SimpliVityVME
----
-
-> **執筆者**: 16年目ITシステムエンジニア (CK notes)  
-> **検証環境**: HPE SimpliVity 380 Gen10/Gen11, HPE VM Essentials (VME / Morpheusベース), HVM 24.04 BaseOS
-
 ---
 
 昨今、VMwareのライセンス体系刷新を契機に、KVMベースの軽量な仮想化基盤への移行を検討する企業が急速に増えています。その有力なエンタープライズ選択肢の一つが、**HPE SimpliVity 6.2.0 と HPE VM Essentials (VME)** によるHCI基盤です。
