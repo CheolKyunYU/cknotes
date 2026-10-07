@@ -12,9 +12,7 @@ categories:
 
 > 📌 **Local LLM on Personal Workstation: Practical Series Table of Contents**
 > 
-> - **[Current Post] [Part 1. What is Ollama, a Local AI Running Free on Your PC? (Concepts & Features)](./)**
-> - **[Part 2. Windows 11 Ollama Installation & First Model Setup Guide](../ollama-02-windows-install-guide/)**
-> - **[Part 3. Practical Usage: From CLI Mastery to WebUI & API Integration](../ollama-03-cli-webui-api/)**
+> - **[Current Post] [Part 1. What is Ollama, a Local AI Running Free on Your PC? (Concepts & Features)](./)**> -**[Part 2. Windows 11 Ollama Installation & First Model Setup Guide](../ollama-02-windows-install-guide/)**> -**[Part 3. Practical Usage: From CLI Mastery to WebUI & API Integration](../ollama-03-cli-webui-api/)**
 
 ---
 
@@ -66,11 +64,11 @@ flowchart TD
 
 | Dimension | Cloud AI (ChatGPT / Claude) | Local AI (Ollama) |
 | :--- | :--- | :--- |
-| **Data Security** | Transmission to external server (risk of leakage of company secrets) | **Not a single byte leaves my laptop (100% safe)** |
-| **Internet Connection** | Internet connection required (will not work if communication is not possible) | **Full support for air-gap closed networks with 0% internet blocking** |
-| **Cost** | Monthly subscription fee ($20+) or per API token | **Completely free (only uses laptop battery and hardware resources)** |
-| **Speed/Latency** | External server traffic and network delays occur | **Instant streaming output based on local memory** |
-| **Model Selection** | Forced dependency on service provider policies | **Freely replace any open source model (Gemma, Llama, etc.) of your choice** |
+| **Data Security **| Transmission to external server (risk of leakage of company secrets) |**Not a single byte leaves my laptop (100% safe)** |
+| **Internet Connection **| Internet connection required (will not work if communication is not possible) |**Full support for air-gap closed networks with 0% internet blocking** |
+| **Cost **| Monthly subscription fee ($20+) or per API token |**Completely free (only uses laptop battery and hardware resources)** |
+| **Speed/Latency **| External server traffic and network delays occur |**Instant streaming output based on local memory** |
+| **Model Selection **| Forced dependency on service provider policies |**Freely replace any open source model (Gemma, Llama, etc.) of your choice** |
 
 ---
 
@@ -107,8 +105,7 @@ flowchart LR
 
 1. **Optimized Memory (RAM) Usage (~2 GB)**  
    On a typical Windows 11 laptop (16 GB RAM), the OS and default background apps already use 6 – 8 GB. The 2B – 3B models only take up about 1.5 GB – 2.5 GB of memory when running, so they can reside lightly alongside other work programs without out-of-memory (OOM) errors.
-2. **Comfortable Speed With Pure CPU Computation**  
-   Even on laptops without NVIDIA discrete graphics (e.g., Intel Iris Xe or AMD Radeon), CPU execution delivers **20 – 30 tokens/sec**, exceeding human reading speed.
+2. **Comfortable Speed With Pure CPU Computation **Even on laptops without NVIDIA discrete graphics (e.g., Intel Iris Xe or AMD Radeon), CPU execution delivers**20 – 30 tokens/sec**, exceeding human reading speed.
 3. **High Capability for Everyday Engineering Tasks**  
    Latest sLLM models excel at writing Python/Bash scripts, generating regular expressions, validating Linux syntax, and diagnosing error logs.
 4. **Minimal Battery Consumption and Noise**  
@@ -120,10 +117,10 @@ flowchart LR
 
 | Category | General Laptop (2B – 3B Models Recommended) | High-Performance Laptop (7B – 9B Models) |
 | :--- | :--- | :--- |
-| **Operating System** | **Windows 11 (64-bit)** | **Windows 11 (64-bit)** |
+| **Operating System **|**Windows 11 (64-bit)**|**Windows 11 (64-bit)** |
 | **CPU** | Intel Core i5/i7 (11th Gen+) or AMD Ryzen 5/7 | Intel Core i7/i9 or AMD Ryzen 7/9 |
-| **System RAM** | **16 GB** (Comfortable multitasking) | 32 GB Recommended |
-| **Graphics (GPU)** | **Intel / AMD Built-in Graphics (Sufficient)** | **NVIDIA RTX 3060 / 4060 Laptop (6 GB – 8 GB VRAM)** |
+| **System RAM **|**16 GB** (Comfortable multitasking) | 32 GB Recommended |
+| **Graphics (GPU)**|**Intel / AMD Built-in Graphics (Sufficient)**|**NVIDIA RTX 3060 / 4060 Laptop (6 GB – 8 GB VRAM)** |
 | **Storage Space** | NVMe SSD 20 GB+ free space | NVMe SSD 50 GB+ free space |
 
 ---
@@ -142,4 +139,4 @@ The next article, **[Part 2: Windows 11 Ollama Installation & Initial Model Setu
 
 | Previous Step | Next Step |
 | :---: | :---: |
-| **Series Start (Current)** | **[Part 2. Windows 11 Ollama Installation & First Model Setup ➡️](../ollama-02-windows-install-guide/)** |
+| **Series Start (Current)**|**[Part 2. Windows 11 Ollama Installation & First Model Setup ➡️](../ollama-02-windows-install-guide/)** |

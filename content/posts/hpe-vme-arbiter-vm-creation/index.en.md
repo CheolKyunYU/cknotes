@@ -23,7 +23,7 @@ To an experienced systems engineer, this request highlights **two critical archi
 ### Dilemma 1: The Arbiter Must Exist Before SimpliVity Storage is Created
 A 2-node SimpliVity cluster requires active network communication with an Arbiter IP before the cluster creation wizard can even begin. If the SimpliVity nodes haven't been initialized and no storage pool exists, where can you run the Arbiter VM? It is a classic **chicken-and-egg paradox**.
 
-Furthermore, because the Arbiter acts as an impartial quorum tie-breaker during node communication failures to prevent **Split-Brain scenarios**, it must **never reside on the very storage it arbitrates**.
+Furthermore, because the Arbiter acts as an impartial quorum tie-breaker during node communication failures to prevent **Split-Brain scenarios **, it must**never reside on the very storage it arbitrates**.
 
 ### Dilemma 2: Creating It in the VME GUI Triggers Costly Licensing
 The natural location for the Arbiter is the **external standalone management host running the VME Manager appliance (which runs on KVM)**.

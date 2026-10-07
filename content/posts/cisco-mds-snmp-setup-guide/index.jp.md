@@ -27,11 +27,11 @@ MDSスイッチのSNMP設定で最も頻発する誤用が、`snmp-server enable
 | アイテム | 例設定値 | 説明 |
 | :--- | :--- | :--- |
 | **装備モデル** | Cisco MDS 9148S | SANファブリックスイッチ |
-| **SNMP バージョン** | **v2c** | 実際に最も広く使用されている標準 SNMP バージョン |
-| **Community String** | **`SDS`**(例) | セキュリティのためにデフォルトの `public`の代わりに組織標準名を使用する |
-| **アクセス権限** | **`ro`(Read-Only)** | NMS収集のための読み取り専用権限 |
-| **NMS監視サーバーIP** | **`192.168.100.10`** | Trapイベントを受信する監視サーバーのIP |
-| **Trap 受信ポート** | **UDP 162** | 標準SNMP Trapポート |
+| **SNMP バージョン**|**v2c** | 実際に最も広く使用されている標準 SNMP バージョン |
+| **Community String **|**`SDS`**(例) | セキュリティのためにデフォルトの `public`の代わりに組織標準名を使用する |
+| **アクセス権限**|**`ro`(Read-Only)** | NMS収集のための読み取り専用権限 |
+| **NMS監視サーバーIP **|**`192.168.100.10`** | Trapイベントを受信する監視サーバーのIP |
+| **Trap 受信ポート**|**UDP 162** | 標準SNMP Trapポート |
 
 ---
 
@@ -57,8 +57,7 @@ snmp-server host 192.168.100.10 traps version 2c SDS
 ![Cisco MDS SNMP Community および Host Trap の設定](images/cisco_mds_snmp_basic.png)
 
 > [!TIP]
-> **Communityセキュリティの推奨事項**
-> 監視目的のコミュニティは、必ず** `ro`（Read-Only）**に設定する必要があります。 `rw`（Read-Write）に設定すると、SNMPの脆弱性によってスイッチ設定が外部からランダムに変更される危険があります。
+> **Communityセキュリティの推奨事項**> 監視目的のコミュニティは、必ず**`ro`（Read-Only）に設定する必要があります**。 `rw`（Read-Write）に設定すると、SNMPの脆弱性によってスイッチ設定が外部からランダムに変更される危険があります。
 
 ---
 
@@ -165,18 +164,18 @@ show snmp trap
 
 ## 5. NMSサーバーに必要なMIBファイルガイド
 
-NMS監視サーバー（Zabbix、PRTGなど）がMDSスイッチから受信したOID番号（「.1.3.6.1.4.1.9 ...」など）を人が読める名前（「ciscoMds ...」、「entPhysicalDescr」）に変換するには、** Cisco MIBファイル**をNMSサーバーに登録する必要があります。
+NMS監視サーバー（Zabbix、PRTGなど）がMDSスイッチから受信したOID番号（「.1.3.6.1.4.1.9 ...」など）を人が読める名前（「ciscoMds ...」、「entPhysicalDescr」）に変換するには、**Cisco MIBファイル**をNMSサーバーに登録する必要があります。
 
 ### 5.1。必須MIBファイルのリスト
 
 以下の6つのMIBファイルは、今回の投稿で設定した通知を解釈するためのコアファイルです。
 
-1. ** `SNMPv2-SMI.my`**：SNMPv2構造定義基本MIB
-2. ** `SNMPv2-MIB.my`**：システム基本情報と認証トラップMIB
-3. ** `RFC1213-MIB.my`**: MIB-II標準管理MIB
-4. ** `IF-MIB.my`**：インターフェイス（FCポート）ステータスとトラフィックMIB
-5. ** `CISCO-SMI.my`**：シスコ固有のEnterprise OIDルート定義MIB
-6. ** `ENTITY-MIB.my`**：シャーシ、スロット、パワー、ファンなど物理エンティティ管理MIB
+1. **`SNMPv2-SMI.my`**：SNMPv2構造定義基本MIB
+2. **`SNMPv2-MIB.my`**：システム基本情報と認証トラップMIB
+3. **`RFC1213-MIB.my`**: MIB-II標準管理MIB
+4. **`IF-MIB.my`**：インターフェイス（FCポート）ステータスとトラフィックMIB
+5. **`CISCO-SMI.my`**：シスコ固有のEnterprise OIDルート定義MIB
+6. **`ENTITY-MIB.my`**：シャーシ、スロット、パワー、ファンなど物理エンティティ管理MIB
 
 ### 5.2。 Cisco 公式 MIB ダウンロードパス
 

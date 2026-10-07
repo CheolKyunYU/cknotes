@@ -6,7 +6,7 @@ draft: false
 summary: "CK notes プライバシーポリシー、Google AdSense Cookieポリシーおよびお問い合わせ窓口"
 ---
 
-当ブログ（**CK notes**、以下「本サイト」）は、訪問者のプライバシーを尊重し、個人情報保護関連法令および**Googleの広告・分析サービス運営ポリシー（Google Publisher Policies）**を遵守いたします。
+当ブログ（**CK notes **、以下「本サイト」）は、訪問者のプライバシーを尊重し、個人情報保護関連法令および**Googleの広告・分析サービス運営ポリシー（Google Publisher Policies）を遵守いたします**。
 
 本サイトは、事前の同意なく個人を特定できる情報（PII）を不当に収集することは一切ありません。Google AdSenseやGoogle Analyticsなどの第三者サービスによるCookieの利用目的および管理方法について、以下の通り透明性を持ってご案内します。
 
@@ -27,7 +27,7 @@ summary: "CK notes プライバシーポリシー、Google AdSense Cookieポリ�
 
 ### 2. Google広告サービスおよびCookieポリシー (Google AdSense)
 
-本サイトでは、高品質なエンジニアリングコンテンツの制作およびサーバー維持管理のため、**Google AdSense（グーグル アドセンス）**による広告を掲載しています。
+本サイトでは、高品質なエンジニアリングコンテンツの制作およびサーバー維持管理のため、**Google AdSense（グーグル アドセンス）による広告を掲載しています**。
 
 Googleのパブリッシャー向け最新ポリシーに基づき、以下の事項を開示します：
 
@@ -46,7 +46,7 @@ Googleのパブリッシャー向け最新ポリシーに基づき、以下の�
 
 ### 3. Google Analytics（アクセス解析ツール）の運用
 
-本サイトでは、コンテンツ品質の向上およびトラフィック分析のために**Google Analytics**を利用しています。
+本サイトでは、コンテンツ品質の向上およびトラフィック分析のために **Google Analytics**を利用しています。
 
 * Google Analyticsは、Cookieを通じて個人を特定できない識別子（Client ID）、滞在時間、参照元URL、デバイス情報などを収集します。
 * 収集されたデータはすべて匿名化されて処理されます。

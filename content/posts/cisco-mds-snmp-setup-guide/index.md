@@ -27,11 +27,11 @@ MDS 스위치에서 SNMP를 구성할 때 흔히 하는 실수가 `snmp-server e
 | 항목 | 예시 설정값 | 설명 |
 | :--- | :--- | :--- |
 | **장비 모델** | Cisco MDS 9148S | SAN Fabric Switch |
-| **SNMP 버전** | **v2c** | 실무에서 가장 널리 쓰이는 표준 SNMP 버전 |
-| **Community String** | **`SDS`** (예시) | 보안을 위해 기본 `public` 대신 조직 표준 명칭 사용 |
-| **접근 권한** | **`ro` (Read-Only)** | NMS 수집을 위한 읽기 전용 권한 |
-| **NMS 모니터링 서버 IP** | **`192.168.100.10`** | Trap 이벤트를 수신할 모니터링 서버 IP |
-| **Trap 수신 포트** | **UDP 162** | 표준 SNMP Trap 포트 |
+| **SNMP 버전**|**v2c** | 실무에서 가장 널리 쓰이는 표준 SNMP 버전 |
+| **Community String **|**`SDS`** (예시) | 보안을 위해 기본 `public` 대신 조직 표준 명칭 사용 |
+| **접근 권한**|**`ro` (Read-Only)** | NMS 수집을 위한 읽기 전용 권한 |
+| **NMS 모니터링 서버 IP **|**`192.168.100.10`** | Trap 이벤트를 수신할 모니터링 서버 IP |
+| **Trap 수신 포트**|**UDP 162** | 표준 SNMP Trap 포트 |
 
 ---
 
@@ -57,8 +57,7 @@ snmp-server host 192.168.100.10 traps version 2c SDS
 ![Cisco MDS SNMP Community 및 Host Trap 설정](images/cisco_mds_snmp_basic.png)
 
 > [!TIP]
-> **Community 보안 권장사항**  
-> 모니터링 목적의 Community는 반드시 **`ro` (Read-Only)**로 설정해야 합니다. `rw` (Read-Write)로 설정할 경우 SNMP 취약점을 통해 스위치 설정이 외부에서 임의로 변경될 위험이 있습니다.
+> **Community 보안 권장사항**> 모니터링 목적의 Community는 반드시**`ro` (Read-Only)로** 설정해야 합니다. `rw` (Read-Write)로 설정할 경우 SNMP 취약점을 통해 스위치 설정이 외부에서 임의로 변경될 위험이 있습니다.
 
 ---
 

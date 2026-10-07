@@ -12,9 +12,7 @@ categories:
 
 > 📌 **내 PC에서 구동하는 로컬 LLM: Ollama 실전 연재 목차**
 > 
-> - **[1편. 내 PC에서 무료로 돌리는 로컬 AI, Ollama란 무엇인가? (개념 및 특징)](../ollama-01-local-llm-intro/)**
-> - **[현재글] [2편. Windows 11 환경 Ollama 설치 및 첫 모델 다운로드 & 구동 가이드](./)**
-> - **[3편. Ollama 실전 활용법: 터미널 대화부터 WebUI & API 연동까지](../ollama-03-cli-webui-api/)**
+> - **[1편. 내 PC에서 무료로 돌리는 로컬 AI, Ollama란 무엇인가? (개념 및 특징)](../ollama-01-local-llm-intro/)**> -**[현재글] [2편. Windows 11 환경 Ollama 설치 및 첫 모델 다운로드 & 구동 가이드](./)**> -**[3편. Ollama 실전 활용법: 터미널 대화부터 WebUI & API 연동까지](../ollama-03-cli-webui-api/)**
 
 ---
 
@@ -91,7 +89,7 @@ flowchart TD
 
 ## 5. 4단계: 터미널(CLI)에서 설치 검증 및 모델 탐색
 
-윈도우 시작 버튼을 우클릭하고 **터미널(Terminal)** 또는 **PowerShell**을 실행합니다.
+윈도우 시작 버튼을 우클릭하고 **터미널(Terminal)**또는**PowerShell**을 실행합니다.
 
 터미널 창에 `ollama`를 입력하고 엔터를 치면, 지원되는 기본 명령어 목록(`serve`, `create`, `show`, `run`, `stop`, `pull`, `push`, `list`, `ps`, `rm`)이 출력됩니다.
 
@@ -154,8 +152,8 @@ ollama run gemma2:2b
 여러 모델(Gemma, Llama, Qwen 등)을 다운받다 보면 C드라이브 용량이 부족해질 수 있습니다. 이 경우 환경 변수를 통해 D드라이브 등 다른 볼륨으로 모델 저장 경로를 변경할 수 있습니다.
 
 1. `Win + R` ➔ `sysdm.cpl` 입력 (시스템 속성 열기)
-2. **[고급]** 탭 ➔ **[환경 변수]** 클릭
-3. **시스템 변수** 또는 사용자 변수에 **[새로 만들기]** 클릭:
+2. **[고급]**탭 ➔**[환경 변수]** 클릭
+3. **시스템 변수**또는 사용자 변수에**[새로 만들기]** 클릭:
    * **변수 이름**: `OLLAMA_MODELS`
    * **변수 값**: `D:\ollama\models` (원하는 폴더 경로 지정)
 4. 시스템 트레이에서 Ollama 아이콘을 우클릭하여 **`Quit Ollama`**로 종료 후 다시 실행하면, 이후 다운로드되는 모든 모델이 지정된 드라이브로 저장됩니다.
@@ -174,7 +172,7 @@ Windows 11 환경에 Ollama를 설치하고 경량 모델을 다운로드하면,
 
 C드라이브 용량이 제한적인 경우 환경 변수(`OLLAMA_MODELS`)를 활용해 데이터 드라이브로 경로를 분리하고, 사전에 내려받은 모델 폴더를 복사해 에어갭 현장에 반입하는 방식으로 유연하게 운용할 수 있습니다.
 
-이어지는 **[3편: Ollama 실전 활용법: 터미널 대화부터 WebUI & API 연동까지](../ollama-03-cli-webui-api/)**에서는 브라우저 기반의 WebUI 연동과 파이썬 스크립트 기반의 REST API 호출 방법을 다룹니다.
+이어지는 **[3편: Ollama 실전 활용법: 터미널 대화부터 WebUI & API 연동까지](../ollama-03-cli-webui-api/)에서는** 브라우저 기반의 WebUI 연동과 파이썬 스크립트 기반의 REST API 호출 방법을 다룹니다.
 
 ---
 
@@ -182,4 +180,4 @@ C드라이브 용량이 제한적인 경우 환경 변수(`OLLAMA_MODELS`)를 �
 
 | 이전 단계 | 다음 단계 |
 | :---: | :---: |
-| **[⬅️ 1편. Ollama 개념 및 특징 총정리](../ollama-01-local-llm-intro/)** | **[3편. Ollama 실전 활용법: WebUI & API 연동 ➡️](../ollama-03-cli-webui-api/)** |
+| **[⬅️ 1편. Ollama 개념 및 특징 총정리](../ollama-01-local-llm-intro/)**|**[3편. Ollama 실전 활용법: WebUI & API 연동 ➡️](../ollama-03-cli-webui-api/)** |

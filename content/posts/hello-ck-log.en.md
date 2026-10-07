@@ -21,7 +21,7 @@ When looking at the blog address or title, you might have initially thought of t
 However, **CK notes** carries a sincere engineering purpose:
 
 * **CK**: The initials of my name.
-* **notes**: Derived from **Engineering Field Notes**—the verified technical practices and troubleshooting solutions documented while working directly on enterprise systems. Since starting my IT journey on September 6, 2010, I have spent over **{{< career-years >}} years** building servers, enterprise storage, and virtualization clusters across numerous datacenters. This blog is an accessible, reliable technical notebook preserving that hard-earned knowledge.
+* **notes **: Derived from**Engineering Field Notes **—the verified technical practices and troubleshooting solutions documented while working directly on enterprise systems. Since starting my IT journey on September 6, 2010, I have spent over**{{< career-years >}} years** building servers, enterprise storage, and virtualization clusters across numerous datacenters. This blog is an accessible, reliable technical notebook preserving that hard-earned knowledge.
 
 ---
 
@@ -29,7 +29,7 @@ However, **CK notes** carries a sincere engineering purpose:
 
 I was never someone who wrote frequently for leisure. However, as an infrastructure engineer, I encounter complex issues and troubleshooting scenarios almost daily. Relying solely on memory felt wasteful, and having a personal reference when similar challenges arise is essential.
 
-Previously, I documented these insights in slide decks and internal company wikis. By publishing them online, I hope they become **a lifelong engineering archive for myself** and **a practical guide for fellow engineers** working late to solve similar production incidents.
+Previously, I documented these insights in slide decks and internal company wikis. By publishing them online, I hope they become **a lifelong engineering archive for myself **and**a practical guide for fellow engineers** working late to solve similar production incidents.
 
 ---
 

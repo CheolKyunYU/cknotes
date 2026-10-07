@@ -48,7 +48,7 @@ Log in to the web console and inspect system alerts (`New alerts: 0`), usable ca
 <br>
 
 ### Step 2. Loading Upgrade Tool and OS 9.6.30 Update Packages
-From the right-hand `Actions` menu, click **Load an update package**. Upload the downloaded **Upgrade Tool (UT 80)** and **OS 9.6.30 package** to the array.
+From the right-hand `Actions` menu, click **Load an update package **. Upload the downloaded**Upgrade Tool (UT 80)** and **OS 9.6.30 package** to the array.
 
 {{< figure src="fig-03-load-update-package.png" caption="Figure 3. Load an update package - Selecting and uploading firmware packages" >}}
 
@@ -96,7 +96,7 @@ After base filesystem staging, **Node 0** leaves the cluster (`11:13:20`) to per
 ### Step 5. Node 1 Rolling Upgrade & Web UI Reconnection
 With Node 0 confirmed healthy and resynchronized, **Node 1** leaves the cluster to reboot into OS 9.6.30 (`11:27:32`).
 
-Reconnecting to the web management UI during the Node 1 reboot reveals the main Software view displaying an active **Maintenance Mode** notification banner and the overall installation progress (**Installing HPE Alletra 9000 9.6.30: 69%**).
+Reconnecting to the web management UI during the Node 1 reboot reveals the main Software view displaying an active **Maintenance Mode **notification banner and the overall installation progress (**Installing HPE Alletra 9000 9.6.30: 69%**).
 
 {{< figure src="fig-04-staged-packages-and-maintenance-mode.png" caption="Figure 10. Web UI reconnection during Node 1 reboot - Installation progress (69%) and maintenance mode banner" >}}
 

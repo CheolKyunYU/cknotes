@@ -13,7 +13,7 @@ categories:
 
 HPE SimpliVity is a solution that provides integrated computing, storage, and network based on hyperconverged infrastructure (HCI).
 
-The storage architecture is based on **RAID + RAIN structure** and **NFS protocol**, and VMware-based SimpliVity and VME have similarities and differences.
+The storage architecture is based on **RAID + RAIN structure **and**NFS protocol**, and VMware-based SimpliVity and VME have similarities and differences.
 
 ---
 
@@ -30,7 +30,7 @@ The storage architecture is based on **RAID + RAIN structure** and **NFS protoco
 * Virtual machines (VMs) operate reliably through this NFS datastore.
 
 ### 3) Data efficiency
-* Reduce storage space through **Deduplication** + **Compression** technology
+* Reduce storage space through **Deduplication **+**Compression** technology
 * Provides built-in backup and recovery functions → Self-DR (disaster recovery) possible without external storage
 
 ---

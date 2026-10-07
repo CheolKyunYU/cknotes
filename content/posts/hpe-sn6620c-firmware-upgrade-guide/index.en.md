@@ -51,7 +51,7 @@ show module
 ### Step 2. Download and Configure Rebex Tiny SCP Server
 Set up **Rebex Tiny SFTP/SCP Server**, a lightweight portable tool optimized for air-gapped field operations.
 1. Download the portable executable and place it on the engineer laptop.
-2. Launch the utility, configure **User/Password** (e.g., `scpuser` / `P@ssw0rd`), and specify the directory containing the firmware binaries as the **Root Directory**.
+2. Launch the utility, configure **User/Password **(e.g., `scpuser` / `P@ssw0rd`), and specify the directory containing the firmware binaries as the**Root Directory**.
 3. Click `Start Server` to immediately bind and activate the SCP listener.
 
 {{< figure src="step-02a-rebex-download.jpg" caption="Step 2-1. Download Rebex Tiny SFTP/SCP Server Portable" >}}

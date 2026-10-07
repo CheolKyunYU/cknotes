@@ -21,9 +21,7 @@ On January 9th, as the odometer crossed 234,000 km, I scheduled the first oil ch
 ![MANN filter set delivered in advance](images/mann_filters.jpg)
 *(Photo: MANN filter boxes prepared in advance)*
 
-Before heading to the garage, I ordered the oil filter and engine air filter online. I chose **MANN-FILTER** for filtration reliability, paired with **ZIC** engine oil, which has been my go-to choice for years.
-
-**💡 Note on Filters**
+Before heading to the garage, I ordered the oil filter and engine air filter online. I chose **MANN-FILTER **for filtration reliability, paired with**ZIC **engine oil, which has been my go-to choice for years.**💡 Note on Filters**
 While MANN filters offer dependable quality, I plan to test other cost-effective OEM alternatives on upcoming services to compare value.
 
 With parts in the trunk, I headed to a pre-booked **Gongimnara** shop.
@@ -43,8 +41,7 @@ For reference, when I looked around the store, there was an oil that matched my 
 
 I left my car and went up to the lounge on the second floor. The waiting area was well-maintained and comfortable, so I was able to rest comfortably until the maintenance was completed.
 
-**💡 Mechanic’s thorough check and advice**
-After completing the maintenance, the mechanic informed me that **the drain bolt side of the oil filter cap was worn**. He said that if you continue to ride like this and do not replace the O-ring in time, the O-ring may eventually wear out and cause engine oil leakage. **It is recommended that the entire oil filter cap be replaced the next time.
+**💡 Mechanic’s thorough check and advice **After completing the maintenance, the mechanic informed me that**the drain bolt side of the oil filter cap was worn **. He said that if you continue to ride like this and do not replace the O-ring in time, the O-ring may eventually wear out and cause engine oil leakage.**It is recommended that the entire oil filter cap be replaced the next time.
 I could have easily missed it, but I was very fortunate to be able to clearly check for hidden factors of deteriorating physical condition with the eagle eye of an expert.
 
 ## In July, replacement cycle and parts repair returned (246,203km)
@@ -65,7 +62,7 @@ I purchased an oil filter cap through Naver for about 60,000 won. When changing 
 ![ZIC engine oil selected again this time](images/zic_oil.jpg)
 *(Photo: ZIC engine oil was still selected during replacement in July)*
 
-For this July replacement, we used **ZIC engine oil** just like last January. After emptying out the old oil and replacing it with new ZIC oil, **the engine became noticeably quieter and the car felt much smoother**. The drive to my next client felt much more refreshing! I am so satisfied with this smooth driving feeling that I will probably replace it with ZIC without hesitation the next time I change engine oil.
+For this July replacement, we used **ZIC engine oil **just like last January. After emptying out the old oil and replacing it with new ZIC oil,**the engine became noticeably quieter and the car felt much smoother**. The drive to my next client felt much more refreshing! I am so satisfied with this smooth driving feeling that I will probably replace it with ZIC without hesitation the next time I change engine oil.
 
 ## finish
 

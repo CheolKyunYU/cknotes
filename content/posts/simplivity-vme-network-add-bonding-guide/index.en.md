@@ -231,4 +231,4 @@ After removal, `ovs-vsctl show` will reflect a clean bridge state containing onl
 
 Network provisioning in HPE VME and SimpliVity clusters hinges on standard host-level bonding paired with flexible VME OVS router abstraction.
 
-The workflow is straightforward, but adhering to two core practices—**bonding even single links from day one** and **strictly isolating storage backbone fabrics**—ensures reliable long-term operations and non-disruptive capacity expansion.
+The workflow is straightforward, but adhering to two core practices—**bonding even single links from day one **and**strictly isolating storage backbone fabrics**—ensures reliable long-term operations and non-disruptive capacity expansion.

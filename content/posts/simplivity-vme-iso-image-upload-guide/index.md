@@ -69,7 +69,7 @@ root@vmemgr:/home/vmeadmin# exportfs -v
 웹 브라우저에서 VM Essentials Manager 콘솔(`https://<VME_Manager_IP>`)에 접속한 후:
 1. 상단 메뉴에서 **[인프라 (Infrastructure)] -> [스토리지 (Storage)]**로 이동합니다.
 2. 상단 탭에서 **`파일 공유 (File Shares)`**를 선택합니다.
-3. 우측의 **`[+ 추가]`** 드롭다운 버튼을 누르고 **`NFSv3`**를 클릭합니다.
+3. 우측의 **`[+ 추가]`**드롭다운 버튼을 누르고**`NFSv3`**를 클릭합니다.
 
 ![스토리지 파일 공유 메뉴 및 NFSv3 추가](images/02_vme_storage_file_shares_menu.png)
 

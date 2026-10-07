@@ -10,7 +10,7 @@ categories:
 
 ## 1. 背景: Alletra MP 10.6.0 アップグレードと新UIへの刷新
 
-ミッションクリティカルストレージである **HPE Alletra Storage MP (B10K / B10120)** において、システムの安定性向上と最新機能のサポートを目的とした **10.6.0 OSファームウェアアップグレード** を実施しました。
+ミッションクリティカルストレージである **HPE Alletra Storage MP (B10K / B10120)**において、システムの安定性向上と最新機能のサポートを目的とした**10.6.0 OSファームウェアアップグレード** を実施しました。
 
 今回の10.6.0リリースは、バックエンドの性能向上とプラットフォームの安定化だけでなく、**Web管理コンソールが従来のダークサイドバーからモダンなホワイトツリー型新UIへと大幅に刷新される**重要なアップデートとなっています。
 
@@ -71,7 +71,7 @@ Staged一覧の右側にある **`View readiness checks`** リンクをクリッ
 
 ### Step 4. Update Software の実行および10.6.0パッケージの選択
 事前点検の成功を確認したら、右上の **`Update software`** アクションボタンをクリックします。  
-パッケージ選択画面で **`HPE GreenLake for Block Storage 10.6.0`** にチェックを入れ、下部の **`Install`** ボタンを押します。
+パッケージ選択画面で **`HPE GreenLake for Block Storage 10.6.0`**にチェックを入れ、下部の**`Install`** ボタンを押します。
 
 {{< figure src="step-04-select-package.png" caption="Step 4. Update software 画面で HPE GreenLake for Block Storage 10.6.0 を選択し Install を実行" >}}
 

@@ -12,9 +12,7 @@ categories:
 
 > 📌 **Local LLM on My PC: Ollama Practical Series**
 > 
-> - **[Part 1. What is Ollama, a Local AI Running Free on My PC? (Concepts & Features)](../ollama-01-local-llm-intro/)**
-> - **[Part 2. Windows 11 Ollama Installation & First Model Setup Guide](../ollama-02-windows-install-guide/)**
-> - **[Current Post] [Part 3. Ollama Practical Applications: Terminal Chat, WebUI, and REST API](./)**
+> - **[Part 1. What is Ollama, a Local AI Running Free on My PC? (Concepts & Features)](../ollama-01-local-llm-intro/)**> -**[Part 2. Windows 11 Ollama Installation & First Model Setup Guide](../ollama-02-windows-install-guide/)**> -**[Current Post] [Part 3. Ollama Practical Applications: Terminal Chat, WebUI, and REST API](./)**
 
 ---
 
@@ -77,7 +75,7 @@ ollama rm gemma2:2b
 
 When you enter conversational mode with `ollama run <model name>`, you can control the session with the slash (`/`) command in the prompt window:
 
-* **`/?`** or **`/help`**: Check the list of available shortcut commands.
+* **`/?`**or **`/help`**: Check the list of available shortcut commands.
 * **`/show info`**: Check parameter size, context length, and architecture details of the current local model.
 * **`/clear`**: Clear the previous conversation context (history) and start with a new topic.
 * **`/set system "..."`**: Assign a specific role (persona) to AI
@@ -105,10 +103,10 @@ The most recommended free tool for regular Windows 11 users is **`Chatbox`**. In
 
 ### 🛠️ How to set up and connect Chatbox in 1 minute
 
-1. **Chatbox Download**: Download the **`Download for Windows`** installation file from the official website ([https://chatboxai.app/](https://chatboxai.app/)) and install it.
-2. **Open the settings window**: After running the Chatbox, click the **[Settings]** icon in the bottom left.
+1. **Chatbox Download **: Download the**`Download for Windows`** installation file from the official website ([https://chatboxai.app/](https://chatboxai.app/)) and install it.
+2. **Open the settings window **: After running the Chatbox, click the**[Settings]** icon in the bottom left.
 3. **Select AI model provider**:
-   * **Model Provider**: Select **`Ollama`**
+   * **Model Provider **: Select**`Ollama`**
    * **API Host**: Maintain the default value of `http://localhost:11434` (however, when connecting from another PC, refer to the tips below)
    * **Model**: Select the local model you have installed (e.g. `gemma2:2b`, `llama3.2:3b`, etc.)
 
@@ -122,9 +120,7 @@ The most recommended free tool for regular Windows 11 users is **`Chatbox`**. In
 
 > *"I work on a light sub-laptop in the living room or conference room. Is it not possible to remotely connect to Ollama on the main PC in my room (or a high-performance in-house server) and use it?"*
 
-**Of course you can, and that's one of Ollama's strongest appeals!**
-
-Heavy AI model calculations are handled by the high-performance main PC, and on a light laptop (another PC) with a low battery, you can conveniently ask questions and receive answers** remotely by simply turning on Chatbox.
+**Of course you can, and that's one of Ollama's strongest appeals!** Heavy AI model calculations are handled by the high-performance main PC, and on a light laptop (another PC) with a low battery, you can conveniently ask questions and receive answers** remotely by simply turning on Chatbox.
 
 ```mermaid
 flowchart LR
@@ -146,14 +142,14 @@ By default, Ollama is locked down to only receive requests from itself (`127.0.0
 
 1. `Win + R` ➔ Enter `sysdm.cpl` (System Properties) ➔ Click **[Advanced] ➔ [Environment Variables]**
 2. Click [New]:
-   * **Variable Name**: **`OLLAMA_HOST`**
-   * **Variable value**: **`0.0.0.0`** (All local IP connections allowed)
+   * **Variable Name **:**`OLLAMA_HOST`**
+   * **Variable value **:**`0.0.0.0`** (All local IP connections allowed)
 3. Right-click the Ollama icon in the taskbar system tray, quit with **`Quit Ollama`**, and run it again. (If the Windows Firewall notification window appears, click ‘Allow access’)
 4. Check the internal IP address of your main PC (type `ipconfig` in PowerShell ➔ e.g. `192.168.0.50`).
 
 #### Step 2: Just change the address in the Chatbox on another PC (sub-laptop)!
 1. There is absolutely no need to install Ollama or a heavy model on a lightweight sub-notebook (another PC). **Install only the Chatbox app**.
-2. In the Chatbox settings window, enter the **API Host** address as **`http://192.168.0.50:11434`** (IP of the main PC) instead of `http://localhost:11434`.
+2. In the Chatbox settings window, enter the **API Host **address as**`http://192.168.0.50:11434`** (IP of the main PC) instead of `http://localhost:11434`.
 3. Now, on your sub-laptop, you can freely connect to the powerful AI engine of your main PC remotely and chat like ChatGPT, without fan noise or battery consumption!
 
 ![Chatbox screen for real-time conversation with the Ollama model on the remote main PC from another PC](images/chatbot_chat.jpg)
@@ -239,4 +235,4 @@ Local LLMs provide infrastructure engineers with a secure, highly responsive cop
 
 | Previous Step | Next Step |
 | :---: | :---: |
-| **[⬅️ Part 2. Windows 11 Ollama Installation & Setup](../ollama-02-windows-install-guide/)** | **Series Complete** |
+| **[⬅️ Part 2. Windows 11 Ollama Installation & Setup](../ollama-02-windows-install-guide/)**|**Series Complete** |

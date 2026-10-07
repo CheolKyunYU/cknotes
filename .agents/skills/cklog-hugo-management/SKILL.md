@@ -111,6 +111,11 @@ All blog posts (KO, EN, JP) must adhere to these standards to ensure natural, hu
    * **NO AI Closing Templates**: Do NOT end posts with *"오늘의 핵심 요약 3가지"*, *"궁금한 점은 댓글로 남겨주세요!"*.
      * *Instead*: Conclude with a calm, professional engineering summary focusing on long-term design stability and best practices.
    * **NO Excessive Bold Formatting**: Avoid bolding multiple words or phrases in every sentence. Reserve bolding strictly for UI button names, CLI commands, device names, or critical warnings.
+    * **Strict Bold Syntax Rules (CommonMark / Goldmark Compatibility)**:
+      * **Korean Particles with Parentheses/Quotes**: When bold text ends in punctuation like `)` or `'` followed by Korean particles (`을/를/은/는/이/가/로/와/과`), ALWAYS include the particle inside the bold syntax (e.g., `**용어(설명)를**`, `**'단어'는**`). Leaving the particle outside (`**용어(설명)**를`) causes Goldmark to treat `**` as literal asterisks!
+      * **No Whitespace Inside Delimiters**: Never write `** bold **` or `**bold **`. Always write `**bold**`.
+      * **Proper Whitespace Outside Delimiters**: In English/multilingual text, ensure a space precedes the opening `**` and follows the closing `**` (e.g., `the **term** is`, NOT `the**term**is`).
+    * **Image Width Standard**: Do NOT hardcode `width="50%"` in `{{< figure ... >}}` shortcodes. Omit the width attribute to let images automatically scale responsively to 100% of the content container.
    * **NO Hyperbolic Adjectives**: Avoid buzzwords like *"치명적인 문제점"*, *"완벽 가이드"*, *"필연적으로"*, *"놀라운"*. Use objective engineering terms.
 
 3. **Field Experience & "Why" Integration**:

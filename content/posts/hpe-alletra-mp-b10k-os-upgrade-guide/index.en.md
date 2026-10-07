@@ -71,7 +71,7 @@ Ensure all check categories display a green **Passed** status before proceeding.
 
 ### Step 4. Initiate Update Software and Select 10.6.0 Package
 With readiness checks confirmed, click the **`Update software`** action button.  
-In the package selection dialog, select **`HPE GreenLake for Block Storage 10.6.0`** and click **`Install`**.
+In the package selection dialog, select **`HPE GreenLake for Block Storage 10.6.0`**and click **`Install`**.
 
 {{< figure src="step-04-select-package.png" caption="Step 4. Selecting HPE GreenLake for Block Storage 10.6.0 package and initiating Install" >}}
 
@@ -126,14 +126,14 @@ Navigate to **System ➔ Details / Software** in the new interface to verify ove
 
 ### Precaution 1: Handling Warnings or Failures in Readiness Checks
 * **Root Cause**: Severed multipath links, ongoing background backup jobs, or insufficient node free space.
-* **Resolution**: Never check `Ignore pre-installation warnings` to force an install. Resolve the underlying issue first, run `Re-run checks`, and **only proceed when all checks achieve Passed status**.
+* **Resolution **: Never check `Ignore pre-installation warnings` to force an install. Resolve the underlying issue first, run `Re-run checks`, and**only proceed when all checks achieve Passed status**.
 
 ### Precaution 2: Temporary Web Console Freezing at 44% Version Switch
 * **Symptom**: The browser may appear unresponsive or show the updating popup for 1–2 minutes during node reboots.
 * **Resolution**: This is normal behavior during web service daemon restarts. Do not close or spam-refresh the browser; the page will automatically refresh into the new white UI once complete.
 
 ### Precaution 3: When In-House Execution is Difficult (Mandatory Recommendation for HPE Engineer Support)
-* **Recommendation**: HPE Alletra Storage MP powers critical enterprise tier-1 workloads. If your in-house team is unfamiliar with the process, if persistent warnings in Readiness Checks cannot be resolved internally, or if executing offline manual package updates, **do not attempt to force the upgrade alone. Strongly request on-site or remote assistance from certified HPE Pointnext Services or authorized partner engineers** to ensure zero data disruption.
+* **Recommendation **: HPE Alletra Storage MP powers critical enterprise tier-1 workloads. If your in-house team is unfamiliar with the process, if persistent warnings in Readiness Checks cannot be resolved internally, or if executing offline manual package updates,**do not attempt to force the upgrade alone. Strongly request on-site or remote assistance from certified HPE Pointnext Services or authorized partner engineers** to ensure zero data disruption.
 
 ---
 

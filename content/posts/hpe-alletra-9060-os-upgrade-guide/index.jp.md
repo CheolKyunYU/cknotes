@@ -48,7 +48,7 @@ Webコンソールにログインし、システムアラート（New alerts: 0�
 <br>
 
 ### Step 2. Upgrade Tool および OS 9.6.30 パッケージのロード
-右側の `Actions` メニューから **Load an update package** をクリックし、事前にダウンロードした <strong>Upgrade Tool（UT 80）</strong> と **OS 9.6.30 パッケージ** をストレージへアップロードします。
+右側の `Actions` メニューから **Load an update package **をクリックし、事前にダウンロードした <strong>Upgrade Tool（UT 80）</strong> と**OS 9.6.30 パッケージ** をストレージへアップロードします。
 
 {{< figure src="fig-03-load-update-package.png" caption="図 3. Load an update package - アップグレードパッケージの選択とアップロード" >}}
 
@@ -96,7 +96,7 @@ PD、LD、IOCTL、ホストパス整合性などの主要項目がすべて `Pas
 ### Step 5. Node 1 ローリング更新および Web UI 再接続
 Node 0 の正常稼働および同期が確認された後、続いて <strong>Node 1</strong> がクラスタを離脱し新OSで再起動します（`11:27:32`）。
 
-Node 1 が再起動している間に Web コンソールへ再接続すると、上部に **メンテナンスモード（Maintenance Mode）** バナーが表示され、全体のOSインストール進捗状況（**Installing HPE Alletra 9000 9.6.30: 69%**）が確認できます。
+Node 1 が再起動している間に Web コンソールへ再接続すると、上部に **メンテナンスモード（Maintenance Mode）**バナーが表示され、全体のOSインストール進捗状況（**Installing HPE Alletra 9000 9.6.30: 69%**）が確認できます。
 
 {{< figure src="fig-04-staged-packages-and-maintenance-mode.png" caption="図 10. Node 1 再起動中の Web UI 再接続画面 - インストール進捗（69%）およびメンテナンスモード稼働" >}}
 

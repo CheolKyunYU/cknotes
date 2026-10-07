@@ -12,7 +12,7 @@ categories:
 
 HPE SN6620C (Cisco MDS 9148T 기반) 32Gb FC SAN 스위치를 운영 중인 고객사 현장에서 기존 9.2.2 버전의 안정성 보강 요청이 있었습니다. 
 
-구형 9.2.2 버전은 장기 운영 시 환경 센서 폴링 오진단이나 ISSU(In-Service Software Upgrade) 과정에서의 BIOS 타임아웃 가능성이 보고되어 있던 상태였습니다. 이에 HPE 및 Cisco 공식 문서에서 **추천 안정화 버전(Recommended Release)으로 지정된 NX-OS 9.4(5)**로 업그레이드를 결정했습니다.
+구형 9.2.2 버전은 장기 운영 시 환경 센서 폴링 오진단이나 ISSU(In-Service Software Upgrade) 과정에서의 BIOS 타임아웃 가능성이 보고되어 있던 상태였습니다. 이에 HPE 및 Cisco 공식 문서에서 **추천 안정화 버전(Recommended Release)으로 지정된 NX-OS 9.4(5)로** 업그레이드를 결정했습니다.
 
 폐쇄망 환경 특성상 보안 정책에 따라 외부 통신이 차단되어 있었으므로, **작업용 엔지니어 노트북에 Rebex Tiny SFTP/SCP Server를 띄워 로컬 네트워크를 통해 펌웨어를 전송**하는 방식으로 작업을 진행했습니다.
 
@@ -51,7 +51,7 @@ show module
 ### Step 2. Rebex Tiny SCP Server 다운로드 및 구성
 폐쇄망 작업 환경에 최적화된 경량 포터블 툴인 **Rebex Tiny SFTP/SCP Server**를 준비하고 설정합니다.
 1. 포터블 실행 파일을 다운로드하여 작업 노트북에 준비합니다.
-2. 실행 후 **User/Password** 계정 정보(예: `scpuser` / `P@ssw0rd`)를 설정하고, 펌웨어 파일이 위치한 폴더를 **Root Directory**로 지정합니다.
+2. 실행 후 **User/Password **계정 정보(예: `scpuser` / `P@ssw0rd`)를 설정하고, 펌웨어 파일이 위치한 폴더를**Root Directory**로 지정합니다.
 3. `Start Server` 버튼을 눌러 SCP 바인딩 서비스를 즉시 활성화합니다.
 
 {{< figure src="step-02a-rebex-download.jpg" caption="Step 2-1. Rebex Tiny SFTP/SCP Server 포터블 다운로드" >}}

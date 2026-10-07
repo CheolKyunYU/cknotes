@@ -14,7 +14,7 @@ During on-site data center maintenance, it is common to observe the **SYS/ENV st
 
 When running `show environment` to inspect internal sensor readings, the temperatures show `32°C (Normal)`. Despite normal operating conditions, a sensor polling mechanism bug in NX-OS 9.2.2 (such as CSCwo09244) erroneously triggers a threshold warning and illuminates the cosmetic amber warning light.
 
-In this guide, we cover **the root cause analysis of the false temperature sensor Amber LED issue, the permanent resolution via the recommended 9.4.5 upgrade**, and **how to configure the switch Timezone** to eliminate log timestamp confusion during incidents.
+In this guide, we cover **the root cause analysis of the false temperature sensor Amber LED issue, the permanent resolution via the recommended 9.4.5 upgrade **, and**how to configure the switch Timezone** to eliminate log timestamp confusion during incidents.
 
 ---
 

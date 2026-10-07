@@ -12,9 +12,7 @@ categories:
 
 > 📌 **내 PC에서 구동하는 로컬 LLM: Ollama 실전 연재 목차**
 > 
-> - **[1편. 내 PC에서 무료로 돌리는 로컬 AI, Ollama란 무엇인가? (개념 및 특징)](../ollama-01-local-llm-intro/)**
-> - **[2편. Windows 11 환경 Ollama 설치 및 첫 모델 다운로드 & 구동 가이드](../ollama-02-windows-install-guide/)**
-> - **[현재글] [3편. Ollama 실전 활용법: CLI 고급 팁부터 WebUI 및 API 연동까지](./)**
+> - **[1편. 내 PC에서 무료로 돌리는 로컬 AI, Ollama란 무엇인가? (개념 및 특징)](../ollama-01-local-llm-intro/)**> -**[2편. Windows 11 환경 Ollama 설치 및 첫 모델 다운로드 & 구동 가이드](../ollama-02-windows-install-guide/)**> -**[현재글] [3편. Ollama 실전 활용법: CLI 고급 팁부터 WebUI 및 API 연동까지](./)**
 
 ---
 
@@ -28,7 +26,7 @@ categories:
 
 ## 1. 로컬 AI 실전 활용 아키텍처
 
-Ollama는 단순한 터미널 툴이 아니라, 백그라운드에서 강력한 **REST API 서버(`http://localhost:11434`)**로 동작합니다. 따라서 아래와 같이 다양한 인터페이스와 손쉽게 결합하여 확장할 수 있습니다.
+Ollama는 단순한 터미널 툴이 아니라, 백그라운드에서 강력한 **REST API 서버(`http://localhost:11434`)로** 동작합니다. 따라서 아래와 같이 다양한 인터페이스와 손쉽게 결합하여 확장할 수 있습니다.
 
 ```mermaid
 flowchart TD
@@ -77,7 +75,7 @@ ollama rm gemma2:2b
 
 `ollama run <모델명>`으로 대화 모드에 진입했을 때, 프롬프트 창에서 슬래시(`/`) 명령어로 세션을 제어할 수 있습니다:
 
-* **`/?`** 또는 **`/help`**: 사용 가능한 단축 명령어 목록 확인
+* **`/?`**또는**`/help`**: 사용 가능한 단축 명령어 목록 확인
 * **`/show info`**: 현재 로컬 모델의 파라미터 크기, 컨텍스트 길이, 아키텍처 상세 확인
 * **`/clear`**: 이전 대화 문맥(히스토리)을 깨끗이 비우고 새로운 주제로 시작
 * **`/set system "..."`**: AI에게 특정 역할(페르소나) 부여하기
@@ -105,10 +103,10 @@ ollama rm gemma2:2b
 
 ### 🛠️ Chatbox 1분 설정 및 연동 방법
 
-1. **Chatbox 다운로드**: 공식 웹사이트([https://chatboxai.app/](https://chatboxai.app/))에서 **`Download for Windows`** 설치 파일을 받아 설치합니다.
-2. **설정창 열기**: Chatbox 실행 후 좌측 하단 **[설정(Settings)]** 아이콘을 클릭합니다.
+1. **Chatbox 다운로드**: 공식 웹사이트([https://chatboxai.app/](https://chatboxai.app/))에서**`Download for Windows`** 설치 파일을 받아 설치합니다.
+2. **설정창 열기**: Chatbox 실행 후 좌측 하단**[설정(Settings)]** 아이콘을 클릭합니다.
 3. **AI 모델 제공자 선택**:
-   * **Model Provider**: **`Ollama`** 선택
+   * **Model Provider **:**`Ollama`** 선택
    * **API Host**: 기본값인 `http://localhost:11434` 유지 (단, 다른 PC에서 접속 시 아래 꿀팁 참고)
    * **Model**: 내가 설치한 로컬 모델 선택 (예: `gemma2:2b`, `llama3.2:3b` 등)
 
@@ -122,9 +120,7 @@ ollama rm gemma2:2b
 
 > *"거실이나 회의실에서 가벼운 서브 노트북으로 작업하는데, 내 방의 메인 PC(또는 사내 고성능 서버)에 있는 Ollama를 원격으로 연결해서 쓸 수는 없을까?"*
 
-**당연히 가능하며, 이것이 바로 Ollama의 가장 강력한 매력 중 하나입니다!**
-
-무거운 AI 모델 연산은 성능 좋은 메인 PC가 전담하고, 배터리가 적은 가벼운 노트북(다른 PC)에서는 **Chatbox만 켜서 원격으로 쾌적하게 질문하고 답변**을 받을 수 있습니다.
+**당연히 가능하며, 이것이 바로 Ollama의 가장 강력한 매력 중 하나입니다!** 무거운 AI 모델 연산은 성능 좋은 메인 PC가 전담하고, 배터리가 적은 가벼운 노트북(다른 PC)에서는**Chatbox만 켜서 원격으로 쾌적하게 질문하고 답변**을 받을 수 있습니다.
 
 ```mermaid
 flowchart LR
@@ -146,14 +142,14 @@ flowchart LR
 
 1. `Win + R` ➔ `sysdm.cpl` 입력 (시스템 속성) ➔ **[고급] ➔ [환경 변수]** 클릭
 2. [새로 만들기] 클릭:
-   * **변수 이름**: **`OLLAMA_HOST`**
-   * **변수 값**: **`0.0.0.0`** (모든 로컬 IP 접속 허용)
+   * **변수 이름**:**`OLLAMA_HOST`**
+   * **변수 값**:**`0.0.0.0`** (모든 로컬 IP 접속 허용)
 3. 작업표시줄 시스템 트레이에서 Ollama 아이콘을 우클릭하여 **`Quit Ollama`**로 종료 후 다시 실행합니다. (윈도우 방화벽 알림창이 뜨면 '액세스 허용' 클릭)
 4. 메인 PC의 내부 IP 주소를 확인합니다 (PowerShell에서 `ipconfig` 입력 ➔ 예: `192.168.0.50`).
 
 #### 2단계: 다른 PC(서브 노트북)의 Chatbox에서 주소만 바꿔주기!
 1. 가벼운 서브 노트북(다른 PC)에는 Ollama나 무거운 모델을 깔 필요가 전혀 없습니다. **Chatbox 앱만 설치**합니다.
-2. Chatbox 설정창에서 **API Host** 주소를 `http://localhost:11434` 대신 **`http://192.168.0.50:11434`** (메인 PC의 IP)로 입력합니다.
+2. Chatbox 설정창에서 **API Host **주소를 `http://localhost:11434` 대신**`http://192.168.0.50:11434`** (메인 PC의 IP)로 입력합니다.
 3. 이제 서브 노트북에서는 팬 소음이나 배터리 소모 없이, 메인 PC의 파워풀한 AI 엔진을 원격으로 자유롭게 연결하여 ChatGPT처럼 대화할 수 있습니다!
 
 ![다른 PC에서 원격 메인 PC의 Ollama 모델과 실시간 대화하는 Chatbox 화면](images/chatbot_chat.jpg)
@@ -162,7 +158,7 @@ flowchart LR
 
 ## 5. 내 자동화 스크립트에 AI 연결하기 (API & Python)
 
-Ollama의 또 다른 강력한 무기는 프로그래밍 언어와 연동하여 **내 업무 자동화 파이프라인의 '지능형 모듈'**로 쓸 수 있다는 점입니다.
+Ollama의 또 다른 강력한 무기는 프로그래밍 언어와 연동하여 **내 업무 자동화 파이프라인의 '지능형 모듈'로** 쓸 수 있다는 점입니다.
 
 ### ① Windows PowerShell에서 `curl`로 API 직접 호출
 
@@ -239,4 +235,4 @@ Ollama는 자체적으로 OpenAI API 호환 규격(`http://localhost:11434/v1`)�
 
 | 이전 단계 | 다음 단계 |
 | :---: | :---: |
-| **[⬅️ 2편. Windows 11 Ollama 설치 & 모델 구동 가이드](../ollama-02-windows-install-guide/)** | **시리즈 완결** |
+| **[⬅️ 2편. Windows 11 Ollama 설치 & 모델 구동 가이드](../ollama-02-windows-install-guide/)**|**시리즈 완결** |

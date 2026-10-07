@@ -6,7 +6,7 @@ draft: false
 summary: "CK notes Privacy Policy, Google AdSense cookie guidelines, and contact information."
 ---
 
-This blog (**CK notes**, hereinafter referred to as the 'Site') values the privacy of its visitors and complies with applicable privacy regulations and **Google Publisher Policies** for advertising and analytics services.
+This blog (**CK notes **, hereinafter referred to as the 'Site') values the privacy of its visitors and complies with applicable privacy regulations and**Google Publisher Policies** for advertising and analytics services.
 
 This Site does not collect Personally Identifiable Information (PII) without prior consent. The transparent handling of cookies by third-party services such as Google AdSense and Google Analytics is detailed below.
 

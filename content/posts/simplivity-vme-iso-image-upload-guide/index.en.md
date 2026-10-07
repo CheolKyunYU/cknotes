@@ -69,7 +69,7 @@ Confirm that the output includes proper export options such as `/nfs <world>(syn
 Log into the VM Essentials Manager console (`https://<VME_Manager_IP>`):
 1. Navigate to **[Infrastructure] -> [Storage]**.
 2. Select the **`File Shares`** tab.
-3. Click the **`[+ Add]`** dropdown on the right and select **`NFSv3`**.
+3. Click the **`[+ Add]`**dropdown on the right and select **`NFSv3`**.
 
 ![Storage File Shares Menu and NFSv3 Add](images/02_vme_storage_file_shares_menu.png)
 

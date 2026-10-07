@@ -12,9 +12,7 @@ categories:
 
 > 📌 **Local LLM on My PC: Ollama Practical Series**
 > 
-> - **[Part 1. What is Ollama, a Local AI Running Free on My PC? (Concepts & Features)](../ollama-01-local-llm-intro/)**
-> - **[Current Post] [Part 2. Windows 11 Ollama Installation & First Model Setup Guide](./)**
-> - **[Part 3. Ollama Practical Applications: Terminal Chat, WebUI, and REST API](../ollama-03-cli-webui-api/)**
+> - **[Part 1. What is Ollama, a Local AI Running Free on My PC? (Concepts & Features)](../ollama-01-local-llm-intro/)**> -**[Current Post] [Part 2. Windows 11 Ollama Installation & First Model Setup Guide](./)**> -**[Part 3. Ollama Practical Applications: Terminal Chat, WebUI, and REST API](../ollama-03-cli-webui-api/)**
 
 ---
 
@@ -89,7 +87,7 @@ If desired, you can sign in with your Ollama account (optional; downloading mode
 
 ## 5. Step 4: Verify Installation and Explore Models in CLI
 
-Right-click the Windows Start button and open **Terminal** or **PowerShell**.
+Right-click the Windows Start button and open **Terminal **or**PowerShell**.
 
 Type `ollama` and press Enter to display the supported command-line options (`serve`, `create`, `show`, `run`, `stop`, `pull`, `push`, `list`, `ps`, `rm`).
 
@@ -152,7 +150,7 @@ To exit the interactive session and return to PowerShell:
 As you pull multiple models, system drive space may diminish. You can relocate the storage path to another partition (such as `D:\`) using environment variables:
 
 1. Press `Win + R`, enter `sysdm.cpl`, and hit Enter.
-2. Navigate to **Advanced** ➔ click **Environment Variables**.
+2. Navigate to **Advanced **➔ click**Environment Variables**.
 3. Under System or User variables, click **New**:
    * **Variable name**: `OLLAMA_MODELS`
    * **Variable value**: `D:\ollama\models` (or your target path)
@@ -180,4 +178,4 @@ In **[Part 3: Ollama Practical Applications: Terminal Chat, WebUI, and REST API]
 
 | Previous Step | Next Step |
 | :---: | :---: |
-| **[⬅️ Part 1. Ollama Concepts and Architecture Overview](../ollama-01-local-llm-intro/)** | **[Part 3. Ollama Practical Applications: WebUI & API Integration ➡️](../ollama-03-cli-webui-api/)** |
+| **[⬅️ Part 1. Ollama Concepts and Architecture Overview](../ollama-01-local-llm-intro/)**|**[Part 3. Ollama Practical Applications: WebUI & API Integration ➡️](../ollama-03-cli-webui-api/)** |

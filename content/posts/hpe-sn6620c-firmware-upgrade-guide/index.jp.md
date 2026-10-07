@@ -12,7 +12,7 @@ categories:
 
 HPE SN6620C (Cisco MDS 9148Tベース) 32Gb FC SANスイッチを運用中のお客様環境において、安定性向上のためのファームウェア更新を実施しました。
 
-旧バージョンの9.2.2では、長期稼働時の環境センサー誤検知やISSU実行時のBIOSタイムアウトの懸念が報告されていました。そのため、HPEおよびCisco公式の**推奨安定バージョン(Recommended Release)であるNX-OS 9.4(5)**へのアップグレードを決定しました。
+旧バージョンの9.2.2では、長期稼働時の環境センサー誤検知やISSU実行時のBIOSタイムアウトの懸念が報告されていました。そのため、HPEおよびCisco公式の **推奨安定バージョン(Recommended Release)であるNX-OS 9.4(5)へのアップグレ**ードを決定しました。
 
 外部接続が遮断された閉域網環境であるため、**エンジニアの作業用ノートPCにRebex Tiny SFTP/SCP Serverを起動し、ローカル接続でファームウェアを転送**する方式を採用しました。
 
@@ -51,7 +51,7 @@ show module
 ### Step 2. Rebex Tiny SCP Server のダウンロードと設定
 閉域網での作業に適したポータブルツール **Rebex Tiny SFTP/SCP Server** を準備・設定します。
 1. ポータブル実行ファイルをダウンロードして作業PCに配置します。
-2. 起動後、**User/Password** (例: `scpuser` / `P@ssw0rd`) を設定し、ファームウェアファイル格納フォルダを **Root Directory** に指定します。
+2. 起動後、**User/Password **(例: `scpuser` / `P@ssw0rd`) を設定し、ファームウェアファイル格納フォルダを**Root Directory** に指定します。
 3. `Start Server` ボタンを押してSCPサービスを即座に有効化します。
 
 {{< figure src="step-02a-rebex-download.jpg" caption="Step 2-1. Rebex Tiny SFTP/SCP Server ポータブル版のダウンロード" >}}

@@ -19,7 +19,7 @@ If you are visiting for the first time, you might have initially thought of the 
 However, **CK notes** carries a simple yet dedicated meaning:
 
 * **CK**: The initials of the engineer and author of this blog.
-* **notes**: Represents **Engineering Field Notes**—the verified technical insights and solutions gathered while diagnosing servers, networks, and virtualization platforms every day. Since entering the IT industry on September 6, 2010, I have spent over **{{< career-years >}} years** building enterprise data centers, managing server and storage infrastructure, and solving critical downtime issues. This space serves as an open, reliable engineering notebook documenting that hard-earned knowledge.
+* **notes **: Represents**Engineering Field Notes **—the verified technical insights and solutions gathered while diagnosing servers, networks, and virtualization platforms every day. Since entering the IT industry on September 6, 2010, I have spent over**{{< career-years >}} years** building enterprise data centers, managing server and storage infrastructure, and solving critical downtime issues. This space serves as an open, reliable engineering notebook documenting that hard-earned knowledge.
 
 ---
 

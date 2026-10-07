@@ -35,7 +35,7 @@ HPE SimpliVity VME(Virtual Machine Essentials)는 하이퍼컨버지드 인프�
 4. **클러스터 생성 및 OVC 배포**: VME Manager 기반으로 HVM 클러스터를 구성하고 OmniStack Virtual Controller 배포
 
 > 💡 **상세 구축 가이드**:
-> 실제 단계별 상세 설치 절차는 **[HPE SimpliVity 6.2.0 실전 구축 연재 시리즈](../simplivity-00-install-prep/)**에서 단계별 스크린샷과 함께 상세히 다루고 있습니다.
+> 실제 단계별 상세 설치 절차는 **[HPE SimpliVity 6.2.0 실전 구축 연재 시리즈](../simplivity-00-install-prep/)에서** 단계별 스크린샷과 함께 상세히 다루고 있습니다.
 
 ---
 

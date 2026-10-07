@@ -27,11 +27,11 @@ The basic parameters of the practical and field application environment are defi
 | item | Example settings | explanation |
 | :--- | :--- | :--- |
 | **Equipment Model** | Cisco MDS 9148S | SAN Fabric Switch |
-| **SNMP Version** | **v2c** | The most widely used standard SNMP version in practice |
-| **Community String** | **`SDS`** (example) | For security reasons, use the organization standard name instead of the default `public` |
-| **Access Rights** | **`ro` (Read-Only)** | Read-only permission for NMS collection |
-| **NMS Monitoring Server IP** | **`192.168.100.10`** | Monitoring server IP to receive trap events |
-| **Trap listening port** | **UDP 162** | Standard SNMP Trap Port |
+| **SNMP Version **|**v2c** | The most widely used standard SNMP version in practice |
+| **Community String **|**`SDS`** (example) | For security reasons, use the organization standard name instead of the default `public` |
+| **Access Rights **|**`ro` (Read-Only)** | Read-only permission for NMS collection |
+| **NMS Monitoring Server IP **|**`192.168.100.10`** | Monitoring server IP to receive trap events |
+| **Trap listening port **|**UDP 162** | Standard SNMP Trap Port |
 
 ---
 
@@ -57,8 +57,7 @@ snmp-server host 192.168.100.10 traps version 2c SDS
 ![Cisco MDS SNMP Community and Host Trap Settings](images/cisco_mds_snmp_basic.png)
 
 > [!TIP]
-> **Community Security Recommendations**
-> Community for monitoring purposes must be set to **`ro` (Read-Only)**. If set to `rw` (Read-Write), there is a risk of the switch settings being arbitrarily changed from outside through SNMP vulnerability.
+> **Community Security Recommendations **> Community for monitoring purposes must be set to**`ro` (Read-Only)**. If set to `rw` (Read-Write), there is a risk of the switch settings being arbitrarily changed from outside through SNMP vulnerability.
 
 ---
 

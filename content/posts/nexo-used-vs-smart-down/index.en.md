@@ -34,9 +34,7 @@ Even if a new car is released at an actual purchase price of 40 million won with
 
 * **Market price reality for 1st generation used Nexo**:
 Currently, the market price for the 2019-2021 model year 1st generation Nexo accident-free used car at Encana K Car is **approximately 14 to 17 million won**.
-👉 **Surprisingly, the money you pay to buy an entire 1st generation used Nexo is almost the same as the depreciation loss lost when you drive the new car, The All New Nexo, for 3 years!**
-
-In the end, the essence of this concern is a matter of choice: **"If 15 to 20 million won will come out of my pocket over 3 years anyway, what will I gain with that cost and what risks will I avoid?"**
+👉 **Surprisingly, the money you pay to buy an entire 1st generation used Nexo is almost the same as the depreciation loss lost when you drive the new car, The All New Nexo, for 3 years!** In the end, the essence of this concern is a matter of choice:**"If 15 to 20 million won will come out of my pocket over 3 years anyway, what will I gain with that cost and what risks will I avoid?"**
 
 ---
 
@@ -73,7 +71,7 @@ This is a method of purchasing a used 1st generation Nexo, which has already rea
 
 ### ⚠️ Realistic worry: The pressure of the looming warranty expiration
 * Used items priced at 15 million won are usually 4 to 6 years old and have an accumulated mileage of 60,000 to 100,000 km.
-* Hyundai Motor Company’s free warranty for hydrogen-specific parts is **10 years / 160,000 km**. In other words, **only half of the warranty remains**.
+* Hyundai Motor Company’s free warranty for hydrogen-specific parts is **10 years / 160,000 km **. In other words,**only half of the warranty remains**.
 * If, by any chance, a defect occurs in the fuel cell stack after the warranty period ends, the replacement estimate alone will cost more than 40 million won, so the fact that I may have to give up the car is weighing on my heart.
 
 ---
@@ -84,12 +82,12 @@ Assuming you'll keep the car for three years, we've compared the two options sid
 
 | Feature / Metric | Direct Purchase: 1st Gen Used NEXO (2019–2021) | The All-New NEXO + Guaranteed Buyback (New) |
 | :--- | :--- | :--- |
-| **Estimated 3-year extinction cost** | **Vehicle depreciation loss of approximately 7 to 10 million won** | **Total payment (depreciation amount) over 3 years: approximately 12 to 18 million won** |
-| **Initial lump sum burden** | **Approximately 14 to 17 million won** (Lump sum expenditure) | **Advance fee ranges from 0 won to several million won** (preservation of lump sum) |
-| **Vehicle Productivity** | 1st generation model / V2L not supported / Previous generation info | **2nd generation full change (3rd generation stack, V2L, ccNC)** |
-| **Stack Remaining Guarantee** | Remaining 4 to 5 years / Remaining 60,000 to 90,000 km | **New car 10-year/160,000 km full warranty (0 won repair fee)** |
-| **Certain failure risk** | **Caution required** (Stack cannot be replaced after warranty ends) | **No worries** (100% free care within the warranty period) |
-| **Disposal after 3 years** | Sell ​​directly to a used car dealer (market price supervised) | **Clearly completed with guaranteed residual value upon return** |
+| **Estimated 3-year extinction cost **|**Vehicle depreciation loss of approximately 7 to 10 million won **|**Total payment (depreciation amount) over 3 years: approximately 12 to 18 million won** |
+| **Initial lump sum burden **|**Approximately 14 to 17 million won **(Lump sum expenditure) |**Advance fee ranges from 0 won to several million won** (preservation of lump sum) |
+| **Vehicle Productivity **| 1st generation model / V2L not supported / Previous generation info |**2nd generation full change (3rd generation stack, V2L, ccNC)** |
+| **Stack Remaining Guarantee **| Remaining 4 to 5 years / Remaining 60,000 to 90,000 km |**New car 10-year/160,000 km full warranty (0 won repair fee)** |
+| **Certain failure risk **|**Caution required **(Stack cannot be replaced after warranty ends) |**No worries** (100% free care within the warranty period) |
+| **Disposal after 3 years **| Sell ​​directly to a used car dealer (market price supervised) |**Clearly completed with guaranteed residual value upon return** |
 
 ---
 

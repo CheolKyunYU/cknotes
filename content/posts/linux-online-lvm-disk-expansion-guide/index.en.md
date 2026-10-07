@@ -102,7 +102,7 @@ Specify the **mount point directory**:
 xfs_growfs /data
 ```
 
-> ⚠️ **Important Field Note**: XFS supports online expansion seamlessly, but **cannot be shrunk**. Never over-allocate if you expect to reduce storage later.
+> ⚠️ **Important Field Note **: XFS supports online expansion seamlessly, but**cannot be shrunk**. Never over-allocate if you expect to reduce storage later.
 
 ### For EXT4 (Default on Ubuntu / Debian):
 Specify the **logical volume block device path**:

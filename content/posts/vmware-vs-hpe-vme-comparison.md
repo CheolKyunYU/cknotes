@@ -12,7 +12,7 @@ categories:
 
 2024~2026년 기업 IT 인프라 담당자들의 최대 고민은 단연 **VMware vSphere 라이선스의 구독형(Subscription) 전환 및 비용 급증**입니다. 영구 라이선스(Perpetual)가 종료되고 코어(Core) 단위 구독 모델로 개편되면서, 많은 기업들의 가상화 유지보수 비용이 최소 2배에서 많게는 4~5배까지 치솟았습니다.
 
-이러한 상황에서 **HPE VME (VM Essentials)**는 VMware vSphere의 강력한 대안으로 급부상하고 있습니다. 
+이러한 상황에서 **HPE VME (VM Essentials)는** VMware vSphere의 강력한 대안으로 급부상하고 있습니다. 
 
 본 글에서는 단순 제품 브로슈어 수치를 벗어나, **16년 차 현장 엔지니어 관점에서 두 플랫폼의 기술 아키텍처, 기능 차이, TCO 비용 구조, 그리고 실제 전환 시 주의해야 할 실무 포인트**를 철저히 비교 분석합니다.
 
@@ -35,7 +35,7 @@ categories:
 
 ### 1) 라이선스 비용 및 TCO 구조 (가장 결정적인 차이)
 * **VMware**: 서버당 코어 수(최소 16코어 단위)에 비례해 라이선스 비용이 가파르게 상승합니다.
-* **HPE VME**: 물리 CPU 소켓 수 단위로 라이선스가 산정되므로, AMD EPYC나 Intel Xeon 고코어 CPU를 탑재한 신규 서버 도입 시 **최대 60~70%의 TCO 절감 효과**를 가져옵니다.
+* **HPE VME **: 물리 CPU 소켓 수 단위로 라이선스가 산정되므로, AMD EPYC나 Intel Xeon 고코어 CPU를 탑재한 신규 서버 도입 시**최대 60~70%의 TCO 절감 효과**를 가져옵니다.
 
 ### 2) 멀티 하이퍼바이저 동시 관리 (Morpheus CMP 탑재)
 * VME Manager는 단순한 KVM 관리자가 아니라, CMP(Cloud Management Platform) 시장의 강자인 Morpheus 엔진을 내장하고 있습니다.

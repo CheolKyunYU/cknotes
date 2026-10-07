@@ -16,7 +16,7 @@ categories:
 
 With VMware's recent licensing changes, many enterprise data centers are looking closely at lightweight, KVM-based virtualization alternatives. One viable enterprise solution is **HPE SimpliVity 6.2.0 powered by HPE VM Essentials (VME)**.
 
-In my 16 years as an infrastructure engineer deploying servers and SAN fabrics, I have found that 90% of HCI deployment failures boil down to two things: **sloppy physical/VLAN network segmentation** and **misplaced quorum (Arbiter) architecture**.
+In my 16 years as an infrastructure engineer deploying servers and SAN fabrics, I have found that 90% of HCI deployment failures boil down to two things: **sloppy physical/VLAN network segmentation **and**misplaced quorum (Arbiter) architecture**.
 
 This guide condenses the entire deployment lifecycle—from pre-flight network planning to management server staging, node initialization, and automated OVC provisioning via VME Manager—with battle-tested field troubleshooting insights.
 
@@ -34,7 +34,7 @@ A 2-node SimpliVity cluster delivers high availability at a modest footprint. Ho
 | :--- | :---: | :---: | :--- |
 | **1. iLO Out-of-Band** | 1 Gbps | 1500 | Dedicated out-of-band management & remote console (physically isolated switch recommended). |
 | **2. Management** | 1 Gbps / 10 Gbps | 1500 | Host BaseOS, VME Manager UI, and OVC control communications. |
-| **3. Storage** | **10 Gbps / 25 Gbps** | **9000 (Jumbo)** | **[CRITICAL]** Real-time node data mirroring. Must enable MTU 9000 end-to-end. |
+| **3. Storage **|**10 Gbps / 25 Gbps **|**9000 (Jumbo)**|**[CRITICAL]** Real-time node data mirroring. Must enable MTU 9000 end-to-end. |
 | **4. Federation** | 10 Gbps | 1500 | SimpliVity inter-OVC cluster metadata catalog & synchronization. |
 | **5. VM Workload** | 10 Gbps | 1500 | Production tenant VM service traffic (isolated customer VLANs). |
 

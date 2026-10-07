@@ -12,9 +12,7 @@ categories:
 
 > 📌 **私のPCで駆動するローカルLLM：Ollama実践連載目次**
 > 
-> - **[第1編：PC上で無料稼働するローカルAI、Ollamaの概念と特徴](../ollama-01-local-llm-intro/)**
-> - **[現在の記事] [第2編：Windows 11環境 Ollamaインストールおよび初モデル駆動ガイド](./)**
-> - **[第3編：Ollamaの実践活用法：ターミナル対話からWebUI＆API連携まで](../ollama-03-cli-webui-api/)**
+> - **[第1編：PC上で無料稼働するローカルAI、Ollamaの概念と特徴](../ollama-01-local-llm-intro/)**> -**[現在の記事] [第2編：Windows 11環境 Ollamaインストールおよび初モデル駆動ガイド](./)**> -**[第3編：Ollamaの実践活用法：ターミナル対話からWebUI＆API連携まで](../ollama-03-cli-webui-api/)**
 
 ---
 
@@ -45,11 +43,11 @@ flowchart TD
 
 1. Webブラウザを開き、Ollamaの公式ダウンロードページにアクセスします。
    * 🌐 **公式ダウンロードリンク**: [https://ollama.com/download/windows](https://ollama.com/download/windows)
-2. 画面中央の**`Download for Windows`**ボタンをクリックします。
+2. 画面中央の **`Download for Windows`**ボタンをクリックします。
 
 ![Ollama公式ダウンロードページ](images/download_page.jpg)
 
-3. ダウンロードが完了すると、ダウンロードフォルダに**`OllamaSetup.exe`**インストールファイルが作成されます。
+3. ダウンロードが完了すると、ダウンロードフォルダに **`OllamaSetup.exe`**インストールファイルが作成されます。
 
 ![ダウンロードしたOllamaSetupインストールファイル](images/ollama_setup_file.jpg)
 
@@ -91,7 +89,7 @@ flowchart TD
 
 ## 5. ステップ4: ターミナル(CLI)での動作検証とモデル選定
 
-Windowsスタートボタンを右クリックし、**ターミナル(Terminal)** または **PowerShell** を起動します。
+Windowsスタートボタンを右クリックし、**ターミナル(Terminal)**または**PowerShell** を起動します。
 
 ターミナルに `ollama` と入力してEnterキーを押すと、サポートされるコマンド一覧（`serve`, `create`, `show`, `run`, `stop`, `pull`, `push`, `list`, `ps`, `rm`）が表示されます。
 
@@ -154,7 +152,7 @@ ollama run gemma2:2b
 複数のモデルをダウンロードするとCドライブの容量が圧迫されることがあります。環境変数を設定して別ドライブ（Dドライブなど）に保存先を変更できます。
 
 1. `Win + R` ➔ `sysdm.cpl` を入力（システムのプロパティ）
-2. **詳細設定** タブ ➔ **環境変数** をクリック
+2. **詳細設定**タブ ➔**環境変数** をクリック
 3. システム環境変数またはユーザー環境変数で **新規** をクリック:
    * **変数名**: `OLLAMA_MODELS`
    * **変数値**: `D:\ollama\models` （任意のパスを指定）
@@ -174,7 +172,7 @@ Windows 11環境にOllamaを導入し軽量モデルを配置することで、�
 
 Cドライブの容量管理には環境変数 `OLLAMA_MODELS` を活用し、事前に取得したモデルデータをオフライン持ち込みすることで、厳しいセキュリティ規定のある現場でも有効なエンジニアリング支援環境を構築できます。
 
-続く**[第3編: Ollamaの実践活用法: ターミナル対話からWebUI＆API連動まで](../ollama-03-cli-webui-api/)**では、ブラウザベースのWebUI構築およびPythonスクリプトによるREST API連携手順を解説します。
+続く **[第3編: Ollamaの実践活用法: ターミナル対話からWebUI＆API連動まで](../ollama-03-cli-webui-api/)では**、ブラウザベースのWebUI構築およびPythonスクリプトによるREST API連携手順を解説します。
 
 ---
 
@@ -182,4 +180,4 @@ Cドライブの容量管理には環境変数 `OLLAMA_MODELS` を活用し、�
 
 | 前のステップ | 次のステップ |
 | :---: | :---: |
-| **[⬅️ 1編。 Ollamaの概念と特徴総まとめ](../ollama-01-local-llm-intro/)** | **[3編。 Ollama 実践活用法: WebUI & API 連動 ➡️](../ollama-03-cli-webui-api/)** |
+| **[⬅️ 1編。 Ollamaの概念と特徴総まとめ](../ollama-01-local-llm-intro/)**|**[3編。 Ollama 実践活用法: WebUI & API 連動 ➡️](../ollama-03-cli-webui-api/)** |

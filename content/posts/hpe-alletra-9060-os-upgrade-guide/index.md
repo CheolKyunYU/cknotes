@@ -48,7 +48,7 @@ Alletra 9000 및 Primera 장비의 펌웨어와 도구는 HPE 공식 라이선�
 <br>
 
 ### Step 2. Upgrade Tool 및 OS 9.6.30 업데이트 패키지 로드
-우측 `Actions` 메뉴에서 **Load an update package**를 클릭하고, 사전에 다운로드해 둔 <strong>최신 Upgrade Tool(UT 80)</strong>과 **OS 9.6.30 패키지**를 스토리지로 업로드합니다.
+우측 `Actions` 메뉴에서 **Load an update package **를 클릭하고, 사전에 다운로드해 둔 <strong>최신 Upgrade Tool(UT 80)</strong>과**OS 9.6.30 패키지**를 스토리지로 업로드합니다.
 
 {{< figure src="fig-03-load-update-package.png" caption="그림 3. Load an update package - 업그레이드 패키지 선택 및 스토리지 업로드" >}}
 
@@ -96,7 +96,7 @@ PD, LD, IOCTL, 호스트 경로 일관성(Host Path Consistency) 등 핵심 무�
 ### Step 5. Node 1 롤링 업그레이드 및 Web UI 재접속 확인
 Node 0의 정상 복귀가 확인되면, 동일한 방식으로 <strong>Node 1</strong>이 클러스터를 이탈하여 신규 OS로 리부팅을 진행합니다(`11:27:32`).
 
-Node 1이 리부팅되는 동안 웹 콘솔(Web UI)에 다시 접속하면, 상단에 **유지보수 모드(Maintenance Mode)** 알림 배너와 함께 전체 OS 설치 진행률(**Installing HPE Alletra 9000 9.6.30: 69%**)이 표시되는 메인 Software 화면을 확인할 수 있습니다.
+Node 1이 리부팅되는 동안 웹 콘솔(Web UI)에 다시 접속하면, 상단에 **유지보수 모드(Maintenance Mode)**알림 배너와 함께 전체 OS 설치 진행률(**Installing HPE Alletra 9000 9.6.30: 69%**)이 표시되는 메인 Software 화면을 확인할 수 있습니다.
 
 {{< figure src="fig-04-staged-packages-and-maintenance-mode.png" caption="그림 10. Node 1 리부팅 중 Web UI 재접속 화면 - 설치 진행률(69%) 및 유지보수 모드 활성화" >}}
 

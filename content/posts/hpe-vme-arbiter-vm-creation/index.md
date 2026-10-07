@@ -19,12 +19,12 @@ HPE SimpliVity with VME (VM Essentials) 2노드 클러스터를 납품하러 현
 하지만 인프라를 직접 구축해 본 실무 엔지니어라면 이 요구가 마주하는 **치명적인 딜레마 2가지**를 즉시 떠올릴 수밖에 없습니다.
 
 ### 딜레마 1: SimpliVity 스토리지 생성 전 아비터가 먼저 살아있어야 한다
-2노드 SimpliVity 클러스터는 **배포 위저드가 돌아가기 전에 아비터(Arbiter) IP와 통신이 되어야만** 클러스터 생성이 진행됩니다. 그런데 아직 노드 초기화도 안 끝났고 스토리지 풀도 생성되지 않은 상태에서 SimpliVity 위에 아비터 VM을 어떻게 올릴 수 있을까요? 완벽한 **닭과 달걀의 모순**입니다. 
+2노드 SimpliVity 클러스터는 **배포 위저드가 돌아가기 전에 아비터(Arbiter) IP와 통신이 되어야만**클러스터 생성이 진행됩니다. 그런데 아직 노드 초기화도 안 끝났고 스토리지 풀도 생성되지 않은 상태에서 SimpliVity 위에 아비터 VM을 어떻게 올릴 수 있을까요? 완벽한**닭과 달걀의 모순**입니다. 
 
 게다가 아비터는 2개 노드가 장애로 통신이 끊겼을 때 스플릿 브레인(Split-Brain)을 판정해 주는 '재판관'이므로, **절대로 본인이 판정해야 할 SimpliVity 내부 스토리지에 올라가면 안 됩니다.**
 
 ### 딜레마 2: VME GUI에서 만들면 유료 라이선스 비용이 청구된다
-그렇다면 아비터는 어디에 올려야 할까요? 정답은 **VME Manager가 구동되고 있는 외부 독립 관리 호스트(KVM 기반)**입니다.
+그렇다면 아비터는 어디에 올려야 할까요? 정답은 **VME Manager가 구동되고 있는 외부 독립 관리 호스트(KVM 기반)입니다**.
 
 그런데 여기서 큰 문제가 생깁니다. 많은 엔지니어들이 편하게 작업하려고 VME Manager 웹 GUI 콘솔에서 관리 호스트를 정식 등록하고 아비터 VM을 생성하려 합니다. 하지만 VME Manager 정책상, **콘솔에 호스트를 등록하는 순간 해당 물리 서버의 모든 CPU 코어가 VME 유료 라이선스 카운트에 포함**됩니다! 아비터 하나 띄우자고 수백만 ~ 수천만 원 상당의 소프트웨어 라이선스를 추가 구매할 수는 없는 노릇입니다.
 
@@ -35,7 +35,7 @@ HPE SimpliVity with VME (VM Essentials) 2노드 클러스터를 납품하러 현
 해법은 의외로 간단하고 강력합니다.  
 VME Manager 호스트의 밑바탕 OS(BaseOS)는 **표준 리눅스 KVM / libvirt 기반**입니다.
 
-즉, VME Manager GUI를 통하지 않고, **호스트 CLI 레벨에서 직접 `virt-install` 명령어로 KVM 가상머신을 생성**하면 VME 라이선스 관리 영역에 전혀 잡히지 않습니다. 그리고 설치 GUI 화면은 `virsh vncdisplay`와 VNC Viewer(MobaXterm)를 이용해 띄우면 10분 만에 **라이선스 소모 0원의 완벽한 독립 Arbiter VM**이 완성됩니다.
+즉, VME Manager GUI를 통하지 않고, **호스트 CLI 레벨에서 직접 `virt-install` 명령어로 KVM 가상머신을 생성**하면 VME 라이선스 관리 영역에 전혀 잡히지 않습니다. 그리고 설치 GUI 화면은 `virsh vncdisplay`와 VNC Viewer(MobaXterm)를 이용해 띄우면 10분 만에**라이선스 소모 0원의 완벽한 독립 Arbiter VM**이 완성됩니다.
 
 ---
 
@@ -176,7 +176,7 @@ sudo dpkg -i ./svtarb_6.0.0.39_amd64.deb
 
 * **한눈에 보는 핵심**:
   - Arbiter는 2노드 SimpliVity 스플릿 브레인 방지 재판관이므로 **외부 독립 호스트**에 올려야 함.
-  - VME Manager GUI 등록 대신 **KVM CLI (`virt-install`)**를 쓰면 라이선스 소모 0원으로 구축 가능.
+  - VME Manager GUI 등록 대신 **KVM CLI (`virt-install`)를** 쓰면 라이선스 소모 0원으로 구축 가능.
   - 설치 후 `autostart` 및 `ttyS0` 시리얼 콘솔 개방은 유지보수 필수 절차.
 
 * **관련 글 예고**:
