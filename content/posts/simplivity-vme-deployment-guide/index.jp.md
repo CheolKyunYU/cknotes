@@ -5,11 +5,11 @@ date: 2026-08-31T13:00:00+09:00
 draft: false
 tags: ["HPE", "SimpliVity", "VME", "HCI", "仮想化", "トラブルシューティング", "インフラ構築"]
 aliases:
-  - /jp/posts/simplivity-00-install-prep/
-  - /jp/posts/simplivity-01-baseos-infra-setup/
-  - /jp/posts/simplivity-02-vme-mgr-arbiter/
-  - /jp/posts/simplivity-03-node-initial-setup/
-  - /jp/posts/simplivity-04-hvm-cluster-ovc-deploy/
+  - /posts/simplivity-00-install-prep/
+  - /posts/simplivity-01-baseos-infra-setup/
+  - /posts/simplivity-02-vme-mgr-arbiter/
+  - /posts/simplivity-03-node-initial-setup/
+  - /posts/simplivity-04-hvm-cluster-ovc-deploy/
 categories:
   - SimpliVityVME
 ---
