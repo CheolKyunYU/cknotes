@@ -28,7 +28,7 @@ AlletraストレージはOSアップデートファイルの準備方法とし�
 - **インターネット直接ダウンロード**: ストレージが外部（HPE InfoSight等）と通信可能な環境であれば、UI上から直接最新バージョンを確認してダウンロードできます。
 - **ローカルファイルアップロード**: 閉域網環境や特定バージョンを手動適用する場合、PCに事前ダウンロードしたファイルをブラウザ経由でアップロードします。
 
-{{< figure src="step-01-dashboard.png" caption="Alletra 新UI メインダッシュボード画面" width="50%" >}}
+{{< figure src="step-01-dashboard.png" caption="Alletra 新UI メインダッシュボード画面" >}}
 
 <br>
 
@@ -37,7 +37,7 @@ AlletraストレージはOSアップデートファイルの準備方法とし�
 **Step 1. ソフトウェア(Software)メニューへ移動**
 管理者アカウントでログイン後、メインメニューの `ソフトウェア(Software)` 項目へ移動します。現在インストールされているバージョン(6.1.2.500)と利用可能なアップデート情報が表示されます。
 
-{{< figure src="step-02-software-menu.png" caption="ソフトウェア管理メニュー画面" width="50%" >}}
+{{< figure src="step-02-software-menu.png" caption="ソフトウェア管理メニュー画面" >}}
 
 <br>
 
@@ -46,13 +46,13 @@ AlletraストレージはOSアップデートファイルの準備方法とし�
 - **インターネット直接ダウンロード**: 「ダウンロード」ボタンをクリックすると、利用可能なOSバージョン一覧が表示されます。
 - **ローカルアップロード**: 「Browse(参照)」ボタンを押して、ローカルPCのファームウェアファイル(.iso/.img)を選択しアップロードを実行します。
 
-{{< figure src="step-11-internet-download.png" caption="ダウンロードボタンクリック時に表示される利用可能OSバージョン一覧画面" width="50%" >}}
+{{< figure src="step-11-internet-download.png" caption="ダウンロードボタンクリック時に表示される利用可能OSバージョン一覧画面" >}}
 
-{{< figure src="step-04-summary.png" caption="ローカルアップロード用ファームウェアファイルを選択するため「Browse(参照)」ボタンを押す画面" width="50%" >}}
+{{< figure src="step-04-summary.png" caption="ローカルアップロード用ファームウェアファイルを選択するため「Browse(参照)」ボタンを押す画面" >}}
 
-{{< figure src="step-09-completion-stage.png" caption="選択したファームウェアファイルのアップロード進行画面" width="50%" >}}
+{{< figure src="step-09-completion-stage.png" caption="選択したファームウェアファイルのアップロード進行画面" >}}
 
-{{< figure src="step-12-download-progress.png" caption="インターネットダウンロードおよびファイル適用進捗画面" width="50%" >}}
+{{< figure src="step-12-download-progress.png" caption="インターネットダウンロードおよびファイル適用進捗画面" >}}
 
 <br>
 
@@ -64,21 +64,21 @@ AlletraストレージはOSアップデートファイルの準備方法とし�
 **Step 4. UpdateボタンのクリックとEULAライセンス同意**
 有効化された`Update`ボタンを押すと、最終EULAライセンス同意ポップアップが表示されます。内容を確認し同意を進行します。
 
-{{< figure src="step-05-eula.png" caption="Updateボタンクリック後に表示されるEULAライセンス同意画面" width="50%" >}}
+{{< figure src="step-05-eula.png" caption="Updateボタンクリック後に表示されるEULAライセンス同意画面" >}}
 
 <br>
 
 **Step 5. OSおよびファームウェア更新の進行状況モニタリング**
 ライセンス同意完了後、コントローラーノードが順次再起動しながらファームウェアが適用されます。新UIでは進捗率(%)がリアルタイムで表示されます。
 
-{{< figure src="step-08-upgrading.png" caption="OSアップデート進行画面" width="50%" >}}
+{{< figure src="step-08-upgrading.png" caption="OSアップデート進行画面" >}}
 
 <br>
 
 **Step 6. アップグレード完了と最終バージョンの確認**
 すべてのノードの再起動と適用が完了したら、ダッシュボードでターゲットバージョン(6.1.3.300)が正しく反映されているか確認します。
 
-{{< figure src="step-10-upgrade-complete.png" caption="最終OSバージョン(6.1.3.300)反映確認" width="50%" >}}
+{{< figure src="step-10-upgrade-complete.png" caption="最終OSバージョン(6.1.3.300)反映確認" >}}
 
 💡 **注記**: OSアップグレードの進行中、ハードウェアコンポーネントのFW(ファームウェア)更新が必要な項目がある場合は自動的に合わせて実行されます。
 

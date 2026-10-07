@@ -28,7 +28,7 @@ HPE Alletra supports two methods for preparing OS update files. Choose based on 
 - **Direct Internet Download**: If the storage array has external internet connectivity (e.g., connected to HPE InfoSight), you can check and download the latest version directly from the UI.
 - **Local File Upload**: For air-gapped environments or manual version staging, upload the pre-downloaded firmware image file from your local PC via the browser.
 
-{{< figure src="step-01-dashboard.png" caption="Alletra New UI Main Dashboard" width="50%" >}}
+{{< figure src="step-01-dashboard.png" caption="Alletra New UI Main Dashboard" >}}
 
 <br>
 
@@ -37,7 +37,7 @@ HPE Alletra supports two methods for preparing OS update files. Choose based on 
 **Step 1. Accessing the Software Menu**
 Log in with administrator credentials and navigate to the `Software` section from the main menu. You can view the currently installed version (6.1.2.500) and available update actions.
 
-{{< figure src="step-02-software-menu.png" caption="Software Management Menu Interface" width="50%" >}}
+{{< figure src="step-02-software-menu.png" caption="Software Management Menu Interface" >}}
 
 <br>
 
@@ -46,13 +46,13 @@ Proceed based on your selected method:
 - **Direct Internet Download**: Clicking the 'Download' button displays a list of available downloadable OS versions.
 - **Local Upload**: Click the 'Browse' button to select the pre-downloaded firmware file (.iso/.img) from your local PC.
 
-{{< figure src="step-11-internet-download.png" caption="Available Downloadable OS Versions Window Displayed Upon Clicking Download" width="50%" >}}
+{{< figure src="step-11-internet-download.png" caption="Available Downloadable OS Versions Window Displayed Upon Clicking Download" >}}
 
-{{< figure src="step-04-summary.png" caption="Clicking the 'Browse' Button to Select Local Firmware File for Upload" width="50%" >}}
+{{< figure src="step-04-summary.png" caption="Clicking the 'Browse' Button to Select Local Firmware File for Upload" >}}
 
-{{< figure src="step-09-completion-stage.png" caption="Firmware Image File Upload Progress Screen" width="50%" >}}
+{{< figure src="step-09-completion-stage.png" caption="Firmware Image File Upload Progress Screen" >}}
 
-{{< figure src="step-12-download-progress.png" caption="Direct Internet Download & Image Application Progress Screen" width="50%" >}}
+{{< figure src="step-12-download-progress.png" caption="Direct Internet Download & Image Application Progress Screen" >}}
 
 <br>
 
@@ -64,21 +64,21 @@ Once the file is staged, the system automatically runs a pre-check routine. *(Sc
 **Step 4. Clicking Update & EULA License Agreement**
 Clicking the activated `Update` button opens the final End User License Agreement (EULA) popup dialog. Review and accept the EULA terms.
 
-{{< figure src="step-05-eula.png" caption="EULA License Agreement Dialog Displayed After Clicking Update" width="50%" >}}
+{{< figure src="step-05-eula.png" caption="EULA License Agreement Dialog Displayed After Clicking Update" >}}
 
 <br>
 
 **Step 5. Initiating OS & Firmware Update & Monitoring**
 Upon accepting the EULA, controller nodes reboot sequentially to apply the new OS and component firmware patches. The UI displays real-time percentage (%) progress.
 
-{{< figure src="step-08-upgrading.png" caption="OS Update In-Progress Screen" width="50%" >}}
+{{< figure src="step-08-upgrading.png" caption="OS Update In-Progress Screen" >}}
 
 <br>
 
 **Step 6. Completion & Version Verification**
 After all nodes finish rebooting and patch application completes, return to the main dashboard to verify the target version (6.1.3.300).
 
-{{< figure src="step-10-upgrade-complete.png" caption="Final OS Version (6.1.3.300) Verification" width="50%" >}}
+{{< figure src="step-10-upgrade-complete.png" caption="Final OS Version (6.1.3.300) Verification" >}}
 
 💡 **Note**: During the OS upgrade process, hardware component FW (firmware) updates are automatically performed if necessary.
 

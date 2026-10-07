@@ -28,7 +28,7 @@ Alletra 스토리지는 OS 업데이트 파일을 준비할 때 두 가지 방�
 - **인터넷 직접 다운로드**: 스토리지가 외부 인터넷(HPE InfoSight 등)과 통신 가능한 환경이라면, 스토리지 UI에서 즉시 버전을 확인하고 다운로드할 수 있습니다.
 - **로컬 파일 업로드**: 폐쇄망이거나 특정 버전을 수동으로 올릴 때, 엔지니어 PC에 미리 다운로드해 둔 펌웨어 이미지를 브라우저를 통해 업로드하는 방식입니다.
 
-{{< figure src="step-01-dashboard.png" caption="Alletra 신규 UI 메인 대시보드 화면" width="50%" >}}
+{{< figure src="step-01-dashboard.png" caption="Alletra 신규 UI 메인 대시보드 화면" >}}
 
 <br>
 
@@ -37,7 +37,7 @@ Alletra 스토리지는 OS 업데이트 파일을 준비할 때 두 가지 방�
 **Step 1. 소프트웨어(Software) 메뉴 진입**
 관리자 계정으로 접속 후 메인 화면 메뉴에서 `소프트웨어(Software)` 항목으로 진입합니다. 현재 설치된 OS 버전(6.1.2.500) 정보와 업데이트 가능한 옵션들이 나타납니다.
 
-{{< figure src="step-02-software-menu.png" caption="소프트웨어 관리 메뉴 진입 화면" width="50%" >}}
+{{< figure src="step-02-software-menu.png" caption="소프트웨어 관리 메뉴 진입 화면" >}}
 
 <br>
 
@@ -46,13 +46,13 @@ Alletra 스토리지는 OS 업데이트 파일을 준비할 때 두 가지 방�
 - 인터넷 직접 다운로드 시 '다운로드' 버튼을 클릭하면 스토리지에서 다운로드 가능한 펌웨어 버전 목록이 출력됩니다.
 - 로컬 업로드 시 'Browse(찾아보기)' 버튼을 눌러 PC에 받아둔 펌웨어 파일(.iso/.img)을 선택하고 업로드를 진행합니다.
 
-{{< figure src="step-11-internet-download.png" caption="인터넷 다운로드 버튼 클릭 시 나타나는 다운로드 가능 OS 버전 목록 화면" width="50%" >}}
+{{< figure src="step-11-internet-download.png" caption="인터넷 다운로드 버튼 클릭 시 나타나는 다운로드 가능 OS 버전 목록 화면" >}}
 
-{{< figure src="step-04-summary.png" caption="로컬 업로드용 펌웨어 파일 선택을 위해 'Browse(찾아보기)' 버튼을 누르는 화면" width="50%" >}}
+{{< figure src="step-04-summary.png" caption="로컬 업로드용 펌웨어 파일 선택을 위해 'Browse(찾아보기)' 버튼을 누르는 화면" >}}
 
-{{< figure src="step-09-completion-stage.png" caption="선택한 펌웨어 파일 업로드 진행 과정 화면" width="50%" >}}
+{{< figure src="step-09-completion-stage.png" caption="선택한 펌웨어 파일 업로드 진행 과정 화면" >}}
 
-{{< figure src="step-12-download-progress.png" caption="인터넷 다운로드 및 파일 적용 진행 상황 화면" width="50%" >}}
+{{< figure src="step-12-download-progress.png" caption="인터넷 다운로드 및 파일 적용 진행 상황 화면" >}}
 
 <br>
 
@@ -64,21 +64,21 @@ Alletra 스토리지는 OS 업데이트 파일을 준비할 때 두 가지 방�
 **Step 4. Update 버튼 클릭 및 소프트웨어 라이선스(EULA) 동의**
 활성화된 `Update` 버튼을 클릭하면 최종 소프트웨어 라이선스(EULA) 동의 팝업 창이 나타납니다. 라이선스 조항을 확인 후 동의를 진행합니다.
 
-{{< figure src="step-05-eula.png" caption="Update 버튼 클릭 후 나타나는 소프트웨어 라이선스(EULA) 동의 화면" width="50%" >}}
+{{< figure src="step-05-eula.png" caption="Update 버튼 클릭 후 나타나는 소프트웨어 라이선스(EULA) 동의 화면" >}}
 
 <br>
 
 **Step 5. OS 및 펌웨어 업데이트 진행 상태 모니터링**
 라이선스 동의를 마치는 즉시 실제 패치 적용이 시작되며, 컨트롤러 노드가 순차적으로 리부팅됩니다. 신규 UI에서는 진행률(%)과 현재 상태가 직관적으로 표시되므로 차분히 모니터링합니다.
 
-{{< figure src="step-08-upgrading.png" caption="OS 업데이트 진행 상태 모니터링 화면" width="50%" >}}
+{{< figure src="step-08-upgrading.png" caption="OS 업데이트 진행 상태 모니터링 화면" >}}
 
 <br>
 
 **Step 6. 업그레이드 완료 및 최종 버전 확인**
 모든 노드의 순차 리부팅과 패치 적용이 마무리되면, 대시보드 화면으로 이동하여 타겟 버전(6.1.3.300)으로 정상 반영되었는지 최종 확인합니다.
 
-{{< figure src="step-10-upgrade-complete.png" caption="최종 OS 버전(6.1.3.300) 업데이트 완료 확인" width="50%" >}}
+{{< figure src="step-10-upgrade-complete.png" caption="최종 OS 버전(6.1.3.300) 업데이트 완료 확인" >}}
 
 💡 **참고**: OS 업그레이드가 진행되는 동안, 하드웨어 컴포넌트의 FW(펌웨어) 업데이트가 필요한 항목이 있다면 프로세스 내에서 자동으로 함께 진행됩니다.
 
