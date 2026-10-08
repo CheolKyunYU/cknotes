@@ -33,9 +33,9 @@ However, using a $10 aftermarket replacement rubber ring and a utility knife, th
 ## 1. Root Cause of Tether Failure and Replacement Part Preparation
 
 ![Broken fuel filler cap rubber strap](images/fuel_cap_broken_strap.jpg)
-*(Figure: Snapped rubber tether on the fuel filler cap due to fuel vapor exposure and thermal aging)*
+*(Figure: Rubber tether snapped from repeated bending fatigue and natural aging over 10+ years of ownership)*
 
-The fuel filler recess is continuously exposed to harsh operating conditions, notably fuel vapors and extreme ambient temperature swings year-round. Over several years, the rubber material (typically NBR or EPDM elastomer) loses elasticity, hardens, and eventually succinates to fatigue fracture.
+The root cause here has nothing to do with fuel vapor leaks or seal failure within the cap itself. Over more than a decade of daily driving, opening and closing the fuel cap hundreds of times subjected the rubber tether to continuous bending and twisting fatigue. Combined with exposure to seasonal outdoor temperature fluctuations, the elastomer naturally hardened over the years until reaching its fatigue threshold and snapping. Because the cap's internal pressure valve and sealing gasket remain in perfect condition, replacing only the tether strap completely resolves the problem.
 
 ![Replacement fuel cap tether part](images/fuel_cap_part_new.jpg)
 *(Figure: Molded replacement part integrating cap mounting ring, tether cord, and door retaining eyelet)*
