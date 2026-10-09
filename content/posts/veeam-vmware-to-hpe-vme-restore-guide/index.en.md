@@ -113,7 +113,7 @@ Key operational checks within Windows 10 Device Manager and App Settings confirm
 
 ---
 
-## 5. Senior Systems Engineer Takeaways
+## 5. Key Takeaways & Operational Conclusion
 
 1. **In low-bandwidth environments (10Mbps), physical backup relocation remains king**:  
    Insisting on network replication across narrow WANs risks missing critical disaster recovery windows. For structured cutovers or air-gapped recovery, transferring full backup data (`.vbk`) and metadata (`.vbm`) files directly into a target repository provides the safest, most deterministic restoration path.
