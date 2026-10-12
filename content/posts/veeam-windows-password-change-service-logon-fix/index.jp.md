@@ -7,7 +7,7 @@ tags: ["Veeam", "Backup", "Windows Server", "セキュリティ", "サービス�
 aliases:
   - /jp/posts/veeam-windows-password-change-service-logon-fix/
 categories:
-  - SimpliVityVME
+  - Storage
 ---
 
 ## 1. 背景: Windows パスワード更新直後に発生する Veeam サービス起動停止

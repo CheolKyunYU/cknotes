@@ -7,7 +7,7 @@ tags: ["Veeam", "Backup", "Windows Server", "보안컴플라이언스", "비밀�
 aliases:
   - /posts/veeam-windows-password-change-service-logon-fix/
 categories:
-  - SimpliVityVME
+  - Storage
 ---
 
 ## 1. 배경: 보안 조치 후 마주하는 Veeam 콘솔 접속 불가 현상

@@ -7,7 +7,7 @@ tags: ["Veeam", "Backup", "Windows Server", "Security", "ServiceAccount", "Troub
 aliases:
   - /en/posts/veeam-windows-password-change-service-logon-fix/
 categories:
-  - SimpliVityVME
+  - Storage
 ---
 
 ## 1. Background: Service Startup Failures After Windows Password Rotation
