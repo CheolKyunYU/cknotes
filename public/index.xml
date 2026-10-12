@@ -6,8 +6,15 @@
     <description>Recent content on CK notes</description>
     <generator>Hugo</generator>
     <language>ko-KR</language>
-    <lastBuildDate>Fri, 09 Oct 2026 16:10:00 +0900</lastBuildDate>
+    <lastBuildDate>Mon, 12 Oct 2026 15:52:00 +0900</lastBuildDate>
     <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>[Veeam] Windows 서버 비밀번호 변경 후 서비스 계정 일괄 갱신 가이드</title>
+      <link>http://localhost:1313/posts/veeam-windows-password-change-service-logon-fix/</link>
+      <pubDate>Mon, 12 Oct 2026 15:52:00 +0900</pubDate>
+      <guid>http://localhost:1313/posts/veeam-windows-password-change-service-logon-fix/</guid>
+      <description>보안 컴플라이언스 및 정기 점검 규정으로 Veeam 서버의 Windows Administrator 비밀번호를 변경한 뒤 발생하는 서비스 로그인 실패(Error 1069) 및 콘솔 접속 불가를 해결하는 실무 조치 가이드입니다.</description>
+    </item>
     <item>
       <title>[HPE VME] Veeam 백업 복구 실패: VirtIO 디스크 번호 중복(index=0) 해결 가이드</title>
       <link>http://localhost:1313/posts/vme-veeam-duplicate-virtio-disk-restore-fix/</link>

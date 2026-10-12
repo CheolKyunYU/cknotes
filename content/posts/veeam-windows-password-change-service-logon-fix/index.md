@@ -1,9 +1,9 @@
 ---
 title: "[Veeam] Windows 서버 비밀번호 변경 후 서비스 계정 일괄 갱신 가이드"
-description: "KISA 점검이나 보안 규정으로 Veeam 서버의 Windows Administrator 비밀번호를 변경한 뒤 발생하는 서비스 로그인 실패(Error 1069) 및 콘솔 접속 불가를 해결하는 실무 조치 가이드입니다."
+description: "보안 컴플라이언스 및 정기 점검 규정으로 Veeam 서버의 Windows Administrator 비밀번호를 변경한 뒤 발생하는 서비스 로그인 실패(Error 1069) 및 콘솔 접속 불가를 해결하는 실무 조치 가이드입니다."
 date: 2026-10-12T15:52:00+09:00
 draft: false
-tags: ["Veeam", "Backup", "Windows Server", "보안취약점", "KISA", "서비스계정", "트러블슈팅"]
+tags: ["Veeam", "Backup", "Windows Server", "보안컴플라이언스", "비밀번호변경", "서비스계정", "트러블슈팅"]
 aliases:
   - /posts/veeam-windows-password-change-service-logon-fix/
 categories:
@@ -12,7 +12,7 @@ categories:
 
 ## 1. 배경: 보안 조치 후 마주하는 Veeam 콘솔 접속 불가 현상
 
-기업 및 공공기관 인프라 운영 환경에서는 **KISA(한국인터넷진흥원) 정보보안 취약점 진단 가이드(W-01 기본 관리자 계정 관리 등)**나 내부 컴플라이언스 기준에 따라 Windows Server의 로컬 관리자(`Administrator`) 비밀번호를 주기적으로 변경하거나 전용 관리 계정으로 전환하는 작업을 진행합니다.
+기업 및 공공기관 인프라 운영 환경에서는 **정보보안 취약점 진단 가이드(기본 관리자 계정 관리 등)**나 내부 컴플라이언스 기준에 따라 Windows Server의 로컬 관리자(`Administrator`) 비밀번호를 주기적으로 변경하거나 전용 관리 계정으로 전환하는 작업을 진행합니다.
 
 하지만 **Veeam Backup & Replication(VBR)**이 구동되는 백업 관리 서버에서 Windows 계정 비밀번호를 변경한 직후, 갑자기 다음과 같은 문제가 발생하여 긴급 장애 상황으로 이어지는 경우가 많습니다.
 

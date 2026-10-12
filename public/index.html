@@ -187,6 +187,24 @@
 
 <article class="first-entry"> 
   <header class="entry-header">
+    <h2 class="entry-hint-parent">[Veeam] Windows 서버 비밀번호 변경 후 서비스 계정 일괄 갱신 가이드
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>1. 배경: 보안 조치 후 마주하는 Veeam 콘솔 접속 불가 현상 기업 및 공공기관 인프라 운영 환경에서는 **정보보안 취약점 진단 가이드(기본 관리자 계정 관리 등)**나 내부 컴플라이언스 기준에 따라 Windows Server의 로컬 관리자(Administrator) 비밀번호를 주기적으로 변경하거나 전용 관리 계정으로 전환하는 작업을 진행합니다.
+하지만 **Veeam Backup &amp; Replication(VBR)**이 구동되는 백업 관리 서버에서 Windows 계정 비밀번호를 변경한 직후, 갑자기 다음과 같은 문제가 발생하여 긴급 장애 상황으로 이어지는 경우가 많습니다.
+Veeam 백업 콘솔(Veeam Backup &amp; Replication Console) 실행 시 로그인 창에서 멈추거나 접속 불가 오류 발생 Windows 이벤트 로그에 Event ID 7000 / 7038 (로그온 실패로 인해 서비스를 시작할 수 없습니다) 기록 서비스 관리자(services.msc)에서 서비스를 시작하려 하면 Error 1069 (로그온 실패로 서비스를 시작할 수 없습니다) 발생 [Windows 서비스 오류 메시지] 오류 1069: 로그온 실패로 서비스를 시작할 수 없습니다. (Error 1069: The service did not start due to a logon failure.) 이 문제는 Veeam의 핵심 백업 엔진과 카탈로그, 브로커 등 Veeam 백그라운드 서비스들이 설치 시 지정된 Windows 관리자 계정 권한으로 상시 구동되도록 등록되어 있기 때문에 발생합니다.
+Windows 계정의 비밀번호만 바꾸고 서비스에 등록된 인증 정보를 갱신하지 않으면 서비스가 일제히 중단됩니다.
+...</p>
+  </div>
+  <footer class="entry-footer">
+
+<span title='2026-10-12 15:52:00 +0900 KST'>2026-10-12 15:52</span>&nbsp;·&nbsp;<span>CK notes</span></footer>
+  <a class="entry-link" aria-label="post link to [Veeam] Windows 서버 비밀번호 변경 후 서비스 계정 일괄 갱신 가이드" href="http://localhost:1313/posts/veeam-windows-password-change-service-logon-fix/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
     <h2 class="entry-hint-parent">[HPE VME] Veeam 백업 복구 실패: VirtIO 디스크 번호 중복(index=0) 해결 가이드
     </h2>
   </header>
@@ -332,23 +350,6 @@ Alletra 9000 계열의 OS 업그레이드 시 가장 중요한 사전 요구사�
 
 <span title='2026-09-26 13:30:00 +0900 KST'>2026-09-26 13:30</span>&nbsp;·&nbsp;<span>CK notes</span></footer>
   <a class="entry-link" aria-label="post link to [HPE Alletra 6000] OS 펌웨어 업그레이드 실무 가이드" href="http://localhost:1313/posts/hpe-alletra-6000-firmware-upgrade-guide/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">[Linux 실무] 재부팅 없는 온라인 디스크 증설 및 LVM 확장
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>엔터프라이즈 환경에서 24시간 가동되는 데이터베이스(DB)나 서비스 서버의 디스크 사용량이 90%를 초과해 긴급 알람이 울리면, 가장 먼저 떠오르는 과제는 “서비스를 내리지 않고 온라인 상태에서 안전하게 디스크를 늘릴 수 있는가?“입니다.
-과거에는 야간 점검 시간을 잡아 서버를 끄고 파티션을 조정했지만, RHEL/Rocky Linux/CentOS (7 ~ 9) 및 Ubuntu (20.04 ~ 24.04 LTS) 등 현대 가상화(VMware, KVM, Nutanix, SimpliVity 등)와 클라우드 환경에서는 서버 재부팅 없이 100% 무중단(Online)으로 디스크를 확장하는 것이 엔지니어의 기본 역량입니다.
-데이터센터 현장에서 수없이 검증한 SCSI 버스 재스캔부터 LVM 볼륨 확장, 파일시스템(XFS vs EXT4) 반영까지의 검증된 표준 작업 절차를 깔끔하게 정리해 드립니다.
-...</p>
-  </div>
-  <footer class="entry-footer">
-
-<span title='2026-09-22 14:00:00 +0900 KST'>2026-09-22 14:00</span>&nbsp;·&nbsp;<span>CK notes</span></footer>
-  <a class="entry-link" aria-label="post link to [Linux 실무] 재부팅 없는 온라인 디스크 증설 및 LVM 확장" href="http://localhost:1313/posts/linux-online-lvm-disk-expansion-guide/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
