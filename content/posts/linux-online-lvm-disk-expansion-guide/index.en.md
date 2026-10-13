@@ -5,7 +5,7 @@ date: 2026-09-22T14:00:00+09:00
 draft: false
 tags: ["Linux", "LVM", "Storage", "Troubleshooting", "SysAdmin", "Infrastructure"]
 categories:
-  - Linux
+  - Storage
 ---
 
 When production database or application servers running RHEL, Rocky Linux, CentOS (7 ~ 9), or Ubuntu (20.04 ~ 24.04 LTS) reach 90%+ disk utilization, scheduling emergency maintenance downtime is rarely an acceptable option. In modern virtualization (VMware, KVM, Nutanix, SimpliVity) and cloud infrastructures, performing **100% online, non-disruptive storage expansion** is an essential skill for system engineers.
