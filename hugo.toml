@@ -30,9 +30,9 @@ enableRobotsTXT = true
   mapping = "pathname" # URL 경로 기준으로 글마다 고유 댓글창 생성
   reactionsEnabled = "1"
   emitMetadata = "0"
-  inputPosition = "top"
+  inputPosition = "bottom"
   theme = "preferred_color_scheme"
-  lang = "preferred"
+  lang = "ko"
 
 [params.analytics.google]
   SiteVerificationTag = "dr0Q6_PYk2R4JOUSa884LZJjb8hrAqlRxTg5j-XnkgY"

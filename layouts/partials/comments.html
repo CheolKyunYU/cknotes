@@ -1,10 +1,12 @@
 {{- if or .Params.comments (and site.Params.comments (ne .Params.comments false)) -}}
-{{- $term := "" -}}
-{{- if .File -}}
-  {{- if eq .File.TranslationBaseName "index" -}}
-    {{- $term = path.Base .File.Dir -}}
-  {{- else -}}
-    {{- $term = .File.TranslationBaseName -}}
+{{- $lang := "ko" -}}
+{{- if eq .Language.Lang "en" -}}
+  {{- $lang = "en" -}}
+{{- else if or (eq .Language.Lang "jp") (eq .Language.Lang "ja") -}}
+  {{- $lang = "ja" -}}
+{{- else if site.Params.giscus.lang -}}
+  {{- if ne site.Params.giscus.lang "preferred" -}}
+    {{- $lang = site.Params.giscus.lang -}}
   {{- end -}}
 {{- end -}}
 {{- with site.Params.giscus -}}
@@ -19,9 +21,9 @@
           data-strict="0"
           data-reactions-enabled="{{ .reactionsEnabled | default "1" }}"
           data-emit-metadata="{{ .emitMetadata | default "0" }}"
-          data-input-position="{{ .inputPosition | default "top" }}"
+          data-input-position="{{ .inputPosition | default "bottom" }}"
           data-theme="{{ .theme | default "preferred_color_scheme" }}"
-          data-lang="{{ .lang | default "preferred" }}"
+          data-lang="{{ $lang }}"
           data-loading="lazy"
           crossorigin="anonymous"
           async>
