@@ -1,4 +1,4 @@
-﻿{{- if or .Params.comments (and site.Params.comments (ne .Params.comments false)) -}}
+{{- if or .Params.comments (and site.Params.comments (ne .Params.comments false)) -}}
 {{- $term := "" -}}
 {{- if .File -}}
   {{- if eq .File.TranslationBaseName "index" -}}
@@ -15,8 +15,7 @@
           data-repo-id="{{ .repoId }}"
           data-category="{{ .category | default "General" }}"
           data-category-id="{{ .categoryId }}"
-          data-mapping="specific"
-          data-term="{{ $term }}"
+          data-mapping="pathname"
           data-strict="0"
           data-reactions-enabled="{{ .reactionsEnabled | default "1" }}"
           data-emit-metadata="{{ .emitMetadata | default "0" }}"
