@@ -24,9 +24,9 @@ enableRobotsTXT = true
 [params.giscus]
   enable = true
   repo = "CheolKyunYU/cknotes"
-  repoId = ""          # giscus.app에서 발급받은 repo-id 입력
-  category = "General" # GitHub Discussions 카테고리
-  categoryId = ""      # giscus.app에서 발급받은 category-id 입력
+  repoId = "R_kgDOUEwsNg"
+  category = "General"
+  categoryId = "DIC_kwDOUEwsNs4DIl8R"
   mapping = "specific" # 다국어 페이지 간 동일한 포스트 식별자로 공유
   reactionsEnabled = "1"
   emitMetadata = "0"
