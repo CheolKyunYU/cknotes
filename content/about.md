@@ -3,6 +3,7 @@ title: "About me"
 description: "16년 차 IT 필드 엔지니어 CK notes의 프로필, 블로그 이름 의미(CK와 notes), 주요 기술 스택, 커리어 이력 및 문의 연락처를 안내합니다."
 date: 2026-08-27T12:30:00+09:00
 draft: false
+comments: false
 summary: "CK notes 블로그 및 작성자 소개"
 ---
 

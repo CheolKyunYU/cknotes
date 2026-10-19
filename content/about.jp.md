@@ -3,6 +3,7 @@ title: "About me"
 description: "16年目のITシステム・フィールドエンジニア CK notesのプロフィール、ブログ名の由来、主要技術スタック、経歴、およびお問い合わせ窓口をご案内します。"
 date: 2026-08-27T12:30:00+09:00
 draft: false
+comments: false
 summary: "CK notes ブログおよび運営エンジニアの紹介"
 ---
 

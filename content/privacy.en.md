@@ -1,8 +1,9 @@
-﻿---
+---
 title: "Privacy Policy"
 description: "Privacy policy for CK notes, Google AdSense cookie policy, Google Analytics tracking, visitor data protection, and opt-out guidelines."
 date: 2026-09-05T19:40:00+09:00
 draft: false
+comments: false
 summary: "CK notes Privacy Policy, Google AdSense cookie guidelines, and contact information."
 ---
 

@@ -3,6 +3,7 @@ title: "About me"
 description: "Profile of CK notes, a 16-year IT systems/field engineer. Explains the meaning behind CK notes, core technical stack, career experience, and contact information."
 date: 2026-08-27T12:30:00+09:00
 draft: false
+comments: false
 summary: "Introduction to CK notes blog and the engineer behind it."
 ---
 

@@ -3,6 +3,7 @@ title: "개인정보처리방침 (Privacy Policy)"
 description: "CK notes 블로그의 개인정보처리방침, Google AdSense 광고 쿠키 정책, Google Analytics 분석 및 방문자 데이터 보호와 쿠키 거부 안내입니다."
 date: 2026-09-05T19:40:00+09:00
 draft: false
+comments: false
 summary: "CK notes 개인정보처리방침, 구글 애드센스 쿠키 정책 및 문의 안내"
 ---
 

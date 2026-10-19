@@ -1,8 +1,9 @@
-﻿---
+---
 title: "プライバシーポリシー (Privacy Policy)"
 description: "CK notesブログのプライバシーポリシー、Google AdSense広告Cookieポリシー、Google Analyticsによるアクセス解析、訪問者データの保護およびCookieオプトアウトについてのご案内です。"
 date: 2026-09-05T19:40:00+09:00
 draft: false
+comments: false
 summary: "CK notes プライバシーポリシー、Google AdSense Cookieポリシーおよびお問い合わせ窓口"
 ---
 
