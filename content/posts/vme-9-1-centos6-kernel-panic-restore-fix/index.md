@@ -46,6 +46,8 @@ VMware 환경에서 정상 백업된 백업 이미지를 HPE VME 9.1 클러스�
 
 GRUB 부트로더 화면이 지나가고 커널이 로드되는 순간, 루트 디스크를 전혀 마운트하지 못하며 콘솔 화면에 아래의 치명적인 커널 패닉이 출력되고 시스템이 완전히 정지했습니다.
 
+{{< figure src="images/01_kernel_panic_attempted_to_kill_init.png" caption="HPE VME 9.1 가상 콘솔에서 확인된 CentOS 6.6 Kernel Panic (Attempted to kill init!) 화면" >}}
+
 ```text
 Kernel panic - not syncing: Attempted to kill init!
 Pid: 1, comm: init Not tainted 2.6.32-504.el6.x86_64 #1

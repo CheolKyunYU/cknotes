@@ -46,6 +46,8 @@ VMware上で取得したバックアップイメージをHPE VME 9.1クラスタ
 
 GRUBブートローダー画面を通過してカーネルがロードされた瞬間、ルートディスクをマウントできず、コンソールに以下のカーネルパニックが出力されてシステムが完全に停止しました。
 
+{{< figure src="images/01_kernel_panic_attempted_to_kill_init.png" caption="HPE VME 9.1 仮想コンソール上で確認されたCentOS 6.6のKernel Panic (Attempted to kill init!) 画面" >}}
+
 ```text
 Kernel panic - not syncing: Attempted to kill init!
 Pid: 1, comm: init Not tainted 2.6.32-504.el6.x86_64 #1

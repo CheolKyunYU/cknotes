@@ -46,6 +46,8 @@ Following an Entire VM Restore from VMware backup images to the HPE VME 9.1 clus
 
 Immediately following the GRUB bootloader phase, the kernel failed to mount the root block device, halting the system with the following panic message on the virtual console:
 
+{{< figure src="images/01_kernel_panic_attempted_to_kill_init.png" caption="CentOS 6.6 Kernel Panic (Attempted to kill init!) on HPE VME 9.1 Virtual Machine Console" >}}
+
 ```text
 Kernel panic - not syncing: Attempted to kill init!
 Pid: 1, comm: init Not tainted 2.6.32-504.el6.x86_64 #1
