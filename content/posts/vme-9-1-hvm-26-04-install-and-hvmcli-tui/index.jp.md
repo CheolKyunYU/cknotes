@@ -41,7 +41,7 @@ HPE VME 9.1.0ソフトウェア自体は既存のHVM OS 24.04上でも動作可�
 
 ---
 
-### Step 1. HVM OS 26.04 GRUBブートおよび言語選択
+### Step 1. HVM OS 26.04 GRUBブート、言語選択および管理者アカウント登録
 
 サーバーコンソール(iLO仮想メディア等)に `HVM_OS_26.04` インストールISOをマウントし、UEFIモードで起動します。
 
@@ -52,6 +52,14 @@ HPE VME 9.1.0ソフトウェア自体は既存のHVM OS 24.04上でも動作可�
 ブートカーネルの読み込み後、Ubuntu Subiquityベースの **HPE HVM Installer** 画面が立ち上がります。システム言語として **`[ English (US) ]`** を選択し、次へ進みます。
 
 {{< figure src="images/02_installer_language_select.jpg" caption="HPE HVM Installer 言語選択画面" >}}
+
+言語選択の直後、ホストシステムの管理者アカウントを登録します。
+
+* **Enter Administrator Username**: `hvmadmin`
+* **Enter Administrator Password**: 管理者パスワードを入力
+* **Confirm Administrator Password**: パスワード再確認
+
+{{< figure src="images/07_admin_account_creation.jpg" caption="ホスト管理者(hvmadmin)アカウント登録画面" >}}
 
 ---
 
@@ -93,14 +101,6 @@ HPE VME 9.1.0ソフトウェア自体は既存のHVM OS 24.04上でも動作可�
 インストール完了後、画面下部の **`[ Reboot Now ]`** を選択してシステムを再起動します。
 
 {{< figure src="images/06_curtin_os_installation_progress.jpg" caption="CurtinエンジンによるOSパッケージおよびストレージドライバー導入画面" >}}
-
-初期セットアップ画面において、ホストシステムの管理者アカウントを登録します。
-
-* **Enter Administrator Username**: `hvmadmin`
-* **Enter Administrator Password**: 管理者パスワードを入力
-* **Confirm Administrator Password**: パスワード再確認
-
-{{< figure src="images/07_admin_account_creation.jpg" caption="ホスト管理者(hvmadmin)アカウント登録画面" >}}
 
 ---
 

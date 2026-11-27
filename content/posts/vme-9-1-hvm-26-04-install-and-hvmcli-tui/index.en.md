@@ -41,7 +41,7 @@ The legacy console command `hpe-vm` has been completely deprecated. Executing **
 
 ---
 
-### Step 1. HVM OS 26.04 GRUB Boot & Language Selection
+### Step 1. HVM OS 26.04 GRUB Boot, Language Selection & Admin Account Setup
 
 Mount the `HVM_OS_26.04` ISO image to the server console (e.g., HPE iLO Virtual Media) and boot in UEFI mode.
 
@@ -52,6 +52,14 @@ Upon boot, the GNU GRUB menu appears with **`HVM Install 26.04`** as the default
 Once the installation kernel initializes, the Subiquity-based **HPE HVM Installer** loads. Select **`[ English (US) ]`** as the system language and continue.
 
 {{< figure src="images/02_installer_language_select.jpg" caption="HPE HVM Installer Language Selection" >}}
+
+Immediately after selecting the language, configure the primary host administrator account:
+
+* **Enter Administrator Username**: `hvmadmin`
+* **Enter Administrator Password**: Specify a secure password
+* **Confirm Administrator Password**: Re-enter the password
+
+{{< figure src="images/07_admin_account_creation.jpg" caption="Configuring the Primary Administrator (hvmadmin) Account" >}}
 
 ---
 
@@ -93,14 +101,6 @@ The Curtin installation engine executes in the background, handling partition fo
 Once the process finishes, select **`[ Reboot Now ]`** at the bottom to reboot the system.
 
 {{< figure src="images/06_curtin_os_installation_progress.jpg" caption="Curtin Installer Executing Kernel and Storage Driver Packages" >}}
-
-During initial system setup, configure the primary administrator account:
-
-* **Enter Administrator Username**: `hvmadmin`
-* **Enter Administrator Password**: Specify a secure password
-* **Confirm Administrator Password**: Re-enter the password
-
-{{< figure src="images/07_admin_account_creation.jpg" caption="Configuring the Primary Administrator (hvmadmin) Account" >}}
 
 ---
 
