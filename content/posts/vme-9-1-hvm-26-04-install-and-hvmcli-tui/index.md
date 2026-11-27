@@ -41,7 +41,7 @@ HPE VME 9.1.0 소프트웨어 자체는 기존 HVM OS 24.04 버전에서도 구�
 
 ---
 
-### Step 1. HVM OS 26.04 GRUB 부팅 및 언어 설정
+### Step 1. HVM OS 26.04 GRUB 부팅, 언어 선택 및 관리자 계정 생성
 
 서버 콘솔(iLO 등)에 `HVM_OS_26.04` 설치 미디어를 마운트하고 UEFI 모드로 부팅을 진행합니다.
 
@@ -52,6 +52,14 @@ HPE VME 9.1.0 소프트웨어 자체는 기존 HVM OS 24.04 버전에서도 구�
 부팅 커널이 로드되면 최신 Ubuntu Subiquity 기반의 **HPE HVM Installer** 화면이 실행됩니다. 기본 언어로 **`[ English (US) ]`**를 선택하고 다음 단계로 진행합니다.
 
 {{< figure src="images/02_installer_language_select.jpg" caption="HPE HVM Installer 언어 선택 화면" >}}
+
+언어 선택 직후, 호스트 시스템의 최고 관리자 계정 정보를 등록합니다.
+
+* **Enter Administrator Username**: `hvmadmin`
+* **Enter Administrator Password**: 관리자 비밀번호 입력
+* **Confirm Administrator Password**: 비밀번호 재확인
+
+{{< figure src="images/07_admin_account_creation.jpg" caption="호스트 최고 관리자(hvmadmin) 계정 생성 화면" >}}
 
 ---
 
@@ -93,14 +101,6 @@ HPE VME 9.1.0 소프트웨어 자체는 기존 HVM OS 24.04 버전에서도 구�
 설치가 완료되면 하단의 **`[ Reboot Now ]`**를 눌러 시스템을 재부팅합니다.
 
 {{< figure src="images/06_curtin_os_installation_progress.jpg" caption="Curtin 설치 엔진을 통한 OS 패키지 및 커널 드라이버 구성 화면" >}}
-
-설치 마무리 단계(또는 초기 부팅 과정)에서 호스트 시스템의 최고 관리자 계정 정보를 등록합니다.
-
-* **Enter Administrator Username**: `hvmadmin`
-* **Enter Administrator Password**: 관리자 비밀번호 입력
-* **Confirm Administrator Password**: 비밀번호 재확인
-
-{{< figure src="images/07_admin_account_creation.jpg" caption="호스트 최고 관리자(hvmadmin) 계정 생성 화면" >}}
 
 ---
 
